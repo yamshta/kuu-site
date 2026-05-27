@@ -3,19 +3,41 @@
 KUU の公式 LP (`https://kuu-zen.com/`)。GitHub Pages で配信。
 
 主目的:
-- App Store の マーケティング/サポート URL のホスト
+- App Store の マーケティング/サポート URL のホスト (5 言語)
 - AdMob `app-ads.txt` の配信ドメイン (= AdMob 検証を通すため)
 
 ## 構成
 
 ```
 .
-├── index.html        # トップ LP
-├── support/
-│   └── index.html    # サポート (お問い合わせ / FAQ)
-├── app-ads.txt       # AdMob 検証用 (必須・ルート直下)
-└── CNAME             # kuu-zen.com (GitHub Pages 用)
+├── index.html              # ja (root)
+├── support/index.html      # ja support
+├── en/index.html           # en
+├── en/support/index.html
+├── es/index.html           # es
+├── es/support/index.html
+├── ko/index.html           # ko
+├── ko/support/index.html
+├── zh-Hans/index.html      # zh-Hans
+├── zh-Hans/support/index.html
+├── app-ads.txt             # AdMob 検証用 (ルート直下)
+├── CNAME                   # kuu-zen.com
+└── scripts/
+    └── generate_pages.py   # 10 ファイルの一括生成 (翻訳の SSoT)
 ```
+
+翻訳/コピーを変更する場合は `scripts/generate_pages.py` の `LOCALES` dict を編集 → `python3 scripts/generate_pages.py` で再生成。
+個別 HTML を直接編集しない (次回生成で上書きされる)。
+
+## App Store Connect URL マッピング
+
+| locale | marketing | support |
+|---|---|---|
+| ja | `https://kuu-zen.com/` | `https://kuu-zen.com/support/` |
+| en-US | `https://kuu-zen.com/en/` | `https://kuu-zen.com/en/support/` |
+| es-ES | `https://kuu-zen.com/es/` | `https://kuu-zen.com/es/support/` |
+| ko | `https://kuu-zen.com/ko/` | `https://kuu-zen.com/ko/support/` |
+| zh-Hans | `https://kuu-zen.com/zh-Hans/` | `https://kuu-zen.com/zh-Hans/support/` |
 
 ## デプロイ手順 (初回 owner 作業)
 
@@ -57,9 +79,10 @@ google.com, pub-6031760637647284, DIRECT, f08c47fec0942fa0
 
 ### 5. App Store Connect 更新
 
-App 情報 (5 言語ぶん) の マーケティング URL / サポート URL を変更:
+上記マッピングどおりに 5 言語ぶんの URL を設定。保存後、AdMob で「アップデートを確認」(最大 24h)。
 
-- マーケティング URL: `https://kuu-zen.com/`
-- サポート URL: `https://kuu-zen.com/support/`
+## 翻訳ソース
 
-保存後、AdMob で「アップデートを確認」を押す (最大 24h)。
+- 4 象限の正規ラベル: `KUU/Localizable.xcstrings` (xcstrings)
+- トーン参照: `KUU/fastlane/metadata/<locale>/{subtitle,promotional_text,description}.txt`
+- 世界観: `docs/copy_guide.md` (静寂・余白)
