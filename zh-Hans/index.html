@@ -65,11 +65,14 @@ section { padding: clamp(64px, 13vw, 132px) 0; }
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
+  inset: -12%;
   z-index: -1;
   background:
-    radial-gradient(60% 50% at 78% 8%, rgba(127, 178, 214, 0.10), transparent 70%),
-    radial-gradient(70% 55% at 12% 96%, rgba(156, 198, 226, 0.12), transparent 72%);
+    radial-gradient(58% 48% at 80% 10%, rgba(127, 178, 214, 0.13), transparent 70%),
+    radial-gradient(66% 52% at 8% 92%, rgba(156, 198, 226, 0.15), transparent 72%);
+  /* scroll-linked drift = 全ページに静かな動き。--py は JS が rAF で更新 */
+  transform: translate3d(0, var(--py, 0px), 0);
+  will-change: transform;
 }
 
 /* ---- hero ---- */
@@ -103,11 +106,6 @@ body::before {
   max-width: 30em;
   margin: clamp(16px, 4vw, 22px) auto 0;
 }
-/* parallax: hero layers lag behind the scroll (--hy set by JS, 0 without JS / reduced-motion) */
-.js .hero .orb { transform: translateY(var(--hy, 0px)); }
-.js .hero h1,
-.js .hero .sub { transform: translateY(calc(var(--hy, 0px) * 0.45)); }
-.js .hero .wordmark { transform: translateY(calc(var(--hy, 0px) * 0.3)); }
 
 /* ---- water orb (the KUU signature) ---- */
 .orb {
@@ -126,7 +124,8 @@ body::before {
   left: -28%;
   right: -28%;
   bottom: -12%;
-  height: 60%;
+  /* 水位はスクロールで静かに下がる (--wl: JS, 0〜) ＝ 余白が増える world view */
+  height: calc(60% - var(--wl, 0px));
   background: linear-gradient(180deg, var(--water-top), var(--water-bottom));
   border-radius: 42% 44% 0 0 / 58% 56% 0 0;
   animation: orb-bob 7.5s ease-in-out infinite, orb-sway 11s ease-in-out infinite;
@@ -291,12 +290,16 @@ h2 {
 }
 .q {
   padding: 22px 20px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  border-top: 3px solid var(--q, var(--primary));
+  border-radius: 20px;
+  /* アプリの象限カードと同じ: 白地 + カテゴリ色の縦グラデ (0.10→0.24) + ラベルはカテゴリ色
+     (ResultView.swift / PlaceView.swift の tint.opacity(0.10..0.24) を再現) */
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--q, var(--primary)) 10%, #fff),
+      color-mix(in srgb, var(--q, var(--primary)) 24%, #fff));
+  border: 1px solid color-mix(in srgb, var(--q, var(--primary)) 20%, var(--line));
 }
-.q strong { display: block; color: var(--ink); font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.q strong { display: block; color: var(--q, var(--primary)); font-size: 16px; font-weight: 600; margin-bottom: 6px; }
 .q span { color: var(--ink-soft); font-size: 13.5px; line-height: 1.6; }
 
 /* ---- privacy ---- */
@@ -452,12 +455,15 @@ footer {
     document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 
     if (prefersReduce) return;
-    var hero = document.querySelector('.hero');
-    if (!hero) return;
+    var water = document.querySelector('.orb__water');
     var ticking = false;
     function update() {
       var y = window.scrollY || 0;
-      if (y < window.innerHeight * 1.2) hero.style.setProperty('--hy', (y * 0.22) + 'px');
+      var vh = window.innerHeight || 1;
+      // 全ページに効く背景アンビエントの drift
+      document.body.style.setProperty('--py', (y * 0.08).toFixed(1) + 'px');
+      // hero の水位はスクロール最初の 1 画面で静かに下がる
+      if (water) water.style.setProperty('--wl', (Math.min(y / vh, 1) * 16).toFixed(1) + 'px');
       ticking = false;
     }
     addEventListener('scroll', function () {
