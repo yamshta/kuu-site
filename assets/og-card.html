@@ -1,0 +1,91 @@
+<!doctype html>
+<!-- Source for /assets/og.png — render at 1200x630 and screenshot. -->
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * { box-sizing: border-box; margin: 0; }
+      html, body { width: 1200px; height: 630px; }
+      body {
+        position: relative;
+        overflow: hidden;
+        background: #f6f9fc;
+        font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Helvetica Neue", Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        display: flex;
+        align-items: center;
+        padding: 0 88px;
+        gap: 64px;
+      }
+      body::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(55% 60% at 86% 12%, rgba(127, 178, 214, 0.16), transparent 70%),
+          radial-gradient(60% 60% at 6% 96%, rgba(156, 198, 226, 0.18), transparent 72%);
+      }
+      .text { position: relative; flex: 1; }
+      .wordmark {
+        font-size: 26px;
+        font-weight: 600;
+        letter-spacing: 0.42em;
+        color: #5e97c2;
+        margin-bottom: 30px;
+      }
+      h1 {
+        font-size: 66px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        line-height: 1.3;
+        color: #353b41;
+      }
+      p {
+        margin-top: 28px;
+        font-size: 24px;
+        line-height: 1.7;
+        color: #6b737b;
+        max-width: 18em;
+      }
+      .orb {
+        position: relative;
+        flex: none;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: radial-gradient(125% 120% at 50% 16%, #ffffff, #eff4f8);
+        border: 1px solid #e7edf3;
+        box-shadow: 0 40px 80px -36px rgba(94, 151, 194, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      }
+      .orb__water {
+        position: absolute;
+        left: -28%;
+        right: -28%;
+        bottom: -12%;
+        height: 60%;
+        background: linear-gradient(180deg, #cfe4f2, #9cc6e2);
+        border-radius: 44% 41% 0 0 / 56% 60% 0 0;
+      }
+      .orb__water::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -12px;
+        height: 30px;
+        background: #cfe4f2;
+        opacity: 0.5;
+        border-radius: 46%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text">
+      <div class="wordmark">KUU</div>
+      <h1>話して、<br />あたまに余白を。</h1>
+      <p>頭の中を口に出すだけ。いま持たなくていいものを、そっと外へ。</p>
+    </div>
+    <div class="orb"><div class="orb__water"></div></div>
+  </body>
+</html>
