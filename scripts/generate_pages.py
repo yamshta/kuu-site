@@ -37,7 +37,8 @@ LOCALES = {
         # Why
         "why_eyebrow": "なぜ KUU か",
         "why_headline": "頭の中には、いろんな思考が混ざっている。",
-        "why_lead": "タスク、悩み、アイデア、違和感、心配ごと。メモにもタスクにも、しっくりこないまま溜まっていく。",
+        "why_scenario": "作業の途中で、別のことがふと浮かぶ。忘れたくないのに、いま向き合うものでもない。",
+        "why_lead": "タスク管理に入れると「やること」になり、メモに書くと埋もれる。散らかるのは、思考そのものより「どう扱うか」の判断のほう。",
         "thoughts": [
             "やらなきゃいけない気がすること",
             "あとで考えたいこと",
@@ -45,12 +46,12 @@ LOCALES = {
             "なんとなく気になる違和感",
             "今は考えても仕方ない心配ごと",
         ],
-        "why_note": "KUU は、それを声に出して頭の外へ。水位が下がるように、すこし軽くなる。",
+        "why_note": "KUU は、片づける前に、まず受け止める。声に出すほど、頭の水位が下がっていく。",
         # How
         "steps_eyebrow": "使い方",
         "steps_headline": "やることは、話すだけ。",
         "steps": [
-            ("話す", "まとまっていなくて大丈夫。思いついたまま、声に出す。"),
+            ("話す", "まとまっていなくて大丈夫。声にすると、忘れていたことまで連なって出てくる。"),
             ("分ける", "KUU が、いま見る / あとで考える / 寝かせる / 手放す に静かに分ける。"),
             ("棚卸しする", "落ち着いたころ、見返して扱いを整える。積み上げっぱなしにしない。"),
         ],
@@ -113,7 +114,8 @@ LOCALES = {
         "scroll_cue": "Scroll",
         "why_eyebrow": "Why KUU",
         "why_headline": "Your head holds all kinds of thoughts.",
-        "why_lead": "Tasks, worries, ideas, small doubts, anxieties. They pile up — fitting neither a to-do list nor a notebook.",
+        "why_scenario": "Mid-task, something unrelated pops up. You don't want to forget it, but it isn't for right now either.",
+        "why_lead": "Put it in a to-do app and it becomes a “task”; jot it in notes and it gets buried. What gets cluttered isn’t the notes — it’s deciding how to handle each one.",
         "thoughts": [
             "Something you feel you ought to do",
             "Something to think about later",
@@ -121,11 +123,11 @@ LOCALES = {
             "A vague unease you can't place",
             "A worry there's no point dwelling on now",
         ],
-        "why_note": "KUU lets you say it out loud and set it down. Like a water line dropping, your head gets a little lighter.",
+        "why_note": "KUU receives it first, before you sort anything. The more you speak, the lower the water in your head.",
         "steps_eyebrow": "How it works",
         "steps_headline": "All you do is talk.",
         "steps": [
-            ("Speak", "It doesn't need to be tidy. Just say it as it comes."),
+            ("Speak", "It doesn’t need to be tidy. Saying it aloud pulls up things you’d forgotten, one after another."),
             ("Sort", "KUU quietly sorts it into Now, Later, Park, and Let go."),
             ("Look back", "When things settle, revisit and tend to them. Nothing just piles up."),
         ],
@@ -182,7 +184,8 @@ LOCALES = {
         "scroll_cue": "Desliza",
         "why_eyebrow": "Por qué KUU",
         "why_headline": "En la cabeza se mezclan toda clase de pensamientos.",
-        "why_lead": "Tareas, preocupaciones, ideas, dudas, inquietudes. Se acumulan, y no encajan ni en una lista de tareas ni en una nota.",
+        "why_scenario": "A mitad de una tarea, surge otra cosa. No quieres olvidarla, pero tampoco es para ahora.",
+        "why_lead": "Si lo metes en una app de tareas, se vuelve un “pendiente”; si lo anotas, queda sepultado. Lo que se desordena no son las notas, sino decidir cómo tratar cada cosa.",
         "thoughts": [
             "Algo que sientes que deberías hacer",
             "Algo para pensar más tarde",
@@ -190,11 +193,11 @@ LOCALES = {
             "Una vaga inquietud que no ubicas",
             "Una preocupación que de nada sirve rumiar ahora",
         ],
-        "why_note": "KUU te deja decirlo en voz alta y dejarlo ir. Como un nivel de agua que baja, la cabeza se aligera un poco.",
+        "why_note": "KUU lo recibe primero, antes de ordenar nada. Cuanto más hablas, más baja el agua en tu cabeza.",
         "steps_eyebrow": "Cómo funciona",
         "steps_headline": "Lo único que haces es hablar.",
         "steps": [
-            ("Habla", "No tiene que estar ordenado. Dilo tal como surge."),
+            ("Habla", "No tiene que estar ordenado. Al decirlo en voz alta, salen incluso cosas que habías olvidado, una tras otra."),
             ("Separa", "KUU lo separa con calma en Ahora, Más tarde, Reposar y Soltar."),
             ("Repasa", "Cuando todo se calma, vuelve a verlo y ordénalo. Nada se acumula sin más."),
         ],
@@ -251,7 +254,8 @@ LOCALES = {
         "scroll_cue": "아래로",
         "why_eyebrow": "왜 KUU인가",
         "why_headline": "머릿속에는 온갖 생각이 뒤섞여 있습니다.",
-        "why_lead": "할 일, 고민, 아이디어, 위화감, 걱정. 메모에도 할 일 목록에도 들어맞지 않은 채 쌓여 갑니다.",
+        "why_scenario": "작업 중에 문득 다른 게 떠오릅니다. 잊고 싶진 않은데, 지금 마주할 것도 아닙니다.",
+        "why_lead": "할 일 앱에 넣으면 ‘해야 할 일’이 되고, 메모에 적으면 묻혀 버립니다. 어질러지는 건 메모가 아니라, ‘어떻게 다룰지’의 판단 쪽입니다.",
         "thoughts": [
             "해야 할 것 같은 일",
             "나중에 생각하고 싶은 것",
@@ -259,11 +263,11 @@ LOCALES = {
             "왠지 마음에 걸리는 위화감",
             "지금 걱정해 봐야 소용없는 일",
         ],
-        "why_note": "KUU는 그것을 소리 내어 머리 밖으로. 수위가 내려가듯, 조금 가벼워집니다.",
+        "why_note": "KUU는 정리하기 전에, 먼저 받아 둡니다. 말할수록, 머릿속 수위가 내려갑니다.",
         "steps_eyebrow": "사용법",
         "steps_headline": "할 일은, 말하는 것뿐.",
         "steps": [
-            ("말하기", "정리되어 있지 않아도 괜찮아요. 떠오르는 대로 소리 내어."),
+            ("말하기", "정리되어 있지 않아도 괜찮아요. 소리 내어 말하면, 잊고 있던 것까지 줄줄이 떠올라요."),
             ("나누기", "KUU가 지금 보기, 나중에 생각하기, 묵히기, 내려놓기로 조용히 나눕니다."),
             ("돌아보기", "마음이 가라앉으면 다시 보고 정리해요. 쌓아두기만 하지 않아요."),
         ],
@@ -320,7 +324,8 @@ LOCALES = {
         "scroll_cue": "向下",
         "why_eyebrow": "为什么是 KUU",
         "why_headline": "脑袋里，混着各种各样的念头。",
-        "why_lead": "待办、烦恼、灵感、违和感、担忧。它们既不像待办，也不像笔记，就这样堆着。",
+        "why_scenario": "做事做到一半，别的念头忽然冒出来。不想忘掉，可现在也不是面对它的时候。",
+        "why_lead": "放进待办应用就成了“要做的事”，写进笔记又被埋没。乱的不是笔记，而是“怎么处置”的判断。",
         "thoughts": [
             "总觉得该做的事",
             "想之后再想的事",
@@ -328,11 +333,11 @@ LOCALES = {
             "莫名在意的违和感",
             "此刻想也无益的担忧",
         ],
-        "why_note": "KUU 让你把它说出口，移到脑外。像水位下降一样，轻一些。",
+        "why_note": "KUU 先接住，再谈整理。说得越多，脑子里的水位就越低。",
         "steps_eyebrow": "怎么用",
         "steps_headline": "要做的，只有说。",
         "steps": [
-            ("说", "不必整理，想到什么就说出来。"),
+            ("说", "不必整理。一说出口，连忘掉的事也会一件接一件冒出来。"),
             ("分", "KUU 会安静地分到现在看、之后想、搁置、放下。"),
             ("回看", "等心定下来，再回看、整理。不会只是一味堆着。"),
         ],
@@ -556,6 +561,7 @@ h2 {
   margin: 0;
 }
 .lead { color: var(--ink-soft); font-size: clamp(15px, 4vw, 16px); margin: 16px 0 0; }
+.scenario { color: var(--ink); font-size: clamp(16px, 4.4vw, 18px); line-height: 1.7; margin: 18px 0 0; }
 
 /* ---- why: thought list ---- */
 .thoughts { list-style: none; padding: 0; margin: 32px 0 0; }
@@ -853,6 +859,7 @@ def index_html(code, d):
         <div class="wrap reveal">
           <p class="eyebrow">{d["why_eyebrow"]}</p>
           <h2>{d["why_headline"]}</h2>
+          <p class="scenario">{d["why_scenario"]}</p>
           <p class="lead">{d["why_lead"]}</p>
           <ul class="thoughts">
 {thoughts_html}
