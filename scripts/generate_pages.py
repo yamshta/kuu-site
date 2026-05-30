@@ -37,7 +37,8 @@ LOCALES = {
         # Why
         "why_eyebrow": "なぜ KUU か",
         "why_headline": "頭の中には、いろんな思考が混ざっている。",
-        "why_lead": "タスク、悩み、アイデア、違和感、心配ごと。メモにもタスクにも、しっくりこないまま溜まっていく。",
+        "why_scenario": "作業の途中で、別のことがふと浮かぶ。忘れたくないのに、いま向き合うものでもない。",
+        "why_lead": "タスク管理に入れると「やること」になり、メモに書くと埋もれる。散らかるのは、思考そのものより「どう扱うか」の判断のほう。",
         "thoughts": [
             "やらなきゃいけない気がすること",
             "あとで考えたいこと",
@@ -45,12 +46,12 @@ LOCALES = {
             "なんとなく気になる違和感",
             "今は考えても仕方ない心配ごと",
         ],
-        "why_note": "KUU は、それを声に出して頭の外へ。水位が下がるように、すこし軽くなる。",
+        "why_note": "KUU は、片づける前に、まず受け止める。声に出すほど、頭の水位が下がっていく。",
         # How
         "steps_eyebrow": "使い方",
         "steps_headline": "やることは、話すだけ。",
         "steps": [
-            ("話す", "まとまっていなくて大丈夫。思いついたまま、声に出す。"),
+            ("話す", "まとまっていなくて大丈夫。声にすると、忘れていたことまで連なって出てくる。"),
             ("分ける", "KUU が、いま見る / あとで考える / 寝かせる / 手放す に静かに分ける。"),
             ("棚卸しする", "落ち着いたころ、見返して扱いを整える。積み上げっぱなしにしない。"),
         ],
@@ -113,7 +114,8 @@ LOCALES = {
         "scroll_cue": "Scroll",
         "why_eyebrow": "Why KUU",
         "why_headline": "Your head holds all kinds of thoughts.",
-        "why_lead": "Tasks, worries, ideas, small doubts, anxieties. They pile up — fitting neither a to-do list nor a notebook.",
+        "why_scenario": "Mid-task, something unrelated pops up. You don't want to forget it, but it isn't for right now either.",
+        "why_lead": "Put it in a to-do app and it becomes a “task”; jot it in notes and it gets buried. What gets cluttered isn’t the notes — it’s deciding how to handle each one.",
         "thoughts": [
             "Something you feel you ought to do",
             "Something to think about later",
@@ -121,11 +123,11 @@ LOCALES = {
             "A vague unease you can't place",
             "A worry there's no point dwelling on now",
         ],
-        "why_note": "KUU lets you say it out loud and set it down. Like a water line dropping, your head gets a little lighter.",
+        "why_note": "KUU receives it first, before you sort anything. The more you speak, the lower the water in your head.",
         "steps_eyebrow": "How it works",
         "steps_headline": "All you do is talk.",
         "steps": [
-            ("Speak", "It doesn't need to be tidy. Just say it as it comes."),
+            ("Speak", "It doesn’t need to be tidy. Saying it aloud pulls up things you’d forgotten, one after another."),
             ("Sort", "KUU quietly sorts it into Now, Later, Park, and Let go."),
             ("Look back", "When things settle, revisit and tend to them. Nothing just piles up."),
         ],
@@ -182,7 +184,8 @@ LOCALES = {
         "scroll_cue": "Desliza",
         "why_eyebrow": "Por qué KUU",
         "why_headline": "En la cabeza se mezclan toda clase de pensamientos.",
-        "why_lead": "Tareas, preocupaciones, ideas, dudas, inquietudes. Se acumulan, y no encajan ni en una lista de tareas ni en una nota.",
+        "why_scenario": "A mitad de una tarea, surge otra cosa. No quieres olvidarla, pero tampoco es para ahora.",
+        "why_lead": "Si lo metes en una app de tareas, se vuelve un “pendiente”; si lo anotas, queda sepultado. Lo que se desordena no son las notas, sino decidir cómo tratar cada cosa.",
         "thoughts": [
             "Algo que sientes que deberías hacer",
             "Algo para pensar más tarde",
@@ -190,11 +193,11 @@ LOCALES = {
             "Una vaga inquietud que no ubicas",
             "Una preocupación que de nada sirve rumiar ahora",
         ],
-        "why_note": "KUU te deja decirlo en voz alta y dejarlo ir. Como un nivel de agua que baja, la cabeza se aligera un poco.",
+        "why_note": "KUU lo recibe primero, antes de ordenar nada. Cuanto más hablas, más baja el agua en tu cabeza.",
         "steps_eyebrow": "Cómo funciona",
         "steps_headline": "Lo único que haces es hablar.",
         "steps": [
-            ("Habla", "No tiene que estar ordenado. Dilo tal como surge."),
+            ("Habla", "No tiene que estar ordenado. Al decirlo en voz alta, salen incluso cosas que habías olvidado, una tras otra."),
             ("Separa", "KUU lo separa con calma en Ahora, Más tarde, Reposar y Soltar."),
             ("Repasa", "Cuando todo se calma, vuelve a verlo y ordénalo. Nada se acumula sin más."),
         ],
@@ -251,7 +254,8 @@ LOCALES = {
         "scroll_cue": "아래로",
         "why_eyebrow": "왜 KUU인가",
         "why_headline": "머릿속에는 온갖 생각이 뒤섞여 있습니다.",
-        "why_lead": "할 일, 고민, 아이디어, 위화감, 걱정. 메모에도 할 일 목록에도 들어맞지 않은 채 쌓여 갑니다.",
+        "why_scenario": "작업 중에 문득 다른 게 떠오릅니다. 잊고 싶진 않은데, 지금 마주할 것도 아닙니다.",
+        "why_lead": "할 일 앱에 넣으면 ‘해야 할 일’이 되고, 메모에 적으면 묻혀 버립니다. 어질러지는 건 메모가 아니라, ‘어떻게 다룰지’의 판단 쪽입니다.",
         "thoughts": [
             "해야 할 것 같은 일",
             "나중에 생각하고 싶은 것",
@@ -259,11 +263,11 @@ LOCALES = {
             "왠지 마음에 걸리는 위화감",
             "지금 걱정해 봐야 소용없는 일",
         ],
-        "why_note": "KUU는 그것을 소리 내어 머리 밖으로. 수위가 내려가듯, 조금 가벼워집니다.",
+        "why_note": "KUU는 정리하기 전에, 먼저 받아 둡니다. 말할수록, 머릿속 수위가 내려갑니다.",
         "steps_eyebrow": "사용법",
         "steps_headline": "할 일은, 말하는 것뿐.",
         "steps": [
-            ("말하기", "정리되어 있지 않아도 괜찮아요. 떠오르는 대로 소리 내어."),
+            ("말하기", "정리되어 있지 않아도 괜찮아요. 소리 내어 말하면, 잊고 있던 것까지 줄줄이 떠올라요."),
             ("나누기", "KUU가 지금 보기, 나중에 생각하기, 묵히기, 내려놓기로 조용히 나눕니다."),
             ("돌아보기", "마음이 가라앉으면 다시 보고 정리해요. 쌓아두기만 하지 않아요."),
         ],
@@ -320,7 +324,8 @@ LOCALES = {
         "scroll_cue": "向下",
         "why_eyebrow": "为什么是 KUU",
         "why_headline": "脑袋里，混着各种各样的念头。",
-        "why_lead": "待办、烦恼、灵感、违和感、担忧。它们既不像待办，也不像笔记，就这样堆着。",
+        "why_scenario": "做事做到一半，别的念头忽然冒出来。不想忘掉，可现在也不是面对它的时候。",
+        "why_lead": "放进待办应用就成了“要做的事”，写进笔记又被埋没。乱的不是笔记，而是“怎么处置”的判断。",
         "thoughts": [
             "总觉得该做的事",
             "想之后再想的事",
@@ -328,11 +333,11 @@ LOCALES = {
             "莫名在意的违和感",
             "此刻想也无益的担忧",
         ],
-        "why_note": "KUU 让你把它说出口，移到脑外。像水位下降一样，轻一些。",
+        "why_note": "KUU 先接住，再谈整理。说得越多，脑子里的水位就越低。",
         "steps_eyebrow": "怎么用",
         "steps_headline": "要做的，只有说。",
         "steps": [
-            ("说", "不必整理，想到什么就说出来。"),
+            ("说", "不必整理。一说出口，连忘掉的事也会一件接一件冒出来。"),
             ("分", "KUU 会安静地分到现在看、之后想、搁置、放下。"),
             ("回看", "等心定下来，再回看、整理。不会只是一味堆着。"),
         ],
@@ -412,20 +417,13 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   line-height: 1.7;
+  /* CJK 句読点 (、。) を proportional alternate で詰め組み＝中央寄せの見た目を均す。
+     "halt" は「、」を潰す副作用があるため使わない (スクショ editor と同方針)。 */
+  font-feature-settings: "palt" 1, "kern" 1;
+  font-kerning: normal;
 }
 .wrap { max-width: 660px; margin: 0 auto; padding: 0 24px; }
 section { padding: clamp(64px, 13vw, 132px) 0; }
-
-/* soft ambient background wash */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(60% 50% at 78% 8%, rgba(127, 178, 214, 0.10), transparent 70%),
-    radial-gradient(70% 55% at 12% 96%, rgba(156, 198, 226, 0.12), transparent 72%);
-}
 
 /* ---- hero ---- */
 .hero {
@@ -476,7 +474,8 @@ body::before {
   left: -28%;
   right: -28%;
   bottom: -12%;
-  height: 60%;
+  /* 水位はスクロールで静かに下がる (--wl: JS, 0〜) ＝ 余白が増える world view */
+  height: calc(60% - var(--wl, 0px));
   background: linear-gradient(180deg, var(--water-top), var(--water-bottom));
   border-radius: 42% 44% 0 0 / 58% 56% 0 0;
   animation: orb-bob 7.5s ease-in-out infinite, orb-sway 11s ease-in-out infinite;
@@ -500,6 +499,29 @@ body::before {
 @keyframes orb-sway {
   0%, 100% { border-radius: 42% 44% 0 0 / 58% 56% 0 0; }
   50% { border-radius: 47% 39% 0 0 / 54% 60% 0 0; }
+}
+
+/* 水中を下から上へ昇る泡 (アプリ WaterLevelView.Bubbles を CSS で再現) */
+.orb__bubbles { position: absolute; inset: 0; pointer-events: none; }
+.bubble {
+  position: absolute;
+  bottom: 0;
+  left: var(--bx);
+  width: var(--bs);
+  height: var(--bs);
+  border-radius: 50%;
+  /* 明るい芯＋淡いリム＝空気泡らしく、薄水色の上でも視認できる */
+  background: radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.28) 70%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 1.5px rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  animation: bubble-rise var(--bdur) var(--bd) linear infinite;
+}
+@keyframes bubble-rise {
+  0% { bottom: 3%; opacity: 0; transform: translateX(0); }
+  18% { opacity: 0.85; }
+  50% { transform: translateX(4px); }
+  82% { opacity: 0.5; }
+  100% { bottom: 55%; opacity: 0; transform: translateX(-3px); }
 }
 
 /* ---- cta ---- */
@@ -547,6 +569,7 @@ h2 {
   margin: 0;
 }
 .lead { color: var(--ink-soft); font-size: clamp(15px, 4vw, 16px); margin: 16px 0 0; }
+.scenario { color: var(--ink); font-size: clamp(16px, 4.4vw, 18px); line-height: 1.7; margin: 18px 0 0; }
 
 /* ---- why: thought list ---- */
 .thoughts { list-style: none; padding: 0; margin: 32px 0 0; }
@@ -640,20 +663,20 @@ h2 {
 }
 .q {
   padding: 22px 20px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  border-top: 3px solid var(--q, var(--primary));
+  border-radius: 20px;
+  /* アプリの象限カードと同じ: 白地 + カテゴリ色の縦グラデ (0.10→0.24) + ラベルはカテゴリ色
+     (ResultView.swift / PlaceView.swift の tint.opacity(0.10..0.24) を再現) */
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--q, var(--primary)) 10%, #fff),
+      color-mix(in srgb, var(--q, var(--primary)) 24%, #fff));
+  border: 1px solid color-mix(in srgb, var(--q, var(--primary)) 20%, var(--line));
 }
-.q strong { display: block; color: var(--ink); font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.q strong { display: block; color: var(--q, var(--primary)); font-size: 16px; font-weight: 600; margin-bottom: 6px; }
 .q span { color: var(--ink-soft); font-size: 13.5px; line-height: 1.6; }
 
 /* ---- privacy ---- */
-.privacy {
-  text-align: center;
-  background:
-    radial-gradient(80% 90% at 50% 0%, rgba(220, 234, 244, 0.6), transparent 70%);
-}
+.privacy { text-align: center; }
 .privacy .lead { max-width: 30em; margin-left: auto; margin-right: auto; }
 
 /* ---- closing ---- */
@@ -677,19 +700,39 @@ footer {
 .langs a:hover { text-decoration: underline; }
 
 /* ---- scroll reveal (progressive enhancement) ---- */
-.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); }
 .js .reveal.in { opacity: 1; transform: none; }
+
+/* staggered reveal: children settle in one after another */
+.js .reveal .stagger > * { opacity: 0; transform: translateY(14px); transition: opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .reveal.in .stagger > * { opacity: 1; transform: none; }
+.js .reveal.in .stagger > *:nth-child(2) { transition-delay: 0.07s; }
+.js .reveal.in .stagger > *:nth-child(3) { transition-delay: 0.14s; }
+.js .reveal.in .stagger > *:nth-child(4) { transition-delay: 0.21s; }
+.js .reveal.in .stagger > *:nth-child(5) { transition-delay: 0.28s; }
+.js .reveal.in .stagger > *:nth-child(6) { transition-delay: 0.35s; }
+
+/* hero entrance on first load */
+.js .hero .wordmark { animation: enter 0.8s 0.05s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .hero h1 { animation: enter 0.8s 0.16s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .hero .sub { animation: enter 0.8s 0.28s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .hero .orb { animation: enter 1s 0.4s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .hero .cta { animation: enter 0.8s 0.58s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+@keyframes enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .orb__water, .orb__water::before, .scroll-cue { animation: none; }
-  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .orb__water, .orb__water::before, .scroll-cue, .bubble { animation: none; }
+  .bubble { opacity: 0; }
+  .js .hero .wordmark, .js .hero h1, .js .hero .sub, .js .hero .orb, .js .hero .cta { animation: none; }
+  .js .reveal, .js .reveal .stagger > * { opacity: 1; transform: none; transition: none; }
 }
 """
 
 REVEAL_SCRIPT = """\
 <script>
   document.documentElement.classList.add('js');
+  var prefersReduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   addEventListener('DOMContentLoaded', function () {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -697,6 +740,21 @@ REVEAL_SCRIPT = """\
       });
     }, { threshold: 0.16 });
     document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+    if (prefersReduce) return;
+    var water = document.querySelector('.orb__water');
+    var ticking = false;
+    function update() {
+      var y = window.scrollY || 0;
+      var vh = window.innerHeight || 1;
+      // hero の水位はスクロール最初の 1 画面で静かに下がる＝余白が増える
+      if (water) water.style.setProperty('--wl', (Math.min(y / vh, 1) * 16).toFixed(1) + 'px');
+      ticking = false;
+    }
+    addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
   });
 </script>
 """
@@ -749,6 +807,19 @@ a { color: var(--ink); }
 """
 
 QUADRANT_VARS = ["--cat-now", "--cat-later", "--cat-parked", "--cat-release"]
+
+# Rising bubbles inside the water orb (deterministic seeds; matches app's Bubbles).
+BUBBLES_HTML = "".join(
+    f'<span class="bubble" style="--bx:{bx};--bs:{bs};--bdur:{dur};--bd:{delay}"></span>'
+    for bx, bs, dur, delay in [
+        ("18%", "6px", "4.6s", "0s"),
+        ("34%", "4px", "5.4s", "1.4s"),
+        ("50%", "8px", "4.0s", "2.2s"),
+        ("62%", "5px", "5.8s", "0.8s"),
+        ("76%", "7px", "4.4s", "3.0s"),
+        ("44%", "4px", "6.2s", "2.6s"),
+    ]
+)
 
 
 def lang_switcher(current_locale, page="index"):
@@ -819,7 +890,7 @@ def index_html(code, d):
       <p class="wordmark">KUU</p>
       <h1>{d["hero_headline"]}</h1>
       <p class="sub">{d["hero_sub"]}</p>
-      <div class="orb" aria-hidden="true"><div class="orb__water"></div></div>
+      <div class="orb" aria-hidden="true"><div class="orb__water"></div><div class="orb__bubbles">{BUBBLES_HTML}</div></div>
       <a class="cta" href="{APP_STORE_URL}" rel="noopener">{d["cta"]}</a>
       <div class="scroll-cue" aria-hidden="true">{d["scroll_cue"]}</div>
     </header>
@@ -829,8 +900,9 @@ def index_html(code, d):
         <div class="wrap reveal">
           <p class="eyebrow">{d["why_eyebrow"]}</p>
           <h2>{d["why_headline"]}</h2>
+          <p class="scenario">{d["why_scenario"]}</p>
           <p class="lead">{d["why_lead"]}</p>
-          <ul class="thoughts">
+          <ul class="thoughts stagger">
 {thoughts_html}
           </ul>
           <p class="note">{d["why_note"]}</p>
@@ -841,7 +913,7 @@ def index_html(code, d):
         <div class="wrap reveal">
           <p class="eyebrow">{d["steps_eyebrow"]}</p>
           <h2>{d["steps_headline"]}</h2>
-          <div class="steps">
+          <div class="steps stagger">
 {steps_html}
           </div>
         </div>
@@ -852,7 +924,7 @@ def index_html(code, d):
           <p class="eyebrow">{d["app_eyebrow"]}</p>
           <h2>{d["app_headline"]}</h2>
         </div>
-        <div class="showcase" aria-label="{d["app_eyebrow"]}">
+        <div class="showcase stagger" aria-label="{d["app_eyebrow"]}">
 {screens_html}
         </div>
       </section>
@@ -862,7 +934,7 @@ def index_html(code, d):
           <p class="eyebrow">{d["matrix_eyebrow"]}</p>
           <h2>{d["matrix_headline"]}</h2>
           <p class="lead">{d["matrix_lead"]}</p>
-          <div class="matrix" aria-label="{d["quadrants_aria"]}">
+          <div class="matrix stagger" aria-label="{d["quadrants_aria"]}">
 {matrix_html}
           </div>
         </div>
