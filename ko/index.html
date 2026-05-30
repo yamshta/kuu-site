@@ -61,20 +61,6 @@ body {
 .wrap { max-width: 660px; margin: 0 auto; padding: 0 24px; }
 section { padding: clamp(64px, 13vw, 132px) 0; }
 
-/* soft ambient background wash */
-body::before {
-  content: "";
-  position: fixed;
-  inset: -12%;
-  z-index: -1;
-  background:
-    radial-gradient(58% 48% at 80% 10%, rgba(127, 178, 214, 0.13), transparent 70%),
-    radial-gradient(66% 52% at 8% 92%, rgba(156, 198, 226, 0.15), transparent 72%);
-  /* scroll-linked drift = 全ページに静かな動き。--py は JS が rAF で更新 */
-  transform: translate3d(0, var(--py, 0px), 0);
-  will-change: transform;
-}
-
 /* ---- hero ---- */
 .hero {
   min-height: 100svh;
@@ -149,6 +135,29 @@ body::before {
 @keyframes orb-sway {
   0%, 100% { border-radius: 42% 44% 0 0 / 58% 56% 0 0; }
   50% { border-radius: 47% 39% 0 0 / 54% 60% 0 0; }
+}
+
+/* 水中を下から上へ昇る泡 (アプリ WaterLevelView.Bubbles を CSS で再現) */
+.orb__bubbles { position: absolute; inset: 0; pointer-events: none; }
+.bubble {
+  position: absolute;
+  bottom: 0;
+  left: var(--bx);
+  width: var(--bs);
+  height: var(--bs);
+  border-radius: 50%;
+  /* 明るい芯＋淡いリム＝空気泡らしく、薄水色の上でも視認できる */
+  background: radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.28) 70%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 1.5px rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  animation: bubble-rise var(--bdur) var(--bd) linear infinite;
+}
+@keyframes bubble-rise {
+  0% { bottom: 3%; opacity: 0; transform: translateX(0); }
+  18% { opacity: 0.85; }
+  50% { transform: translateX(4px); }
+  82% { opacity: 0.5; }
+  100% { bottom: 55%; opacity: 0; transform: translateX(-3px); }
 }
 
 /* ---- cta ---- */
@@ -303,11 +312,7 @@ h2 {
 .q span { color: var(--ink-soft); font-size: 13.5px; line-height: 1.6; }
 
 /* ---- privacy ---- */
-.privacy {
-  text-align: center;
-  background:
-    radial-gradient(80% 90% at 50% 0%, rgba(220, 234, 244, 0.6), transparent 70%);
-}
+.privacy { text-align: center; }
 .privacy .lead { max-width: 30em; margin-left: auto; margin-right: auto; }
 
 /* ---- closing ---- */
@@ -334,10 +339,29 @@ footer {
 .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); }
 .js .reveal.in { opacity: 1; transform: none; }
 
+/* staggered reveal: children settle in one after another */
+.js .reveal .stagger > * { opacity: 0; transform: translateY(14px); transition: opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .reveal.in .stagger > * { opacity: 1; transform: none; }
+.js .reveal.in .stagger > *:nth-child(2) { transition-delay: 0.07s; }
+.js .reveal.in .stagger > *:nth-child(3) { transition-delay: 0.14s; }
+.js .reveal.in .stagger > *:nth-child(4) { transition-delay: 0.21s; }
+.js .reveal.in .stagger > *:nth-child(5) { transition-delay: 0.28s; }
+.js .reveal.in .stagger > *:nth-child(6) { transition-delay: 0.35s; }
+
+/* hero entrance on first load */
+.js .hero .wordmark { animation: enter 0.8s 0.05s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .hero h1 { animation: enter 0.8s 0.16s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .hero .sub { animation: enter 0.8s 0.28s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .hero .orb { animation: enter 1s 0.4s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .hero .cta { animation: enter 0.8s 0.58s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+@keyframes enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .orb__water, .orb__water::before, .scroll-cue { animation: none; }
-  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .orb__water, .orb__water::before, .scroll-cue, .bubble { animation: none; }
+  .bubble { opacity: 0; }
+  .js .hero .wordmark, .js .hero h1, .js .hero .sub, .js .hero .orb, .js .hero .cta { animation: none; }
+  .js .reveal, .js .reveal .stagger > * { opacity: 1; transform: none; transition: none; }
 }
     </style>
   </head>
@@ -346,7 +370,7 @@ footer {
       <p class="wordmark">KUU</p>
       <h1>말하고, 머릿속에 여백을.</h1>
       <p class="sub">생각으로 가득 찬 머리에서, 지금 가지고 있지 않아도 될 것을 소리 내어 말하기만 하면 됩니다.</p>
-      <div class="orb" aria-hidden="true"><div class="orb__water"></div></div>
+      <div class="orb" aria-hidden="true"><div class="orb__water"></div><div class="orb__bubbles"><span class="bubble" style="--bx:18%;--bs:6px;--bdur:4.6s;--bd:0s"></span><span class="bubble" style="--bx:34%;--bs:4px;--bdur:5.4s;--bd:1.4s"></span><span class="bubble" style="--bx:50%;--bs:8px;--bdur:4.0s;--bd:2.2s"></span><span class="bubble" style="--bx:62%;--bs:5px;--bdur:5.8s;--bd:0.8s"></span><span class="bubble" style="--bx:76%;--bs:7px;--bdur:4.4s;--bd:3.0s"></span><span class="bubble" style="--bx:44%;--bs:4px;--bdur:6.2s;--bd:2.6s"></span></div></div>
       <a class="cta" href="https://apps.apple.com/app/id6771264775" rel="noopener">App Store에서 받기</a>
       <div class="scroll-cue" aria-hidden="true">아래로</div>
     </header>
@@ -358,7 +382,7 @@ footer {
           <h2>머릿속에는 온갖 생각이 뒤섞여 있습니다.</h2>
           <p class="scenario">작업 중에 문득 다른 게 떠오릅니다. 잊고 싶진 않은데, 지금 마주할 것도 아닙니다.</p>
           <p class="lead">할 일 앱에 넣으면 ‘해야 할 일’이 되고, 메모에 적으면 묻혀 버립니다. 어질러지는 건 메모가 아니라, ‘어떻게 다룰지’의 판단 쪽입니다.</p>
-          <ul class="thoughts">
+          <ul class="thoughts stagger">
         <li>해야 할 것 같은 일</li>
         <li>나중에 생각하고 싶은 것</li>
         <li>아직 형태가 잡히지 않은 아이디어</li>
@@ -373,7 +397,7 @@ footer {
         <div class="wrap reveal">
           <p class="eyebrow">사용법</p>
           <h2>할 일은, 말하는 것뿐.</h2>
-          <div class="steps">
+          <div class="steps stagger">
         <div class="step"><div class="n">1</div><div><h3>말하기</h3><p>정리되어 있지 않아도 괜찮아요. 소리 내어 말하면, 잊고 있던 것까지 줄줄이 떠올라요.</p></div></div>
         <div class="step"><div class="n">2</div><div><h3>나누기</h3><p>KUU가 지금 보기, 나중에 생각하기, 묵히기, 내려놓기로 조용히 나눕니다.</p></div></div>
         <div class="step"><div class="n">3</div><div><h3>돌아보기</h3><p>마음이 가라앉으면 다시 보고 정리해요. 쌓아두기만 하지 않아요.</p></div></div>
@@ -386,7 +410,7 @@ footer {
           <p class="eyebrow">앱</p>
           <h2>이것이 KUU.</h2>
         </div>
-        <div class="showcase" aria-label="앱">
+        <div class="showcase stagger" aria-label="앱">
         <img class="shot" src="/assets/store/ko/01.png" width="600" height="1303" loading="lazy" alt="KUU 화면 1" />
         <img class="shot" src="/assets/store/ko/02.png" width="600" height="1303" loading="lazy" alt="KUU 화면 2" />
         <img class="shot" src="/assets/store/ko/03.png" width="600" height="1303" loading="lazy" alt="KUU 화면 3" />
@@ -401,7 +425,7 @@ footer {
           <p class="eyebrow">KUU 매트릭스</p>
           <h2>생각의, 자리.</h2>
           <p class="lead">할 일 분류가 아니라, 머릿속에 있는 것을 다루는 방식으로 나눕니다.</p>
-          <div class="matrix" aria-label="KUU 매트릭스">
+          <div class="matrix stagger" aria-label="KUU 매트릭스">
         <div class="q" style="--q: var(--cat-now)"><strong>지금 보기</strong><span>지금 잠깐 보면 가벼워질 것</span></div>
         <div class="q" style="--q: var(--cat-later)"><strong>나중에 생각하기</strong><span>지금 말고, 다른 타이밍에</span></div>
         <div class="q" style="--q: var(--cat-parked)"><strong>묵히기</strong><span>아직 결론 내지 않고 두기</span></div>
@@ -460,9 +484,7 @@ footer {
     function update() {
       var y = window.scrollY || 0;
       var vh = window.innerHeight || 1;
-      // 全ページに効く背景アンビエントの drift
-      document.body.style.setProperty('--py', (y * 0.08).toFixed(1) + 'px');
-      // hero の水位はスクロール最初の 1 画面で静かに下がる
+      // hero の水位はスクロール最初の 1 画面で静かに下がる＝余白が増える
       if (water) water.style.setProperty('--wl', (Math.min(y / vh, 1) * 16).toFixed(1) + 'px');
       ticking = false;
     }

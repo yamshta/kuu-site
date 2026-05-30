@@ -425,20 +425,6 @@ body {
 .wrap { max-width: 660px; margin: 0 auto; padding: 0 24px; }
 section { padding: clamp(64px, 13vw, 132px) 0; }
 
-/* soft ambient background wash */
-body::before {
-  content: "";
-  position: fixed;
-  inset: -12%;
-  z-index: -1;
-  background:
-    radial-gradient(58% 48% at 80% 10%, rgba(127, 178, 214, 0.13), transparent 70%),
-    radial-gradient(66% 52% at 8% 92%, rgba(156, 198, 226, 0.15), transparent 72%);
-  /* scroll-linked drift = 全ページに静かな動き。--py は JS が rAF で更新 */
-  transform: translate3d(0, var(--py, 0px), 0);
-  will-change: transform;
-}
-
 /* ---- hero ---- */
 .hero {
   min-height: 100svh;
@@ -513,6 +499,29 @@ body::before {
 @keyframes orb-sway {
   0%, 100% { border-radius: 42% 44% 0 0 / 58% 56% 0 0; }
   50% { border-radius: 47% 39% 0 0 / 54% 60% 0 0; }
+}
+
+/* 水中を下から上へ昇る泡 (アプリ WaterLevelView.Bubbles を CSS で再現) */
+.orb__bubbles { position: absolute; inset: 0; pointer-events: none; }
+.bubble {
+  position: absolute;
+  bottom: 0;
+  left: var(--bx);
+  width: var(--bs);
+  height: var(--bs);
+  border-radius: 50%;
+  /* 明るい芯＋淡いリム＝空気泡らしく、薄水色の上でも視認できる */
+  background: radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.28) 70%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 1.5px rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  animation: bubble-rise var(--bdur) var(--bd) linear infinite;
+}
+@keyframes bubble-rise {
+  0% { bottom: 3%; opacity: 0; transform: translateX(0); }
+  18% { opacity: 0.85; }
+  50% { transform: translateX(4px); }
+  82% { opacity: 0.5; }
+  100% { bottom: 55%; opacity: 0; transform: translateX(-3px); }
 }
 
 /* ---- cta ---- */
@@ -667,11 +676,7 @@ h2 {
 .q span { color: var(--ink-soft); font-size: 13.5px; line-height: 1.6; }
 
 /* ---- privacy ---- */
-.privacy {
-  text-align: center;
-  background:
-    radial-gradient(80% 90% at 50% 0%, rgba(220, 234, 244, 0.6), transparent 70%);
-}
+.privacy { text-align: center; }
 .privacy .lead { max-width: 30em; margin-left: auto; margin-right: auto; }
 
 /* ---- closing ---- */
@@ -698,10 +703,29 @@ footer {
 .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); }
 .js .reveal.in { opacity: 1; transform: none; }
 
+/* staggered reveal: children settle in one after another */
+.js .reveal .stagger > * { opacity: 0; transform: translateY(14px); transition: opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .reveal.in .stagger > * { opacity: 1; transform: none; }
+.js .reveal.in .stagger > *:nth-child(2) { transition-delay: 0.07s; }
+.js .reveal.in .stagger > *:nth-child(3) { transition-delay: 0.14s; }
+.js .reveal.in .stagger > *:nth-child(4) { transition-delay: 0.21s; }
+.js .reveal.in .stagger > *:nth-child(5) { transition-delay: 0.28s; }
+.js .reveal.in .stagger > *:nth-child(6) { transition-delay: 0.35s; }
+
+/* hero entrance on first load */
+.js .hero .wordmark { animation: enter 0.8s 0.05s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .hero h1 { animation: enter 0.8s 0.16s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .hero .sub { animation: enter 0.8s 0.28s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .hero .orb { animation: enter 1s 0.4s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .hero .cta { animation: enter 0.8s 0.58s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+@keyframes enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .orb__water, .orb__water::before, .scroll-cue { animation: none; }
-  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .orb__water, .orb__water::before, .scroll-cue, .bubble { animation: none; }
+  .bubble { opacity: 0; }
+  .js .hero .wordmark, .js .hero h1, .js .hero .sub, .js .hero .orb, .js .hero .cta { animation: none; }
+  .js .reveal, .js .reveal .stagger > * { opacity: 1; transform: none; transition: none; }
 }
 """
 
@@ -723,9 +747,7 @@ REVEAL_SCRIPT = """\
     function update() {
       var y = window.scrollY || 0;
       var vh = window.innerHeight || 1;
-      // 全ページに効く背景アンビエントの drift
-      document.body.style.setProperty('--py', (y * 0.08).toFixed(1) + 'px');
-      // hero の水位はスクロール最初の 1 画面で静かに下がる
+      // hero の水位はスクロール最初の 1 画面で静かに下がる＝余白が増える
       if (water) water.style.setProperty('--wl', (Math.min(y / vh, 1) * 16).toFixed(1) + 'px');
       ticking = false;
     }
@@ -785,6 +807,19 @@ a { color: var(--ink); }
 """
 
 QUADRANT_VARS = ["--cat-now", "--cat-later", "--cat-parked", "--cat-release"]
+
+# Rising bubbles inside the water orb (deterministic seeds; matches app's Bubbles).
+BUBBLES_HTML = "".join(
+    f'<span class="bubble" style="--bx:{bx};--bs:{bs};--bdur:{dur};--bd:{delay}"></span>'
+    for bx, bs, dur, delay in [
+        ("18%", "6px", "4.6s", "0s"),
+        ("34%", "4px", "5.4s", "1.4s"),
+        ("50%", "8px", "4.0s", "2.2s"),
+        ("62%", "5px", "5.8s", "0.8s"),
+        ("76%", "7px", "4.4s", "3.0s"),
+        ("44%", "4px", "6.2s", "2.6s"),
+    ]
+)
 
 
 def lang_switcher(current_locale, page="index"):
@@ -855,7 +890,7 @@ def index_html(code, d):
       <p class="wordmark">KUU</p>
       <h1>{d["hero_headline"]}</h1>
       <p class="sub">{d["hero_sub"]}</p>
-      <div class="orb" aria-hidden="true"><div class="orb__water"></div></div>
+      <div class="orb" aria-hidden="true"><div class="orb__water"></div><div class="orb__bubbles">{BUBBLES_HTML}</div></div>
       <a class="cta" href="{APP_STORE_URL}" rel="noopener">{d["cta"]}</a>
       <div class="scroll-cue" aria-hidden="true">{d["scroll_cue"]}</div>
     </header>
@@ -867,7 +902,7 @@ def index_html(code, d):
           <h2>{d["why_headline"]}</h2>
           <p class="scenario">{d["why_scenario"]}</p>
           <p class="lead">{d["why_lead"]}</p>
-          <ul class="thoughts">
+          <ul class="thoughts stagger">
 {thoughts_html}
           </ul>
           <p class="note">{d["why_note"]}</p>
@@ -878,7 +913,7 @@ def index_html(code, d):
         <div class="wrap reveal">
           <p class="eyebrow">{d["steps_eyebrow"]}</p>
           <h2>{d["steps_headline"]}</h2>
-          <div class="steps">
+          <div class="steps stagger">
 {steps_html}
           </div>
         </div>
@@ -889,7 +924,7 @@ def index_html(code, d):
           <p class="eyebrow">{d["app_eyebrow"]}</p>
           <h2>{d["app_headline"]}</h2>
         </div>
-        <div class="showcase" aria-label="{d["app_eyebrow"]}">
+        <div class="showcase stagger" aria-label="{d["app_eyebrow"]}">
 {screens_html}
         </div>
       </section>
@@ -899,7 +934,7 @@ def index_html(code, d):
           <p class="eyebrow">{d["matrix_eyebrow"]}</p>
           <h2>{d["matrix_headline"]}</h2>
           <p class="lead">{d["matrix_lead"]}</p>
-          <div class="matrix" aria-label="{d["quadrants_aria"]}">
+          <div class="matrix stagger" aria-label="{d["quadrants_aria"]}">
 {matrix_html}
           </div>
         </div>
