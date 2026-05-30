@@ -247,36 +247,29 @@ h2 {
 .step h3 { margin: 0 0 4px; font-size: 17px; font-weight: 600; }
 .step p { margin: 0; color: var(--ink-soft); font-size: 15px; }
 
-/* ---- app showcase ---- */
+/* ---- app showcase (App Store style gallery) ---- */
+.app .wrap { margin-bottom: 4px; }
 .showcase {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(190px, 1fr);
+  display: flex;
   gap: 18px;
-  margin-top: 36px;
+  margin-top: 28px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding-bottom: 6px;
+  padding: 6px max(24px, calc((100vw - 660px) / 2)) 10px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 .showcase::-webkit-scrollbar { display: none; }
-.phone { margin: 0; scroll-snap-align: center; }
-.phone img {
-  width: 100%;
+.shot {
+  flex: 0 0 auto;
+  width: min(64vw, 272px);
   height: auto;
   display: block;
-  border-radius: 26px;
+  border-radius: 28px;
   border: 1px solid var(--line);
   box-shadow: 0 26px 54px -30px rgba(94, 151, 194, 0.55);
   background: var(--surface);
-}
-.phone figcaption {
-  margin-top: 14px;
-  text-align: center;
-  font-size: 13px;
-  color: var(--ink-soft);
-  letter-spacing: 0.04em;
+  scroll-snap-align: center;
 }
 
 /* ---- matrix ---- */
@@ -338,7 +331,7 @@ footer {
   <body>
     <header class="hero">
       <p class="wordmark">KUU</p>
-      <h1>说出来，给脑袋留出余白。</h1>
+      <h1>说出来，给脑子留点空。</h1>
       <p class="sub">从塞满念头的脑袋里，把此刻不必扛着的事，说出来就好。</p>
       <div class="orb" aria-hidden="true"><div class="orb__water"></div></div>
       <a class="cta" href="https://apps.apple.com/app/id6771264775" rel="noopener">在 App Store 下载</a>
@@ -374,15 +367,18 @@ footer {
         </div>
       </section>
 
-      <section class="app">
-        <div class="wrap reveal">
+      <section class="app reveal">
+        <div class="wrap">
           <p class="eyebrow">应用</p>
           <h2>这就是 KUU。</h2>
-          <div class="showcase">
-        <figure class="phone"><img src="/assets/screens/zh-Hans/01.png" width="720" height="1565" loading="lazy" alt="轻触，说出来" /><figcaption>轻触，说出来</figcaption></figure>
-        <figure class="phone"><img src="/assets/screens/zh-Hans/02.png" width="720" height="1565" loading="lazy" alt="在听" /><figcaption>在听</figcaption></figure>
-        <figure class="phone"><img src="/assets/screens/zh-Hans/03.png" width="720" height="1565" loading="lazy" alt="只看现在的" /><figcaption>只看现在的</figcaption></figure>
-          </div>
+        </div>
+        <div class="showcase" aria-label="应用">
+        <img class="shot" src="/assets/store/zh-Hans/01.png" width="600" height="1303" loading="lazy" alt="KUU 界面 1" />
+        <img class="shot" src="/assets/store/zh-Hans/02.png" width="600" height="1303" loading="lazy" alt="KUU 界面 2" />
+        <img class="shot" src="/assets/store/zh-Hans/03.png" width="600" height="1303" loading="lazy" alt="KUU 界面 3" />
+        <img class="shot" src="/assets/store/zh-Hans/04.png" width="600" height="1303" loading="lazy" alt="KUU 界面 4" />
+        <img class="shot" src="/assets/store/zh-Hans/05.png" width="600" height="1303" loading="lazy" alt="KUU 界面 5" />
+        <img class="shot" src="/assets/store/zh-Hans/06.png" width="600" height="1303" loading="lazy" alt="KUU 界面 6" />
         </div>
       </section>
 

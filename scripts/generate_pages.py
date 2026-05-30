@@ -57,7 +57,7 @@ LOCALES = {
         # App showcase
         "app_eyebrow": "アプリ",
         "app_headline": "これが、KUU。",
-        "screen_captions": ["ふれて、話す", "聞いています", "いま見ることだけ"],
+        "screen_alt": "KUU の画面",
         # Matrix
         "matrix_eyebrow": "KUU マトリクス",
         "matrix_headline": "思考の、置き場所。",
@@ -106,8 +106,8 @@ LOCALES = {
         "og_locale": "en_US",
         "label": "English",
         "title": "KUU — A quiet brain-dump for busy minds",
-        "description": "KUU is a quiet voice-first brain-dump app. Speak what is on your mind; KUU sorts it into Now, Later, Park, and Release.",
-        "hero_headline": "Speak, and make room in your head.",
+        "description": "KUU is a quiet voice-first brain-dump app. Speak what is on your mind; KUU sorts it into Now, Later, Park, and Let go.",
+        "hero_headline": "Speak, and free your mind.",
         "hero_sub": "From a head full of thoughts, just say out loud what you don't need to carry right now.",
         "cta": "Download on the App Store",
         "scroll_cue": "Scroll",
@@ -126,12 +126,12 @@ LOCALES = {
         "steps_headline": "All you do is talk.",
         "steps": [
             ("Speak", "It doesn't need to be tidy. Just say it as it comes."),
-            ("Sort", "KUU quietly sorts it into Now, Later, Park, and Release."),
+            ("Sort", "KUU quietly sorts it into Now, Later, Park, and Let go."),
             ("Look back", "When things settle, revisit and tend to them. Nothing just piles up."),
         ],
         "app_eyebrow": "The app",
         "app_headline": "This is KUU.",
-        "screen_captions": ["Touch to speak", "Listening", "Just what to see now"],
+        "screen_alt": "KUU app screen",
         "matrix_eyebrow": "The KUU matrix",
         "matrix_headline": "A place for each thought.",
         "matrix_lead": "Not task buckets — a way to hold what's in your head.",
@@ -139,7 +139,7 @@ LOCALES = {
             ("Now", "Worth a glance today to feel lighter"),
             ("Later", "Not now — another time"),
             ("Park", "Set it down without deciding yet"),
-            ("Release", "No longer worth carrying"),
+            ("Let go", "No longer worth carrying"),
         ],
         "quadrants_aria": "KUU matrix",
         "privacy_eyebrow": "Privacy",
@@ -175,8 +175,8 @@ LOCALES = {
         "og_locale": "es_ES",
         "label": "Español",
         "title": "KUU — Un volcado mental tranquilo para mentes ocupadas",
-        "description": "KUU es una app silenciosa para vaciar la mente. Habla lo que tienes; KUU lo separa en Ahora, Luego, Aparcar y Soltar.",
-        "hero_headline": "Habla y haz espacio en tu cabeza.",
+        "description": "KUU es una app silenciosa para vaciar la mente. Habla lo que tienes; KUU lo separa en Ahora, Más tarde, Reposar y Soltar.",
+        "hero_headline": "Habla y deja espacio en tu cabeza.",
         "hero_sub": "Desde una cabeza llena de pensamientos, solo di en voz alta lo que ahora no necesitas cargar.",
         "cta": "Descargar en el App Store",
         "scroll_cue": "Desliza",
@@ -195,19 +195,19 @@ LOCALES = {
         "steps_headline": "Lo único que haces es hablar.",
         "steps": [
             ("Habla", "No tiene que estar ordenado. Dilo tal como surge."),
-            ("Separa", "KUU lo separa con calma en Ahora, Luego, Aparcar y Soltar."),
+            ("Separa", "KUU lo separa con calma en Ahora, Más tarde, Reposar y Soltar."),
             ("Repasa", "Cuando todo se calma, vuelve a verlo y ordénalo. Nada se acumula sin más."),
         ],
         "app_eyebrow": "La app",
         "app_headline": "Esto es KUU.",
-        "screen_captions": ["Toca para hablar", "Escuchando", "Solo lo de ahora"],
+        "screen_alt": "Pantalla de KUU",
         "matrix_eyebrow": "La matriz KUU",
         "matrix_headline": "Un lugar para cada pensamiento.",
         "matrix_lead": "No son casillas de tareas, sino una forma de sostener lo que tienes en la cabeza.",
         "quadrants": [
             ("Ahora", "Vale un vistazo hoy para aligerar"),
-            ("Luego", "Ahora no — en otro momento"),
-            ("Aparcar", "Déjalo sin decidir todavía"),
+            ("Más tarde", "Ahora no — en otro momento"),
+            ("Reposar", "Déjalo sin decidir todavía"),
             ("Soltar", "Ya no vale la pena cargarlo"),
         ],
         "quadrants_aria": "Matriz KUU",
@@ -244,8 +244,8 @@ LOCALES = {
         "og_locale": "ko_KR",
         "label": "한국어",
         "title": "KUU — 바쁜 머리를 조용히 비우는 브레인덤프",
-        "description": "KUU는 조용한 음성 브레인덤프 앱입니다. 마음에 있는 것을 말하세요. KUU가 지금 보기, 나중에 생각, 묵히기, 놓아주기로 나눠줍니다.",
-        "hero_headline": "말하고, 머리에 여백을.",
+        "description": "KUU는 조용한 음성 브레인덤프 앱입니다. 마음에 있는 것을 말하세요. KUU가 지금 보기, 나중에 생각하기, 묵히기, 내려놓기로 나눠줍니다.",
+        "hero_headline": "말하고, 머릿속에 여백을.",
         "hero_sub": "생각으로 가득 찬 머리에서, 지금 가지고 있지 않아도 될 것을 소리 내어 말하기만 하면 됩니다.",
         "cta": "App Store에서 받기",
         "scroll_cue": "아래로",
@@ -264,20 +264,20 @@ LOCALES = {
         "steps_headline": "할 일은, 말하는 것뿐.",
         "steps": [
             ("말하기", "정리되어 있지 않아도 괜찮아요. 떠오르는 대로 소리 내어."),
-            ("나누기", "KUU가 지금 보기, 나중에 생각, 묵히기, 놓아주기로 조용히 나눕니다."),
+            ("나누기", "KUU가 지금 보기, 나중에 생각하기, 묵히기, 내려놓기로 조용히 나눕니다."),
             ("돌아보기", "마음이 가라앉으면 다시 보고 정리해요. 쌓아두기만 하지 않아요."),
         ],
         "app_eyebrow": "앱",
         "app_headline": "이것이 KUU.",
-        "screen_captions": ["닿아서, 말하기", "듣고 있어요", "지금 볼 것만"],
+        "screen_alt": "KUU 화면",
         "matrix_eyebrow": "KUU 매트릭스",
         "matrix_headline": "생각의, 자리.",
         "matrix_lead": "할 일 분류가 아니라, 머릿속에 있는 것을 다루는 방식으로 나눕니다.",
         "quadrants": [
             ("지금 보기", "지금 잠깐 보면 가벼워질 것"),
-            ("나중에 생각", "지금 말고, 다른 타이밍에"),
+            ("나중에 생각하기", "지금 말고, 다른 타이밍에"),
             ("묵히기", "아직 결론 내지 않고 두기"),
-            ("놓아주기", "더는 안고 있지 않아도 될 것"),
+            ("내려놓기", "더는 안고 있지 않아도 될 것"),
         ],
         "quadrants_aria": "KUU 매트릭스",
         "privacy_eyebrow": "개인정보",
@@ -314,7 +314,7 @@ LOCALES = {
         "label": "简体中文",
         "title": "KUU — 让忙碌的脑袋安静下来的脑内倾倒",
         "description": "KUU 是一款安静的语音脑内倾倒应用。说出心中所想，KUU 会分到现在看、之后想、搁置、放下。",
-        "hero_headline": "说出来，给脑袋留出余白。",
+        "hero_headline": "说出来，给脑子留点空。",
         "hero_sub": "从塞满念头的脑袋里，把此刻不必扛着的事，说出来就好。",
         "cta": "在 App Store 下载",
         "scroll_cue": "向下",
@@ -338,7 +338,7 @@ LOCALES = {
         ],
         "app_eyebrow": "应用",
         "app_headline": "这就是 KUU。",
-        "screen_captions": ["轻触，说出来", "在听", "只看现在的"],
+        "screen_alt": "KUU 界面",
         "matrix_eyebrow": "KUU 矩阵",
         "matrix_headline": "念头的，去处。",
         "matrix_lead": "不是待办分类，而是看待脑中之物的方式。",
@@ -606,36 +606,29 @@ h2 {
 .step h3 { margin: 0 0 4px; font-size: 17px; font-weight: 600; }
 .step p { margin: 0; color: var(--ink-soft); font-size: 15px; }
 
-/* ---- app showcase ---- */
+/* ---- app showcase (App Store style gallery) ---- */
+.app .wrap { margin-bottom: 4px; }
 .showcase {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(190px, 1fr);
+  display: flex;
   gap: 18px;
-  margin-top: 36px;
+  margin-top: 28px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding-bottom: 6px;
+  padding: 6px max(24px, calc((100vw - 660px) / 2)) 10px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 .showcase::-webkit-scrollbar { display: none; }
-.phone { margin: 0; scroll-snap-align: center; }
-.phone img {
-  width: 100%;
+.shot {
+  flex: 0 0 auto;
+  width: min(64vw, 272px);
   height: auto;
   display: block;
-  border-radius: 26px;
+  border-radius: 28px;
   border: 1px solid var(--line);
   box-shadow: 0 26px 54px -30px rgba(94, 151, 194, 0.55);
   background: var(--surface);
-}
-.phone figcaption {
-  margin-top: 14px;
-  text-align: center;
-  font-size: 13px;
-  color: var(--ink-soft);
-  letter-spacing: 0.04em;
+  scroll-snap-align: center;
 }
 
 /* ---- matrix ---- */
@@ -791,10 +784,9 @@ def index_html(code, d):
         for i, (name, sub) in enumerate(d["quadrants"])
     )
     screens_html = "\n".join(
-        f'        <figure class="phone"><img src="/assets/screens/{code}/{n:02d}.png" '
-        f'width="720" height="1565" loading="lazy" alt="{cap}" />'
-        f"<figcaption>{cap}</figcaption></figure>"
-        for n, cap in zip((1, 2, 3), d["screen_captions"])
+        f'        <img class="shot" src="/assets/store/{code}/{n:02d}.png" '
+        f'width="600" height="1303" loading="lazy" alt="{d["screen_alt"]} {n}" />'
+        for n in range(1, 7)
     )
     support_href = "/support/" if not d["subdir"] else f'/{d["subdir"]}/support/'
     return f"""<!doctype html>
@@ -855,13 +847,13 @@ def index_html(code, d):
         </div>
       </section>
 
-      <section class="app">
-        <div class="wrap reveal">
+      <section class="app reveal">
+        <div class="wrap">
           <p class="eyebrow">{d["app_eyebrow"]}</p>
           <h2>{d["app_headline"]}</h2>
-          <div class="showcase">
+        </div>
+        <div class="showcase" aria-label="{d["app_eyebrow"]}">
 {screens_html}
-          </div>
         </div>
       </section>
 

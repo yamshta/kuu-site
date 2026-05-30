@@ -6,9 +6,9 @@
     <meta name="theme-color" content="#f6f9fc" />
     <meta name="robots" content="index,follow" />
     <title>KUU — Un volcado mental tranquilo para mentes ocupadas</title>
-    <meta name="description" content="KUU es una app silenciosa para vaciar la mente. Habla lo que tienes; KUU lo separa en Ahora, Luego, Aparcar y Soltar." />
+    <meta name="description" content="KUU es una app silenciosa para vaciar la mente. Habla lo que tienes; KUU lo separa en Ahora, Más tarde, Reposar y Soltar." />
     <meta property="og:title" content="KUU — Un volcado mental tranquilo para mentes ocupadas" />
-    <meta property="og:description" content="KUU es una app silenciosa para vaciar la mente. Habla lo que tienes; KUU lo separa en Ahora, Luego, Aparcar y Soltar." />
+    <meta property="og:description" content="KUU es una app silenciosa para vaciar la mente. Habla lo que tienes; KUU lo separa en Ahora, Más tarde, Reposar y Soltar." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://kuu-zen.com/es/" />
     <meta property="og:locale" content="es_ES" />
@@ -17,7 +17,7 @@
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="KUU — Un volcado mental tranquilo para mentes ocupadas" />
-    <meta name="twitter:description" content="KUU es una app silenciosa para vaciar la mente. Habla lo que tienes; KUU lo separa en Ahora, Luego, Aparcar y Soltar." />
+    <meta name="twitter:description" content="KUU es una app silenciosa para vaciar la mente. Habla lo que tienes; KUU lo separa en Ahora, Más tarde, Reposar y Soltar." />
     <meta name="twitter:image" content="https://kuu-zen.com/assets/og.png" />
     <link rel="canonical" href="https://kuu-zen.com/es/" />
     <style>
@@ -247,36 +247,29 @@ h2 {
 .step h3 { margin: 0 0 4px; font-size: 17px; font-weight: 600; }
 .step p { margin: 0; color: var(--ink-soft); font-size: 15px; }
 
-/* ---- app showcase ---- */
+/* ---- app showcase (App Store style gallery) ---- */
+.app .wrap { margin-bottom: 4px; }
 .showcase {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(190px, 1fr);
+  display: flex;
   gap: 18px;
-  margin-top: 36px;
+  margin-top: 28px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding-bottom: 6px;
+  padding: 6px max(24px, calc((100vw - 660px) / 2)) 10px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 .showcase::-webkit-scrollbar { display: none; }
-.phone { margin: 0; scroll-snap-align: center; }
-.phone img {
-  width: 100%;
+.shot {
+  flex: 0 0 auto;
+  width: min(64vw, 272px);
   height: auto;
   display: block;
-  border-radius: 26px;
+  border-radius: 28px;
   border: 1px solid var(--line);
   box-shadow: 0 26px 54px -30px rgba(94, 151, 194, 0.55);
   background: var(--surface);
-}
-.phone figcaption {
-  margin-top: 14px;
-  text-align: center;
-  font-size: 13px;
-  color: var(--ink-soft);
-  letter-spacing: 0.04em;
+  scroll-snap-align: center;
 }
 
 /* ---- matrix ---- */
@@ -338,7 +331,7 @@ footer {
   <body>
     <header class="hero">
       <p class="wordmark">KUU</p>
-      <h1>Habla y haz espacio en tu cabeza.</h1>
+      <h1>Habla y deja espacio en tu cabeza.</h1>
       <p class="sub">Desde una cabeza llena de pensamientos, solo di en voz alta lo que ahora no necesitas cargar.</p>
       <div class="orb" aria-hidden="true"><div class="orb__water"></div></div>
       <a class="cta" href="https://apps.apple.com/app/id6771264775" rel="noopener">Descargar en el App Store</a>
@@ -368,21 +361,24 @@ footer {
           <h2>Lo único que haces es hablar.</h2>
           <div class="steps">
         <div class="step"><div class="n">1</div><div><h3>Habla</h3><p>No tiene que estar ordenado. Dilo tal como surge.</p></div></div>
-        <div class="step"><div class="n">2</div><div><h3>Separa</h3><p>KUU lo separa con calma en Ahora, Luego, Aparcar y Soltar.</p></div></div>
+        <div class="step"><div class="n">2</div><div><h3>Separa</h3><p>KUU lo separa con calma en Ahora, Más tarde, Reposar y Soltar.</p></div></div>
         <div class="step"><div class="n">3</div><div><h3>Repasa</h3><p>Cuando todo se calma, vuelve a verlo y ordénalo. Nada se acumula sin más.</p></div></div>
           </div>
         </div>
       </section>
 
-      <section class="app">
-        <div class="wrap reveal">
+      <section class="app reveal">
+        <div class="wrap">
           <p class="eyebrow">La app</p>
           <h2>Esto es KUU.</h2>
-          <div class="showcase">
-        <figure class="phone"><img src="/assets/screens/es/01.png" width="720" height="1565" loading="lazy" alt="Toca para hablar" /><figcaption>Toca para hablar</figcaption></figure>
-        <figure class="phone"><img src="/assets/screens/es/02.png" width="720" height="1565" loading="lazy" alt="Escuchando" /><figcaption>Escuchando</figcaption></figure>
-        <figure class="phone"><img src="/assets/screens/es/03.png" width="720" height="1565" loading="lazy" alt="Solo lo de ahora" /><figcaption>Solo lo de ahora</figcaption></figure>
-          </div>
+        </div>
+        <div class="showcase" aria-label="La app">
+        <img class="shot" src="/assets/store/es/01.png" width="600" height="1303" loading="lazy" alt="Pantalla de KUU 1" />
+        <img class="shot" src="/assets/store/es/02.png" width="600" height="1303" loading="lazy" alt="Pantalla de KUU 2" />
+        <img class="shot" src="/assets/store/es/03.png" width="600" height="1303" loading="lazy" alt="Pantalla de KUU 3" />
+        <img class="shot" src="/assets/store/es/04.png" width="600" height="1303" loading="lazy" alt="Pantalla de KUU 4" />
+        <img class="shot" src="/assets/store/es/05.png" width="600" height="1303" loading="lazy" alt="Pantalla de KUU 5" />
+        <img class="shot" src="/assets/store/es/06.png" width="600" height="1303" loading="lazy" alt="Pantalla de KUU 6" />
         </div>
       </section>
 
@@ -393,8 +389,8 @@ footer {
           <p class="lead">No son casillas de tareas, sino una forma de sostener lo que tienes en la cabeza.</p>
           <div class="matrix" aria-label="Matriz KUU">
         <div class="q" style="--q: var(--cat-now)"><strong>Ahora</strong><span>Vale un vistazo hoy para aligerar</span></div>
-        <div class="q" style="--q: var(--cat-later)"><strong>Luego</strong><span>Ahora no — en otro momento</span></div>
-        <div class="q" style="--q: var(--cat-parked)"><strong>Aparcar</strong><span>Déjalo sin decidir todavía</span></div>
+        <div class="q" style="--q: var(--cat-later)"><strong>Más tarde</strong><span>Ahora no — en otro momento</span></div>
+        <div class="q" style="--q: var(--cat-parked)"><strong>Reposar</strong><span>Déjalo sin decidir todavía</span></div>
         <div class="q" style="--q: var(--cat-release)"><strong>Soltar</strong><span>Ya no vale la pena cargarlo</span></div>
           </div>
         </div>

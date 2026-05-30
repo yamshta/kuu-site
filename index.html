@@ -247,36 +247,29 @@ h2 {
 .step h3 { margin: 0 0 4px; font-size: 17px; font-weight: 600; }
 .step p { margin: 0; color: var(--ink-soft); font-size: 15px; }
 
-/* ---- app showcase ---- */
+/* ---- app showcase (App Store style gallery) ---- */
+.app .wrap { margin-bottom: 4px; }
 .showcase {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(190px, 1fr);
+  display: flex;
   gap: 18px;
-  margin-top: 36px;
+  margin-top: 28px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding-bottom: 6px;
+  padding: 6px max(24px, calc((100vw - 660px) / 2)) 10px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 .showcase::-webkit-scrollbar { display: none; }
-.phone { margin: 0; scroll-snap-align: center; }
-.phone img {
-  width: 100%;
+.shot {
+  flex: 0 0 auto;
+  width: min(64vw, 272px);
   height: auto;
   display: block;
-  border-radius: 26px;
+  border-radius: 28px;
   border: 1px solid var(--line);
   box-shadow: 0 26px 54px -30px rgba(94, 151, 194, 0.55);
   background: var(--surface);
-}
-.phone figcaption {
-  margin-top: 14px;
-  text-align: center;
-  font-size: 13px;
-  color: var(--ink-soft);
-  letter-spacing: 0.04em;
+  scroll-snap-align: center;
 }
 
 /* ---- matrix ---- */
@@ -374,15 +367,18 @@ footer {
         </div>
       </section>
 
-      <section class="app">
-        <div class="wrap reveal">
+      <section class="app reveal">
+        <div class="wrap">
           <p class="eyebrow">アプリ</p>
           <h2>これが、KUU。</h2>
-          <div class="showcase">
-        <figure class="phone"><img src="/assets/screens/ja/01.png" width="720" height="1565" loading="lazy" alt="ふれて、話す" /><figcaption>ふれて、話す</figcaption></figure>
-        <figure class="phone"><img src="/assets/screens/ja/02.png" width="720" height="1565" loading="lazy" alt="聞いています" /><figcaption>聞いています</figcaption></figure>
-        <figure class="phone"><img src="/assets/screens/ja/03.png" width="720" height="1565" loading="lazy" alt="いま見ることだけ" /><figcaption>いま見ることだけ</figcaption></figure>
-          </div>
+        </div>
+        <div class="showcase" aria-label="アプリ">
+        <img class="shot" src="/assets/store/ja/01.png" width="600" height="1303" loading="lazy" alt="KUU の画面 1" />
+        <img class="shot" src="/assets/store/ja/02.png" width="600" height="1303" loading="lazy" alt="KUU の画面 2" />
+        <img class="shot" src="/assets/store/ja/03.png" width="600" height="1303" loading="lazy" alt="KUU の画面 3" />
+        <img class="shot" src="/assets/store/ja/04.png" width="600" height="1303" loading="lazy" alt="KUU の画面 4" />
+        <img class="shot" src="/assets/store/ja/05.png" width="600" height="1303" loading="lazy" alt="KUU の画面 5" />
+        <img class="shot" src="/assets/store/ja/06.png" width="600" height="1303" loading="lazy" alt="KUU の画面 6" />
         </div>
       </section>
 
