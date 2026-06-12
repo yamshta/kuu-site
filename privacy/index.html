@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>プライバシーポリシー — KUU</title>
+    <meta name="description" content="KUU のプライバシーポリシー。音声認識も AI 分類もすべて端末内で完結し、話した内容は外部に送信されません。" />
+    <link rel="canonical" href="https://kuu-zen.com/privacy/" />
+    <meta property="og:locale" content="ja_JP" />
+    <link rel="alternate" hreflang="ja" href="https://kuu-zen.com/privacy/" />
+    <link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/privacy/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/privacy/" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DC1R54C73B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DC1R54C73B');
+    </script>
+    <style>
+:root {
+  color-scheme: light;
+  --bg: #f6f9fc;
+  --ink: #353b41;
+  --ink-soft: #6b737b;
+  --line: #e7edf3;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Apple SD Gothic Neo", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: clamp(48px, 10vw, 96px) 24px 80px;
+}
+h1 { font-size: 28px; font-weight: 600; margin: 0 0 24px; }
+h2 { font-size: 18px; font-weight: 600; margin: 32px 0 8px; }
+p { line-height: 1.7; color: var(--ink-soft); margin: 0 0 12px; }
+a { color: var(--ink); }
+.back {
+  display: inline-block;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 14px;
+}
+.langs {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.langs a { color: var(--ink-soft); text-decoration: none; }
+.langs a[aria-current="true"] { color: var(--ink); font-weight: 600; }
+.langs a:hover { text-decoration: underline; }
+main { max-width: 720px; }
+h1 { font-size: 26px; }
+h2 { font-size: 17px; }
+li { line-height: 1.7; color: var(--ink-soft); margin: 4px 0; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>KUU プライバシーポリシー</h1>
+      <p>最終更新日：2026 年 5 月 28 日</p>
+      <p><strong>ひとことで：</strong> あなたが話したことはあなたのものです。<strong>話した内容そのものは外部に送信しません</strong>。文字起こしも整理（AI 分類）もすべて端末の中で行い、保存先はあなたの iCloud（プライベートデータベース）だけです。開発者は内容を受け取りません。いつでもアプリ内から全データを削除できます。アプリは Apple の課金（StoreKit）と Google AdMob の広告のために<strong>必要最小限の通信</strong>のみ行い、その情報には話した内容は含まれません（広告は KUU+ 加入で無効化できます）。アプリの品質改善と本番事故の即知化のために、<strong>ユーザーが明示的に opt-in した場合に限り</strong> Firebase Analytics / Crashlytics を利用しますが、こちらも話した内容は含みません（詳細は第 14 条）。</p>
+      <hr />
+      <h2>第 1 条（基本方針）</h2>
+      <p>本アプリ「KUU」（以下「本アプリ」）は、頭の中の考えごとを声で外に出し、整理することを支援する iOS アプリです。本アプリは、機能提供に必要な最小限の範囲でのみ情報を扱い、ユーザーのプライバシー保護を最優先とします。</p>
+      <h2>第 2 条（取得・保存する情報）</h2>
+      <p>本アプリが取り扱う情報は、以下に限られます。</p>
+      <ol>
+      <li><strong>ユーザーが話した内容（音声データ）</strong> — 録音した音声は文字起こしの処理中のみ端末内の一時領域に保存され、処理完了後すみやかに削除されます。サーバーには送信されません。
+      </li>
+      <li><strong>文字起こし結果と整理結果（テキスト）</strong> — あなた自身が見返せるように、端末および iCloud（プライベートデータベース）に保存されます。
+      </li>
+      <li><strong>アプリ内設定</strong> — テーマ、文字サイズ、頭の水位状態などのアプリ動作に必要な設定値。
+      </li></ol>
+      <p>本アプリは、氏名・メールアドレス・電話番号・位置情報・連絡先・カレンダー・写真・端末識別子等の個人情報を取得しません。</p>
+      <h2>第 3 条（音声認識と AI 分類について）</h2>
+      <p>本アプリの音声認識（文字起こし）および AI 分類（カテゴリ分け）は、すべて<strong>お使いの iOS デバイス上で完結</strong>します。</p>
+      <ul>
+      <li>音声認識：Apple の Speech フレームワーク（オンデバイス）を使用します
+      </li>
+      <li>AI 分類：Apple の FoundationModels（オンデバイス）を使用します
+      </li></ul>
+      <p>話した内容、文字起こし結果、整理結果のいずれも、本アプリの開発者または第三者のサーバーに送信されることはありません。</p>
+      <h2>第 4 条（iCloud への保存と同期）</h2>
+      <p>本アプリは、文字起こし結果と整理結果をあなたの <strong>iCloud のプライベートデータベース</strong>（CloudKit Private Database）にのみ保存します。これは Apple が提供するストレージで、保存内容にアクセスできるのはあなた本人だけです。本アプリの開発者は、保存された内容を閲覧することも、取得することもできません。</p>
+      <p>iCloud の利用条件・セキュリティについては、Apple のプライバシーポリシーが適用されます。</p>
+      <h2>第 5 条（利用目的）</h2>
+      <p>取り扱う情報は、以下の目的でのみ利用します。</p>
+      <ol>
+      <li>音声から文字起こしを生成し、ユーザーに表示する
+      </li>
+      <li>文字起こしを「いま見る／あとで考える／寝かせる／手放す」に分類してユーザーに表示する
+      </li>
+      <li>ユーザーが過去に話した内容を、ユーザー自身が見返せるように保存・表示する
+      </li>
+      <li>アプリの動作に必要な設定値を保持する
+      </li></ol>
+      <h2>第 6 条（外部サービスの利用）</h2>
+      <p>本アプリは、機能提供のために以下の外部サービスを利用します。<strong>話した内容・文字起こし・分類結果は、いずれのサービスにも送信されません</strong>。</p>
+      <ul>
+      <li><strong>iCloud / CloudKit</strong>（Apple 提供。あなた自身のプライベートデータベースにのみ保存・同期）
+      </li>
+      <li><strong>Speech フレームワーク</strong>（Apple 提供。完全に端末上で実行）
+      </li>
+      <li><strong>FoundationModels</strong>（Apple 提供。完全に端末上で実行）
+      </li>
+      <li><strong>Apple StoreKit</strong>（KUU+ サブスクリプションの購入・更新・解約管理。話した内容は送信されません）
+      </li>
+      <li><strong>Google AdMob（Google Mobile Ads SDK）</strong>（KUU+ 未加入時のみ、「話したこと」画面に節間のネイティブ広告 1 枠を表示。話した内容は送信されません。詳細は第 13 条）
+      </li>
+      <li><strong>Firebase Analytics / Crashlytics</strong>（Google 提供。アプリの品質改善・安定性監視のため、<strong>ユーザーが Settings で明示的に opt-in した場合にのみ</strong>利用します。話した内容は送信されません。詳細は第 14 条）
+      </li></ul>
+      <p>本アプリは、独自サーバーや認証サービスを使用しません。アクセス解析・クラッシュレポートはユーザーの opt-in を前提としてのみ動作します。</p>
+      <h2>第 7 条（第三者提供）</h2>
+      <p>本アプリの開発者は、ユーザーが話した内容、文字起こし結果、整理結果にアクセスする手段を持たず、これらを第三者に提供しません。</p>
+      <p>KUU+ 未加入のユーザーに広告を配信する目的で、Google AdMob に対して端末識別子・広告 ID・端末の言語・地域・概略の位置情報・広告のクリック情報など、AdMob が広告配信のために必要とする情報が Google に送信されます（詳細は第 13 条、Google の AdMob プライバシーポリシーが適用されます）。KUU+ に加入している間は、この情報送信は発生しません。</p>
+      <p>法令に基づき開示が義務付けられた場合に限り、所定の手続きに従い対応します。</p>
+      <h2>第 8 条（データの削除）</h2>
+      <p>ユーザーは、アプリ内の「設定 → 声とデータ → 保存していることの削除」からいつでも全データを削除できます。削除を行うと、端末上のデータおよび iCloud（プライベートデータベース）上のデータが完全に消去されます。消去したデータの復元はできません。</p>
+      <p>本アプリをアンインストールした場合、端末上のデータは削除されます。iCloud 上のデータは、Apple の設定（設定 → Apple ID → iCloud → ストレージ管理）から削除できます。</p>
+      <h2>第 9 条（安全管理措置）</h2>
+      <ul>
+      <li>録音中の一時音声ファイルは、iOS のファイル保護機能（<code>FileProtectionType.complete</code>）により暗号化され、デバイスロック中はアクセスできません
+      </li>
+      <li>iCloud との通信は Apple が SSL/TLS で暗号化します
+      </li>
+      <li>本アプリは独自サーバーを持たないため、開発者側で取り扱う情報そのものが存在しません
+      </li></ul>
+      <h2>第 10 条（未成年者の利用）</h2>
+      <p>本アプリは年齢区分 4+ で提供されますが、思考の整理という性質上、文字を読み書きできる年齢以上での利用を想定しています。未成年者が利用する場合は、保護者の同意を得たうえで利用してください。</p>
+      <h2>第 11 条（プライバシーポリシーの変更）</h2>
+      <p>本ポリシーは、法令の変更、機能の追加、Apple のフレームワーク仕様変更等により、改定されることがあります。重要な変更がある場合は、アプリのアップデート時または本ポリシーの公開ページで告知します。</p>
+      <h2>第 12 条（お問い合わせ）</h2>
+      <p>本ポリシーに関するお問い合わせは、App Store のアプリページ内「開発元」セクションよりご連絡ください。</p>
+      <h2>第 13 条（広告と App Tracking Transparency について）</h2>
+      <p>本アプリは KUU+ サブスクリプションに加入していない期間のみ、Google AdMob によるネイティブ広告を「話したこと」画面で 1 枠だけ表示します。広告そのものは KUU の世界観を保つため、画面の節間に控えめに表示されます。</p>
+      <ul>
+      <li><strong>話した内容を広告のために使うことはありません</strong>（広告は文字起こし・分類結果・テーマを参照しません）
+      </li>
+      <li>広告配信のために Google AdMob は端末識別子（IDFA を含む）、広告 ID、Coarse Location（概略の位置情報）、Diagnostics、Product Interaction（アプリ内の広告との接触情報）等を収集する場合があります
+      </li>
+      <li>iOS の <strong>App Tracking Transparency</strong>（ATT）プロンプトを最初の広告表示直前に 1 回だけ表示します。ユーザーが許諾しない場合でも広告は表示されますが、Google に送信される情報は限定的な範囲（パーソナライズなし）になります
+      </li>
+      <li>ATT 許諾状態は iOS の「設定」→「プライバシーとセキュリティ」→「トラッキング」からいつでも変更できます
+      </li>
+      <li><strong>KUU+ に加入すると広告と関連する情報送信はすべて停止します</strong>
+      </li>
+      <li>Google AdMob によるデータ取り扱いの詳細は <a href="https://support.google.com/admob/answer/6128543" rel="noopener">Google AdMob プライバシーポリシー</a> をご確認ください
+      </li></ul>
+      <h2>第 14 条（Firebase Analytics / Crashlytics の利用について）</h2>
+      <p>本アプリは、アプリの品質改善および本番事故の即知化のために、Google の Firebase Analytics（利用状況の集計）および Firebase Crashlytics（クラッシュレポート）を利用することがあります。<strong>本機能は既定で OFF（送信なし）であり、ユーザーが「設定 → データと診断」で明示的に opt-in した場合に限り動作します。</strong></p>
+      <ul>
+      <li><strong>送信される情報</strong>:
+      <ul>
+      <li>Firebase が自動的に発行する匿名化された install ID（IDFV に基づく。個人を直接特定する識別子ではありません）
+      </li>
+      <li>アプリ内の操作 event の集計シグナル（録音セッションの完走有無、Paywall の表示・購入転換、Onboarding 完了等の集計用 event。数値はバケット化された粗い粒度で送信）
+      </li>
+      <li>アプリが異常終了した際の crash stack trace（symbol 化済み）
+      </li></ul>
+      </li>
+      <li><strong>送信されない情報</strong>: 話した内容（音声）、文字起こし結果、AI 分類結果のテキスト、ユーザーが設定したテーマ名は<strong>型レベルで送信できない設計</strong>になっています（実装上、計測 SDK に文字列値を渡せない API になっています）
+      </li>
+      <li><strong>opt-in されていない期間は、上記の情報を含む一切の通信が Firebase に対して発生しません</strong>
+      </li>
+      <li><strong>送信を停止する手段</strong>: 「設定 → データと診断」のトグルをいつでも OFF にできます。OFF にした時点で過去の install ID は破棄され、端末ローカルに保存されていた未送信の crash log も削除されます
+      </li>
+      <li>送信先は Google LLC（米国）です。Google の <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase Privacy Information</a> が適用されます
+      </li></ul>
+
+      <a class="back" href="/">← トップへ</a>
+
+      <nav class="langs" aria-label="言語">
+      <a href="/privacy/" hreflang="ja" aria-current="true">日本語</a>
+      <a href="/en/privacy/" hreflang="en">English</a>
+      </nav>
+    </main>
+  </body>
+</html>
