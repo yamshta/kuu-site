@@ -8,18 +8,29 @@ Source of truth for translations:
 Output:
 - /index.html, /support/index.html  (ja, at root)
 - /<locale>/index.html, /<locale>/support/index.html  for en, es, ko, zh-Hans
+- /privacy/index.html (ja), /en/privacy/index.html (en) — from content/privacy.md
+  (source of truth: KUU/docs/legal/PRIVACY_POLICY.md; copy here when it changes)
+- /sitemap.xml, /robots.txt
 
 ja is the canonical locale. New marketing copy is authored in ja first; other
 locales fall back to ja for any key they have not translated yet (see main()).
 """
 
+import html as html_mod
+import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-PRIVACY_URL = "https://aerial-dogsled-ede.notion.site/KUU-3667869259cf80b59f50fdfe039b1f7b"
+APP_STORE_ID = "6771264775"
 # No country code: Apple auto-redirects to the visitor's storefront.
-APP_STORE_URL = "https://apps.apple.com/app/id6771264775"
+APP_STORE_URL = f"https://apps.apple.com/app/id{APP_STORE_ID}"
 OG_IMAGE = "https://kuu-zen.com/assets/og.png"
+BASE_URL = "https://kuu-zen.com"
+# GA4 web stream measurement ID (G-XXXXXXXXXX). Empty = no analytics tag emitted.
+GA4_MEASUREMENT_ID = ""
+# Privacy policy is hosted on this site in ja/en only; other locales link to en.
+PRIVACY_LOCALES = ("ja", "en")
 
 LOCALES = {
     "ja": {
@@ -835,10 +846,89 @@ def lang_switcher(current_locale, page="index"):
 
 def url_for(locale_data, page="index"):
     sub = locale_data["subdir"]
-    base = "https://kuu-zen.com"
     if not sub:
-        return f"{base}/" if page == "index" else f"{base}/support/"
-    return f"{base}/{sub}/" if page == "index" else f"{base}/{sub}/support/"
+        return f"{BASE_URL}/" if page == "index" else f"{BASE_URL}/{page}/"
+    return f"{BASE_URL}/{sub}/" if page == "index" else f"{BASE_URL}/{sub}/{page}/"
+
+
+# JSON-LD offers requires priceCurrency even for a free app.
+CURRENCIES = {"ja": "JPY", "en": "USD", "es": "EUR", "ko": "KRW", "zh-Hans": "CNY"}
+
+ICON_LINKS = """\
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />"""
+
+# Safari-only smart banner pointing to the App Store listing.
+SMART_BANNER = f'    <meta name="apple-itunes-app" content="app-id={APP_STORE_ID}" />'
+
+
+def ga4_snippet():
+    if not GA4_MEASUREMENT_ID:
+        return ""
+    return f"""
+    <script async src="https://www.googletagmanager.com/gtag/js?id={GA4_MEASUREMENT_ID}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {{ dataLayer.push(arguments); }}
+      gtag('js', new Date());
+      gtag('config', '{GA4_MEASUREMENT_ID}');
+    </script>"""
+
+
+def hreflang_links(page="index", locales=None):
+    """<link rel=alternate hreflang> cluster. x-default points to ja (site root)."""
+    codes = locales or list(LOCALES)
+    lines = []
+    for code in codes:
+        d = LOCALES[code]
+        lines.append(
+            f'    <link rel="alternate" hreflang="{d["html_lang"]}" href="{url_for(d, page)}" />'
+        )
+    lines.append(
+        f'    <link rel="alternate" hreflang="x-default" href="{url_for(LOCALES["ja"], page)}" />'
+    )
+    return "\n".join(lines)
+
+
+def app_jsonld(code, d, url):
+    data = {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "KUU",
+        "description": d["description"],
+        "url": url,
+        "image": OG_IMAGE,
+        "operatingSystem": "iOS",
+        "applicationCategory": "LifestyleApplication",
+        "installUrl": APP_STORE_URL,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": CURRENCIES[code]},
+    }
+    return (
+        '    <script type="application/ld+json">\n'
+        + json.dumps(data, ensure_ascii=False, indent=2)
+        + "\n    </script>"
+    )
+
+
+def faq_jsonld(d):
+    data = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": q,
+                "acceptedAnswer": {"@type": "Answer", "text": a},
+            }
+            for q, a in d["faqs"]
+        ],
+    }
+    return (
+        '    <script type="application/ld+json">\n'
+        + json.dumps(data, ensure_ascii=False, indent=2)
+        + "\n    </script>"
+    )
 
 
 def index_html(code, d):
@@ -860,6 +950,7 @@ def index_html(code, d):
         for n in range(1, 7)
     )
     support_href = "/support/" if not d["subdir"] else f'/{d["subdir"]}/support/'
+    privacy_href = "/privacy/" if code == "ja" else "/en/privacy/"
     return f"""<!doctype html>
 <html lang="{d["html_lang"]}">
   <head>
@@ -882,6 +973,10 @@ def index_html(code, d):
     <meta name="twitter:description" content="{d["description"]}" />
     <meta name="twitter:image" content="{OG_IMAGE}" />
     <link rel="canonical" href="{url}" />
+{hreflang_links("index")}
+{ICON_LINKS}
+{SMART_BANNER}
+{app_jsonld(code, d, url)}{ga4_snippet()}
     <style>
 {BASE_CSS}    </style>
   </head>
@@ -961,7 +1056,7 @@ def index_html(code, d):
       <div class="wrap">
         <div class="footer-row">
           <a href="{support_href}">{d["support_label"]}</a>
-          <a href="{PRIVACY_URL}" rel="noopener" target="_blank">{d["privacy_label"]}</a>
+          <a href="{privacy_href}">{d["privacy_label"]}</a>
           <span>© KUU</span>
         </div>
         <nav class="langs" aria-label="{d["lang_switcher_aria"]}">
@@ -990,6 +1085,10 @@ def support_html(code, d):
     <meta name="description" content="{d["support_description"]}" />
     <link rel="canonical" href="{url}" />
     <meta property="og:locale" content="{d["og_locale"]}" />
+{hreflang_links("support")}
+{ICON_LINKS}
+{SMART_BANNER}
+{faq_jsonld(d)}{ga4_snippet()}
     <style>
 {SUPPORT_CSS}    </style>
   </head>
@@ -1015,6 +1114,173 @@ def support_html(code, d):
 """
 
 
+PRIVACY_META = {
+    "ja": {
+        "title": "プライバシーポリシー — KUU",
+        "description": "KUU のプライバシーポリシー。音声認識も AI 分類もすべて端末内で完結し、話した内容は外部に送信されません。",
+    },
+    "en": {
+        "title": "Privacy Policy — KUU",
+        "description": "KUU's privacy policy. Speech recognition and AI organization happen entirely on your device; your spoken content is never sent outside.",
+    },
+}
+
+
+def md_inline(s):
+    s = html_mod.escape(s, quote=False)
+    s = re.sub(r"`([^`]+)`", r"<code>\1</code>", s)
+    s = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", s)
+    s = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2" rel="noopener">\1</a>', s)
+    return s
+
+
+def md_to_html(md):
+    """Minimal converter for content/privacy.md (h1/h2, hr, p, ul/ol with one nest level)."""
+    out = []
+    para = []
+    # stack of open list tags, innermost last; index = nest depth
+    lists = []
+
+    def flush_para():
+        if para:
+            out.append("      <p>" + md_inline(" ".join(para)) + "</p>")
+            para.clear()
+
+    def close_lists(depth=0):
+        while len(lists) > depth:
+            out.append("      " + "</li></%s>" % lists.pop())
+
+    for line in md.splitlines():
+        stripped = line.strip()
+        if not stripped:
+            flush_para()
+            close_lists()
+            continue
+        if stripped == "---":
+            flush_para()
+            close_lists()
+            out.append("      <hr />")
+            continue
+        if stripped.startswith("## "):
+            flush_para()
+            close_lists()
+            out.append("      <h2>" + md_inline(stripped[3:]) + "</h2>")
+            continue
+        if stripped.startswith("# "):
+            flush_para()
+            close_lists()
+            out.append("      <h1>" + md_inline(stripped[2:]) + "</h1>")
+            continue
+        m = re.match(r"^(\s*)(-|\d+\.)\s+(.*)$", line)
+        if m:
+            flush_para()
+            depth = 1 if m.group(1) else 0
+            tag = "ul" if m.group(2) == "-" else "ol"
+            if len(lists) <= depth:
+                out.append("      " + f"<{tag}>")
+                lists.append(tag)
+            else:
+                close_lists(depth + 1)
+                out.append("      </li>")
+            out.append("      <li>" + md_inline(m.group(3)))
+            continue
+        para.append(stripped)
+    flush_para()
+    close_lists()
+    return "\n".join(out)
+
+
+PRIVACY_CSS = SUPPORT_CSS + """\
+main { max-width: 720px; }
+h1 { font-size: 26px; }
+h2 { font-size: 17px; }
+li { line-height: 1.7; color: var(--ink-soft); margin: 4px 0; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4px; }
+"""
+
+
+def privacy_html(code, body_html):
+    d = LOCALES[code]
+    meta = PRIVACY_META[code]
+    url = url_for(d, "privacy")
+    home_href = "/" if not d["subdir"] else f"/{d['subdir']}/"
+    langs = []
+    for c in PRIVACY_LOCALES:
+        ld = LOCALES[c]
+        href = "/privacy/" if c == "ja" else f"/{ld['subdir']}/privacy/"
+        attr = ' aria-current="true"' if c == code else ""
+        langs.append(f'      <a href="{href}" hreflang="{ld["html_lang"]}"{attr}>{ld["label"]}</a>')
+    return f"""<!doctype html>
+<html lang="{d["html_lang"]}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{meta["title"]}</title>
+    <meta name="description" content="{meta["description"]}" />
+    <link rel="canonical" href="{url}" />
+    <meta property="og:locale" content="{d["og_locale"]}" />
+{hreflang_links("privacy", locales=PRIVACY_LOCALES)}
+{ICON_LINKS}{ga4_snippet()}
+    <style>
+{PRIVACY_CSS}    </style>
+  </head>
+  <body>
+    <main>
+{body_html}
+
+      <a class="back" href="{home_href}">{d["back"]}</a>
+
+      <nav class="langs" aria-label="{d["lang_switcher_aria"]}">
+{chr(10).join(langs)}
+      </nav>
+    </main>
+  </body>
+</html>
+"""
+
+
+def split_privacy_md():
+    """content/privacy.md holds ja then en, separated by the en h1."""
+    md = (ROOT / "content" / "privacy.md").read_text()
+    marker = "# Privacy Policy for KUU"
+    ja_md, en_md = md.split(marker, 1)
+    # drop the trailing hr that separated the two documents
+    ja_md = re.sub(r"-{3,}\s*$", "", ja_md.rstrip())
+    return {"ja": ja_md, "en": marker + en_md}
+
+
+def sitemap_xml():
+    clusters = [
+        ("index", list(LOCALES)),
+        ("support", list(LOCALES)),
+        ("privacy", list(PRIVACY_LOCALES)),
+    ]
+    urls = []
+    for page, codes in clusters:
+        alts = "".join(
+            f'\n    <xhtml:link rel="alternate" hreflang="{LOCALES[c]["html_lang"]}" href="{url_for(LOCALES[c], page)}" />'
+            for c in codes
+        )
+        alts += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{url_for(LOCALES["ja"], page)}" />'
+        for c in codes:
+            urls.append(f"  <url>\n    <loc>{url_for(LOCALES[c], page)}</loc>{alts}\n  </url>")
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+        'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+        + "\n".join(urls)
+        + "\n</urlset>\n"
+    )
+
+
+ROBOTS_TXT = f"""User-agent: *
+Allow: /
+
+Sitemap: {BASE_URL}/sitemap.xml
+"""
+
+
 def main():
     # ja is canonical; fill any missing key on other locales from ja.
     ja = LOCALES["ja"]
@@ -1033,6 +1299,20 @@ def main():
         sup.write_text(support_html(code, d))
         written.append(str(idx.relative_to(ROOT)))
         written.append(str(sup.relative_to(ROOT)))
+
+    privacy_md = split_privacy_md()
+    for code in PRIVACY_LOCALES:
+        sub = LOCALES[code]["subdir"]
+        base = ROOT / sub if sub else ROOT
+        (base / "privacy").mkdir(parents=True, exist_ok=True)
+        page = base / "privacy" / "index.html"
+        page.write_text(privacy_html(code, md_to_html(privacy_md[code])))
+        written.append(str(page.relative_to(ROOT)))
+
+    (ROOT / "sitemap.xml").write_text(sitemap_xml())
+    (ROOT / "robots.txt").write_text(ROBOTS_TXT)
+    written += ["sitemap.xml", "robots.txt"]
+
     for path in written:
         print(path)
 

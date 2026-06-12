@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kuu-zen.com/sitemap.xml
