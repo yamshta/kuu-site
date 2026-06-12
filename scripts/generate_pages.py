@@ -28,7 +28,8 @@ APP_STORE_URL = f"https://apps.apple.com/app/id{APP_STORE_ID}"
 OG_IMAGE = "https://kuu-zen.com/assets/og.png"
 BASE_URL = "https://kuu-zen.com"
 # GA4 web stream measurement ID (G-XXXXXXXXXX). Empty = no analytics tag emitted.
-GA4_MEASUREMENT_ID = ""
+# Stream: properties/539320049/dataStreams/15063638495 (kuu-zen.com)
+GA4_MEASUREMENT_ID = "G-DC1R54C73B"
 # Privacy policy is hosted on this site in ja/en only; other locales link to en.
 PRIVACY_LOCALES = ("ja", "en")
 
