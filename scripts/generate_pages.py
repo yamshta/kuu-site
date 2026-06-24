@@ -24,6 +24,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 APP_STORE_ID = "6771264775"
 # No country code: Apple auto-redirects to the visitor's storefront.
+# installUrl(構造化データ)は canonical のまま。CTA リンクだけ Apple の campaign token `ct` を付与
+# （utm は Apple が install 計測に使わないが ct は ASC App Analytics の Campaigns に出る＝LP 経由の
+#  install を帰属できる）。hero/footer どちらの CTA が効くかも ct=lp_hero / lp_footer で分離。
 APP_STORE_URL = f"https://apps.apple.com/app/id{APP_STORE_ID}"
 OG_IMAGE = "https://kuu-zen.com/assets/og.png"
 BASE_URL = "https://kuu-zen.com"
@@ -987,7 +990,7 @@ def index_html(code, d):
       <h1>{d["hero_headline"]}</h1>
       <p class="sub">{d["hero_sub"]}</p>
       <div class="orb" aria-hidden="true"><div class="orb__water"></div><div class="orb__bubbles">{BUBBLES_HTML}</div></div>
-      <a class="cta" href="{APP_STORE_URL}" rel="noopener">{d["cta"]}</a>
+      <a class="cta" href="{APP_STORE_URL}?ct=lp_hero" rel="noopener">{d["cta"]}</a>
       <div class="scroll-cue" aria-hidden="true">{d["scroll_cue"]}</div>
     </header>
 
@@ -1048,7 +1051,7 @@ def index_html(code, d):
         <div class="wrap reveal">
           <h2>{d["closing_headline"]}</h2>
           <p class="sub">{d["closing_sub"]}</p>
-          <a class="cta" href="{APP_STORE_URL}" rel="noopener">{d["cta"]}</a>
+          <a class="cta" href="{APP_STORE_URL}?ct=lp_footer" rel="noopener">{d["cta"]}</a>
         </div>
       </section>
     </main>
