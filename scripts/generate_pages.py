@@ -35,6 +35,8 @@ BASE_URL = "https://kuu-zen.com"
 GA4_MEASUREMENT_ID = "G-DC1R54C73B"
 # Privacy policy is hosted on this site in ja/en only; other locales link to en.
 PRIVACY_LOCALES = ("ja", "en")
+# Usage tips page is ja-only for now (other locales added later, same pattern as PRIVACY_LOCALES).
+TIPS_LOCALES = ("ja",)
 
 LOCALES = {
     "ja": {
@@ -114,6 +116,81 @@ LOCALES = {
                 "iCloud Private DB に同期されます (Apple ID 所有者本人のみアクセス可)。開発者サーバーはありません。",
             ),
         ],
+        # Tips / usage page (ja-only for now; see TIPS_LOCALES)
+        "tips_title": "使い方のコツ — KUU",
+        "tips_description": "KUU の気づきにくい操作のまとめ。音声入力のあとの書き直し、自分での仕分け、テーマの使い方を静かに紹介します。",
+        "tips_eyebrow": "使い方のコツ",
+        "tips_h1": "声にしたあとも、自分の手で。",
+        "tips_lead": "KUU は画面を静かに保つために、操作の多くを表に出していません。でも、聞き取りを直したり、自分の手で仕分けたりは、ちゃんとできます。気づきにくいものを、ここにまとめました。",
+        # 画面単位でセクション分け（アプリを使う人の「いまこの画面で何ができる？」に合わせる）
+        "tips_screens": [
+            {
+                "heading": "考えの置き場で",
+                "lead": "ホームから引き上げる、いちばん使う画面。声で分けたものは、4つの置き場に集まります。気づきにくい操作も、ほとんどがここに。",
+                "groups": [
+                    {
+                        "subhead": "項目をひとつずつ整える",
+                        "items": [
+                            ("タップ", "タイトルをタップして書き直す", "項目の文字をそのままタップすると、その場で書き直せます。聞き取りの小さなズレは、ここで整えられます。", "t_edit"),
+                            ("長押し → ドラッグ", "別の場所へ移す", "項目を長押ししてドラッグすると、いま見る / あとで考える / 寝かせる / 手放す のあいだを自由に移し替えられます。", "t_move"),
+                            ("ドラッグ", "テーマへ移す", "同じドラッグで、上のテーマチップへも移せます。そのテーマに入り、「未分類」へ落とすと外れます。", "t_theme_drag"),
+                            ("タップ", "○をタップして手放す", "項目の先頭にある小さな○をタップすると、その場でそっと「手放す」へ。すぐ取り消すこともできます。", "t_release"),
+                            ("タップ", "「＋」で手入力を足す", "各ブロックの右下にある淡い「＋」から、その場所に項目を文字で書き足せます。", "t_add"),
+                        ],
+                    },
+                    {
+                        "subhead": "テーマでまとめる",
+                        "items": [
+                            ("長押し", "テーマを長押しでメニュー", "上のテーマチップを長押しすると、常に表示（ピン留め）/ 名前や色を編集 / 手放す が出ます。テーマの設定は、ここが入口です。", "t_theme_press"),
+                            ("タップ", "名前・色・並びを変える", "テーマの編集画面では、名前をタップして書き直し、色の丸から淡い色を選び、左の持ち手で並び替えられます。", "t_theme_edit"),
+                        ],
+                    },
+                ],
+            },
+            {
+                "heading": "分けた直後の画面で",
+                "lead": "話して分けた、すぐあと。KUU の分け方がしっくりこなければ、ここで整えてから残せます。",
+                "groups": [
+                    {
+                        "items": [
+                            ("タップ", "いらないものはタップで外す", "ピンとこない項目はタップすると淡くなって外れます。もう一度タップで戻せます。", "t_remove"),
+                            ("ドラッグ", "ドラッグして分類を変更する", "項目を別のブロックへドラッグすると、その場で分類を変えられます。", "t_reclassify"),
+                            ("ボタン", "「分け直す」で全文を直す", "聞き間違いがあれば「分け直す」から、文字起こし全体を直して、もう一度分けられます。", "t_resort"),
+                        ],
+                    },
+                ],
+            },
+            {
+                "heading": "ホームで",
+                "lead": "声が出しにくい日もある。そんなときは、文字でも。",
+                "groups": [
+                    {
+                        "items": [
+                            ("タップ", "キーボードで書く", "ホーム下の「キーボードで書く」から、声を使わず文字でも、同じように分けられます。", "t_keyboard"),
+                        ],
+                    },
+                ],
+            },
+        ],
+        "tips_note": "これらの案内は、最初の一度だけ画面にそっと出ます。見落としても大丈夫。このページは、いつでも見返せます。",
+        "tips_closing_sub": "まだ KUU を試していなければ、こちらから。",
+        "tips_label": "使い方のコツ",
+        "tips_faqs": [
+            (
+                "音声入力のあと、まちがいを直せますか？",
+                "はい。考えの置き場で項目の文字をタップすると、その場で書き直せます。文字起こし全体を直したいときは、分けた直後の画面の「分け直す」から、直してもう一度分けられます。",
+            ),
+            (
+                "自分で仕分けることはできますか？",
+                "はい。項目を長押ししてドラッグすると、いま見る / あとで考える / 寝かせる / 手放す のあいだを自由に移せます。先頭の○をタップすれば「手放す」へ移ります。",
+            ),
+            (
+                "テーマの名前や色は変えられますか？",
+                "はい。テーマのチップを長押しして「テーマを編集…」を開くと、名前をタップして書き直し、色を選び、並び順も変えられます。",
+            ),
+        ],
+        "tips_support_before": "音声入力のあとの書き直しや、自分での仕分けなど、気づきにくい操作は",
+        "tips_support_after": "にまとめています。",
         "back": "← トップへ",
     },
     "en": {
@@ -821,6 +898,175 @@ a { color: var(--ink); }
 .langs a:hover { text-decoration: underline; }
 """
 
+# Tips page: lighter than the LP (no orb), card-per-gesture. Tokens mirror KUUColors.
+TIPS_CSS = """\
+:root {
+  color-scheme: light;
+  --bg: #f6f9fc;
+  --surface: #ffffff;
+  --surface-quiet: #eff4f8;
+  --ink: #353b41;
+  --ink-soft: #6b737b;
+  --ink-faint: #939aa2;
+  --primary-deep: #5e97c2;
+  --primary-soft: #dceaf4;
+  --water-action: #bfddef;
+  --water-ink: #255069;
+  --line: #e7edf3;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Apple SD Gothic Neo", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.7;
+  font-feature-settings: "palt" 1, "kern" 1;
+  font-kerning: normal;
+}
+.wrap { max-width: 660px; margin: 0 auto; padding: 0 24px; }
+
+/* ---- header ---- */
+.tips-hero { text-align: center; padding: clamp(56px, 12vw, 104px) 24px clamp(4px, 3vw, 16px); }
+.wordmark {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  color: var(--primary-deep);
+  margin: 0 0 clamp(20px, 4vw, 32px) 0.42em;
+}
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: var(--primary-deep);
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+.tips-hero h1 {
+  font-size: clamp(26px, 6vw, 38px);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+.tips-hero .lead { color: var(--ink-soft); font-size: clamp(15px, 4vw, 16px); max-width: 32em; margin: 16px auto 0; }
+
+/* ---- screen sections ---- */
+.screen { padding: clamp(44px, 9vw, 68px) 0 0; }
+.screen h2 { font-size: clamp(20px, 5vw, 25px); font-weight: 600; line-height: 1.45; margin: 0; }
+.screen .screen-lead { color: var(--ink-soft); font-size: clamp(14px, 3.8vw, 15px); margin: 10px 0 0; max-width: 32em; }
+.subhead {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--primary-deep);
+  margin: 22px 0 0;
+}
+/* extra separation only when a subhead follows a previous group's cards */
+.tips + .subhead { margin-top: clamp(40px, 8vw, 56px); }
+
+/* ---- figure (annotated real screenshot) ---- */
+.figure {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 18px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  box-shadow: 0 22px 48px -28px rgba(94, 151, 194, 0.55);
+  background: var(--surface);
+}
+.figure + .figure { margin-top: 12px; }
+
+/* ---- tip cards ---- */
+.tips { display: grid; gap: 14px; margin-top: 18px; }
+.tip {
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.tip .thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: -2px 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface-quiet);
+}
+.tip .badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--primary-deep);
+  background: var(--primary-soft);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 11px;
+}
+.tip h3 { margin: 0 0 6px; font-size: 16.5px; font-weight: 600; color: var(--ink); }
+.tip p { margin: 0; color: var(--ink-soft); font-size: 14.5px; line-height: 1.72; }
+
+/* ---- note ---- */
+.note {
+  margin: clamp(40px, 8vw, 64px) 0 0;
+  padding: 22px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  color: var(--ink-soft);
+  font-size: clamp(15px, 4vw, 16px);
+}
+
+/* ---- closing cta ---- */
+.closing { text-align: center; padding: clamp(48px, 10vw, 80px) 0 clamp(8px, 3vw, 24px); }
+.closing .sub { color: var(--ink-soft); margin: 0 0 22px; font-size: clamp(15px, 4vw, 16px); }
+.cta {
+  display: inline-block;
+  padding: 15px 30px;
+  background: var(--water-action);
+  color: var(--water-ink);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cta:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -12px rgba(37, 80, 105, 0.5); }
+
+/* ---- footer ---- */
+footer {
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: clamp(40px, 8vw, 72px);
+  padding: 40px 0 56px;
+}
+.footer-row { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+.footer-row a { color: var(--ink-soft); text-decoration: none; }
+.footer-row a:hover { text-decoration: underline; }
+
+/* ---- scroll reveal (progressive enhancement) ---- */
+.js .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .reveal.in { opacity: 1; transform: none; }
+.js .reveal .stagger > * { opacity: 0; transform: translateY(12px); transition: opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .reveal.in .stagger > * { opacity: 1; transform: none; }
+.js .reveal.in .stagger > *:nth-child(2) { transition-delay: 0.06s; }
+.js .reveal.in .stagger > *:nth-child(3) { transition-delay: 0.12s; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal, .js .reveal .stagger > * { opacity: 1; transform: none; transition: none; }
+}
+"""
+
 QUADRANT_VARS = ["--cat-now", "--cat-later", "--cat-parked", "--cat-release"]
 
 # Rising bubbles inside the water orb (deterministic seeds; matches app's Bubbles).
@@ -955,6 +1201,12 @@ def index_html(code, d):
     )
     support_href = "/support/" if not d["subdir"] else f'/{d["subdir"]}/support/'
     privacy_href = "/privacy/" if code == "ja" else "/en/privacy/"
+    # Tips page exists only for TIPS_LOCALES; link it from the footer where it does.
+    tips_link = (
+        f'<a href="/tips/">{d["tips_label"]}</a>\n          '
+        if code in TIPS_LOCALES
+        else ""
+    )
     return f"""<!doctype html>
 <html lang="{d["html_lang"]}">
   <head>
@@ -1059,7 +1311,7 @@ def index_html(code, d):
     <footer>
       <div class="wrap">
         <div class="footer-row">
-          <a href="{support_href}">{d["support_label"]}</a>
+          {tips_link}<a href="{support_href}">{d["support_label"]}</a>
           <a href="{privacy_href}">{d["privacy_label"]}</a>
           <span>© KUU</span>
         </div>
@@ -1080,6 +1332,12 @@ def support_html(code, d):
         f'      <p>\n        <strong>{q}</strong><br />\n        {a}\n      </p>'
         for q, a in d["faqs"]
     )
+    tips_prompt = (
+        f'\n      <p>{d["tips_support_before"]} '
+        f'<a href="/tips/">{d["tips_label"]}</a>{d["tips_support_after"]}</p>'
+        if code in TIPS_LOCALES
+        else ""
+    )
     return f"""<!doctype html>
 <html lang="{d["html_lang"]}">
   <head>
@@ -1099,7 +1357,7 @@ def support_html(code, d):
   <body>
     <main>
       <h1>{d["support_h1"]}</h1>
-      <p>{d["support_intro"]}</p>
+      <p>{d["support_intro"]}</p>{tips_prompt}
 
       <h2>{d["contact_h2"]}</h2>
       <p>{d["contact_body"]}</p>
@@ -1114,6 +1372,140 @@ def support_html(code, d):
       </nav>
     </main>
   </body>
+</html>
+"""
+
+
+def tips_jsonld(d):
+    data = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": q,
+                "acceptedAnswer": {"@type": "Answer", "text": a},
+            }
+            for q, a in d["tips_faqs"]
+        ],
+    }
+    return (
+        '    <script type="application/ld+json">\n'
+        + json.dumps(data, ensure_ascii=False, indent=2)
+        + "\n    </script>"
+    )
+
+
+def tips_html(code, d):
+    url = url_for(d, "tips")
+    home_href = "/" if not d["subdir"] else f"/{d['subdir']}/"
+    support_href = "/support/" if not d["subdir"] else f"/{d['subdir']}/support/"
+    privacy_href = "/privacy/" if code == "ja" else "/en/privacy/"
+    def card(it):
+        badge, title, body = it[0], it[1], it[2]
+        thumb = it[3] if len(it) > 3 else ""
+        thumb_html = (
+            f'<img class="thumb" src="/assets/tips/{thumb}.png" '
+            f'width="900" height="562" loading="lazy" alt="" />'
+            if thumb
+            else ""
+        )
+        return (
+            f'            <div class="tip">{thumb_html}<span class="badge">{badge}</span>'
+            f"<h3>{title}</h3><p>{body}</p></div>"
+        )
+
+    def render_group(g):
+        parts = []
+        if g.get("subhead"):
+            parts.append(f'          <p class="subhead">{g["subhead"]}</p>')
+        for name, alt in g.get("figures", []):
+            parts.append(
+                f'          <img class="figure" src="/assets/tips/{name}.png" '
+                f'width="1000" height="1029" loading="lazy" alt="{alt}" />'
+            )
+        cards = "\n".join(card(it) for it in g["items"])
+        parts.append(f'          <div class="tips stagger">\n{cards}\n          </div>')
+        return "\n".join(parts)
+
+    screens = []
+    for s in d["tips_screens"]:
+        body = "\n".join(render_group(g) for g in s["groups"])
+        screens.append(
+            '      <section class="screen reveal">\n'
+            "        <div class=\"wrap\">\n"
+            f"          <h2>{s['heading']}</h2>\n"
+            f"          <p class=\"screen-lead\">{s['lead']}</p>\n"
+            f"{body}\n"
+            "        </div>\n"
+            "      </section>"
+        )
+    groups_block = "\n\n".join(screens)
+    return f"""<!doctype html>
+<html lang="{d["html_lang"]}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f6f9fc" />
+    <meta name="robots" content="index,follow" />
+    <title>{d["tips_title"]}</title>
+    <meta name="description" content="{d["tips_description"]}" />
+    <meta property="og:title" content="{d["tips_title"]}" />
+    <meta property="og:description" content="{d["tips_description"]}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{url}" />
+    <meta property="og:locale" content="{d["og_locale"]}" />
+    <meta property="og:image" content="{OG_IMAGE}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{d["tips_title"]}" />
+    <meta name="twitter:description" content="{d["tips_description"]}" />
+    <meta name="twitter:image" content="{OG_IMAGE}" />
+    <link rel="canonical" href="{url}" />
+{hreflang_links("tips", locales=TIPS_LOCALES)}
+{ICON_LINKS}
+{SMART_BANNER}
+{tips_jsonld(d)}{ga4_snippet()}
+    <style>
+{TIPS_CSS}    </style>
+  </head>
+  <body>
+    <header class="tips-hero">
+      <p class="wordmark">KUU</p>
+      <p class="eyebrow">{d["tips_eyebrow"]}</p>
+      <h1>{d["tips_h1"]}</h1>
+      <p class="lead">{d["tips_lead"]}</p>
+    </header>
+
+    <main>
+{groups_block}
+
+      <section class="closing-note reveal">
+        <div class="wrap">
+          <p class="note">{d["tips_note"]}</p>
+        </div>
+      </section>
+
+      <section class="closing reveal">
+        <div class="wrap">
+          <p class="sub">{d["tips_closing_sub"]}</p>
+          <a class="cta" href="{APP_STORE_URL}?ct=lp_tips" rel="noopener">{d["cta"]}</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="footer-row">
+          <a href="{home_href}">{d["back"]}</a>
+          <a href="{support_href}">{d["support_label"]}</a>
+          <a href="{privacy_href}">{d["privacy_label"]}</a>
+          <span>© KUU</span>
+        </div>
+      </div>
+    </footer>
+{REVEAL_SCRIPT}  </body>
 </html>
 """
 
@@ -1258,6 +1650,7 @@ def sitemap_xml():
     clusters = [
         ("index", list(LOCALES)),
         ("support", list(LOCALES)),
+        ("tips", list(TIPS_LOCALES)),
         ("privacy", list(PRIVACY_LOCALES)),
     ]
     urls = []
@@ -1303,6 +1696,14 @@ def main():
         sup.write_text(support_html(code, d))
         written.append(str(idx.relative_to(ROOT)))
         written.append(str(sup.relative_to(ROOT)))
+
+    for code in TIPS_LOCALES:
+        sub = LOCALES[code]["subdir"]
+        base = ROOT / sub if sub else ROOT
+        (base / "tips").mkdir(parents=True, exist_ok=True)
+        page = base / "tips" / "index.html"
+        page.write_text(tips_html(code, LOCALES[code]))
+        written.append(str(page.relative_to(ROOT)))
 
     privacy_md = split_privacy_md()
     for code in PRIVACY_LOCALES:
