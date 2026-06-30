@@ -20,10 +20,12 @@ KUU の公式 LP (`https://kuu-zen.com/`)。GitHub Pages で配信。
 ├── ko/support/index.html
 ├── zh-Hans/index.html      # zh-Hans
 ├── zh-Hans/support/index.html
+├── tips/index.html         # 使い方のコツ (ja-only, TIPS_LOCALES。privacy と同じ一部言語パターン)
+├── privacy/index.html      # ja / en/privacy/ のみ (PRIVACY_LOCALES)
 ├── app-ads.txt             # AdMob 検証用 (ルート直下)
 ├── CNAME                   # kuu-zen.com
 └── scripts/
-    └── generate_pages.py   # 10 ファイルの一括生成 (翻訳の SSoT)
+    └── generate_pages.py   # 全ページ + sitemap/robots の一括生成 (翻訳の SSoT)
 ```
 
 翻訳/コピーを変更する場合は `scripts/generate_pages.py` の `LOCALES` dict を編集 → `python3 scripts/generate_pages.py` で再生成。
