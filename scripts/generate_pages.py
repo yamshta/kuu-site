@@ -30,6 +30,14 @@ APP_STORE_ID = "6771264775"
 APP_STORE_URL = f"https://apps.apple.com/app/id{APP_STORE_ID}"
 OG_IMAGE = "https://kuu-zen.com/assets/og.png"
 BASE_URL = "https://kuu-zen.com"
+# tips のスクショ (assets/tips/*.png) はファイル名を変えず中身を差し替えるため、
+# ブラウザキャッシュ回避に日付版クエリ ?v= を付ける。スクショを更新したら日付を上げる。
+ASSET_VERSION = "20260701b"
+# これらの thumb 名は静止画でなく mp4 ループ動画で見せる（<name>.mp4 + <name>_poster.jpg）。
+# 動き（ドラッグ&ドロップ等）は動画のほうが伝わるため。iOS Safari の自動再生条件に合わせ
+# autoplay + muted + playsinline を付ける。
+VIDEO_THUMBS = {"t_move", "t_theme_drag", "t_reclassify",
+                "t_release", "t_theme_press", "t_remove", "t_edit"}
 # GA4 web stream measurement ID (G-XXXXXXXXXX). Empty = no analytics tag emitted.
 # Stream: properties/539320049/dataStreams/15063638495 (kuu-zen.com)
 GA4_MEASUREMENT_ID = "G-DC1R54C73B"
@@ -177,27 +185,48 @@ LOCALES = {
         "tips_label": "使い方のコツ",
         # 不満ベースのよくある問い合わせ（可視セクション + FAQPage 構造化データで共用）
         "tips_faq_heading": "よくある問い合わせ",
+        # answer は「文（。）ごとの行」リスト。可視は 1 行 = 1 段落で余白を出し、
+        # FAQPage 構造化データは "".join で 1 文に戻す。
         "tips_faqs": [
             (
                 "思ったように分けてくれない。精度がいまひとつ。",
-                "KUU の見立ては、いつも完璧ではありません。だから、あとから自分の手で直せるようにしています（タップで書き直す／長押しドラッグで移す／「分け直す」）。聞きとりと仕分けの精度は、これからも少しずつ良くしていきます。あなたが使ってくれることが、その励みになっています。",
+                [
+                    "KUU の見立ては、いつも完璧ではありません。",
+                    "だから、あとから自分の手で直せるようにしています（タップで書き直す／長押しドラッグで移す／「分け直す」）。",
+                    "聞きとりと仕分けの精度は、これからも少しずつ良くしていきます。",
+                    "あなたが使ってくれることが、その励みになっています。",
+                ],
             ),
             (
                 "長く話すと、ぜんぶひとつにまとめられてしまう。",
-                "文が続くと、区切りを見つけにくいことがあります。話すときは「〜して、（ひと呼吸）〜して」と少し間を置くと、分かれやすくなります。すでに入力したものは、「分け直す」で文章に読点や句点（、。）を足すと、区切られやすくなります。それでもまとまるときは、長押しドラッグで分けたり、タップで書き直したりできます。",
+                [
+                    "文が続くと、区切りを見つけにくいことがあります。",
+                    "話すときは「〜して、（ひと呼吸）〜して」と少し間を置くと、分かれやすくなります。",
+                    "すでに入力したものは、「分け直す」で文章に読点や句点（、。）を足すと、区切られやすくなります。",
+                    "それでもまとまるときは、長押しドラッグで分けたり、タップで書き直したりできます。",
+                ],
             ),
             (
                 "すぐ課金に誘われている気がする。",
-                "話して、分けて、見返す——KUU の中心は、ずっと無料で使えます。KUU+ は、広告をオフにしたい・Face ID ロックをかけたい方への、そっとした追加です。",
+                [
+                    "話して、分けて、見返す——KUU の中心は、ずっと無料で使えます。",
+                    "KUU+ は、広告をオフにしたい・Face ID ロックをかけたい方への、そっとした追加です。",
+                ],
             ),
             (
                 "声を出せない場面では使いにくい。",
-                "ホーム下の「キーボードで書く」から、声を使わず文字でも、同じように分けられます。",
+                [
+                    "ホーム下の「キーボードで書く」から、声を使わず文字でも、同じように分けられます。",
+                ],
+                "t_keyboard",
             ),
             # 自動テーマ振り分けが正式リリースされたら復活（今は非表示）:
             # (
             #     "テーマを勝手につけてほしくない。",
-            #     "既定では、AI はテーマを付けません（すべて「未分類」から始まります）。付くのは、あなたが付けたときか、KUU+ で「自動で振り分け」をオンにしたときだけ。いつでも解除できます。",
+            #     [
+            #         "既定では、AI はテーマを付けません（すべて「未分類」から始まります）。",
+            #         "付くのは、あなたが付けたときか、KUU+ で「自動で振り分け」をオンにしたときだけ。いつでも解除できます。",
+            #     ],
             # ),
         ],
         "tips_support_before": "音声入力のあとの書き直しや、自分での仕分けなど、気づきにくい操作は",
@@ -1064,8 +1093,18 @@ body {
   border: 1px solid var(--line);
   border-radius: 18px;
 }
-.faq-q { margin: 0 0 8px; font-size: 15.5px; font-weight: 600; color: var(--ink); line-height: 1.55; }
-.faq-a { margin: 0; font-size: 14.5px; color: var(--ink-soft); line-height: 1.75; }
+.faq-q { margin: 0 0 10px; font-size: 15.5px; font-weight: 600; color: var(--ink); line-height: 1.55; }
+.faq-a { margin: 0; font-size: 14.5px; color: var(--ink-soft); line-height: 1.7; }
+.faq-a + .faq-a { margin-top: 8px; }
+.faq-item .thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 16px 0 0;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface-quiet);
+}
 
 /* ---- closing cta ---- */
 .closing { text-align: center; padding: clamp(48px, 10vw, 80px) 0 clamp(8px, 3vw, 24px); }
@@ -1426,9 +1465,9 @@ def tips_jsonld(d):
             {
                 "@type": "Question",
                 "name": q,
-                "acceptedAnswer": {"@type": "Answer", "text": a},
+                "acceptedAnswer": {"@type": "Answer", "text": "".join(a)},
             }
-            for q, a in d["tips_faqs"]
+            for q, a, *_ in d["tips_faqs"]
         ],
     }
     return (
@@ -1446,14 +1485,23 @@ def tips_html(code, d):
     def card(it):
         badge, title, body = it[0], it[1], it[2]
         thumb = it[3] if len(it) > 3 else ""
-        thumb_html = (
-            f'<img class="thumb" src="/assets/tips/{thumb}.png" '
-            f'width="900" height="562" loading="lazy" alt="" />'
-            if thumb
-            else ""
-        )
+        if thumb in VIDEO_THUMBS:
+            media = (
+                f'<video class="thumb" autoplay loop muted playsinline preload="metadata" '
+                f'width="860" height="798" '
+                f'poster="/assets/tips/{thumb}_poster.jpg?v={ASSET_VERSION}">'
+                f'<source src="/assets/tips/{thumb}.mp4?v={ASSET_VERSION}" type="video/mp4" />'
+                f"</video>"
+            )
+        elif thumb:
+            media = (
+                f'<img class="thumb" src="/assets/tips/{thumb}.png?v={ASSET_VERSION}" '
+                f'width="900" height="562" loading="lazy" alt="" />'
+            )
+        else:
+            media = ""
         return (
-            f'            <div class="tip">{thumb_html}<span class="badge">{badge}</span>'
+            f'            <div class="tip">{media}<span class="badge">{badge}</span>'
             f"<h3>{title}</h3><p>{body}</p></div>"
         )
 
@@ -1463,7 +1511,7 @@ def tips_html(code, d):
             parts.append(f'          <p class="subhead">{g["subhead"]}</p>')
         for name, alt in g.get("figures", []):
             parts.append(
-                f'          <img class="figure" src="/assets/tips/{name}.png" '
+                f'          <img class="figure" src="/assets/tips/{name}.png?v={ASSET_VERSION}" '
                 f'width="1000" height="1029" loading="lazy" alt="{alt}" />'
             )
         cards = "\n".join(card(it) for it in g["items"])
@@ -1484,11 +1532,22 @@ def tips_html(code, d):
         )
     groups_block = "\n\n".join(screens)
 
-    faq_items = "\n".join(
-        f'            <div class="faq-item"><p class="faq-q">{q}</p>'
-        f'<p class="faq-a">{a}</p></div>'
-        for q, a in d["tips_faqs"]
-    )
+    def faq_item(item):
+        q, lines = item[0], item[1]
+        thumb = item[2] if len(item) > 2 else ""
+        answer = "".join(f'<p class="faq-a">{line}</p>' for line in lines)
+        thumb_html = (
+            f'<img class="thumb" src="/assets/tips/{thumb}.png?v={ASSET_VERSION}" '
+            f'width="900" height="562" loading="lazy" alt="" />'
+            if thumb
+            else ""
+        )
+        return (
+            f'            <div class="faq-item"><p class="faq-q">{q}</p>'
+            f"{answer}{thumb_html}</div>"
+        )
+
+    faq_items = "\n".join(faq_item(it) for it in d["tips_faqs"])
     faq_block = (
         '      <section class="faq reveal">\n'
         "        <div class=\"wrap\">\n"

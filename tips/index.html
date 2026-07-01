@@ -209,8 +209,18 @@ body {
   border: 1px solid var(--line);
   border-radius: 18px;
 }
-.faq-q { margin: 0 0 8px; font-size: 15.5px; font-weight: 600; color: var(--ink); line-height: 1.55; }
-.faq-a { margin: 0; font-size: 14.5px; color: var(--ink-soft); line-height: 1.75; }
+.faq-q { margin: 0 0 10px; font-size: 15.5px; font-weight: 600; color: var(--ink); line-height: 1.55; }
+.faq-a { margin: 0; font-size: 14.5px; color: var(--ink-soft); line-height: 1.7; }
+.faq-a + .faq-a { margin-top: 8px; }
+.faq-item .thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 16px 0 0;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface-quiet);
+}
 
 /* ---- closing cta ---- */
 .closing { text-align: center; padding: clamp(48px, 10vw, 80px) 0 clamp(8px, 3vw, 24px); }
@@ -269,16 +279,16 @@ footer {
           <p class="screen-lead">ホームから引き上げる、いちばん使う画面。声で分けたものは、4つの置き場に集まります。気づきにくい操作も、ほとんどがここに。</p>
           <p class="subhead">項目をひとつずつ整える</p>
           <div class="tips stagger">
-            <div class="tip"><img class="thumb" src="/assets/tips/t_edit.png" width="900" height="562" loading="lazy" alt="" /><span class="badge">タップ</span><h3>タイトルをタップして書き直す</h3><p>項目の文字をそのままタップすると、その場で書き直せます。聞き取りの小さなズレは、ここで整えられます。</p></div>
-            <div class="tip"><img class="thumb" src="/assets/tips/t_move.png" width="900" height="562" loading="lazy" alt="" /><span class="badge">長押し → ドラッグ</span><h3>別の場所へ移す</h3><p>項目を長押ししてドラッグすると、いま見る / あとで考える / 寝かせる / 手放す のあいだを自由に移し替えられます。</p></div>
-            <div class="tip"><img class="thumb" src="/assets/tips/t_theme_drag.png" width="900" height="562" loading="lazy" alt="" /><span class="badge">ドラッグ</span><h3>テーマへ移す</h3><p>同じドラッグで、上のテーマチップへも移せます。そのテーマに入り、「未分類」へ落とすと外れます。</p></div>
-            <div class="tip"><img class="thumb" src="/assets/tips/t_release.png" width="900" height="562" loading="lazy" alt="" /><span class="badge">タップ</span><h3>○をタップして手放す</h3><p>項目の先頭にある小さな○をタップすると、その場でそっと「手放す」へ。すぐ取り消すこともできます。</p></div>
-            <div class="tip"><img class="thumb" src="/assets/tips/t_add.png" width="900" height="562" loading="lazy" alt="" /><span class="badge">タップ</span><h3>「＋」で手入力を足す</h3><p>各ブロックの右下にある淡い「＋」から、その場所に項目を文字で書き足せます。</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_edit_poster.jpg?v=20260701b"><source src="/assets/tips/t_edit.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">タップ</span><h3>タイトルをタップして書き直す</h3><p>項目の文字をそのままタップすると、その場で書き直せます。聞き取りの小さなズレは、ここで整えられます。</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_move_poster.jpg?v=20260701b"><source src="/assets/tips/t_move.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">長押し → ドラッグ</span><h3>別の場所へ移す</h3><p>項目を長押ししてドラッグすると、いま見る / あとで考える / 寝かせる / 手放す のあいだを自由に移し替えられます。</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_theme_drag_poster.jpg?v=20260701b"><source src="/assets/tips/t_theme_drag.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">ドラッグ</span><h3>テーマへ移す</h3><p>同じドラッグで、上のテーマチップへも移せます。そのテーマに入り、「未分類」へ落とすと外れます。</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_release_poster.jpg?v=20260701b"><source src="/assets/tips/t_release.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">タップ</span><h3>○をタップして手放す</h3><p>項目の先頭にある小さな○をタップすると、その場でそっと「手放す」へ。すぐ取り消すこともできます。</p></div>
+            <div class="tip"><img class="thumb" src="/assets/tips/t_add.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /><span class="badge">タップ</span><h3>「＋」で手入力を足す</h3><p>各ブロックの右下にある淡い「＋」から、その場所に項目を文字で書き足せます。</p></div>
           </div>
           <p class="subhead">テーマでまとめる</p>
           <div class="tips stagger">
-            <div class="tip"><img class="thumb" src="/assets/tips/t_theme_press.png" width="900" height="562" loading="lazy" alt="" /><span class="badge">長押し</span><h3>テーマを長押しでメニュー</h3><p>上のテーマチップを長押しすると、常に表示（ピン留め）/ 名前や色を編集 / 手放す が出ます。テーマの設定は、ここが入口です。</p></div>
-            <div class="tip"><img class="thumb" src="/assets/tips/t_theme_edit.png" width="900" height="562" loading="lazy" alt="" /><span class="badge">タップ</span><h3>名前・色・並びを変える</h3><p>テーマの編集画面では、名前をタップして書き直し、色の丸から淡い色を選び、左の持ち手で並び替えられます。</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_theme_press_poster.jpg?v=20260701b"><source src="/assets/tips/t_theme_press.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">長押し</span><h3>テーマを長押しでメニュー</h3><p>上のテーマチップを長押しすると、常に表示（ピン留め）/ 名前や色を編集 / 手放す が出ます。テーマの設定は、ここが入口です。</p></div>
+            <div class="tip"><img class="thumb" src="/assets/tips/t_theme_edit.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /><span class="badge">タップ</span><h3>名前・色・並びを変える</h3><p>テーマの編集画面では、名前をタップして書き直し、色の丸から淡い色を選び、左の持ち手で並び替えられます。</p></div>
           </div>
         </div>
       </section>
@@ -288,9 +298,9 @@ footer {
           <h2>分けた直後の画面で</h2>
           <p class="screen-lead">話して分けた、すぐあと。KUU の分け方がしっくりこなければ、ここで整えてから残せます。</p>
           <div class="tips stagger">
-            <div class="tip"><img class="thumb" src="/assets/tips/t_remove.png" width="900" height="562" loading="lazy" alt="" /><span class="badge">タップ</span><h3>いらないものはタップで外す</h3><p>ピンとこない項目はタップすると淡くなって外れます。もう一度タップで戻せます。</p></div>
-            <div class="tip"><img class="thumb" src="/assets/tips/t_reclassify.png" width="900" height="562" loading="lazy" alt="" /><span class="badge">ドラッグ</span><h3>ドラッグして分類を変更する</h3><p>項目を別のブロックへドラッグすると、その場で分類を変えられます。</p></div>
-            <div class="tip"><img class="thumb" src="/assets/tips/t_resort.png" width="900" height="562" loading="lazy" alt="" /><span class="badge">ボタン</span><h3>「分け直す」で全文を直す</h3><p>聞き間違いがあれば「分け直す」から、文字起こし全体を直して、もう一度分けられます。</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_remove_poster.jpg?v=20260701b"><source src="/assets/tips/t_remove.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">タップ</span><h3>いらないものはタップで外す</h3><p>ピンとこない項目はタップすると淡くなって外れます。もう一度タップで戻せます。</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_reclassify_poster.jpg?v=20260701b"><source src="/assets/tips/t_reclassify.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">ドラッグ</span><h3>ドラッグして分類を変更する</h3><p>項目を別のブロックへドラッグすると、その場で分類を変えられます。</p></div>
+            <div class="tip"><img class="thumb" src="/assets/tips/t_resort.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /><span class="badge">ボタン</span><h3>「分け直す」で全文を直す</h3><p>聞き間違いがあれば「分け直す」から、文字起こし全体を直して、もう一度分けられます。</p></div>
           </div>
         </div>
       </section>
@@ -300,7 +310,7 @@ footer {
           <h2>ホームで</h2>
           <p class="screen-lead">声が出しにくい日もある。そんなときは、文字でも。</p>
           <div class="tips stagger">
-            <div class="tip"><img class="thumb" src="/assets/tips/t_keyboard.png" width="900" height="562" loading="lazy" alt="" /><span class="badge">タップ</span><h3>キーボードで書く</h3><p>ホーム下の「キーボードで書く」から、声を使わず文字でも、同じように分けられます。</p></div>
+            <div class="tip"><img class="thumb" src="/assets/tips/t_keyboard.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /><span class="badge">タップ</span><h3>キーボードで書く</h3><p>ホーム下の「キーボードで書く」から、声を使わず文字でも、同じように分けられます。</p></div>
           </div>
         </div>
       </section>
@@ -309,10 +319,10 @@ footer {
         <div class="wrap">
           <h2>よくある問い合わせ</h2>
           <div class="faq-list stagger">
-            <div class="faq-item"><p class="faq-q">思ったように分けてくれない。精度がいまひとつ。</p><p class="faq-a">KUU の見立ては、いつも完璧ではありません。だから、あとから自分の手で直せるようにしています（タップで書き直す／長押しドラッグで移す／「分け直す」）。聞きとりと仕分けの精度は、これからも少しずつ良くしていきます。あなたが使ってくれることが、その励みになっています。</p></div>
-            <div class="faq-item"><p class="faq-q">長く話すと、ぜんぶひとつにまとめられてしまう。</p><p class="faq-a">文が続くと、区切りを見つけにくいことがあります。話すときは「〜して、（ひと呼吸）〜して」と少し間を置くと、分かれやすくなります。すでに入力したものは、「分け直す」で文章に読点や句点（、。）を足すと、区切られやすくなります。それでもまとまるときは、長押しドラッグで分けたり、タップで書き直したりできます。</p></div>
-            <div class="faq-item"><p class="faq-q">すぐ課金に誘われている気がする。</p><p class="faq-a">話して、分けて、見返す——KUU の中心は、ずっと無料で使えます。KUU+ は、広告をオフにしたい・Face ID ロックをかけたい方への、そっとした追加です。</p></div>
-            <div class="faq-item"><p class="faq-q">声を出せない場面では使いにくい。</p><p class="faq-a">ホーム下の「キーボードで書く」から、声を使わず文字でも、同じように分けられます。</p></div>
+            <div class="faq-item"><p class="faq-q">思ったように分けてくれない。精度がいまひとつ。</p><p class="faq-a">KUU の見立ては、いつも完璧ではありません。</p><p class="faq-a">だから、あとから自分の手で直せるようにしています（タップで書き直す／長押しドラッグで移す／「分け直す」）。</p><p class="faq-a">聞きとりと仕分けの精度は、これからも少しずつ良くしていきます。</p><p class="faq-a">あなたが使ってくれることが、その励みになっています。</p></div>
+            <div class="faq-item"><p class="faq-q">長く話すと、ぜんぶひとつにまとめられてしまう。</p><p class="faq-a">文が続くと、区切りを見つけにくいことがあります。</p><p class="faq-a">話すときは「〜して、（ひと呼吸）〜して」と少し間を置くと、分かれやすくなります。</p><p class="faq-a">すでに入力したものは、「分け直す」で文章に読点や句点（、。）を足すと、区切られやすくなります。</p><p class="faq-a">それでもまとまるときは、長押しドラッグで分けたり、タップで書き直したりできます。</p></div>
+            <div class="faq-item"><p class="faq-q">すぐ課金に誘われている気がする。</p><p class="faq-a">話して、分けて、見返す——KUU の中心は、ずっと無料で使えます。</p><p class="faq-a">KUU+ は、広告をオフにしたい・Face ID ロックをかけたい方への、そっとした追加です。</p></div>
+            <div class="faq-item"><p class="faq-q">声を出せない場面では使いにくい。</p><p class="faq-a">ホーム下の「キーボードで書く」から、声を使わず文字でも、同じように分けられます。</p><img class="thumb" src="/assets/tips/t_keyboard.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /></div>
           </div>
         </div>
       </section>
