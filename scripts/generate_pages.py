@@ -175,19 +175,30 @@ LOCALES = {
         "tips_note": "これらの案内は、最初の一度だけ画面にそっと出ます。見落としても大丈夫。このページは、いつでも見返せます。",
         "tips_closing_sub": "まだ KUU を試していなければ、こちらから。",
         "tips_label": "使い方のコツ",
+        # 不満ベースのよくある問い合わせ（可視セクション + FAQPage 構造化データで共用）
+        "tips_faq_heading": "よくある問い合わせ",
         "tips_faqs": [
             (
-                "音声入力のあと、まちがいを直せますか？",
-                "はい。考えの置き場で項目の文字をタップすると、その場で書き直せます。文字起こし全体を直したいときは、分けた直後の画面の「分け直す」から、直してもう一度分けられます。",
+                "思ったように分けてくれない。精度がいまひとつ。",
+                "KUU の見立ては、いつも完璧ではありません。だから、あとから自分の手で直せるようにしています（タップで書き直す／長押しドラッグで移す／「分け直す」）。聞きとりと仕分けの精度は、これからも少しずつ良くしていきます。あなたが使ってくれることが、その励みになっています。",
             ),
             (
-                "自分で仕分けることはできますか？",
-                "はい。項目を長押ししてドラッグすると、いま見る / あとで考える / 寝かせる / 手放す のあいだを自由に移せます。先頭の○をタップすれば「手放す」へ移ります。",
+                "長く話すと、ぜんぶひとつにまとめられてしまう。",
+                "文が続くと、区切りを見つけにくいことがあります。話すときは「〜して、（ひと呼吸）〜して」と少し間を置くと、分かれやすくなります。すでに入力したものは、「分け直す」で文章に読点や句点（、。）を足すと、区切られやすくなります。それでもまとまるときは、長押しドラッグで分けたり、タップで書き直したりできます。",
             ),
             (
-                "テーマの名前や色は変えられますか？",
-                "はい。テーマのチップを長押しして「テーマを編集…」を開くと、名前をタップして書き直し、色を選び、並び順も変えられます。",
+                "すぐ課金に誘われている気がする。",
+                "話して、分けて、見返す——KUU の中心は、ずっと無料で使えます。KUU+ は、広告をオフにしたい・Face ID ロックをかけたい方への、そっとした追加です。",
             ),
+            (
+                "声を出せない場面では使いにくい。",
+                "ホーム下の「キーボードで書く」から、声を使わず文字でも、同じように分けられます。",
+            ),
+            # 自動テーマ振り分けが正式リリースされたら復活（今は非表示）:
+            # (
+            #     "テーマを勝手につけてほしくない。",
+            #     "既定では、AI はテーマを付けません（すべて「未分類」から始まります）。付くのは、あなたが付けたときか、KUU+ で「自動で振り分け」をオンにしたときだけ。いつでも解除できます。",
+            # ),
         ],
         "tips_support_before": "音声入力のあとの書き直しや、自分での仕分けなど、気づきにくい操作は",
         "tips_support_after": "にまとめています。",
@@ -1043,6 +1054,19 @@ body {
   font-size: clamp(15px, 4vw, 16px);
 }
 
+/* ---- FAQ (よくある問い合わせ) ---- */
+.faq { padding: clamp(44px, 9vw, 68px) 0 0; }
+.faq h2 { font-size: clamp(20px, 5vw, 25px); font-weight: 600; line-height: 1.45; margin: 0; }
+.faq-list { display: grid; gap: 14px; margin-top: 22px; }
+.faq-item {
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.faq-q { margin: 0 0 8px; font-size: 15.5px; font-weight: 600; color: var(--ink); line-height: 1.55; }
+.faq-a { margin: 0; font-size: 14.5px; color: var(--ink-soft); line-height: 1.75; }
+
 /* ---- closing cta ---- */
 .closing { text-align: center; padding: clamp(48px, 10vw, 80px) 0 clamp(8px, 3vw, 24px); }
 .closing .sub { color: var(--ink-soft); margin: 0 0 22px; font-size: clamp(15px, 4vw, 16px); }
@@ -1459,6 +1483,20 @@ def tips_html(code, d):
             "      </section>"
         )
     groups_block = "\n\n".join(screens)
+
+    faq_items = "\n".join(
+        f'            <div class="faq-item"><p class="faq-q">{q}</p>'
+        f'<p class="faq-a">{a}</p></div>'
+        for q, a in d["tips_faqs"]
+    )
+    faq_block = (
+        '      <section class="faq reveal">\n'
+        "        <div class=\"wrap\">\n"
+        f"          <h2>{d['tips_faq_heading']}</h2>\n"
+        f'          <div class="faq-list stagger">\n{faq_items}\n          </div>\n'
+        "        </div>\n"
+        "      </section>"
+    )
     return f"""<!doctype html>
 <html lang="{d["html_lang"]}">
   <head>
@@ -1498,6 +1536,8 @@ def tips_html(code, d):
 
     <main>
 {groups_block}
+
+{faq_block}
 
       <section class="closing-note reveal">
         <div class="wrap">
