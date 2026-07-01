@@ -32,11 +32,12 @@ OG_IMAGE = "https://kuu-zen.com/assets/og.png"
 BASE_URL = "https://kuu-zen.com"
 # tips のスクショ (assets/tips/*.png) はファイル名を変えず中身を差し替えるため、
 # ブラウザキャッシュ回避に日付版クエリ ?v= を付ける。スクショを更新したら日付を上げる。
-ASSET_VERSION = "20260701"
+ASSET_VERSION = "20260701b"
 # これらの thumb 名は静止画でなく mp4 ループ動画で見せる（<name>.mp4 + <name>_poster.jpg）。
 # 動き（ドラッグ&ドロップ等）は動画のほうが伝わるため。iOS Safari の自動再生条件に合わせ
 # autoplay + muted + playsinline を付ける。
-VIDEO_THUMBS = {"t_move", "t_theme_drag", "t_reclassify"}
+VIDEO_THUMBS = {"t_move", "t_theme_drag", "t_reclassify",
+                "t_release", "t_theme_press", "t_remove", "t_edit"}
 # GA4 web stream measurement ID (G-XXXXXXXXXX). Empty = no analytics tag emitted.
 # Stream: properties/539320049/dataStreams/15063638495 (kuu-zen.com)
 GA4_MEASUREMENT_ID = "G-DC1R54C73B"
