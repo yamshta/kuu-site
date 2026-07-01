@@ -30,6 +30,9 @@ APP_STORE_ID = "6771264775"
 APP_STORE_URL = f"https://apps.apple.com/app/id{APP_STORE_ID}"
 OG_IMAGE = "https://kuu-zen.com/assets/og.png"
 BASE_URL = "https://kuu-zen.com"
+# tips のスクショ (assets/tips/*.png) はファイル名を変えず中身を差し替えるため、
+# ブラウザキャッシュ回避に日付版クエリ ?v= を付ける。スクショを更新したら日付を上げる。
+ASSET_VERSION = "20260701"
 # GA4 web stream measurement ID (G-XXXXXXXXXX). Empty = no analytics tag emitted.
 # Stream: properties/539320049/dataStreams/15063638495 (kuu-zen.com)
 GA4_MEASUREMENT_ID = "G-DC1R54C73B"
@@ -1478,7 +1481,7 @@ def tips_html(code, d):
         badge, title, body = it[0], it[1], it[2]
         thumb = it[3] if len(it) > 3 else ""
         thumb_html = (
-            f'<img class="thumb" src="/assets/tips/{thumb}.png" '
+            f'<img class="thumb" src="/assets/tips/{thumb}.png?v={ASSET_VERSION}" '
             f'width="900" height="562" loading="lazy" alt="" />'
             if thumb
             else ""
@@ -1494,7 +1497,7 @@ def tips_html(code, d):
             parts.append(f'          <p class="subhead">{g["subhead"]}</p>')
         for name, alt in g.get("figures", []):
             parts.append(
-                f'          <img class="figure" src="/assets/tips/{name}.png" '
+                f'          <img class="figure" src="/assets/tips/{name}.png?v={ASSET_VERSION}" '
                 f'width="1000" height="1029" loading="lazy" alt="{alt}" />'
             )
         cards = "\n".join(card(it) for it in g["items"])
@@ -1520,7 +1523,7 @@ def tips_html(code, d):
         thumb = item[2] if len(item) > 2 else ""
         answer = "".join(f'<p class="faq-a">{line}</p>' for line in lines)
         thumb_html = (
-            f'<img class="thumb" src="/assets/tips/{thumb}.png" '
+            f'<img class="thumb" src="/assets/tips/{thumb}.png?v={ASSET_VERSION}" '
             f'width="900" height="562" loading="lazy" alt="" />'
             if thumb
             else ""
