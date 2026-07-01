@@ -209,8 +209,18 @@ body {
   border: 1px solid var(--line);
   border-radius: 18px;
 }
-.faq-q { margin: 0 0 8px; font-size: 15.5px; font-weight: 600; color: var(--ink); line-height: 1.55; }
-.faq-a { margin: 0; font-size: 14.5px; color: var(--ink-soft); line-height: 1.75; }
+.faq-q { margin: 0 0 10px; font-size: 15.5px; font-weight: 600; color: var(--ink); line-height: 1.55; }
+.faq-a { margin: 0; font-size: 14.5px; color: var(--ink-soft); line-height: 1.7; }
+.faq-a + .faq-a { margin-top: 8px; }
+.faq-item .thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 16px 0 0;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface-quiet);
+}
 
 /* ---- closing cta ---- */
 .closing { text-align: center; padding: clamp(48px, 10vw, 80px) 0 clamp(8px, 3vw, 24px); }
@@ -309,10 +319,10 @@ footer {
         <div class="wrap">
           <h2>よくある問い合わせ</h2>
           <div class="faq-list stagger">
-            <div class="faq-item"><p class="faq-q">思ったように分けてくれない。精度がいまひとつ。</p><p class="faq-a">KUU の見立ては、いつも完璧ではありません。だから、あとから自分の手で直せるようにしています（タップで書き直す／長押しドラッグで移す／「分け直す」）。聞きとりと仕分けの精度は、これからも少しずつ良くしていきます。あなたが使ってくれることが、その励みになっています。</p></div>
-            <div class="faq-item"><p class="faq-q">長く話すと、ぜんぶひとつにまとめられてしまう。</p><p class="faq-a">文が続くと、区切りを見つけにくいことがあります。話すときは「〜して、（ひと呼吸）〜して」と少し間を置くと、分かれやすくなります。すでに入力したものは、「分け直す」で文章に読点や句点（、。）を足すと、区切られやすくなります。それでもまとまるときは、長押しドラッグで分けたり、タップで書き直したりできます。</p></div>
-            <div class="faq-item"><p class="faq-q">すぐ課金に誘われている気がする。</p><p class="faq-a">話して、分けて、見返す——KUU の中心は、ずっと無料で使えます。KUU+ は、広告をオフにしたい・Face ID ロックをかけたい方への、そっとした追加です。</p></div>
-            <div class="faq-item"><p class="faq-q">声を出せない場面では使いにくい。</p><p class="faq-a">ホーム下の「キーボードで書く」から、声を使わず文字でも、同じように分けられます。</p></div>
+            <div class="faq-item"><p class="faq-q">思ったように分けてくれない。精度がいまひとつ。</p><p class="faq-a">KUU の見立ては、いつも完璧ではありません。</p><p class="faq-a">だから、あとから自分の手で直せるようにしています（タップで書き直す／長押しドラッグで移す／「分け直す」）。</p><p class="faq-a">聞きとりと仕分けの精度は、これからも少しずつ良くしていきます。</p><p class="faq-a">あなたが使ってくれることが、その励みになっています。</p></div>
+            <div class="faq-item"><p class="faq-q">長く話すと、ぜんぶひとつにまとめられてしまう。</p><p class="faq-a">文が続くと、区切りを見つけにくいことがあります。</p><p class="faq-a">話すときは「〜して、（ひと呼吸）〜して」と少し間を置くと、分かれやすくなります。</p><p class="faq-a">すでに入力したものは、「分け直す」で文章に読点や句点（、。）を足すと、区切られやすくなります。</p><p class="faq-a">それでもまとまるときは、長押しドラッグで分けたり、タップで書き直したりできます。</p></div>
+            <div class="faq-item"><p class="faq-q">すぐ課金に誘われている気がする。</p><p class="faq-a">話して、分けて、見返す——KUU の中心は、ずっと無料で使えます。</p><p class="faq-a">KUU+ は、広告をオフにしたい・Face ID ロックをかけたい方への、そっとした追加です。</p></div>
+            <div class="faq-item"><p class="faq-q">声を出せない場面では使いにくい。</p><p class="faq-a">ホーム下の「キーボードで書く」から、声を使わず文字でも、同じように分けられます。</p><img class="thumb" src="/assets/tips/t_keyboard.png" width="900" height="562" loading="lazy" alt="" /></div>
           </div>
         </div>
       </section>
