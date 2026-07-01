@@ -33,6 +33,10 @@ BASE_URL = "https://kuu-zen.com"
 # tips のスクショ (assets/tips/*.png) はファイル名を変えず中身を差し替えるため、
 # ブラウザキャッシュ回避に日付版クエリ ?v= を付ける。スクショを更新したら日付を上げる。
 ASSET_VERSION = "20260701"
+# これらの thumb 名は静止画でなく mp4 ループ動画で見せる（<name>.mp4 + <name>_poster.jpg）。
+# 動き（ドラッグ&ドロップ等）は動画のほうが伝わるため。iOS Safari の自動再生条件に合わせ
+# autoplay + muted + playsinline を付ける。
+VIDEO_THUMBS = {"t_move"}
 # GA4 web stream measurement ID (G-XXXXXXXXXX). Empty = no analytics tag emitted.
 # Stream: properties/539320049/dataStreams/15063638495 (kuu-zen.com)
 GA4_MEASUREMENT_ID = "G-DC1R54C73B"
@@ -1480,14 +1484,23 @@ def tips_html(code, d):
     def card(it):
         badge, title, body = it[0], it[1], it[2]
         thumb = it[3] if len(it) > 3 else ""
-        thumb_html = (
-            f'<img class="thumb" src="/assets/tips/{thumb}.png?v={ASSET_VERSION}" '
-            f'width="900" height="562" loading="lazy" alt="" />'
-            if thumb
-            else ""
-        )
+        if thumb in VIDEO_THUMBS:
+            media = (
+                f'<video class="thumb" autoplay loop muted playsinline preload="metadata" '
+                f'width="860" height="798" '
+                f'poster="/assets/tips/{thumb}_poster.jpg?v={ASSET_VERSION}">'
+                f'<source src="/assets/tips/{thumb}.mp4?v={ASSET_VERSION}" type="video/mp4" />'
+                f"</video>"
+            )
+        elif thumb:
+            media = (
+                f'<img class="thumb" src="/assets/tips/{thumb}.png?v={ASSET_VERSION}" '
+                f'width="900" height="562" loading="lazy" alt="" />'
+            )
+        else:
+            media = ""
         return (
-            f'            <div class="tip">{thumb_html}<span class="badge">{badge}</span>'
+            f'            <div class="tip">{media}<span class="badge">{badge}</span>'
             f"<h3>{title}</h3><p>{body}</p></div>"
         )
 
