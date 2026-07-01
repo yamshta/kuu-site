@@ -851,6 +851,24 @@ REVEAL_SCRIPT = """\
 </script>
 """
 
+# Tips page reveal: sections are tall, so a 16% threshold never fires for the first
+# section within the initial viewport → it stayed hidden until scroll (blank first view).
+# threshold 0 + slight bottom rootMargin: reveal as soon as any part enters (first
+# section shows on load). No water-orb logic (tips has no orb).
+TIPS_REVEAL_SCRIPT = """\
+<script>
+  document.documentElement.classList.add('js');
+  addEventListener('DOMContentLoaded', function () {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  });
+</script>
+"""
+
 SUPPORT_CSS = """\
 :root {
   color-scheme: light;
@@ -931,13 +949,13 @@ body {
 .wrap { max-width: 660px; margin: 0 auto; padding: 0 24px; }
 
 /* ---- header ---- */
-.tips-hero { text-align: center; padding: clamp(56px, 12vw, 104px) 24px clamp(4px, 3vw, 16px); }
+.tips-hero { text-align: center; padding: clamp(40px, 8vw, 64px) 24px clamp(4px, 3vw, 14px); }
 .wordmark {
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.42em;
   color: var(--primary-deep);
-  margin: 0 0 clamp(20px, 4vw, 32px) 0.42em;
+  margin: 0 0 clamp(14px, 3vw, 22px) 0.42em;
 }
 .eyebrow {
   font-size: 12px;
@@ -1505,7 +1523,7 @@ def tips_html(code, d):
         </div>
       </div>
     </footer>
-{REVEAL_SCRIPT}  </body>
+{TIPS_REVEAL_SCRIPT}  </body>
 </html>
 """
 
