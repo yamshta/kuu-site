@@ -100,9 +100,9 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
       <ul>
       <li>Only the <strong>text of what you said (the transcript)</strong> is sent. Your voice is never sent.
       </li>
-      <li>It is sent to a server operated by the developer (Google Cloud Run), where Google Vertex AI (Gemini) performs the categorization.
+      <li>It is sent to an external cloud AI, relayed through the developer's server.
       </li>
-      <li>The sent text is <strong>used only for categorization and is never stored</strong> on the server or in logs. Under Vertex AI terms, it is not used to train the AI either.
+      <li>The sent text is <strong>used only for categorization and is never stored</strong>. It is not used to train the AI either.
       </li>
       <li>You can switch to <strong>on-device-only organization</strong> (Apple's FoundationModels / on-device rules) anytime via "On-device" in Settings. In that case, the transcript never leaves the device.
       </li></ul>
@@ -127,7 +127,7 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
       </li>
       <li><strong>Speech framework</strong> (Apple, runs entirely on-device)
       </li>
-      <li><strong>kuu-api / Google Vertex AI (Gemini)</strong> (default AI organization. Only the transcript text is sent; used solely for categorization, never stored, never used for AI training. Can be turned off via "On-device" in Settings.)
+      <li><strong>An external cloud AI</strong> (default AI organization. Only the text of what you said is sent; used solely for categorization, never stored, never used for AI training. Can be turned off via "On-device" in Settings.)
       </li>
       <li><strong>FoundationModels</strong> (Apple, runs entirely on-device. Used when "On-device" is enabled, or as fallback.)
       </li>
