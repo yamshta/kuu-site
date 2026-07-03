@@ -100,8 +100,8 @@ LOCALES = {
         "quadrants_aria": "KUU マトリクス",
         # Privacy
         "privacy_eyebrow": "プライバシー",
-        "privacy_headline": "話した内容は、外に出ない。",
-        "privacy_body": "音声の聞きとりも整理も、すべて端末の中だけ。音声そのものは残しません。話したことは、あなたの iCloud（プライベート）にだけ同期されます。",
+        "privacy_headline": "あなたの声は、外に出ない。",
+        "privacy_body": "音声の聞きとりはすべて端末の中だけ。声そのものは残さず、送りません。整理には AI を使い、送るのは文字にした内容だけ。それも保存されません（設定で端末内のみにもできます）。話したことは、あなたの iCloud（プライベート）にだけ同期されます。",
         # Closing
         "closing_headline": "話したあと、すこし頭が軽い。",
         "closing_sub": "それだけのための、静かなアプリです。",
@@ -120,7 +120,7 @@ LOCALES = {
         "faqs": [
             (
                 "声は保存されますか？",
-                "いいえ。KUU は音声を端末から外に出さず、認識が完了したら一時音声ファイルを削除します。残るのは文字起こしと分類結果のみです。",
+                "いいえ。KUU は音声を端末から外に出さず、認識が完了したら一時音声ファイルを削除します。整理のために外部の AI に送るのは文字にした内容だけで、それも保存されません。残るのは、あなたの端末と iCloud にある文字起こしと分類結果だけです。",
             ),
             (
                 "iCloud 同期は？",
@@ -280,8 +280,8 @@ LOCALES = {
         ],
         "quadrants_aria": "KUU matrix",
         "privacy_eyebrow": "Privacy",
-        "privacy_headline": "What you say stays with you.",
-        "privacy_body": "Listening and sorting happen entirely on your device. The audio itself is never kept. Your notes sync only to your private iCloud.",
+        "privacy_headline": "Your voice stays with you.",
+        "privacy_body": "Listening happens entirely on your device — your voice is never kept or sent. Sorting uses AI, so only the text is sent, and it is never kept (you can switch to on-device only). Your notes sync only to your private iCloud.",
         "closing_headline": "After you speak, your head feels lighter.",
         "closing_sub": "A quiet app, made only for that.",
         "support_label": "Support",
@@ -297,7 +297,7 @@ LOCALES = {
         "faqs": [
             (
                 "Is my voice saved?",
-                "No. KUU does not send audio off the device, and temporary audio files are deleted once transcription completes. Only the transcript and classification result are kept.",
+                "No. KUU does not send audio off the device, and temporary audio files are deleted once transcription completes. Only the text is sent to an external AI for sorting, and it is not kept either. What remains is the transcript and classification on your device and iCloud.",
             ),
             (
                 "Does it sync via iCloud?",
@@ -350,8 +350,8 @@ LOCALES = {
         ],
         "quadrants_aria": "Matriz KUU",
         "privacy_eyebrow": "Privacidad",
-        "privacy_headline": "Lo que dices se queda contigo.",
-        "privacy_body": "Escuchar y separar ocurren por completo en tu dispositivo. El audio nunca se guarda. Tus notas se sincronizan solo con tu iCloud privado.",
+        "privacy_headline": "Tu voz se queda contigo.",
+        "privacy_body": "Escuchar ocurre por completo en tu dispositivo: tu voz nunca se guarda ni se envía. La organización usa IA, así que solo se envía el texto, y este nunca se guarda (puedes cambiar a solo en el dispositivo). Tus notas se sincronizan solo con tu iCloud privado.",
         "closing_headline": "Tras hablar, la cabeza se siente más ligera.",
         "closing_sub": "Una app tranquila, hecha solo para eso.",
         "support_label": "Soporte",
@@ -367,7 +367,7 @@ LOCALES = {
         "faqs": [
             (
                 "¿Se guarda mi voz?",
-                "No. KUU no envía el audio fuera del dispositivo y elimina los archivos de audio temporales una vez completada la transcripción. Solo se conservan la transcripción y la clasificación.",
+                "No. KUU no envía el audio fuera del dispositivo y elimina los archivos de audio temporales una vez completada la transcripción. Solo se envía el texto a una IA externa para organizarlo, y tampoco se guarda. Lo que queda es la transcripción y la clasificación en tu dispositivo e iCloud.",
             ),
             (
                 "¿Se sincroniza con iCloud?",
@@ -420,8 +420,8 @@ LOCALES = {
         ],
         "quadrants_aria": "KUU 매트릭스",
         "privacy_eyebrow": "개인정보",
-        "privacy_headline": "말한 내용은, 밖으로 나가지 않습니다.",
-        "privacy_body": "듣기도 정리도 모두 기기 안에서만. 음성 자체는 남기지 않습니다. 말한 것은 당신의 iCloud(프라이빗)에만 동기화됩니다.",
+        "privacy_headline": "당신의 목소리는, 밖으로 나가지 않습니다.",
+        "privacy_body": "듣기는 모두 기기 안에서만 이루어지며, 음성 자체는 남기거나 보내지 않습니다. 정리에는 AI를 사용하므로 텍스트만 보내며, 그것도 남지 않습니다(기기 내 전용으로 바꿀 수도 있습니다). 말한 것은 당신의 iCloud(프라이빗)에만 동기화됩니다.",
         "closing_headline": "말하고 나면, 머리가 조금 가볍습니다.",
         "closing_sub": "오직 그것을 위한, 조용한 앱입니다.",
         "support_label": "지원",
@@ -437,7 +437,7 @@ LOCALES = {
         "faqs": [
             (
                 "음성이 저장되나요?",
-                "아닙니다. KUU는 음성을 기기 밖으로 보내지 않으며, 인식이 완료되면 임시 음성 파일을 즉시 삭제합니다. 텍스트와 분류 결과만 남습니다.",
+                "아닙니다. KUU는 음성을 기기 밖으로 보내지 않으며, 인식이 완료되면 임시 음성 파일을 즉시 삭제합니다. 정리를 위해 외부 AI로 보내는 것은 텍스트뿐이며, 그것도 저장되지 않습니다. 남는 것은 기기와 iCloud에 있는 텍스트와 분류 결과뿐입니다.",
             ),
             (
                 "iCloud 동기화는 되나요?",
@@ -490,8 +490,8 @@ LOCALES = {
         ],
         "quadrants_aria": "KUU 矩阵",
         "privacy_eyebrow": "隐私",
-        "privacy_headline": "你说的内容，不会出去。",
-        "privacy_body": "聆听与整理，全都只在你的设备里完成。语音本身从不保留。记录只同步到你私人的 iCloud。",
+        "privacy_headline": "你的声音，不会出去。",
+        "privacy_body": "聆听全都只在你的设备里完成——语音本身从不保留或发送。整理会使用 AI，因此只发送文字内容，而且不会保留（也可切换为仅在设备端）。记录只同步到你私人的 iCloud。",
         "closing_headline": "说完之后，脑袋轻一点。",
         "closing_sub": "一款只为此而生的、安静的应用。",
         "support_label": "支持",
@@ -507,7 +507,7 @@ LOCALES = {
         "faqs": [
             (
                 "我的语音会被保存吗?",
-                "不会。KUU 不会将音频传输到设备外,识别完成后会立即删除临时音频文件。仅保留转录结果和分类结果。",
+                "不会。KUU 不会将音频传输到设备外,识别完成后会立即删除临时音频文件。为整理而发送给外部 AI 的只有文字内容,且不会保留。留下的只有你设备和 iCloud 中的转录结果和分类结果。",
             ),
             (
                 "是否通过 iCloud 同步?",
@@ -1635,7 +1635,7 @@ def tips_html(code, d):
 PRIVACY_META = {
     "ja": {
         "title": "プライバシーポリシー — KUU",
-        "description": "KUU のプライバシーポリシー。音声認識も AI 分類もすべて端末内で完結し、話した内容は外部に送信されません。",
+        "description": "KUU のプライバシーポリシー。音声はすべて端末内で処理し外部に送信しません。整理の AI 分類は既定で文字だけを送信し保存しません（設定で端末内のみにもできます）。",
     },
     "en": {
         "title": "Privacy Policy — KUU",
