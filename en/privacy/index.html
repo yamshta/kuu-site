@@ -92,13 +92,20 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
       </li></ol>
       <p>The App does not collect names, email addresses, phone numbers, location, contacts, calendar, photos, or device identifiers.</p>
       <h2>Article 3 (Speech Recognition and AI Organization)</h2>
-      <p>Speech recognition (transcription) and AI organization (categorization) are performed <strong>entirely on your iOS device</strong>:</p>
+      <p><strong>Speech recognition (transcription)</strong> is performed entirely on your iOS device:</p>
       <ul>
-      <li>Speech recognition: Apple's Speech framework (on-device)
-      </li>
-      <li>AI organization: Apple's FoundationModels (on-device)
+      <li>Speech recognition: Apple's Speech framework (on-device). Your voice itself is never sent off the device.
       </li></ul>
-      <p>None of your spoken content, transcribed text, or organized results is ever sent to the developer's servers or any third-party server.</p>
+      <p><strong>AI organization (categorization)</strong> uses an external AI by default:</p>
+      <ul>
+      <li>Only the <strong>text of what you said (the transcript)</strong> is sent. Your voice is never sent.
+      </li>
+      <li>It is sent to an external cloud AI, relayed through the developer's server.
+      </li>
+      <li>The sent text is <strong>used only for categorization and is never stored</strong>. It is not used to train the AI either.
+      </li>
+      <li>You can switch to <strong>on-device-only organization</strong> (Apple's FoundationModels / on-device rules) anytime via "On-device" in Settings. In that case, the transcript never leaves the device.
+      </li></ul>
       <h2>Article 4 (iCloud Storage and Sync)</h2>
       <p>The App stores transcribed and organized text in your <strong>iCloud Private Database</strong> (CloudKit Private Database). This is Apple-provided storage that only you can access. The developer cannot view or retrieve any stored content.</p>
       <p>The use of iCloud is subject to Apple's privacy policy.</p>
@@ -114,13 +121,15 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
       <li>Maintaining app settings
       </li></ol>
       <h2>Article 6 (External Services)</h2>
-      <p>The App uses the following external services. <strong>Your spoken content, transcripts, and organized results are not sent to any of them.</strong></p>
+      <p>The App uses the following external services. <strong>Your voice itself is not sent to any of them.</strong></p>
       <ul>
       <li><strong>iCloud / CloudKit</strong> (Apple, only your own private database)
       </li>
       <li><strong>Speech framework</strong> (Apple, runs entirely on-device)
       </li>
-      <li><strong>FoundationModels</strong> (Apple, runs entirely on-device)
+      <li><strong>An external cloud AI</strong> (default AI organization. Only the text of what you said is sent; used solely for categorization, never stored, never used for AI training. Can be turned off via "On-device" in Settings.)
+      </li>
+      <li><strong>FoundationModels</strong> (Apple, runs entirely on-device. Used when "On-device" is enabled, or as fallback.)
       </li>
       <li><strong>Apple StoreKit</strong> (KUU+ subscription purchase, renewal, cancellation. No spoken content is sent.)
       </li>
@@ -128,7 +137,7 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
       </li>
       <li><strong>Firebase Analytics / Crashlytics</strong> (Google. For app quality improvement and stability monitoring. <strong>Used only when you explicitly opt in via Settings.</strong> No spoken content is sent. See Article 14.)
       </li></ul>
-      <p>The App does not operate its own server and does not use authentication services. Analytics and crash reporting are gated on user opt-in.</p>
+      <p>The App operates a minimal stateless server only to relay AI organization requests (no content is stored). It does not use authentication services requiring personal accounts. Analytics and crash reporting are gated on user opt-in.</p>
       <h2>Article 7 (Third-Party Disclosure)</h2>
       <p>The developer has no means to access your spoken content, transcripts, or organized results, and discloses none of them to any third party.</p>
       <p>To deliver ads to users not subscribed to KUU+, the App sends information required by Google AdMob for ad delivery — including device identifiers, advertising ID, device language and region, coarse location, and ad interaction data — to Google (see Article 13; Google's AdMob privacy policy applies). While KUU+ is active, this transmission does not occur.</p>
