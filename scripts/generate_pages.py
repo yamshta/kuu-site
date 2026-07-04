@@ -36,6 +36,9 @@ def app_store_cta_url(code):
     return f"https://apps.apple.com/{country}/app/id{APP_STORE_ID}"
 OG_IMAGE = "https://kuu-zen.com/assets/og.png"
 BASE_URL = "https://kuu-zen.com"
+# App Store の実評価 (社会的証明として journal 記事の CTA に表示)。
+# 取得元: https://itunes.apple.com/lookup?id=6771264775&country=jp — 定期的に手動で更新する。
+APP_RATING = {"score": "4.2", "count": 168}
 # tips のスクショ (assets/tips/*.png) はファイル名を変えず中身を差し替えるため、
 # ブラウザキャッシュ回避に日付版クエリ ?v= を付ける。スクショを更新したら日付を上げる。
 ASSET_VERSION = "20260701b"
@@ -248,6 +251,8 @@ LOCALES = {
         "journal_updated_label": "更新:",
         "journal_pitch_headline": "声に出すと、少し軽くなる。",
         "journal_pitch_body": "KUU は、話すだけで頭の中を「いま見る / あとで考える / 寝かせる / 手放す」に整える、静かなアプリです。",
+        "journal_pitch_note": "無料でダウンロードできます。",
+        "journal_rating_suffix": "件の評価",
         "journal_related_label": "あわせて読みたい",
         "journal_back_label": "読みものへ戻る",
     },
@@ -790,6 +795,7 @@ h2 {
   padding: 6px max(24px, calc((100vw - 660px) / 2)) 10px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  cursor: grab;
 }
 .showcase::-webkit-scrollbar { display: none; }
 .shot {
@@ -927,6 +933,47 @@ TIPS_REVEAL_SCRIPT = """\
 </script>
 """
 
+# Horizontal shot galleries (.showcase / .pitch-shots) scroll natively via touch/trackpad,
+# but a plain mouse has no way to drag them — this adds click-and-drag for mouse only,
+# leaving touch/trackpad's native momentum scroll untouched.
+# Uses classic mouse events (not Pointer Events): a scrollable + scroll-snap element makes
+# Chromium hijack the pointer capture as a native pan gesture and fire pointercancel instead
+# of pointerup mid-drag, snapping the scroll back to 0. Plain mousemove/mouseup on document
+# (not the element) isn't subject to that native takeover and keeps tracking past the element's edge.
+DRAG_SCROLL_SCRIPT = """\
+<script>
+  document.querySelectorAll('.showcase, .pitch-shots').forEach(function (el) {
+    var down = false, startX = 0, startScroll = 0, raf = null, lastX = 0;
+    function apply() {
+      raf = null;
+      el.scrollLeft = startScroll - (lastX - startX);
+    }
+    el.addEventListener('mousedown', function (e) {
+      down = true;
+      startX = lastX = e.clientX;
+      startScroll = el.scrollLeft;
+      // mandatory snap fights the per-frame scrollLeft write and stutters — suspend while dragging.
+      el.style.scrollSnapType = 'none';
+      el.style.cursor = 'grabbing';
+      e.preventDefault();
+    });
+    document.addEventListener('mousemove', function (e) {
+      if (!down) return;
+      lastX = e.clientX;
+      // batch to one write per frame instead of one per mousemove (which fires far more often
+      // than the display refreshes) — the latter is what caused the choppy motion.
+      if (raf == null) raf = requestAnimationFrame(apply);
+    });
+    document.addEventListener('mouseup', function () {
+      if (!down) return;
+      down = false;
+      el.style.cursor = '';
+      el.style.scrollSnapType = '';
+    });
+  });
+</script>
+"""
+
 SUPPORT_CSS = """\
 :root {
   color-scheme: light;
@@ -1000,23 +1047,56 @@ article ul, article ol { line-height: 1.9; color: var(--ink-soft); padding-left:
 article li { margin: 4px 0; }
 .cta {
   display: inline-block;
-  margin-top: 8px;
-  padding: 13px 26px;
-  background: var(--primary-soft);
-  color: var(--primary-deep);
+  margin-top: 18px;
+  padding: 15px 34px;
+  background: var(--primary-deep);
+  color: #fff;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+.cta:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -12px rgba(37, 80, 105, 0.5); }
 .kuu-pitch {
   margin-top: 48px;
-  padding: 28px 24px;
+  padding: 32px 28px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 18px;
+  text-align: center;
 }
-.kuu-pitch h2 { margin-top: 0; font-size: 18px; }
+.kuu-pitch h2 { margin-top: 0; font-size: 19px; }
+.kuu-pitch p { color: var(--ink-soft); }
+.pitch-shots {
+  display: flex;
+  gap: 14px;
+  margin: 0 0 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
+}
+.pitch-shots::-webkit-scrollbar { display: none; }
+.pitch-shot {
+  flex: 0 0 auto;
+  width: min(48vw, 180px);
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  box-shadow: 0 16px 32px -20px rgba(94, 151, 194, 0.55);
+  scroll-snap-align: start;
+}
+.rating {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-deep);
+  margin: 0 0 16px;
+}
+.rating .rating-count { font-weight: 400; color: var(--ink-soft); }
+.kuu-pitch .note { margin: 12px 0 0; font-size: 13px; color: var(--ink-soft); }
 .related {
   margin-top: 40px;
   padding-top: 24px;
@@ -1365,8 +1445,8 @@ def index_html(code, d):
     )
     screens_html = "\n".join(
         f'        <img class="shot" src="/assets/store/{code}/{n:02d}.png" '
-        f'width="600" height="1303" loading="lazy" alt="{d["screen_alt"]} {n}" />'
-        for n in range(1, 7)
+        f'width="1320" height="2868" loading="lazy" alt="{d["screen_alt"]} {n}" />'
+        for n in range(1, 10)
     )
     support_href = "/support/" if not d["subdir"] else f'/{d["subdir"]}/support/'
     privacy_href = "/privacy/" if code == "ja" else "/en/privacy/"
@@ -1489,7 +1569,7 @@ def index_html(code, d):
         </nav>
       </div>
     </footer>
-{REVEAL_SCRIPT}  </body>
+{REVEAL_SCRIPT}{DRAG_SCROLL_SCRIPT}  </body>
 </html>
 """
 
@@ -1943,6 +2023,12 @@ def article_html(code, meta, articles_by_slug):
         </ul>
       </nav>"""
 
+    pitch_shots_html = "\n".join(
+        f'          <img class="pitch-shot" src="/assets/store/{code}/{n:02d}.png" '
+        f'width="1320" height="2868" loading="lazy" alt="{d["screen_alt"]} {n}" />'
+        for n in range(1, 10)
+    )
+
     return f"""<!doctype html>
 <html lang="{d["html_lang"]}">
   <head>
@@ -1982,9 +2068,14 @@ def article_html(code, meta, articles_by_slug):
       </article>
 
       <div class="kuu-pitch">
+        <div class="pitch-shots" aria-label="{d["app_eyebrow"]}">
+{pitch_shots_html}
+        </div>
+        <p class="rating">★ {APP_RATING["score"]}<span class="rating-count"> ・ {APP_RATING["count"]}{d["journal_rating_suffix"]}</span></p>
         <h2>{d["journal_pitch_headline"]}</h2>
         <p>{d["journal_pitch_body"]}</p>
         <a class="cta" href="{cta_base}?ct=journal_{slug}" rel="noopener">{d["cta"]}</a>
+        <p class="note">{d["journal_pitch_note"]}</p>
       </div>
 {related_html}
 
@@ -1995,7 +2086,7 @@ def article_html(code, meta, articles_by_slug):
         <a href="{privacy_href}">{d["privacy_label"]}</a>
       </nav>
     </main>
-  </body>
+{DRAG_SCROLL_SCRIPT}  </body>
 </html>
 """
 

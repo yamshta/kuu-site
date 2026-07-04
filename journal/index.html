@@ -97,23 +97,56 @@ article ul, article ol { line-height: 1.9; color: var(--ink-soft); padding-left:
 article li { margin: 4px 0; }
 .cta {
   display: inline-block;
-  margin-top: 8px;
-  padding: 13px 26px;
-  background: var(--primary-soft);
-  color: var(--primary-deep);
+  margin-top: 18px;
+  padding: 15px 34px;
+  background: var(--primary-deep);
+  color: #fff;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+.cta:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -12px rgba(37, 80, 105, 0.5); }
 .kuu-pitch {
   margin-top: 48px;
-  padding: 28px 24px;
+  padding: 32px 28px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 18px;
+  text-align: center;
 }
-.kuu-pitch h2 { margin-top: 0; font-size: 18px; }
+.kuu-pitch h2 { margin-top: 0; font-size: 19px; }
+.kuu-pitch p { color: var(--ink-soft); }
+.pitch-shots {
+  display: flex;
+  gap: 14px;
+  margin: 0 0 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
+}
+.pitch-shots::-webkit-scrollbar { display: none; }
+.pitch-shot {
+  flex: 0 0 auto;
+  width: min(48vw, 180px);
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  box-shadow: 0 16px 32px -20px rgba(94, 151, 194, 0.55);
+  scroll-snap-align: start;
+}
+.rating {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-deep);
+  margin: 0 0 16px;
+}
+.rating .rating-count { font-weight: 400; color: var(--ink-soft); }
+.kuu-pitch .note { margin: 12px 0 0; font-size: 13px; color: var(--ink-soft); }
 .related {
   margin-top: 40px;
   padding-top: 24px;
@@ -140,8 +173,8 @@ article li { margin: 4px 0; }
       <ul class="cards">
         <li class="card">
           <a href="/journal/kangaesugi-yametai/">
-            <h2>考えすぎてしまう夜に。「反芻思考」を止める4つの具体的な方法</h2>
-            <p>考えすぎて疲れる、同じことを何度も頭の中で繰り返してしまう「反芻思考」。なぜ起きるのか、その場で軽くする4つの対処法をまとめました。</p>
+            <h2>考えすぎて疲れる夜に。同じことを何度も考えてしまうときの4つの対処法</h2>
+            <p>考えすぎて疲れる、同じことを何度も頭の中で繰り返してしまう。なぜそうなるのか、いま試せる4つの対処法を、具体的なやり方とあわせてまとめました。</p>
           </a>
         </li>
       </ul>

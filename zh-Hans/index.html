@@ -319,6 +319,7 @@ h2 {
   padding: 6px max(24px, calc((100vw - 660px) / 2)) 10px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  cursor: grab;
 }
 .showcase::-webkit-scrollbar { display: none; }
 .shot {
@@ -454,12 +455,15 @@ footer {
           <h2>这就是 KUU。</h2>
         </div>
         <div class="showcase stagger" aria-label="应用">
-        <img class="shot" src="/assets/store/zh-Hans/01.png" width="600" height="1303" loading="lazy" alt="KUU 界面 1" />
-        <img class="shot" src="/assets/store/zh-Hans/02.png" width="600" height="1303" loading="lazy" alt="KUU 界面 2" />
-        <img class="shot" src="/assets/store/zh-Hans/03.png" width="600" height="1303" loading="lazy" alt="KUU 界面 3" />
-        <img class="shot" src="/assets/store/zh-Hans/04.png" width="600" height="1303" loading="lazy" alt="KUU 界面 4" />
-        <img class="shot" src="/assets/store/zh-Hans/05.png" width="600" height="1303" loading="lazy" alt="KUU 界面 5" />
-        <img class="shot" src="/assets/store/zh-Hans/06.png" width="600" height="1303" loading="lazy" alt="KUU 界面 6" />
+        <img class="shot" src="/assets/store/zh-Hans/01.png" width="1320" height="2868" loading="lazy" alt="KUU 界面 1" />
+        <img class="shot" src="/assets/store/zh-Hans/02.png" width="1320" height="2868" loading="lazy" alt="KUU 界面 2" />
+        <img class="shot" src="/assets/store/zh-Hans/03.png" width="1320" height="2868" loading="lazy" alt="KUU 界面 3" />
+        <img class="shot" src="/assets/store/zh-Hans/04.png" width="1320" height="2868" loading="lazy" alt="KUU 界面 4" />
+        <img class="shot" src="/assets/store/zh-Hans/05.png" width="1320" height="2868" loading="lazy" alt="KUU 界面 5" />
+        <img class="shot" src="/assets/store/zh-Hans/06.png" width="1320" height="2868" loading="lazy" alt="KUU 界面 6" />
+        <img class="shot" src="/assets/store/zh-Hans/07.png" width="1320" height="2868" loading="lazy" alt="KUU 界面 7" />
+        <img class="shot" src="/assets/store/zh-Hans/08.png" width="1320" height="2868" loading="lazy" alt="KUU 界面 8" />
+        <img class="shot" src="/assets/store/zh-Hans/09.png" width="1320" height="2868" loading="lazy" alt="KUU 界面 9" />
         </div>
       </section>
 
@@ -535,6 +539,37 @@ footer {
       if (!ticking) { ticking = true; requestAnimationFrame(update); }
     }, { passive: true });
     update();
+  });
+</script>
+<script>
+  document.querySelectorAll('.showcase, .pitch-shots').forEach(function (el) {
+    var down = false, startX = 0, startScroll = 0, raf = null, lastX = 0;
+    function apply() {
+      raf = null;
+      el.scrollLeft = startScroll - (lastX - startX);
+    }
+    el.addEventListener('mousedown', function (e) {
+      down = true;
+      startX = lastX = e.clientX;
+      startScroll = el.scrollLeft;
+      // mandatory snap fights the per-frame scrollLeft write and stutters — suspend while dragging.
+      el.style.scrollSnapType = 'none';
+      el.style.cursor = 'grabbing';
+      e.preventDefault();
+    });
+    document.addEventListener('mousemove', function (e) {
+      if (!down) return;
+      lastX = e.clientX;
+      // batch to one write per frame instead of one per mousemove (which fires far more often
+      // than the display refreshes) — the latter is what caused the choppy motion.
+      if (raf == null) raf = requestAnimationFrame(apply);
+    });
+    document.addEventListener('mouseup', function () {
+      if (!down) return;
+      down = false;
+      el.style.cursor = '';
+      el.style.scrollSnapType = '';
+    });
   });
 </script>
   </body>
