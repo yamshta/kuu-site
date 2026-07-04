@@ -1207,6 +1207,14 @@ def ga4_snippet():
       function gtag() {{ dataLayer.push(arguments); }}
       gtag('js', new Date());
       gtag('config', '{GA4_MEASUREMENT_ID}');
+      // LP 唯一のゴール = App Store 遷移を計測。link_location は CTA の ct= (lp_hero/lp_footer/lp_tips)。
+      // GA4 は sendBeacon で送るため同一タブ遷移でも欠落しない。capture で stopPropagation 耐性を持たせる。
+      document.addEventListener('click', function (e) {{
+        var a = e.target.closest && e.target.closest('a[href*="apps.apple.com"]');
+        if (!a) return;
+        var m = a.href.match(/[?&]ct=([^&]+)/);
+        gtag('event', 'app_store_click', {{ link_location: m ? m[1] : 'other' }});
+      }}, true);
     </script>"""
 
 
