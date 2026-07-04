@@ -5,7 +5,7 @@ title: "考えすぎて疲れる夜に。同じことを何度も考えてしま
 description: "考えすぎて疲れる、同じことを何度も頭の中で繰り返してしまう。なぜそうなるのか、いま試せる4つの対処法を、具体的なやり方とあわせてまとめました。"
 target_keywords: ["考えすぎ やめたい", "考えすぎ 疲れる", "同じこと 何度も考えてしまう"]
 persona: null
-hub: null
+hub: brain-dump-yarikata
 spokes: []
 updated: 2026-07-05
 ---
