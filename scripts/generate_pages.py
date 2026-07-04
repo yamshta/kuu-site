@@ -21,6 +21,9 @@ import json
 import re
 from pathlib import Path
 
+import markdown as md_lib
+import yaml
+
 ROOT = Path(__file__).resolve().parent.parent
 APP_STORE_ID = "6771264775"
 # installUrl(構造化データ)は国コードなし canonical。CTA リンクは locale ごとの国コード付き。
@@ -48,6 +51,8 @@ GA4_MEASUREMENT_ID = "G-DC1R54C73B"
 PRIVACY_LOCALES = ("ja", "en")
 # Usage tips page is ja-only for now (other locales added later, same pattern as PRIVACY_LOCALES).
 TIPS_LOCALES = ("ja",)
+# Content SEO articles (/journal/<slug>/) are ja-only for now, same pattern as TIPS_LOCALES.
+JOURNAL_LOCALES = ("ja",)
 
 LOCALES = {
     "ja": {
@@ -235,6 +240,16 @@ LOCALES = {
         "tips_support_before": "音声入力のあとの書き直しや、自分での仕分けなど、気づきにくい操作は",
         "tips_support_after": "にまとめています。",
         "back": "← トップへ",
+        # Journal (content SEO articles): pain/method/persona/scene archetypes, KUU-first ではなく悩み起点。
+        "journal_eyebrow": "読みもの",
+        "journal_hub_title": "読みもの — KUU",
+        "journal_hub_description": "頭の中がいっぱいになったときの、考えごととの付き合い方。",
+        "journal_hub_lead": "頭の中がいっぱいになったときに、少し軽くするためのヒント。",
+        "journal_updated_label": "更新:",
+        "journal_pitch_headline": "声に出すと、少し軽くなる。",
+        "journal_pitch_body": "KUU は、話すだけで頭の中を「いま見る / あとで考える / 寝かせる / 手放す」に整える、静かなアプリです。",
+        "journal_related_label": "あわせて読みたい",
+        "journal_back_label": "読みものへ戻る",
     },
     "en": {
         "subdir": "en",
@@ -957,6 +972,67 @@ a { color: var(--ink); }
 .langs a { color: var(--ink-soft); text-decoration: none; }
 .langs a[aria-current="true"] { color: var(--ink); font-weight: 600; }
 .langs a:hover { text-decoration: underline; }
+"""
+
+# Journal (content SEO article + hub) pages: long-form reading layout on top of SUPPORT_CSS,
+# plus the LP's pill CTA and a card grid for the /journal/ hub listing.
+JOURNAL_CSS = SUPPORT_CSS + """\
+:root {
+  --primary: #7fb2d6;
+  --primary-deep: #5e97c2;
+  --primary-soft: #dceaf4;
+}
+main { max-width: 680px; }
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--primary-deep);
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+h1 { line-height: 1.4; }
+.updated { font-size: 13px; color: var(--ink-soft); margin: 0 0 32px; }
+article h2 { font-size: 20px; margin: 40px 0 12px; }
+article h3 { font-size: 16px; margin: 24px 0 8px; }
+article p { line-height: 1.9; }
+article ul, article ol { line-height: 1.9; color: var(--ink-soft); padding-left: 1.4em; margin: 0 0 16px; }
+article li { margin: 4px 0; }
+.cta {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 13px 26px;
+  background: var(--primary-soft);
+  color: var(--primary-deep);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+.kuu-pitch {
+  margin-top: 48px;
+  padding: 28px 24px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.kuu-pitch h2 { margin-top: 0; font-size: 18px; }
+.related {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.related h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); margin: 0 0 12px; }
+.related ul { list-style: none; padding: 0; margin: 0; }
+.related li { margin: 8px 0; }
+.footer-links { display: flex; gap: 20px; margin-top: 24px; font-size: 13px; }
+.footer-links a { color: var(--ink-soft); text-decoration: none; }
+.footer-links a:hover { text-decoration: underline; }
+.cards { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 16px; }
+.card { border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+.card a { display: block; padding: 20px 22px; text-decoration: none; color: inherit; }
+.card h2 { margin: 0 0 6px; font-size: 17px; }
+.card p { margin: 0; font-size: 14px; color: var(--ink-soft); }
 """
 
 # Tips page: lighter than the LP (no orb), card-per-gesture. Tokens mirror KUUColors.
@@ -1776,7 +1852,201 @@ def split_privacy_md():
     return {"ja": ja_md, "en": marker + en_md}
 
 
-def sitemap_xml():
+# content/<lang>/journal/<slug>.md: YAML front matter + Markdown body.
+FRONT_MATTER_RE = re.compile(r"\A---\n(.*?)\n---\n(.*)\Z", re.DOTALL)
+
+
+def parse_article_md(path):
+    raw = path.read_text()
+    m = FRONT_MATTER_RE.match(raw)
+    if not m:
+        raise ValueError(f"{path}: missing YAML front matter (--- ... ---)")
+    meta = yaml.safe_load(m.group(1)) or {}
+    meta["body_html"] = md_lib.markdown(m.group(2).strip(), extensions=["extra", "sane_lists"])
+    return meta
+
+
+def load_articles():
+    """content/<lang>/journal/*.md -> {locale: [article_dict, ...]}, newest first."""
+    articles = {}
+    for code in JOURNAL_LOCALES:
+        journal_dir = ROOT / "content" / code / "journal"
+        items = [parse_article_md(p) for p in sorted(journal_dir.glob("*.md"))] if journal_dir.exists() else []
+        items.sort(key=lambda a: a["updated"], reverse=True)
+        articles[code] = items
+    return articles
+
+
+def article_jsonld(code, d, meta, url):
+    home_url = url_for(d, "index")
+    hub_url = url_for(d, "journal")
+    article = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": meta["title"],
+        "description": meta["description"],
+        "url": url,
+        "image": OG_IMAGE,
+        "datePublished": str(meta["updated"]),
+        "dateModified": str(meta["updated"]),
+        "inLanguage": d["html_lang"],
+        "author": {"@type": "Organization", "name": "KUU", "url": BASE_URL},
+        "publisher": {"@type": "Organization", "name": "KUU", "url": BASE_URL},
+        "mainEntityOfPage": {"@type": "WebPage", "@id": url},
+    }
+    breadcrumb = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": d["title"], "item": home_url},
+            {"@type": "ListItem", "position": 2, "name": d["journal_hub_title"], "item": hub_url},
+            {"@type": "ListItem", "position": 3, "name": meta["title"], "item": url},
+        ],
+    }
+    return (
+        '    <script type="application/ld+json">\n'
+        + json.dumps(article, ensure_ascii=False, indent=2)
+        + "\n    </script>\n"
+        '    <script type="application/ld+json">\n'
+        + json.dumps(breadcrumb, ensure_ascii=False, indent=2)
+        + "\n    </script>"
+    )
+
+
+def article_html(code, meta, articles_by_slug):
+    d = LOCALES[code]
+    slug = meta["slug"]
+    url = url_for(d, f"journal/{slug}")
+    cta_base = app_store_cta_url(code)
+    home_href = "/" if not d["subdir"] else f"/{d['subdir']}/"
+    journal_href = home_href + "journal/"
+    support_href = home_href + "support/"
+    privacy_href = "/privacy/" if code == "ja" else "/en/privacy/"
+
+    related = []
+    hub_slug = meta.get("hub")
+    if hub_slug and hub_slug != slug and hub_slug in articles_by_slug:
+        related.append((hub_slug, articles_by_slug[hub_slug]["title"]))
+    for s in meta.get("spokes") or []:
+        if s in articles_by_slug and s != slug:
+            related.append((s, articles_by_slug[s]["title"]))
+    related_html = ""
+    if related:
+        items = "\n".join(
+            f'          <li><a href="{journal_href}{s}/">{t}</a></li>' for s, t in related
+        )
+        related_html = f"""
+      <nav class="related" aria-label="{d['journal_related_label']}">
+        <h2>{d["journal_related_label"]}</h2>
+        <ul>
+{items}
+        </ul>
+      </nav>"""
+
+    return f"""<!doctype html>
+<html lang="{d["html_lang"]}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f6f9fc" />
+    <meta name="robots" content="index,follow" />
+    <title>{meta["title"]} — KUU</title>
+    <meta name="description" content="{meta["description"]}" />
+    <meta property="og:title" content="{meta["title"]}" />
+    <meta property="og:description" content="{meta["description"]}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{url}" />
+    <meta property="og:locale" content="{d["og_locale"]}" />
+    <meta property="og:image" content="{OG_IMAGE}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{meta["title"]}" />
+    <meta name="twitter:description" content="{meta["description"]}" />
+    <meta name="twitter:image" content="{OG_IMAGE}" />
+    <link rel="canonical" href="{url}" />
+{hreflang_links(f"journal/{slug}", locales=list(JOURNAL_LOCALES))}
+{ICON_LINKS}
+{SMART_BANNER}
+{article_jsonld(code, d, meta, url)}{ga4_snippet()}
+    <style>
+{JOURNAL_CSS}    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">{d["journal_eyebrow"]}</p>
+      <article>
+        <h1>{meta["title"]}</h1>
+        <p class="updated">{d["journal_updated_label"]} {meta["updated"]}</p>
+{meta["body_html"]}
+      </article>
+
+      <div class="kuu-pitch">
+        <h2>{d["journal_pitch_headline"]}</h2>
+        <p>{d["journal_pitch_body"]}</p>
+        <a class="cta" href="{cta_base}?ct=journal_{slug}" rel="noopener">{d["cta"]}</a>
+      </div>
+{related_html}
+
+      <a class="back" href="{journal_href}">{d["journal_back_label"]}</a>
+
+      <nav class="footer-links" aria-label="{d['lang_switcher_aria']}">
+        <a href="{support_href}">{d["support_label"]}</a>
+        <a href="{privacy_href}">{d["privacy_label"]}</a>
+      </nav>
+    </main>
+  </body>
+</html>
+"""
+
+
+def journal_index_html(code, items):
+    d = LOCALES[code]
+    url = url_for(d, "journal")
+    home_href = "/" if not d["subdir"] else f"/{d['subdir']}/"
+    journal_href = home_href + "journal/"
+    cards = "\n".join(
+        f'''        <li class="card">
+          <a href="{journal_href}{a["slug"]}/">
+            <h2>{a["title"]}</h2>
+            <p>{a["description"]}</p>
+          </a>
+        </li>'''
+        for a in items
+    )
+    return f"""<!doctype html>
+<html lang="{d["html_lang"]}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f6f9fc" />
+    <meta name="robots" content="index,follow" />
+    <title>{d["journal_hub_title"]}</title>
+    <meta name="description" content="{d["journal_hub_description"]}" />
+    <link rel="canonical" href="{url}" />
+{hreflang_links("journal", locales=list(JOURNAL_LOCALES))}
+{ICON_LINKS}
+{SMART_BANNER}{ga4_snippet()}
+    <style>
+{JOURNAL_CSS}    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">KUU</p>
+      <h1>{d["journal_hub_title"]}</h1>
+      <p class="lead">{d["journal_hub_lead"]}</p>
+      <ul class="cards">
+{cards}
+      </ul>
+
+      <a class="back" href="{home_href}">{d["back"]}</a>
+    </main>
+  </body>
+</html>
+"""
+
+
+def sitemap_xml(articles_by_locale=None):
     clusters = [
         ("index", list(LOCALES)),
         ("support", list(LOCALES)),
@@ -1792,6 +2062,29 @@ def sitemap_xml():
         alts += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{url_for(LOCALES["ja"], page)}" />'
         for c in codes:
             urls.append(f"  <url>\n    <loc>{url_for(LOCALES[c], page)}</loc>{alts}\n  </url>")
+
+    articles_by_locale = articles_by_locale or {}
+    if any(articles_by_locale.values()):
+        hub_alts = "".join(
+            f'\n    <xhtml:link rel="alternate" hreflang="{LOCALES[c]["html_lang"]}" href="{url_for(LOCALES[c], "journal")}" />'
+            for c in JOURNAL_LOCALES
+        )
+        hub_alts += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{url_for(LOCALES["ja"], "journal")}" />'
+        for c in JOURNAL_LOCALES:
+            urls.append(f"  <url>\n    <loc>{url_for(LOCALES[c], 'journal')}</loc>{hub_alts}\n  </url>")
+        for c in JOURNAL_LOCALES:
+            for a in articles_by_locale[c]:
+                page = f"journal/{a['slug']}"
+                alts = "".join(
+                    f'\n    <xhtml:link rel="alternate" hreflang="{LOCALES[cc]["html_lang"]}" href="{url_for(LOCALES[cc], page)}" />'
+                    for cc in JOURNAL_LOCALES
+                )
+                alts += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{url_for(LOCALES["ja"], page)}" />'
+                urls.append(
+                    f"  <url>\n    <loc>{url_for(LOCALES[c], page)}</loc>{alts}"
+                    f"\n    <lastmod>{a['updated']}</lastmod>\n  </url>"
+                )
+
     return (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
@@ -1844,7 +2137,25 @@ def main():
         page.write_text(privacy_html(code, md_to_html(privacy_md[code])))
         written.append(str(page.relative_to(ROOT)))
 
-    (ROOT / "sitemap.xml").write_text(sitemap_xml())
+    articles_by_locale = load_articles()
+    for code in JOURNAL_LOCALES:
+        items = articles_by_locale[code]
+        by_slug = {a["slug"]: a for a in items}
+        sub = LOCALES[code]["subdir"]
+        base = ROOT / sub if sub else ROOT
+        journal_dir = base / "journal"
+        for a in items:
+            art_dir = journal_dir / a["slug"]
+            art_dir.mkdir(parents=True, exist_ok=True)
+            page = art_dir / "index.html"
+            page.write_text(article_html(code, a, by_slug))
+            written.append(str(page.relative_to(ROOT)))
+        journal_dir.mkdir(parents=True, exist_ok=True)
+        hub_page = journal_dir / "index.html"
+        hub_page.write_text(journal_index_html(code, items))
+        written.append(str(hub_page.relative_to(ROOT)))
+
+    (ROOT / "sitemap.xml").write_text(sitemap_xml(articles_by_locale))
     (ROOT / "robots.txt").write_text(ROBOTS_TXT)
     written += ["sitemap.xml", "robots.txt"]
 
