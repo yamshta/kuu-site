@@ -2114,6 +2114,18 @@ def journal_index_html(code, items):
     <meta name="robots" content="index,follow" />
     <title>{d["journal_hub_title"]}</title>
     <meta name="description" content="{d["journal_hub_description"]}" />
+    <meta property="og:title" content="{d["journal_hub_title"]}" />
+    <meta property="og:description" content="{d["journal_hub_description"]}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{url}" />
+    <meta property="og:locale" content="{d["og_locale"]}" />
+    <meta property="og:image" content="{OG_IMAGE}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{d["journal_hub_title"]}" />
+    <meta name="twitter:description" content="{d["journal_hub_description"]}" />
+    <meta name="twitter:image" content="{OG_IMAGE}" />
     <link rel="canonical" href="{url}" />
 {hreflang_links("journal", locales=list(JOURNAL_LOCALES))}
 {ICON_LINKS}
