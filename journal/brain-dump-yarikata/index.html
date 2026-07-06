@@ -153,13 +153,37 @@ main { max-width: 680px; }
   text-transform: uppercase;
   margin: 0 0 14px;
 }
-h1 { line-height: 1.4; }
-.updated { font-size: 13px; color: var(--ink-soft); margin: 0 0 32px; }
-article h2 { font-size: 20px; margin: 40px 0 12px; }
-article h3 { font-size: 16px; margin: 24px 0 8px; }
-article p { line-height: 1.9; }
-article ul, article ol { line-height: 1.9; color: var(--ink-soft); padding-left: 1.4em; margin: 0 0 16px; }
-article li { margin: 4px 0; }
+h1 { font-size: clamp(24px, 6vw, 30px); line-height: 1.5; letter-spacing: 0.01em; }
+.updated { display: flex; gap: 14px; font-size: 13px; color: var(--ink-soft); margin: 0 0 36px; }
+article p { line-height: 2.0; color: #4d545b; margin: 0 0 20px; }
+/* リード（最初の段落）は少し大きく濃く: 冒頭で「自分の話だ」と思わせる。
+   .updated を p にすると first-of-type がそちらに当たるため div にしている */
+article > p:first-of-type { font-size: 17px; color: var(--ink); }
+article h2 {
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 56px 0 16px;
+}
+article h3 { font-size: 16.5px; margin: 32px 0 10px; }
+/* 蛍光マーカー風の強調: 流し読みでも要点が拾える */
+article strong {
+  font-weight: 600;
+  color: var(--ink);
+  background: linear-gradient(transparent 62%, var(--primary-soft) 62%);
+  padding: 0 1px;
+}
+article ul, article ol { line-height: 2.0; color: #4d545b; padding-left: 1.5em; margin: 0 0 20px; }
+article li { margin: 6px 0; }
+article li::marker { color: var(--primary-deep); font-weight: 600; }
+article blockquote {
+  margin: 0 0 20px;
+  padding: 14px 20px;
+  background: #eff4f8;
+  border-radius: 14px;
+  color: var(--ink);
+}
+article blockquote p { margin: 0; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; line-height: 1.9; }
+article a { color: var(--primary-deep); }
 .cta {
   display: inline-block;
   margin-top: 18px;
@@ -174,11 +198,11 @@ article li { margin: 4px 0; }
 }
 .cta:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -12px rgba(37, 80, 105, 0.5); }
 .kuu-pitch {
-  margin-top: 48px;
+  margin-top: 56px;
   padding: 32px 28px;
   background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgba(37, 80, 105, 0.07);
   text-align: center;
 }
 .kuu-pitch h2 { margin-top: 0; font-size: 19px; }
@@ -212,11 +236,7 @@ article li { margin: 4px 0; }
 }
 .rating .rating-count { font-weight: 400; color: var(--ink-soft); }
 .kuu-pitch .note { margin: 12px 0 0; font-size: 13px; color: var(--ink-soft); }
-.related {
-  margin-top: 40px;
-  padding-top: 24px;
-  border-top: 1px solid var(--line);
-}
+.related { margin-top: 48px; }
 .related h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); margin: 0 0 12px; }
 .related ul { list-style: none; padding: 0; margin: 0; }
 .related li { margin: 8px 0; }
@@ -224,10 +244,28 @@ article li { margin: 4px 0; }
 .footer-links a { color: var(--ink-soft); text-decoration: none; }
 .footer-links a:hover { text-decoration: underline; }
 .cards { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 16px; }
-.card { border: 1px solid var(--line); border-radius: 16px; background: #fff; }
-.card a { display: block; padding: 20px 22px; text-decoration: none; color: inherit; }
-.card h2 { margin: 0 0 6px; font-size: 17px; }
-.card p { margin: 0; font-size: 14px; color: var(--ink-soft); }
+.card {
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(37, 80, 105, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37, 80, 105, 0.1); }
+.card a { display: block; padding: 22px 24px; text-decoration: none; color: inherit; }
+.card .card-meta { display: flex; gap: 10px; align-items: center; margin: 0 0 10px; }
+.card .tag {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--primary-deep);
+  background: var(--primary-soft);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.card .read-min { font-size: 12px; color: var(--ink-soft); }
+.card h2 { margin: 0 0 8px; font-size: 17px; line-height: 1.6; color: var(--ink); }
+.card p { margin: 0; font-size: 14px; line-height: 1.8; color: var(--ink-soft); }
+.card .more { display: block; margin-top: 12px; font-size: 13px; font-weight: 600; color: var(--primary-deep); }
     </style>
   </head>
   <body>
@@ -235,7 +273,7 @@ article li { margin: 4px 0; }
       <p class="eyebrow">読みもの</p>
       <article>
         <h1>ブレインダンプのやり方。頭の中を全部出す、いちばん簡単な思考整理法</h1>
-        <p class="updated">更新: 2026-07-05</p>
+        <div class="updated"><span>更新: 2026-07-05</span><span>約2分で読めます</span></div>
 <h2>ブレインダンプとは</h2>
 <p>ブレインダンプ（brain dump）は、直訳すると「脳を、どさっと空ける」。頭の中にあるものを、良い悪いの判断をせずに、全部外に出す思考整理法だ。</p>
 <p>やることが多い。気がかりが多い。何から手をつければいいか分からない。そういうとき、私たちは頭の中だけで整理しようとして、かえって混乱する。</p>

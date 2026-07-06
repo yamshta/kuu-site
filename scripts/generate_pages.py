@@ -1023,6 +1023,7 @@ a { color: var(--ink); }
 
 # Journal (content SEO article + hub) pages: long-form reading layout on top of SUPPORT_CSS,
 # plus the LP's pill CTA and a card grid for the /journal/ hub listing.
+# 直帰対策: 読みやすさのリズム（リード強調・マーカー付き strong・目立つ h2）を優先する。
 JOURNAL_CSS = SUPPORT_CSS + """\
 :root {
   --primary: #7fb2d6;
@@ -1038,13 +1039,37 @@ main { max-width: 680px; }
   text-transform: uppercase;
   margin: 0 0 14px;
 }
-h1 { line-height: 1.4; }
-.updated { font-size: 13px; color: var(--ink-soft); margin: 0 0 32px; }
-article h2 { font-size: 20px; margin: 40px 0 12px; }
-article h3 { font-size: 16px; margin: 24px 0 8px; }
-article p { line-height: 1.9; }
-article ul, article ol { line-height: 1.9; color: var(--ink-soft); padding-left: 1.4em; margin: 0 0 16px; }
-article li { margin: 4px 0; }
+h1 { font-size: clamp(24px, 6vw, 30px); line-height: 1.5; letter-spacing: 0.01em; }
+.updated { display: flex; gap: 14px; font-size: 13px; color: var(--ink-soft); margin: 0 0 36px; }
+article p { line-height: 2.0; color: #4d545b; margin: 0 0 20px; }
+/* リード（最初の段落）は少し大きく濃く: 冒頭で「自分の話だ」と思わせる。
+   .updated を p にすると first-of-type がそちらに当たるため div にしている */
+article > p:first-of-type { font-size: 17px; color: var(--ink); }
+article h2 {
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 56px 0 16px;
+}
+article h3 { font-size: 16.5px; margin: 32px 0 10px; }
+/* 蛍光マーカー風の強調: 流し読みでも要点が拾える */
+article strong {
+  font-weight: 600;
+  color: var(--ink);
+  background: linear-gradient(transparent 62%, var(--primary-soft) 62%);
+  padding: 0 1px;
+}
+article ul, article ol { line-height: 2.0; color: #4d545b; padding-left: 1.5em; margin: 0 0 20px; }
+article li { margin: 6px 0; }
+article li::marker { color: var(--primary-deep); font-weight: 600; }
+article blockquote {
+  margin: 0 0 20px;
+  padding: 14px 20px;
+  background: #eff4f8;
+  border-radius: 14px;
+  color: var(--ink);
+}
+article blockquote p { margin: 0; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; line-height: 1.9; }
+article a { color: var(--primary-deep); }
 .cta {
   display: inline-block;
   margin-top: 18px;
@@ -1059,11 +1084,11 @@ article li { margin: 4px 0; }
 }
 .cta:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -12px rgba(37, 80, 105, 0.5); }
 .kuu-pitch {
-  margin-top: 48px;
+  margin-top: 56px;
   padding: 32px 28px;
   background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgba(37, 80, 105, 0.07);
   text-align: center;
 }
 .kuu-pitch h2 { margin-top: 0; font-size: 19px; }
@@ -1097,11 +1122,7 @@ article li { margin: 4px 0; }
 }
 .rating .rating-count { font-weight: 400; color: var(--ink-soft); }
 .kuu-pitch .note { margin: 12px 0 0; font-size: 13px; color: var(--ink-soft); }
-.related {
-  margin-top: 40px;
-  padding-top: 24px;
-  border-top: 1px solid var(--line);
-}
+.related { margin-top: 48px; }
 .related h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); margin: 0 0 12px; }
 .related ul { list-style: none; padding: 0; margin: 0; }
 .related li { margin: 8px 0; }
@@ -1109,10 +1130,28 @@ article li { margin: 4px 0; }
 .footer-links a { color: var(--ink-soft); text-decoration: none; }
 .footer-links a:hover { text-decoration: underline; }
 .cards { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 16px; }
-.card { border: 1px solid var(--line); border-radius: 16px; background: #fff; }
-.card a { display: block; padding: 20px 22px; text-decoration: none; color: inherit; }
-.card h2 { margin: 0 0 6px; font-size: 17px; }
-.card p { margin: 0; font-size: 14px; color: var(--ink-soft); }
+.card {
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(37, 80, 105, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37, 80, 105, 0.1); }
+.card a { display: block; padding: 22px 24px; text-decoration: none; color: inherit; }
+.card .card-meta { display: flex; gap: 10px; align-items: center; margin: 0 0 10px; }
+.card .tag {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--primary-deep);
+  background: var(--primary-soft);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.card .read-min { font-size: 12px; color: var(--ink-soft); }
+.card h2 { margin: 0 0 8px; font-size: 17px; line-height: 1.6; color: var(--ink); }
+.card p { margin: 0; font-size: 14px; line-height: 1.8; color: var(--ink-soft); }
+.card .more { display: block; margin-top: 12px; font-size: 13px; font-weight: 600; color: var(--primary-deep); }
 """
 
 # Tips page: lighter than the LP (no orb), card-per-gesture. Tokens mirror KUUColors.
@@ -1936,13 +1975,20 @@ def split_privacy_md():
 FRONT_MATTER_RE = re.compile(r"\A---\n(.*?)\n---\n(.*)\Z", re.DOTALL)
 
 
+ARCHETYPE_LABELS = {"pain": "悩み", "method": "方法", "scene": "場面"}
+
+
 def parse_article_md(path):
     raw = path.read_text()
     m = FRONT_MATTER_RE.match(raw)
     if not m:
         raise ValueError(f"{path}: missing YAML front matter (--- ... ---)")
     meta = yaml.safe_load(m.group(1)) or {}
-    meta["body_html"] = md_lib.markdown(m.group(2).strip(), extensions=["extra", "sane_lists"])
+    body_md = m.group(2).strip()
+    meta["body_html"] = md_lib.markdown(body_md, extensions=["extra", "sane_lists"])
+    # 読了時間: 日本語 ~550字/分。記号込みの概算で十分
+    plain = re.sub(r"[#*>\-\[\]()`|]", "", body_md)
+    meta["read_min"] = max(1, round(len(plain) / 550))
     return meta
 
 
@@ -1952,7 +1998,8 @@ def load_articles():
     for code in JOURNAL_LOCALES:
         journal_dir = ROOT / "content" / code / "journal"
         items = [parse_article_md(p) for p in sorted(journal_dir.glob("*.md"))] if journal_dir.exists() else []
-        items.sort(key=lambda a: a["updated"], reverse=True)
+        # hub 記事（他記事の親、spokes を持つ）を先頭に固定し、以降は新しい順
+        items.sort(key=lambda a: (bool(a.get("spokes")), str(a["updated"])), reverse=True)
         articles[code] = items
     return articles
 
@@ -2063,7 +2110,7 @@ def article_html(code, meta, articles_by_slug):
       <p class="eyebrow">{d["journal_eyebrow"]}</p>
       <article>
         <h1>{meta["title"]}</h1>
-        <p class="updated">{d["journal_updated_label"]} {meta["updated"]}</p>
+        <div class="updated"><span>{d["journal_updated_label"]} {meta["updated"]}</span><span>約{meta["read_min"]}分で読めます</span></div>
 {meta["body_html"]}
       </article>
 
@@ -2099,8 +2146,10 @@ def journal_index_html(code, items):
     cards = "\n".join(
         f'''        <li class="card">
           <a href="{journal_href}{a["slug"]}/">
+            <p class="card-meta"><span class="tag">{ARCHETYPE_LABELS.get(a.get("archetype"), "読みもの")}</span><span class="read-min">約{a["read_min"]}分</span></p>
             <h2>{a["title"]}</h2>
             <p>{a["description"]}</p>
+            <span class="more">読む →</span>
           </a>
         </li>'''
         for a in items

@@ -113,15 +113,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/journal/" />
   </url>
   <url>
-    <loc>https://kuu-zen.com/journal/atama-no-naka-seiri/</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://kuu-zen.com/journal/atama-no-naka-seiri/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/journal/atama-no-naka-seiri/" />
-    <lastmod>2026-07-05</lastmod>
-  </url>
-  <url>
     <loc>https://kuu-zen.com/journal/brain-dump-yarikata/</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kuu-zen.com/journal/brain-dump-yarikata/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/journal/brain-dump-yarikata/" />
+    <lastmod>2026-07-05</lastmod>
+  </url>
+  <url>
+    <loc>https://kuu-zen.com/journal/atama-no-naka-seiri/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kuu-zen.com/journal/atama-no-naka-seiri/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/journal/atama-no-naka-seiri/" />
     <lastmod>2026-07-05</lastmod>
   </url>
   <url>
