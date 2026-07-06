@@ -156,7 +156,8 @@ main { max-width: 680px; }
 h1 { font-size: clamp(24px, 6vw, 30px); line-height: 1.5; letter-spacing: 0.01em; }
 .updated { display: flex; gap: 14px; font-size: 13px; color: var(--ink-soft); margin: 0 0 36px; }
 article p { line-height: 2.0; color: #4d545b; margin: 0 0 20px; }
-/* リード（最初の段落）は少し大きく濃く: 冒頭で「自分の話だ」と思わせる */
+/* リード（最初の段落）は少し大きく濃く: 冒頭で「自分の話だ」と思わせる。
+   .updated を p にすると first-of-type がそちらに当たるため div にしている */
 article > p:first-of-type { font-size: 17px; color: var(--ink); }
 article h2 {
   font-size: 20px;
@@ -272,7 +273,7 @@ article a { color: var(--primary-deep); }
       <p class="eyebrow">読みもの</p>
       <article>
         <h1>考えすぎて疲れる夜に。同じことを何度も考えてしまうときの4つの対処法</h1>
-        <p class="updated"><span>更新: 2026-07-05</span><span>約2分で読めます</span></p>
+        <div class="updated"><span>更新: 2026-07-05</span><span>約2分で読めます</span></div>
 <h2>こんな夜が、続いていませんか</h2>
 <p>布団に入った瞬間、電車を待っているあいだ、シャワーを浴びている最中。何もしていないはずなのに、頭の中では同じ場面がずっと再生されている。</p>
 <p>「あのとき、ああ言えばよかった」。「明日のプレゼン、大丈夫だろうか」。「そもそも自分は向いていないんじゃないか」。</p>

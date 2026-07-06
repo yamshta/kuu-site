@@ -1042,7 +1042,8 @@ main { max-width: 680px; }
 h1 { font-size: clamp(24px, 6vw, 30px); line-height: 1.5; letter-spacing: 0.01em; }
 .updated { display: flex; gap: 14px; font-size: 13px; color: var(--ink-soft); margin: 0 0 36px; }
 article p { line-height: 2.0; color: #4d545b; margin: 0 0 20px; }
-/* リード（最初の段落）は少し大きく濃く: 冒頭で「自分の話だ」と思わせる */
+/* リード（最初の段落）は少し大きく濃く: 冒頭で「自分の話だ」と思わせる。
+   .updated を p にすると first-of-type がそちらに当たるため div にしている */
 article > p:first-of-type { font-size: 17px; color: var(--ink); }
 article h2 {
   font-size: 20px;
@@ -2109,7 +2110,7 @@ def article_html(code, meta, articles_by_slug):
       <p class="eyebrow">{d["journal_eyebrow"]}</p>
       <article>
         <h1>{meta["title"]}</h1>
-        <p class="updated"><span>{d["journal_updated_label"]} {meta["updated"]}</span><span>約{meta["read_min"]}分で読めます</span></p>
+        <div class="updated"><span>{d["journal_updated_label"]} {meta["updated"]}</span><span>約{meta["read_min"]}分で読めます</span></div>
 {meta["body_html"]}
       </article>
 
