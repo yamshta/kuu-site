@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f6f9fc" />
+    <meta name="robots" content="index,follow" />
+    <title>使用技巧 — KUU</title>
+    <meta name="description" content="汇总 KUU 中不易察觉的操作。语音输入之后的修改、自己动手的分类、主题的用法，静静地一一介绍。" />
+    <meta property="og:title" content="使用技巧 — KUU" />
+    <meta property="og:description" content="汇总 KUU 中不易察觉的操作。语音输入之后的修改、自己动手的分类、主题的用法，静静地一一介绍。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://kuu-zen.com/zh-Hans/tips/" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:image" content="https://kuu-zen.com/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="使用技巧 — KUU" />
+    <meta name="twitter:description" content="汇总 KUU 中不易察觉的操作。语音输入之后的修改、自己动手的分类、主题的用法，静静地一一介绍。" />
+    <meta name="twitter:image" content="https://kuu-zen.com/assets/og.png" />
+    <link rel="canonical" href="https://kuu-zen.com/zh-Hans/tips/" />
+    <link rel="alternate" hreflang="ja" href="https://kuu-zen.com/tips/" />
+    <link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/tips/" />
+    <link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/tips/" />
+    <link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/tips/" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/tips/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/tips/" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <meta name="apple-itunes-app" content="app-id=6771264775" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "分得不像我想的那样。准确度还差一点。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "KUU 的判断，并非总是完美。所以，我们让它之后可以亲手修改（轻点改写／长按拖动移动／“重新分类”）。听写与分类的准确度，今后也会一点点变好。有你在用，就是我们前进的动力。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "说得一长，就全被并到一起了。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "句子一连下去，有时就不容易找到断点。说的时候，像“说完一句，（喘口气）再说一句”这样，稍微留些停顿，就更容易分开。已经输入的内容，可以用“重新分类”给句子加上逗号和句号，就更容易断开。如果还是被并在一起，可以长按拖动来分开，或轻点改写。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "总感觉很快就被引去付费。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "说出来、分好、回看——KUU 的核心，一直都能免费使用。KUU+ 是给想关掉广告、想加上 Face ID 锁的人，悄悄准备的一点补充。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "在不方便出声的场合，不太好用。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "从主页下方的“用键盘写”，不出声、用文字，也能一样地分好。"
+      }
+    }
+  ]
+}
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DC1R54C73B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DC1R54C73B');
+      // LP 唯一のゴール = App Store 遷移を計測。link_location は CTA の ct= (lp_hero/lp_footer/lp_tips)。
+      // GA4 は sendBeacon で送るため同一タブ遷移でも欠落しない。capture で stopPropagation 耐性を持たせる。
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="apps.apple.com"]');
+        if (!a) return;
+        var m = a.href.match(/[?&]ct=([^&]+)/);
+        gtag('event', 'app_store_click', { link_location: m ? m[1] : 'other' });
+      }, true);
+    </script>
+    <style>
+:root {
+  color-scheme: light;
+  --bg: #f6f9fc;
+  --surface: #ffffff;
+  --surface-quiet: #eff4f8;
+  --ink: #353b41;
+  --ink-soft: #6b737b;
+  --ink-faint: #939aa2;
+  --primary-deep: #5e97c2;
+  --primary-soft: #dceaf4;
+  --water-action: #bfddef;
+  --water-ink: #255069;
+  --line: #e7edf3;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Apple SD Gothic Neo", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.7;
+  font-feature-settings: "palt" 1, "kern" 1;
+  font-kerning: normal;
+}
+.wrap { max-width: 660px; margin: 0 auto; padding: 0 24px; }
+
+/* ---- header ---- */
+.tips-hero { text-align: center; padding: clamp(40px, 8vw, 64px) 24px clamp(4px, 3vw, 14px); }
+.wordmark {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  color: var(--primary-deep);
+  margin: 0 0 clamp(14px, 3vw, 22px) 0.42em;
+}
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: var(--primary-deep);
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+.tips-hero h1 {
+  font-size: clamp(26px, 6vw, 38px);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+.tips-hero .lead { color: var(--ink-soft); font-size: clamp(15px, 4vw, 16px); max-width: 32em; margin: 16px auto 0; }
+
+/* ---- screen sections ---- */
+.screen { padding: clamp(44px, 9vw, 68px) 0 0; }
+.screen h2 { font-size: clamp(20px, 5vw, 25px); font-weight: 600; line-height: 1.45; margin: 0; }
+.screen .screen-lead { color: var(--ink-soft); font-size: clamp(14px, 3.8vw, 15px); margin: 10px 0 0; max-width: 32em; }
+.subhead {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--primary-deep);
+  margin: 22px 0 0;
+}
+/* extra separation only when a subhead follows a previous group's cards */
+.tips + .subhead { margin-top: clamp(40px, 8vw, 56px); }
+
+/* ---- figure (annotated real screenshot) ---- */
+.figure {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 18px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  box-shadow: 0 22px 48px -28px rgba(94, 151, 194, 0.55);
+  background: var(--surface);
+}
+.figure + .figure { margin-top: 12px; }
+
+/* ---- tip cards ---- */
+.tips { display: grid; gap: 14px; margin-top: 18px; }
+.tip {
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.tip .thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: -2px 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface-quiet);
+}
+.tip .badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--primary-deep);
+  background: var(--primary-soft);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 11px;
+}
+.tip h3 { margin: 0 0 6px; font-size: 16.5px; font-weight: 600; color: var(--ink); }
+.tip p { margin: 0; color: var(--ink-soft); font-size: 14.5px; line-height: 1.72; }
+
+/* ---- note ---- */
+.note {
+  margin: clamp(40px, 8vw, 64px) 0 0;
+  padding: 22px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  color: var(--ink-soft);
+  font-size: clamp(15px, 4vw, 16px);
+}
+
+/* ---- FAQ (よくある問い合わせ) ---- */
+.faq { padding: clamp(44px, 9vw, 68px) 0 0; }
+.faq h2 { font-size: clamp(20px, 5vw, 25px); font-weight: 600; line-height: 1.45; margin: 0; }
+.faq-list { display: grid; gap: 14px; margin-top: 22px; }
+.faq-item {
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.faq-q { margin: 0 0 10px; font-size: 15.5px; font-weight: 600; color: var(--ink); line-height: 1.55; }
+.faq-a { margin: 0; font-size: 14.5px; color: var(--ink-soft); line-height: 1.7; }
+.faq-a + .faq-a { margin-top: 8px; }
+.faq-item .thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 16px 0 0;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface-quiet);
+}
+
+/* ---- closing cta ---- */
+.closing { text-align: center; padding: clamp(48px, 10vw, 80px) 0 clamp(8px, 3vw, 24px); }
+.closing .sub { color: var(--ink-soft); margin: 0 0 22px; font-size: clamp(15px, 4vw, 16px); }
+.cta {
+  display: inline-block;
+  padding: 15px 30px;
+  background: var(--water-action);
+  color: var(--water-ink);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cta:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -12px rgba(37, 80, 105, 0.5); }
+
+/* ---- footer ---- */
+footer {
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: clamp(40px, 8vw, 72px);
+  padding: 40px 0 56px;
+}
+.footer-row { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+.footer-row a { color: var(--ink-soft); text-decoration: none; }
+.footer-row a:hover { text-decoration: underline; }
+
+/* ---- scroll reveal (progressive enhancement) ---- */
+.js .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .reveal.in { opacity: 1; transform: none; }
+.js .reveal .stagger > * { opacity: 0; transform: translateY(12px); transition: opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .reveal.in .stagger > * { opacity: 1; transform: none; }
+.js .reveal.in .stagger > *:nth-child(2) { transition-delay: 0.06s; }
+.js .reveal.in .stagger > *:nth-child(3) { transition-delay: 0.12s; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal, .js .reveal .stagger > * { opacity: 1; transform: none; transition: none; }
+}
+    </style>
+  </head>
+  <body>
+    <header class="tips-hero">
+      <p class="wordmark">KUU</p>
+      <p class="eyebrow">使用技巧</p>
+      <h1>说出来之后，也能自己动手。</h1>
+      <p class="lead">KUU 为了让画面保持安静，没有把大多数操作摆在明面上。不过，修改听写、亲手分类，都做得到。这些不易察觉的，我们汇总在这里。</p>
+    </header>
+
+    <main>
+      <section class="screen reveal">
+        <div class="wrap">
+          <h2>在念头的去处</h2>
+          <p class="screen-lead">从主页向上拉出的、最常用的画面。用声音分好的念头，会汇集到四个去处。不易察觉的操作，也大多在这里。</p>
+          <p class="subhead">逐一整理每个念头</p>
+          <div class="tips stagger">
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_edit_poster.jpg?v=20260701b"><source src="/assets/tips/t_edit.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">轻点</span><h3>轻点标题即可改写</h3><p>直接轻点念头的文字，就能当场改写。听写的细小偏差，都可以在这里修整。</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_move_poster.jpg?v=20260701b"><source src="/assets/tips/t_move.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">长按 → 拖动</span><h3>移到别的去处</h3><p>长按念头并拖动，就能在现在看／之后想／搁置／放下之间自由挪动。</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_theme_drag_poster.jpg?v=20260701b"><source src="/assets/tips/t_theme_drag.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">拖动</span><h3>移到主题</h3><p>用同样的拖动，也能移到上方的主题标签。移进那个主题就归入其中；把它落到“未分类”，就会移出。</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_release_poster.jpg?v=20260701b"><source src="/assets/tips/t_release.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">轻点</span><h3>轻点○来放下</h3><p>轻点念头开头的小○，就能当场轻轻地把它放下。也可以马上撤销。</p></div>
+            <div class="tip"><img class="thumb" src="/assets/tips/t_add.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /><span class="badge">轻点</span><h3>用“＋”手动补记</h3><p>从每个区块右下角淡淡的“＋”，就能在那个位置用文字补记一条念头。</p></div>
+          </div>
+          <p class="subhead">用主题归拢</p>
+          <div class="tips stagger">
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_theme_press_poster.jpg?v=20260701b"><source src="/assets/tips/t_theme_press.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">长按</span><h3>长按主题打开菜单</h3><p>长按上方的主题标签，会出现始终显示（固定）／编辑名称或颜色／放下。主题的设置，入口就在这里。</p></div>
+            <div class="tip"><img class="thumb" src="/assets/tips/t_theme_edit.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /><span class="badge">轻点</span><h3>更改名称、颜色和排序</h3><p>在主题的编辑界面，轻点名称即可改写，从色点里挑选淡色，用左侧的手柄调整排序。</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen reveal">
+        <div class="wrap">
+          <h2>在刚分好的画面</h2>
+          <p class="screen-lead">说完、分好，紧接着的那一刻。若 KUU 分得不合心意，可以在这里整理好，再留下来。</p>
+          <div class="tips stagger">
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_remove_poster.jpg?v=20260701b"><source src="/assets/tips/t_remove.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">轻点</span><h3>不需要的，轻点移除</h3><p>没什么感觉的念头，轻点一下就会变淡、移出。再轻点一次便能恢复。</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_reclassify_poster.jpg?v=20260701b"><source src="/assets/tips/t_reclassify.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">拖动</span><h3>拖动改变分类</h3><p>把念头拖到别的区块，就能当场改变分类。</p></div>
+            <div class="tip"><img class="thumb" src="/assets/tips/t_resort.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /><span class="badge">按钮</span><h3>用“重新分类”修正全文</h3><p>若有听错，可以从“重新分类”把整段文字都改好，再分一次。</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen reveal">
+        <div class="wrap">
+          <h2>在主页</h2>
+          <p class="screen-lead">也有不方便出声的日子。那样的时候，用文字也可以。</p>
+          <div class="tips stagger">
+            <div class="tip"><img class="thumb" src="/assets/tips/t_keyboard.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /><span class="badge">轻点</span><h3>用键盘写</h3><p>从主页下方的“用键盘写”，不出声、用文字，也能一样地分好。</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq reveal">
+        <div class="wrap">
+          <h2>常见咨询</h2>
+          <div class="faq-list stagger">
+            <div class="faq-item"><p class="faq-q">分得不像我想的那样。准确度还差一点。</p><p class="faq-a">KUU 的判断，并非总是完美。</p><p class="faq-a">所以，我们让它之后可以亲手修改（轻点改写／长按拖动移动／“重新分类”）。</p><p class="faq-a">听写与分类的准确度，今后也会一点点变好。</p><p class="faq-a">有你在用，就是我们前进的动力。</p></div>
+            <div class="faq-item"><p class="faq-q">说得一长，就全被并到一起了。</p><p class="faq-a">句子一连下去，有时就不容易找到断点。</p><p class="faq-a">说的时候，像“说完一句，（喘口气）再说一句”这样，稍微留些停顿，就更容易分开。</p><p class="faq-a">已经输入的内容，可以用“重新分类”给句子加上逗号和句号，就更容易断开。</p><p class="faq-a">如果还是被并在一起，可以长按拖动来分开，或轻点改写。</p></div>
+            <div class="faq-item"><p class="faq-q">总感觉很快就被引去付费。</p><p class="faq-a">说出来、分好、回看——KUU 的核心，一直都能免费使用。</p><p class="faq-a">KUU+ 是给想关掉广告、想加上 Face ID 锁的人，悄悄准备的一点补充。</p></div>
+            <div class="faq-item"><p class="faq-q">在不方便出声的场合，不太好用。</p><p class="faq-a">从主页下方的“用键盘写”，不出声、用文字，也能一样地分好。</p><img class="thumb" src="/assets/tips/t_keyboard.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing-note reveal">
+        <div class="wrap">
+          <p class="note">这些提示，只在最初的那一次静静出现在画面上。错过也没关系。这个页面，随时都能回看。</p>
+        </div>
+      </section>
+
+      <section class="closing reveal">
+        <div class="wrap">
+          <p class="sub">如果还没试过 KUU，可以从这里开始。</p>
+          <a class="cta" href="https://apps.apple.com/cn/app/id6771264775?ct=lp_tips" rel="noopener">在 App Store 下载</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="footer-row">
+          <a href="/zh-Hans/">← 返回顶部</a>
+          <a href="/zh-Hans/support/">支持</a>
+          <a href="/en/privacy/">隐私</a>
+          <span>© KUU</span>
+        </div>
+      </div>
+    </footer>
+<script>
+  document.documentElement.classList.add('js');
+  addEventListener('DOMContentLoaded', function () {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  });
+</script>
+  </body>
+</html>

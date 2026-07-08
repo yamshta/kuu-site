@@ -53,7 +53,7 @@ GA4_MEASUREMENT_ID = "G-DC1R54C73B"
 # Privacy policy is hosted on this site in ja/en only; other locales link to en.
 PRIVACY_LOCALES = ("ja", "en")
 # Usage tips page is ja-only for now (other locales added later, same pattern as PRIVACY_LOCALES).
-TIPS_LOCALES = ("ja",)
+TIPS_LOCALES = ("ja", "en", "es", "ko", "zh-Hans")
 # Content SEO articles (/journal/<slug>/) are ja-only for now, same pattern as TIPS_LOCALES.
 JOURNAL_LOCALES = ("ja",)
 
@@ -258,6 +258,157 @@ LOCALES = {
     },
     "en": {
         "subdir": "en",
+        # Tips / usage page (en)
+        "tips_title": "Tips — KUU",
+        "tips_description": "A round-up of KUU's easy-to-miss moves — a quiet look at editing after you speak, sorting by hand, and using themes.",
+        "tips_eyebrow": "Tips",
+        "tips_h1": "After you speak, it's still in your hands.",
+        "tips_lead": "To keep the screen quiet, KUU keeps most of its controls out of sight. But you can always fix what was heard, or sort things by hand. Here are the ones that are easy to miss.",
+        "tips_screens": [
+            {
+                "heading": "At the place for your thoughts",
+                "lead": "The screen you'll use most, pulled up from Home. What you sorted by voice gathers into four places. Most of the easy-to-miss moves are here, too.",
+                "groups": [
+                    {
+                        "subhead": "Tend to items one by one",
+                        "items": [
+                            [
+                                "Tap",
+                                "Tap a title to rewrite it",
+                                "Tap the words of an item to rewrite them on the spot. Small mishearings can be smoothed out right here.",
+                                "t_edit"
+                            ],
+                            [
+                                "Long-press → drag",
+                                "Move it elsewhere",
+                                "Long-press an item and drag to move it freely between Now, Later, Park, and Let go.",
+                                "t_move"
+                            ],
+                            [
+                                "Drag",
+                                "Move it to a theme",
+                                "The same drag also moves it onto a theme chip above. It joins that theme; drop it onto “Uncategorized” to remove it.",
+                                "t_theme_drag"
+                            ],
+                            [
+                                "Tap",
+                                "Tap the ○ to let go",
+                                "Tap the small ○ at the start of an item to gently send it to Let go. You can undo it right away.",
+                                "t_release"
+                            ],
+                            [
+                                "Tap",
+                                "Add by hand with “+”",
+                                "From the faint “+” at the bottom-right of each block, you can add an item there in text.",
+                                "t_add"
+                            ]
+                        ]
+                    },
+                    {
+                        "subhead": "Group with themes",
+                        "items": [
+                            [
+                                "Long-press",
+                                "Long-press a theme for its menu",
+                                "Long-press a theme chip above to bring up Always show (pin), Edit name or color, and Let go. This is the way into a theme's settings.",
+                                "t_theme_press"
+                            ],
+                            [
+                                "Tap",
+                                "Change name, color, and order",
+                                "In the theme editor, tap the name to rewrite it, pick a soft color from the color dots, and reorder using the handle on the left.",
+                                "t_theme_edit"
+                            ]
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Right after sorting",
+                "lead": "The moment just after you speak and it's sorted. If KUU's sorting doesn't sit right, tidy it here before you keep it.",
+                "groups": [
+                    {
+                        "items": [
+                            [
+                                "Tap",
+                                "Tap to drop what you don't need",
+                                "Tap an item that doesn't fit and it fades out and drops away. Tap again to bring it back.",
+                                "t_remove"
+                            ],
+                            [
+                                "Drag",
+                                "Drag to change where it goes",
+                                "Drag an item to another block to change where it goes, right there.",
+                                "t_reclassify"
+                            ],
+                            [
+                                "Button",
+                                "“Sort again” to fix the whole text",
+                                "If something was misheard, “Sort again” lets you fix the whole transcript and sort it once more.",
+                                "t_resort"
+                            ]
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "On Home",
+                "lead": "Some days, speaking aloud is hard. On those days, text works too.",
+                "groups": [
+                    {
+                        "items": [
+                            [
+                                "Tap",
+                                "Write with the keyboard",
+                                "From “Write with the keyboard” at the bottom of Home, you can sort the same way in text, without using your voice.",
+                                "t_keyboard"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ],
+        "tips_note": "These hints appear gently on screen just once, the first time. If you miss them, that's fine — this page is always here to revisit.",
+        "tips_closing_sub": "If you haven't tried KUU yet, start here.",
+        "tips_label": "Tips",
+        "tips_faq_heading": "Common questions",
+        "tips_faqs": [
+            [
+                "It doesn't sort the way I expected. The accuracy isn't quite there.",
+                [
+                    "KUU's read on things isn't always perfect.",
+                    "That's why you can always fix it by hand afterward (tap to rewrite, long-press and drag to move, or “Sort again”).",
+                    "We'll keep improving how it hears and sorts, little by little.",
+                    "You using it is what encourages us."
+                ]
+            ],
+            [
+                "When I talk for a while, it all gets merged into one.",
+                [
+                    "When sentences run on, the breaks can be hard to find.",
+                    "As you speak, leaving a small pause — “this, (a breath) then that” — helps it split more easily.",
+                    "For something you've already entered, adding commas and periods in “Sort again” helps it break into pieces.",
+                    "If it still stays merged, you can split it with a long-press drag, or rewrite it with a tap."
+                ]
+            ],
+            [
+                "It feels like I'm pushed to pay right away.",
+                [
+                    "Speak, sort, look back — the heart of KUU stays free, always.",
+                    "KUU+ is a quiet extra, for those who'd like to turn off ads or add a Face ID lock."
+                ]
+            ],
+            [
+                "It's hard to use when I can't speak aloud.",
+                [
+                    "From “Write with the keyboard” at the bottom of Home, you can sort the same way in text, without using your voice."
+                ],
+                "t_keyboard"
+            ]
+        ],
+        "tips_support_before": "Rewriting after you speak, sorting by hand — the moves that are easy to miss are gathered in",
+        "tips_support_after": ".",
+
         "html_lang": "en",
         "og_locale": "en_US",
         "label": "English",
@@ -328,6 +479,157 @@ LOCALES = {
     },
     "es": {
         "subdir": "es",
+        # Tips / usage page (es)
+        "tips_title": "Consejos de uso — KUU",
+        "tips_description": "Un resumen de los gestos discretos de KUU. Te mostramos con calma cómo reescribir lo que dictaste, separar las cosas a tu manera y usar los temas.",
+        "tips_eyebrow": "Consejos de uso",
+        "tips_h1": "Después de hablar, también con tus manos.",
+        "tips_lead": "Para mantener la pantalla en calma, KUU no muestra muchos de sus gestos. Pero corregir lo que oyó o separarlo a tu manera sí que se puede. Aquí hemos reunido lo que cuesta descubrir.",
+        "tips_screens": [
+            {
+                "heading": "En el lugar de tus pensamientos",
+                "lead": "La pantalla que subes desde el inicio, la que más usarás. Lo que separaste con la voz se reúne en los cuatro lugares. Y casi todos los gestos discretos están aquí.",
+                "groups": [
+                    {
+                        "subhead": "Ajustar los elementos uno a uno",
+                        "items": [
+                            [
+                                "Toca",
+                                "Toca el título para reescribirlo",
+                                "Toca el texto de un elemento y podrás reescribirlo ahí mismo. Los pequeños desajustes de la transcripción se arreglan aquí.",
+                                "t_edit"
+                            ],
+                            [
+                                "Mantén pulsado → arrastra",
+                                "Muévelo a otro lugar",
+                                "Mantén pulsado un elemento y arrástralo para moverlo libremente entre Ahora, Más tarde, Reposar y Soltar.",
+                                "t_move"
+                            ],
+                            [
+                                "Arrastra",
+                                "Muévelo a un tema",
+                                "Con el mismo arrastre también puedes llevarlo a los chips de tema de arriba. Entra en ese tema; y al soltarlo en «Sin categoría», sale.",
+                                "t_theme_drag"
+                            ],
+                            [
+                                "Toca",
+                                "Toca el ○ para soltar",
+                                "Toca el pequeño ○ al inicio de un elemento y pasará con suavidad a «Soltar». También puedes deshacerlo enseguida.",
+                                "t_release"
+                            ],
+                            [
+                                "Toca",
+                                "Añade a mano con «＋»",
+                                "Desde el «＋» tenue de la esquina inferior derecha de cada bloque, puedes añadir un elemento escribiéndolo en ese lugar.",
+                                "t_add"
+                            ]
+                        ]
+                    },
+                    {
+                        "subhead": "Agrupar por temas",
+                        "items": [
+                            [
+                                "Mantén pulsado",
+                                "Mantén pulsado un tema para el menú",
+                                "Mantén pulsado un chip de tema de arriba y aparecerán: Mostrar siempre (fijar), Editar nombre y color, y Soltar. Los ajustes del tema empiezan aquí.",
+                                "t_theme_press"
+                            ],
+                            [
+                                "Toca",
+                                "Cambia el nombre, el color y el orden",
+                                "En la pantalla de edición del tema, toca el nombre para reescribirlo, elige un color suave en el círculo de color y reordena con el asa de la izquierda.",
+                                "t_theme_edit"
+                            ]
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "En la pantalla, justo tras separar",
+                "lead": "Justo después de hablar y separar. Si la manera en que KUU separó no te convence, aquí puedes ajustarla antes de guardarla.",
+                "groups": [
+                    {
+                        "items": [
+                            [
+                                "Toca",
+                                "Quita lo que no necesitas con un toque",
+                                "Toca un elemento que no encaje y se atenuará hasta salir. Toca otra vez para recuperarlo.",
+                                "t_remove"
+                            ],
+                            [
+                                "Arrastra",
+                                "Arrastra para cambiar la clasificación",
+                                "Arrastra un elemento a otro bloque y cambiarás su clasificación ahí mismo.",
+                                "t_reclassify"
+                            ],
+                            [
+                                "Botón",
+                                "Corrige todo el texto con «Separar de nuevo»",
+                                "Si algo se oyó mal, desde «Separar de nuevo» puedes corregir toda la transcripción y volver a separar.",
+                                "t_resort"
+                            ]
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "En el inicio",
+                "lead": "Hay días en que cuesta hablar en voz alta. Entonces, también por escrito.",
+                "groups": [
+                    {
+                        "items": [
+                            [
+                                "Toca",
+                                "Escribir con el teclado",
+                                "Desde «Escribir con el teclado», en la parte inferior del inicio, puedes separar igual por escrito, sin usar la voz.",
+                                "t_keyboard"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ],
+        "tips_note": "Estos avisos aparecen con suavidad en pantalla solo la primera vez. No pasa nada si se te escapan: esta página está aquí siempre que quieras volver.",
+        "tips_closing_sub": "Si aún no has probado KUU, empieza aquí.",
+        "tips_label": "Consejos de uso",
+        "tips_faq_heading": "Consultas frecuentes",
+        "tips_faqs": [
+            [
+                "No separa como yo esperaba. La precisión no acaba de convencerme.",
+                [
+                    "El criterio de KUU no siempre es perfecto.",
+                    "Por eso puedes corregirlo después con tus manos (tocar para reescribir, mantener pulsado y arrastrar para mover, «Separar de nuevo»).",
+                    "La precisión al escuchar y al separar seguirá mejorando poco a poco.",
+                    "Que la uses es lo que nos anima a seguir."
+                ]
+            ],
+            [
+                "Cuando hablo mucho rato, todo acaba junto en una sola cosa.",
+                [
+                    "Cuando las frases se encadenan, a veces cuesta encontrar los cortes.",
+                    "Al hablar, deja un pequeño respiro entre una idea y otra —por ejemplo «… y luego, (respira) … y luego»— y se separará mejor.",
+                    "Lo que ya escribiste puedes editarlo desde «Separar de nuevo»: al añadir comas y puntos al texto, se separa mejor.",
+                    "Si aun así queda todo junto, puedes separarlo manteniendo pulsado y arrastrando, o reescribirlo con un toque."
+                ]
+            ],
+            [
+                "Siento que me invitan a pagar demasiado pronto.",
+                [
+                    "Hablar, separar, repasar —el corazón de KUU es gratis para siempre.",
+                    "KUU+ es un extra discreto para quien quiera quitar los anuncios o poner el bloqueo con Face ID."
+                ]
+            ],
+            [
+                "Cuesta usarlo cuando no puedo hablar en voz alta.",
+                [
+                    "Desde «Escribir con el teclado», en la parte inferior del inicio, puedes separar igual por escrito, sin usar la voz."
+                ],
+                "t_keyboard"
+            ]
+        ],
+        "tips_support_before": "Los gestos discretos —como reescribir lo dictado o separar a tu manera— están reunidos en",
+        "tips_support_after": ".",
+
         "html_lang": "es",
         "og_locale": "es_ES",
         "label": "Español",
@@ -398,6 +700,157 @@ LOCALES = {
     },
     "ko": {
         "subdir": "ko",
+        # Tips / usage page (ko)
+        "tips_title": "사용 팁 — KUU",
+        "tips_description": "KUU에서 눈에 잘 띄지 않는 조작을 모았습니다. 음성 입력 뒤의 고쳐 쓰기, 직접 나누기, 테마 사용법을 조용히 소개합니다.",
+        "tips_eyebrow": "사용 팁",
+        "tips_h1": "말한 뒤에도, 내 손으로.",
+        "tips_lead": "KUU는 화면을 조용히 두기 위해, 많은 조작을 겉으로 드러내지 않습니다. 하지만 인식된 내용을 고치거나, 직접 나누는 일은 얼마든지 할 수 있습니다. 눈에 잘 띄지 않는 것들을, 여기에 모았습니다.",
+        "tips_screens": [
+            {
+                "heading": "생각의 자리에서",
+                "lead": "홈에서 끌어올리는, 가장 자주 쓰는 화면. 목소리로 나눈 것은 네 개의 자리에 모입니다. 눈에 잘 띄지 않는 조작도, 대부분 여기에 있습니다.",
+                "groups": [
+                    {
+                        "subhead": "항목을 하나씩 다듬기",
+                        "items": [
+                            [
+                                "탭",
+                                "제목을 탭해서 고쳐 쓰기",
+                                "항목의 글자를 그대로 탭하면, 그 자리에서 고쳐 쓸 수 있습니다. 인식이 살짝 어긋난 부분은, 여기서 다듬을 수 있습니다.",
+                                "t_edit"
+                            ],
+                            [
+                                "길게 눌러 드래그",
+                                "다른 자리로 옮기기",
+                                "항목을 길게 눌러 드래그하면, 지금 보기 / 나중에 생각하기 / 묵히기 / 내려놓기 사이를 자유롭게 옮길 수 있습니다.",
+                                "t_move"
+                            ],
+                            [
+                                "드래그",
+                                "테마로 옮기기",
+                                "같은 드래그로 위쪽 테마 칩에도 넣을 수 있습니다. 테마에 들어간 항목은, ‘미분류’로 옮기면 빠집니다.",
+                                "t_theme_drag"
+                            ],
+                            [
+                                "탭",
+                                "○을 탭해서 내려놓기",
+                                "항목 맨 앞의 작은 ○을 탭하면, 그 자리에서 살며시 ‘내려놓기’로. 바로 되돌릴 수도 있습니다.",
+                                "t_release"
+                            ],
+                            [
+                                "탭",
+                                "‘＋’로 직접 입력 더하기",
+                                "각 블록 오른쪽 아래의 옅은 ‘＋’에서, 그 자리에 항목을 글자로 적어 넣을 수 있습니다.",
+                                "t_add"
+                            ]
+                        ]
+                    },
+                    {
+                        "subhead": "테마로 묶기",
+                        "items": [
+                            [
+                                "길게 누르기",
+                                "테마를 길게 눌러 메뉴 열기",
+                                "위쪽 테마 칩을 길게 누르면, 항상 표시(고정) / 이름과 색 편집 / 내려놓기가 나옵니다. 테마 설정은, 여기가 입구입니다.",
+                                "t_theme_press"
+                            ],
+                            [
+                                "탭",
+                                "이름·색·순서 바꾸기",
+                                "테마 편집 화면에서는, 이름을 탭해서 고쳐 쓰고, 색 동그라미에서 옅은 색을 고르고, 왼쪽 손잡이로 순서를 바꿀 수 있습니다.",
+                                "t_theme_edit"
+                            ]
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "막 나눈 직후 화면에서",
+                "lead": "말하고 나눈, 바로 뒤. KUU가 나눈 방식이 마음에 들지 않으면, 여기서 다듬은 뒤 남길 수 있습니다.",
+                "groups": [
+                    {
+                        "items": [
+                            [
+                                "탭",
+                                "필요 없는 건 탭해서 빼기",
+                                "와닿지 않는 항목은 탭하면 옅어지며 빠집니다. 다시 한번 탭하면 되돌아옵니다.",
+                                "t_remove"
+                            ],
+                            [
+                                "드래그",
+                                "드래그해서 분류 바꾸기",
+                                "항목을 다른 블록으로 드래그하면, 그 자리에서 분류를 바꿀 수 있습니다.",
+                                "t_reclassify"
+                            ],
+                            [
+                                "버튼",
+                                "‘다시 나누기’로 전체 고치기",
+                                "잘못 들은 부분이 있으면 ‘다시 나누기’에서, 인식된 텍스트 전체를 고쳐 다시 나눌 수 있습니다.",
+                                "t_resort"
+                            ]
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "홈에서",
+                "lead": "목소리를 내기 어려운 날도 있어요. 그럴 땐, 글자로도.",
+                "groups": [
+                    {
+                        "items": [
+                            [
+                                "탭",
+                                "키보드로 쓰기",
+                                "홈 아래쪽 ‘키보드로 쓰기’에서, 목소리 없이 글자로도 똑같이 나눌 수 있습니다.",
+                                "t_keyboard"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ],
+        "tips_note": "이 안내들은, 처음 한 번만 화면에 살며시 나타납니다. 놓쳐도 괜찮아요. 이 페이지는, 언제든 다시 볼 수 있습니다.",
+        "tips_closing_sub": "아직 KUU를 써 보지 않았다면, 여기서.",
+        "tips_label": "사용 팁",
+        "tips_faq_heading": "자주 받는 문의",
+        "tips_faqs": [
+            [
+                "생각한 대로 나눠 주지 않아요. 정확도가 아쉬워요.",
+                [
+                    "KUU의 판단이, 늘 완벽하지는 않습니다.",
+                    "그래서 나중에 직접 고칠 수 있도록 해 두었습니다(탭해서 고쳐 쓰기 / 길게 눌러 드래그해서 옮기기 / ‘다시 나누기’).",
+                    "인식과 분류의 정확도는, 앞으로도 조금씩 나아지게 하겠습니다.",
+                    "당신이 써 주시는 것이, 그 힘이 됩니다."
+                ]
+            ],
+            [
+                "길게 말하면, 전부 하나로 묶여 버려요.",
+                [
+                    "말이 이어지면, 나눌 지점을 찾기 어려울 때가 있습니다.",
+                    "말할 때 ‘~하고, (한 호흡) ~하고’처럼 잠깐 사이를 두면, 더 잘 나뉩니다.",
+                    "이미 입력한 것은, ‘다시 나누기’에서 문장에 쉼표(,)나 마침표(.)를 넣으면, 더 잘 나뉩니다.",
+                    "그래도 하나로 묶일 때는, 길게 눌러 드래그해서 나누거나, 탭해서 고쳐 쓸 수 있습니다."
+                ]
+            ],
+            [
+                "너무 빨리 결제로 이끄는 것 같아요.",
+                [
+                    "말하기, 나누기, 돌아보기. KUU의 중심은 언제나 무료로 쓸 수 있습니다.",
+                    "KUU+는, 광고를 끄고 싶거나 Face ID 잠금을 걸고 싶은 분을 위한, 조용한 추가 기능입니다."
+                ]
+            ],
+            [
+                "소리를 낼 수 없는 상황에서는 쓰기 불편해요.",
+                [
+                    "홈 아래쪽 ‘키보드로 쓰기’에서, 목소리 없이 글자로도 똑같이 나눌 수 있습니다."
+                ],
+                "t_keyboard"
+            ]
+        ],
+        "tips_support_before": "음성 입력 뒤의 고쳐 쓰기나, 직접 나누기 등, 눈에 잘 띄지 않는 조작은",
+        "tips_support_after": "에 모아 두었습니다.",
+
         "html_lang": "ko",
         "og_locale": "ko_KR",
         "label": "한국어",
@@ -468,6 +921,157 @@ LOCALES = {
     },
     "zh-Hans": {
         "subdir": "zh-Hans",
+        # Tips / usage page (zh-Hans)
+        "tips_title": "使用技巧 — KUU",
+        "tips_description": "汇总 KUU 中不易察觉的操作。语音输入之后的修改、自己动手的分类、主题的用法，静静地一一介绍。",
+        "tips_eyebrow": "使用技巧",
+        "tips_h1": "说出来之后，也能自己动手。",
+        "tips_lead": "KUU 为了让画面保持安静，没有把大多数操作摆在明面上。不过，修改听写、亲手分类，都做得到。这些不易察觉的，我们汇总在这里。",
+        "tips_screens": [
+            {
+                "heading": "在念头的去处",
+                "lead": "从主页向上拉出的、最常用的画面。用声音分好的念头，会汇集到四个去处。不易察觉的操作，也大多在这里。",
+                "groups": [
+                    {
+                        "subhead": "逐一整理每个念头",
+                        "items": [
+                            [
+                                "轻点",
+                                "轻点标题即可改写",
+                                "直接轻点念头的文字，就能当场改写。听写的细小偏差，都可以在这里修整。",
+                                "t_edit"
+                            ],
+                            [
+                                "长按 → 拖动",
+                                "移到别的去处",
+                                "长按念头并拖动，就能在现在看／之后想／搁置／放下之间自由挪动。",
+                                "t_move"
+                            ],
+                            [
+                                "拖动",
+                                "移到主题",
+                                "用同样的拖动，也能移到上方的主题标签。移进那个主题就归入其中；把它落到“未分类”，就会移出。",
+                                "t_theme_drag"
+                            ],
+                            [
+                                "轻点",
+                                "轻点○来放下",
+                                "轻点念头开头的小○，就能当场轻轻地把它放下。也可以马上撤销。",
+                                "t_release"
+                            ],
+                            [
+                                "轻点",
+                                "用“＋”手动补记",
+                                "从每个区块右下角淡淡的“＋”，就能在那个位置用文字补记一条念头。",
+                                "t_add"
+                            ]
+                        ]
+                    },
+                    {
+                        "subhead": "用主题归拢",
+                        "items": [
+                            [
+                                "长按",
+                                "长按主题打开菜单",
+                                "长按上方的主题标签，会出现始终显示（固定）／编辑名称或颜色／放下。主题的设置，入口就在这里。",
+                                "t_theme_press"
+                            ],
+                            [
+                                "轻点",
+                                "更改名称、颜色和排序",
+                                "在主题的编辑界面，轻点名称即可改写，从色点里挑选淡色，用左侧的手柄调整排序。",
+                                "t_theme_edit"
+                            ]
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "在刚分好的画面",
+                "lead": "说完、分好，紧接着的那一刻。若 KUU 分得不合心意，可以在这里整理好，再留下来。",
+                "groups": [
+                    {
+                        "items": [
+                            [
+                                "轻点",
+                                "不需要的，轻点移除",
+                                "没什么感觉的念头，轻点一下就会变淡、移出。再轻点一次便能恢复。",
+                                "t_remove"
+                            ],
+                            [
+                                "拖动",
+                                "拖动改变分类",
+                                "把念头拖到别的区块，就能当场改变分类。",
+                                "t_reclassify"
+                            ],
+                            [
+                                "按钮",
+                                "用“重新分类”修正全文",
+                                "若有听错，可以从“重新分类”把整段文字都改好，再分一次。",
+                                "t_resort"
+                            ]
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "在主页",
+                "lead": "也有不方便出声的日子。那样的时候，用文字也可以。",
+                "groups": [
+                    {
+                        "items": [
+                            [
+                                "轻点",
+                                "用键盘写",
+                                "从主页下方的“用键盘写”，不出声、用文字，也能一样地分好。",
+                                "t_keyboard"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ],
+        "tips_note": "这些提示，只在最初的那一次静静出现在画面上。错过也没关系。这个页面，随时都能回看。",
+        "tips_closing_sub": "如果还没试过 KUU，可以从这里开始。",
+        "tips_label": "使用技巧",
+        "tips_faq_heading": "常见咨询",
+        "tips_faqs": [
+            [
+                "分得不像我想的那样。准确度还差一点。",
+                [
+                    "KUU 的判断，并非总是完美。",
+                    "所以，我们让它之后可以亲手修改（轻点改写／长按拖动移动／“重新分类”）。",
+                    "听写与分类的准确度，今后也会一点点变好。",
+                    "有你在用，就是我们前进的动力。"
+                ]
+            ],
+            [
+                "说得一长，就全被并到一起了。",
+                [
+                    "句子一连下去，有时就不容易找到断点。",
+                    "说的时候，像“说完一句，（喘口气）再说一句”这样，稍微留些停顿，就更容易分开。",
+                    "已经输入的内容，可以用“重新分类”给句子加上逗号和句号，就更容易断开。",
+                    "如果还是被并在一起，可以长按拖动来分开，或轻点改写。"
+                ]
+            ],
+            [
+                "总感觉很快就被引去付费。",
+                [
+                    "说出来、分好、回看——KUU 的核心，一直都能免费使用。",
+                    "KUU+ 是给想关掉广告、想加上 Face ID 锁的人，悄悄准备的一点补充。"
+                ]
+            ],
+            [
+                "在不方便出声的场合，不太好用。",
+                [
+                    "从主页下方的“用键盘写”，不出声、用文字，也能一样地分好。"
+                ],
+                "t_keyboard"
+            ]
+        ],
+        "tips_support_before": "语音输入之后的修改、自己动手的分类等不易察觉的操作，都汇总在",
+        "tips_support_after": "里。",
+
         "html_lang": "zh-Hans",
         "og_locale": "zh_CN",
         "label": "简体中文",
@@ -1490,8 +2094,9 @@ def index_html(code, d):
     support_href = "/support/" if not d["subdir"] else f'/{d["subdir"]}/support/'
     privacy_href = "/privacy/" if code == "ja" else "/en/privacy/"
     # Tips page exists only for TIPS_LOCALES; link it from the footer where it does.
+    tips_href = "/tips/" if not d["subdir"] else f'/{d["subdir"]}/tips/'
     tips_link = (
-        f'<a href="/tips/">{d["tips_label"]}</a>\n          '
+        f'<a href="{tips_href}">{d["tips_label"]}</a>\n          '
         if code in TIPS_LOCALES
         else ""
     )
@@ -1620,9 +2225,10 @@ def support_html(code, d):
         f'      <p>\n        <strong>{q}</strong><br />\n        {a}\n      </p>'
         for q, a in d["faqs"]
     )
+    tips_href = "/tips/" if not d["subdir"] else f'/{d["subdir"]}/tips/'
     tips_prompt = (
         f'\n      <p>{d["tips_support_before"]} '
-        f'<a href="/tips/">{d["tips_label"]}</a>{d["tips_support_after"]}</p>'
+        f'<a href="{tips_href}">{d["tips_label"]}</a>{d["tips_support_after"]}</p>'
         if code in TIPS_LOCALES
         else ""
     )
