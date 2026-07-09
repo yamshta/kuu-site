@@ -3822,11 +3822,15 @@ Sitemap: {BASE_URL}/sitemap.xml
 
 
 def main():
-    # ja is canonical; fill any missing key on other locales from ja.
+    # 未翻訳キーは英語にフォールバックする（国際的な既定として ja より en を優先。
+    # 非日本語ユーザーには日本語より英語のほうが読める）。en が持たないキー
+    # （journal_* 等 ja 専用）だけ ja で補う。ja は canonical なので全キーを持つ。
     ja = LOCALES["ja"]
+    en = LOCALES["en"]
     for code, d in LOCALES.items():
-        for key, val in ja.items():
-            d.setdefault(key, val)
+        for key in ja:
+            if key not in d:
+                d[key] = en.get(key, ja[key])
 
     written = []
     for code, d in LOCALES.items():
