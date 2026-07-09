@@ -7,6 +7,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/" />
   </url>
   <url>
@@ -16,6 +20,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/" />
   </url>
   <url>
@@ -25,6 +33,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/" />
   </url>
   <url>
@@ -34,6 +46,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/" />
   </url>
   <url>
@@ -43,6 +59,62 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/" />
+  </url>
+  <url>
+    <loc>https://kuu-zen.com/de/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kuu-zen.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/" />
+  </url>
+  <url>
+    <loc>https://kuu-zen.com/it/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kuu-zen.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/" />
+  </url>
+  <url>
+    <loc>https://kuu-zen.com/vi/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kuu-zen.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/" />
+  </url>
+  <url>
+    <loc>https://kuu-zen.com/zh-Hant/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kuu-zen.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/" />
   </url>
   <url>
@@ -52,6 +124,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/support/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/support/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/support/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/support/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/support/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/support/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/support/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/support/" />
   </url>
   <url>
@@ -61,6 +137,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/support/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/support/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/support/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/support/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/support/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/support/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/support/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/support/" />
   </url>
   <url>
@@ -70,6 +150,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/support/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/support/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/support/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/support/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/support/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/support/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/support/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/support/" />
   </url>
   <url>
@@ -79,6 +163,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/support/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/support/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/support/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/support/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/support/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/support/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/support/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/support/" />
   </url>
   <url>
@@ -88,6 +176,62 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/support/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/support/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/support/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/support/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/support/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/support/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/support/" />
+  </url>
+  <url>
+    <loc>https://kuu-zen.com/de/support/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kuu-zen.com/support/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/support/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/support/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/support/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/support/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/support/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/support/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/support/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/support/" />
+  </url>
+  <url>
+    <loc>https://kuu-zen.com/it/support/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kuu-zen.com/support/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/support/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/support/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/support/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/support/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/support/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/support/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/support/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/support/" />
+  </url>
+  <url>
+    <loc>https://kuu-zen.com/vi/support/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kuu-zen.com/support/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/support/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/support/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/support/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/support/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/support/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/support/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/support/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/support/" />
+  </url>
+  <url>
+    <loc>https://kuu-zen.com/zh-Hant/support/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kuu-zen.com/support/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/support/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/support/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/support/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/support/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/support/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/support/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/support/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/support/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/support/" />
   </url>
   <url>
@@ -97,6 +241,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/tips/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/tips/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/tips/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/tips/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/tips/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/tips/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/tips/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/tips/" />
   </url>
   <url>
@@ -106,6 +254,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/tips/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/tips/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/tips/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/tips/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/tips/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/tips/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/tips/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/tips/" />
   </url>
   <url>
@@ -115,6 +267,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/tips/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/tips/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/tips/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/tips/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/tips/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/tips/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/tips/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/tips/" />
   </url>
   <url>
@@ -124,6 +280,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/tips/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/tips/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/tips/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/tips/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/tips/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/tips/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/tips/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/tips/" />
   </url>
   <url>
@@ -133,6 +293,62 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/tips/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/tips/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/tips/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/tips/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/tips/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/tips/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/tips/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/tips/" />
+  </url>
+  <url>
+    <loc>https://kuu-zen.com/zh-Hant/tips/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kuu-zen.com/tips/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/tips/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/tips/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/tips/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/tips/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/tips/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/tips/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/tips/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/tips/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/tips/" />
+  </url>
+  <url>
+    <loc>https://kuu-zen.com/de/tips/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kuu-zen.com/tips/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/tips/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/tips/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/tips/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/tips/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/tips/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/tips/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/tips/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/tips/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/tips/" />
+  </url>
+  <url>
+    <loc>https://kuu-zen.com/it/tips/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kuu-zen.com/tips/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/tips/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/tips/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/tips/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/tips/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/tips/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/tips/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/tips/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/tips/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/tips/" />
+  </url>
+  <url>
+    <loc>https://kuu-zen.com/vi/tips/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kuu-zen.com/tips/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/tips/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/tips/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/tips/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/tips/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/tips/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/tips/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/tips/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/tips/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/tips/" />
   </url>
   <url>

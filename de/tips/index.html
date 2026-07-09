@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f6f9fc" />
+    <meta name="robots" content="index,follow" />
+    <title>Tipps — KUU</title>
+    <meta name="description" content="Eine Übersicht der leicht zu übersehenden Bedienschritte in KUU – ein stiller Blick auf das Überarbeiten nach dem Sprechen, das Sortieren von Hand und den Umgang mit Themen." />
+    <meta property="og:title" content="Tipps — KUU" />
+    <meta property="og:description" content="Eine Übersicht der leicht zu übersehenden Bedienschritte in KUU – ein stiller Blick auf das Überarbeiten nach dem Sprechen, das Sortieren von Hand und den Umgang mit Themen." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://kuu-zen.com/de/tips/" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:image" content="https://kuu-zen.com/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tipps — KUU" />
+    <meta name="twitter:description" content="Eine Übersicht der leicht zu übersehenden Bedienschritte in KUU – ein stiller Blick auf das Überarbeiten nach dem Sprechen, das Sortieren von Hand und den Umgang mit Themen." />
+    <meta name="twitter:image" content="https://kuu-zen.com/assets/og.png" />
+    <link rel="canonical" href="https://kuu-zen.com/de/tips/" />
+    <link rel="alternate" hreflang="ja" href="https://kuu-zen.com/tips/" />
+    <link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/tips/" />
+    <link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/tips/" />
+    <link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/tips/" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/tips/" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/tips/" />
+    <link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/tips/" />
+    <link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/tips/" />
+    <link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/tips/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/tips/" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <meta name="apple-itunes-app" content="app-id=6771264775" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Es sortiert nicht so, wie ich es erwartet habe. Die Genauigkeit ist noch nicht ganz da.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "KUUs Einschätzung ist nicht immer perfekt.Deshalb kannst du es hinterher jederzeit von Hand korrigieren (zum Überarbeiten tippen, zum Verschieben lange drücken und ziehen oder „Neu sortieren“).Wie es hört und sortiert, verbessern wir weiterhin Schritt für Schritt.Dass du es nutzt, ist uns dabei Ansporn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wenn ich länger spreche, wird alles zu einem Einzigen zusammengefasst.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wenn Sätze ineinander übergehen, sind die Grenzen manchmal schwer zu finden.Wenn du beim Sprechen eine kleine Pause lässt – „dies, (ein Atemzug) dann das“ –, lässt es sich leichter aufteilen.Bei bereits Eingegebenem hilft es, im „Neu sortieren“ Kommas und Punkte in den Text einzufügen, damit er sich besser aufteilt.Bleibt es trotzdem zusammen, kannst du es per langem Drücken und Ziehen aufteilen oder mit einem Tippen überarbeiten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ich habe das Gefühl, gleich zum Bezahlen gedrängt zu werden.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sprechen, sortieren, durchsehen – der Kern von KUU bleibt für immer kostenlos.KUU+ ist eine leise Ergänzung für alle, die Werbung ausschalten oder eine Face-ID-Sperre hinzufügen möchten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "In Situationen, in denen ich nicht laut sprechen kann, ist es schwer zu nutzen.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Über „Mit Tastatur schreiben“ unten auf dem Home-Screen kannst du auch ohne Stimme als Text genauso sortieren."
+      }
+    }
+  ]
+}
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DC1R54C73B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DC1R54C73B');
+      // LP 唯一のゴール = App Store 遷移を計測。link_location は CTA の ct= (lp_hero/lp_footer/lp_tips)。
+      // GA4 は sendBeacon で送るため同一タブ遷移でも欠落しない。capture で stopPropagation 耐性を持たせる。
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="apps.apple.com"]');
+        if (!a) return;
+        var m = a.href.match(/[?&]ct=([^&]+)/);
+        gtag('event', 'app_store_click', { link_location: m ? m[1] : 'other' });
+      }, true);
+    </script>
+    <style>
+:root {
+  color-scheme: light;
+  --bg: #f6f9fc;
+  --surface: #ffffff;
+  --surface-quiet: #eff4f8;
+  --ink: #353b41;
+  --ink-soft: #6b737b;
+  --ink-faint: #939aa2;
+  --primary-deep: #5e97c2;
+  --primary-soft: #dceaf4;
+  --water-action: #bfddef;
+  --water-ink: #255069;
+  --line: #e7edf3;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Apple SD Gothic Neo", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.7;
+  font-feature-settings: "palt" 1, "kern" 1;
+  font-kerning: normal;
+}
+.wrap { max-width: 660px; margin: 0 auto; padding: 0 24px; }
+
+/* ---- header ---- */
+.tips-hero { text-align: center; padding: clamp(40px, 8vw, 64px) 24px clamp(4px, 3vw, 14px); }
+.wordmark {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  color: var(--primary-deep);
+  margin: 0 0 clamp(14px, 3vw, 22px) 0.42em;
+}
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: var(--primary-deep);
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+.tips-hero h1 {
+  font-size: clamp(26px, 6vw, 38px);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+.tips-hero .lead { color: var(--ink-soft); font-size: clamp(15px, 4vw, 16px); max-width: 32em; margin: 16px auto 0; }
+
+/* ---- screen sections ---- */
+.screen { padding: clamp(44px, 9vw, 68px) 0 0; }
+.screen h2 { font-size: clamp(20px, 5vw, 25px); font-weight: 600; line-height: 1.45; margin: 0; }
+.screen .screen-lead { color: var(--ink-soft); font-size: clamp(14px, 3.8vw, 15px); margin: 10px 0 0; max-width: 32em; }
+.subhead {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--primary-deep);
+  margin: 22px 0 0;
+}
+/* extra separation only when a subhead follows a previous group's cards */
+.tips + .subhead { margin-top: clamp(40px, 8vw, 56px); }
+
+/* ---- figure (annotated real screenshot) ---- */
+.figure {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 18px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  box-shadow: 0 22px 48px -28px rgba(94, 151, 194, 0.55);
+  background: var(--surface);
+}
+.figure + .figure { margin-top: 12px; }
+
+/* ---- tip cards ---- */
+.tips { display: grid; gap: 14px; margin-top: 18px; }
+.tip {
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.tip .thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: -2px 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface-quiet);
+}
+.tip .badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--primary-deep);
+  background: var(--primary-soft);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 11px;
+}
+.tip h3 { margin: 0 0 6px; font-size: 16.5px; font-weight: 600; color: var(--ink); }
+.tip p { margin: 0; color: var(--ink-soft); font-size: 14.5px; line-height: 1.72; }
+
+/* ---- note ---- */
+.note {
+  margin: clamp(40px, 8vw, 64px) 0 0;
+  padding: 22px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  color: var(--ink-soft);
+  font-size: clamp(15px, 4vw, 16px);
+}
+
+/* ---- FAQ (よくある問い合わせ) ---- */
+.faq { padding: clamp(44px, 9vw, 68px) 0 0; }
+.faq h2 { font-size: clamp(20px, 5vw, 25px); font-weight: 600; line-height: 1.45; margin: 0; }
+.faq-list { display: grid; gap: 14px; margin-top: 22px; }
+.faq-item {
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.faq-q { margin: 0 0 10px; font-size: 15.5px; font-weight: 600; color: var(--ink); line-height: 1.55; }
+.faq-a { margin: 0; font-size: 14.5px; color: var(--ink-soft); line-height: 1.7; }
+.faq-a + .faq-a { margin-top: 8px; }
+.faq-item .thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 16px 0 0;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface-quiet);
+}
+
+/* ---- closing cta ---- */
+.closing { text-align: center; padding: clamp(48px, 10vw, 80px) 0 clamp(8px, 3vw, 24px); }
+.closing .sub { color: var(--ink-soft); margin: 0 0 22px; font-size: clamp(15px, 4vw, 16px); }
+.cta {
+  display: inline-block;
+  padding: 15px 30px;
+  background: var(--water-action);
+  color: var(--water-ink);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cta:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -12px rgba(37, 80, 105, 0.5); }
+
+/* ---- footer ---- */
+footer {
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: clamp(40px, 8vw, 72px);
+  padding: 40px 0 56px;
+}
+.footer-row { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+.footer-row a { color: var(--ink-soft); text-decoration: none; }
+.footer-row a:hover { text-decoration: underline; }
+
+/* ---- scroll reveal (progressive enhancement) ---- */
+.js .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .reveal.in { opacity: 1; transform: none; }
+.js .reveal .stagger > * { opacity: 0; transform: translateY(12px); transition: opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .reveal.in .stagger > * { opacity: 1; transform: none; }
+.js .reveal.in .stagger > *:nth-child(2) { transition-delay: 0.06s; }
+.js .reveal.in .stagger > *:nth-child(3) { transition-delay: 0.12s; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal, .js .reveal .stagger > * { opacity: 1; transform: none; transition: none; }
+}
+    </style>
+  </head>
+  <body>
+    <header class="tips-hero">
+      <p class="wordmark">KUU</p>
+      <p class="eyebrow">Tipps</p>
+      <h1>Auch nach dem Sprechen – in deiner Hand.</h1>
+      <p class="lead">Um den Bildschirm still zu halten, zeigt KUU die meisten Bedienelemente nicht offen an. Doch das Erkannte korrigieren oder von Hand sortieren – das geht jederzeit. Die leicht zu übersehenden Schritte haben wir hier zusammengestellt.</p>
+    </header>
+
+    <main>
+      <section class="screen reveal">
+        <div class="wrap">
+          <h2>Am Ort für deine Gedanken</h2>
+          <p class="screen-lead">Der Bildschirm, den du am häufigsten nutzt – vom Home-Screen heraufgezogen. Was per Stimme sortiert wurde, sammelt sich an vier Orten. Auch die meisten leicht zu übersehenden Schritte sind hier.</p>
+          <p class="subhead">Einträge einzeln ordnen</p>
+          <div class="tips stagger">
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_edit_poster.jpg?v=20260701b"><source src="/assets/tips/t_edit.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">Tippen</span><h3>Auf den Titel tippen, um ihn zu überarbeiten</h3><p>Tippe direkt auf den Text eines Eintrags, um ihn an Ort und Stelle zu überarbeiten. Kleine Hörfehler lassen sich genau hier glätten.</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_move_poster.jpg?v=20260701b"><source src="/assets/tips/t_move.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">Lange drücken → ziehen</span><h3>An einen anderen Ort verschieben</h3><p>Drücke lange auf einen Eintrag und ziehe ihn, um ihn frei zwischen „Jetzt ansehen / Später darüber nachdenken / Ruhen lassen / Loslassen“ zu verschieben.</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_theme_drag_poster.jpg?v=20260701b"><source src="/assets/tips/t_theme_drag.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">Ziehen</span><h3>Zu einem Thema verschieben</h3><p>Mit derselben Ziehbewegung lässt er sich auch auf einen Thema-Chip oben verschieben. Er wird Teil dieses Themas; ziehst du ihn auf „Nicht zugeordnet“, wird er wieder herausgenommen.</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_release_poster.jpg?v=20260701b"><source src="/assets/tips/t_release.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">Tippen</span><h3>Auf das ○ tippen, um loszulassen</h3><p>Tippe auf das kleine ○ am Anfang eines Eintrags, um ihn sanft ins „Loslassen“ zu geben. Du kannst es sofort wieder rückgängig machen.</p></div>
+            <div class="tip"><img class="thumb" src="/assets/tips/t_add.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /><span class="badge">Tippen</span><h3>Mit „＋“ von Hand hinzufügen</h3><p>Über das blasse „＋“ unten rechts an jedem Block kannst du dort einen Eintrag als Text ergänzen.</p></div>
+          </div>
+          <p class="subhead">Mit Themen bündeln</p>
+          <div class="tips stagger">
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_theme_press_poster.jpg?v=20260701b"><source src="/assets/tips/t_theme_press.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">Lange drücken</span><h3>Für das Menü lange auf ein Thema drücken</h3><p>Drücke lange auf einen Thema-Chip oben, und es erscheinen „Immer anzeigen (anheften)“, „Name oder Farbe bearbeiten“ und „Loslassen“. Hier geht es zu den Einstellungen eines Themas.</p></div>
+            <div class="tip"><img class="thumb" src="/assets/tips/t_theme_edit.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /><span class="badge">Tippen</span><h3>Name, Farbe und Reihenfolge ändern</h3><p>Im Bearbeitungsbildschirm eines Themas tippst du auf den Namen, um ihn zu überarbeiten, wählst über die Farbpunkte eine zarte Farbe und ordnest die Reihenfolge mit dem Griff links neu.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen reveal">
+        <div class="wrap">
+          <h2>Direkt nach dem Sortieren</h2>
+          <p class="screen-lead">Der Moment gleich nach dem Sprechen und Sortieren. Wenn KUUs Aufteilung nicht recht passt, kannst du sie hier ordnen, bevor du sie behältst.</p>
+          <div class="tips stagger">
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_remove_poster.jpg?v=20260701b"><source src="/assets/tips/t_remove.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">Tippen</span><h3>Nicht Benötigtes durch Tippen entfernen</h3><p>Tippe auf einen Eintrag, der nicht passt, und er wird blasser und fällt heraus. Ein erneutes Tippen holt ihn zurück.</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_reclassify_poster.jpg?v=20260701b"><source src="/assets/tips/t_reclassify.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">Ziehen</span><h3>Durch Ziehen die Einordnung ändern</h3><p>Ziehe einen Eintrag in einen anderen Block, um seine Einordnung gleich an Ort und Stelle zu ändern.</p></div>
+            <div class="tip"><img class="thumb" src="/assets/tips/t_resort.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /><span class="badge">Schaltfläche</span><h3>Mit „Neu sortieren“ den ganzen Text korrigieren</h3><p>Wurde etwas falsch verstanden, kannst du über „Neu sortieren“ die gesamte Abschrift korrigieren und noch einmal sortieren.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen reveal">
+        <div class="wrap">
+          <h2>Auf dem Home-Screen</h2>
+          <p class="screen-lead">An manchen Tagen fällt das laute Sprechen schwer. Dann geht es auch mit Text.</p>
+          <div class="tips stagger">
+            <div class="tip"><img class="thumb" src="/assets/tips/t_keyboard.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /><span class="badge">Tippen</span><h3>Mit Tastatur schreiben</h3><p>Über „Mit Tastatur schreiben“ unten auf dem Home-Screen kannst du auch ohne Stimme als Text genauso sortieren.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq reveal">
+        <div class="wrap">
+          <h2>Häufige Fragen</h2>
+          <div class="faq-list stagger">
+            <div class="faq-item"><p class="faq-q">Es sortiert nicht so, wie ich es erwartet habe. Die Genauigkeit ist noch nicht ganz da.</p><p class="faq-a">KUUs Einschätzung ist nicht immer perfekt.</p><p class="faq-a">Deshalb kannst du es hinterher jederzeit von Hand korrigieren (zum Überarbeiten tippen, zum Verschieben lange drücken und ziehen oder „Neu sortieren“).</p><p class="faq-a">Wie es hört und sortiert, verbessern wir weiterhin Schritt für Schritt.</p><p class="faq-a">Dass du es nutzt, ist uns dabei Ansporn.</p></div>
+            <div class="faq-item"><p class="faq-q">Wenn ich länger spreche, wird alles zu einem Einzigen zusammengefasst.</p><p class="faq-a">Wenn Sätze ineinander übergehen, sind die Grenzen manchmal schwer zu finden.</p><p class="faq-a">Wenn du beim Sprechen eine kleine Pause lässt – „dies, (ein Atemzug) dann das“ –, lässt es sich leichter aufteilen.</p><p class="faq-a">Bei bereits Eingegebenem hilft es, im „Neu sortieren“ Kommas und Punkte in den Text einzufügen, damit er sich besser aufteilt.</p><p class="faq-a">Bleibt es trotzdem zusammen, kannst du es per langem Drücken und Ziehen aufteilen oder mit einem Tippen überarbeiten.</p></div>
+            <div class="faq-item"><p class="faq-q">Ich habe das Gefühl, gleich zum Bezahlen gedrängt zu werden.</p><p class="faq-a">Sprechen, sortieren, durchsehen – der Kern von KUU bleibt für immer kostenlos.</p><p class="faq-a">KUU+ ist eine leise Ergänzung für alle, die Werbung ausschalten oder eine Face-ID-Sperre hinzufügen möchten.</p></div>
+            <div class="faq-item"><p class="faq-q">In Situationen, in denen ich nicht laut sprechen kann, ist es schwer zu nutzen.</p><p class="faq-a">Über „Mit Tastatur schreiben“ unten auf dem Home-Screen kannst du auch ohne Stimme als Text genauso sortieren.</p><img class="thumb" src="/assets/tips/t_keyboard.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing-note reveal">
+        <div class="wrap">
+          <p class="note">Diese Hinweise erscheinen nur beim ersten Mal ganz sanft auf dem Bildschirm. Wenn du sie übersiehst, ist das kein Problem – diese Seite kannst du jederzeit wieder aufrufen.</p>
+        </div>
+      </section>
+
+      <section class="closing reveal">
+        <div class="wrap">
+          <p class="sub">Wenn du KUU noch nicht ausprobiert hast, geht es hier los.</p>
+          <a class="cta" href="https://apps.apple.com/de/app/id6771264775?ct=lp_tips" rel="noopener">Laden im App Store</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="footer-row">
+          <a href="/de/">← Zurück nach oben</a>
+          <a href="/de/support/">Support</a>
+          <a href="/en/privacy/">Datenschutz</a>
+          <span>© KUU</span>
+        </div>
+      </div>
+    </footer>
+<script>
+  document.documentElement.classList.add('js');
+  addEventListener('DOMContentLoaded', function () {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  });
+</script>
+  </body>
+</html>
