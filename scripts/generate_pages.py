@@ -18,6 +18,7 @@ locales fall back to ja for any key they have not translated yet (see main()).
 
 import html as html_mod
 import json
+import os
 import re
 from pathlib import Path
 
@@ -48,6 +49,16 @@ ASSET_VERSION = "20260701b"
 # autoplay + muted + playsinline を付ける。
 VIDEO_THUMBS = {"t_move", "t_theme_drag", "t_reclassify",
                 "t_release", "t_theme_press", "t_remove", "t_edit"}
+
+_TIPS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", "tips")
+
+
+def tips_asset(code, name, ext):
+    """ロケール別 tips アセット (assets/tips/<code>/<name>.<ext>) があればそれを、
+    無ければ ja (root: assets/tips/<name>.<ext>) を返す。各言語 UI で撮り直した
+    スクショ/動画を assets/tips/<locale>/ に置くと自動で差し替わる (#18 の段階展開用)。"""
+    sub = f"{code}/" if os.path.exists(os.path.join(_TIPS_DIR, code, f"{name}.{ext}")) else ""
+    return f"/assets/tips/{sub}{name}.{ext}?v={ASSET_VERSION}"
 # GA4 web stream measurement ID (G-XXXXXXXXXX). Empty = no analytics tag emitted.
 # Stream: properties/539320049/dataStreams/15063638495 (kuu-zen.com)
 GA4_MEASUREMENT_ID = "G-DC1R54C73B"
@@ -3265,13 +3276,13 @@ def tips_html(code, d):
             media = (
                 f'<video class="thumb" autoplay loop muted playsinline preload="metadata" '
                 f'width="860" height="798" '
-                f'poster="/assets/tips/{thumb}_poster.jpg?v={ASSET_VERSION}">'
-                f'<source src="/assets/tips/{thumb}.mp4?v={ASSET_VERSION}" type="video/mp4" />'
+                f'poster="{tips_asset(code, thumb + "_poster", "jpg")}">'
+                f'<source src="{tips_asset(code, thumb, "mp4")}" type="video/mp4" />'
                 f"</video>"
             )
         elif thumb:
             media = (
-                f'<img class="thumb" src="/assets/tips/{thumb}.png?v={ASSET_VERSION}" '
+                f'<img class="thumb" src="{tips_asset(code, thumb, "png")}" '
                 f'width="900" height="562" loading="lazy" alt="" />'
             )
         else:
@@ -3313,7 +3324,7 @@ def tips_html(code, d):
         thumb = item[2] if len(item) > 2 else ""
         answer = "".join(f'<p class="faq-a">{line}</p>' for line in lines)
         thumb_html = (
-            f'<img class="thumb" src="/assets/tips/{thumb}.png?v={ASSET_VERSION}" '
+            f'<img class="thumb" src="{tips_asset(code, thumb, "png")}" '
             f'width="900" height="562" loading="lazy" alt="" />'
             if thumb
             else ""
