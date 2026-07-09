@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f6f9fc" />
+    <meta name="robots" content="index,follow" />
+    <title>Tips — KUU</title>
+    <meta name="description" content="A round-up of KUU's easy-to-miss moves — a quiet look at editing after you speak, sorting by hand, and using themes." />
+    <meta property="og:title" content="Tips — KUU" />
+    <meta property="og:description" content="A round-up of KUU's easy-to-miss moves — a quiet look at editing after you speak, sorting by hand, and using themes." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://kuu-zen.com/en/tips/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://kuu-zen.com/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tips — KUU" />
+    <meta name="twitter:description" content="A round-up of KUU's easy-to-miss moves — a quiet look at editing after you speak, sorting by hand, and using themes." />
+    <meta name="twitter:image" content="https://kuu-zen.com/assets/og.png" />
+    <link rel="canonical" href="https://kuu-zen.com/en/tips/" />
+    <link rel="alternate" hreflang="ja" href="https://kuu-zen.com/tips/" />
+    <link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/tips/" />
+    <link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/tips/" />
+    <link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/tips/" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/tips/" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/tips/" />
+    <link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/tips/" />
+    <link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/tips/" />
+    <link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/tips/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/tips/" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <meta name="apple-itunes-app" content="app-id=6771264775" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "It doesn't sort the way I expected. The accuracy isn't quite there.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "KUU's read on things isn't always perfect.That's why you can always fix it by hand afterward (tap to rewrite, long-press and drag to move, or “Sort again”).We'll keep improving how it hears and sorts, little by little.You using it is what encourages us."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When I talk for a while, it all gets merged into one.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When sentences run on, the breaks can be hard to find.As you speak, leaving a small pause — “this, (a breath) then that” — helps it split more easily.For something you've already entered, adding commas and periods in “Sort again” helps it break into pieces.If it still stays merged, you can split it with a long-press drag, or rewrite it with a tap."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "It feels like I'm pushed to pay right away.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Speak, sort, look back — the heart of KUU stays free, always.KUU+ is a quiet extra, for those who'd like to turn off ads or add a Face ID lock."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "It's hard to use when I can't speak aloud.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "From “Write with the keyboard” at the bottom of Home, you can sort the same way in text, without using your voice."
+      }
+    }
+  ]
+}
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DC1R54C73B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DC1R54C73B');
+      // LP 唯一のゴール = App Store 遷移を計測。link_location は CTA の ct= (lp_hero/lp_footer/lp_tips)。
+      // GA4 は sendBeacon で送るため同一タブ遷移でも欠落しない。capture で stopPropagation 耐性を持たせる。
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="apps.apple.com"]');
+        if (!a) return;
+        var m = a.href.match(/[?&]ct=([^&]+)/);
+        gtag('event', 'app_store_click', { link_location: m ? m[1] : 'other' });
+      }, true);
+    </script>
+    <style>
+:root {
+  color-scheme: light;
+  --bg: #f6f9fc;
+  --surface: #ffffff;
+  --surface-quiet: #eff4f8;
+  --ink: #353b41;
+  --ink-soft: #6b737b;
+  --ink-faint: #939aa2;
+  --primary-deep: #5e97c2;
+  --primary-soft: #dceaf4;
+  --water-action: #bfddef;
+  --water-ink: #255069;
+  --line: #e7edf3;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Apple SD Gothic Neo", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.7;
+  font-feature-settings: "palt" 1, "kern" 1;
+  font-kerning: normal;
+}
+.wrap { max-width: 660px; margin: 0 auto; padding: 0 24px; }
+
+/* ---- header ---- */
+.tips-hero { text-align: center; padding: clamp(40px, 8vw, 64px) 24px clamp(4px, 3vw, 14px); }
+.wordmark {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  color: var(--primary-deep);
+  margin: 0 0 clamp(14px, 3vw, 22px) 0.42em;
+}
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: var(--primary-deep);
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+.tips-hero h1 {
+  font-size: clamp(26px, 6vw, 38px);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+.tips-hero .lead { color: var(--ink-soft); font-size: clamp(15px, 4vw, 16px); max-width: 32em; margin: 16px auto 0; }
+
+/* ---- screen sections ---- */
+.screen { padding: clamp(44px, 9vw, 68px) 0 0; }
+.screen h2 { font-size: clamp(20px, 5vw, 25px); font-weight: 600; line-height: 1.45; margin: 0; }
+.screen .screen-lead { color: var(--ink-soft); font-size: clamp(14px, 3.8vw, 15px); margin: 10px 0 0; max-width: 32em; }
+.subhead {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--primary-deep);
+  margin: 22px 0 0;
+}
+/* extra separation only when a subhead follows a previous group's cards */
+.tips + .subhead { margin-top: clamp(40px, 8vw, 56px); }
+
+/* ---- figure (annotated real screenshot) ---- */
+.figure {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 18px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  box-shadow: 0 22px 48px -28px rgba(94, 151, 194, 0.55);
+  background: var(--surface);
+}
+.figure + .figure { margin-top: 12px; }
+
+/* ---- tip cards ---- */
+.tips { display: grid; gap: 14px; margin-top: 18px; }
+.tip {
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.tip .thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: -2px 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface-quiet);
+}
+.tip .badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--primary-deep);
+  background: var(--primary-soft);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 11px;
+}
+.tip h3 { margin: 0 0 6px; font-size: 16.5px; font-weight: 600; color: var(--ink); }
+.tip p { margin: 0; color: var(--ink-soft); font-size: 14.5px; line-height: 1.72; }
+
+/* ---- note ---- */
+.note {
+  margin: clamp(40px, 8vw, 64px) 0 0;
+  padding: 22px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  color: var(--ink-soft);
+  font-size: clamp(15px, 4vw, 16px);
+}
+
+/* ---- FAQ (よくある問い合わせ) ---- */
+.faq { padding: clamp(44px, 9vw, 68px) 0 0; }
+.faq h2 { font-size: clamp(20px, 5vw, 25px); font-weight: 600; line-height: 1.45; margin: 0; }
+.faq-list { display: grid; gap: 14px; margin-top: 22px; }
+.faq-item {
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.faq-q { margin: 0 0 10px; font-size: 15.5px; font-weight: 600; color: var(--ink); line-height: 1.55; }
+.faq-a { margin: 0; font-size: 14.5px; color: var(--ink-soft); line-height: 1.7; }
+.faq-a + .faq-a { margin-top: 8px; }
+.faq-item .thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 16px 0 0;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface-quiet);
+}
+
+/* ---- closing cta ---- */
+.closing { text-align: center; padding: clamp(48px, 10vw, 80px) 0 clamp(8px, 3vw, 24px); }
+.closing .sub { color: var(--ink-soft); margin: 0 0 22px; font-size: clamp(15px, 4vw, 16px); }
+.cta {
+  display: inline-block;
+  padding: 15px 30px;
+  background: var(--water-action);
+  color: var(--water-ink);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cta:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -12px rgba(37, 80, 105, 0.5); }
+
+/* ---- footer ---- */
+footer {
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: clamp(40px, 8vw, 72px);
+  padding: 40px 0 56px;
+}
+.footer-row { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+.footer-row a { color: var(--ink-soft); text-decoration: none; }
+.footer-row a:hover { text-decoration: underline; }
+
+/* ---- scroll reveal (progressive enhancement) ---- */
+.js .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .reveal.in { opacity: 1; transform: none; }
+.js .reveal .stagger > * { opacity: 0; transform: translateY(12px); transition: opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .reveal.in .stagger > * { opacity: 1; transform: none; }
+.js .reveal.in .stagger > *:nth-child(2) { transition-delay: 0.06s; }
+.js .reveal.in .stagger > *:nth-child(3) { transition-delay: 0.12s; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal, .js .reveal .stagger > * { opacity: 1; transform: none; transition: none; }
+}
+    </style>
+  </head>
+  <body>
+    <header class="tips-hero">
+      <p class="wordmark">KUU</p>
+      <p class="eyebrow">Tips</p>
+      <h1>After you speak, it's still in your hands.</h1>
+      <p class="lead">To keep the screen quiet, KUU keeps most of its controls out of sight. But you can always fix what was heard, or sort things by hand. Here are the ones that are easy to miss.</p>
+    </header>
+
+    <main>
+      <section class="screen reveal">
+        <div class="wrap">
+          <h2>At the place for your thoughts</h2>
+          <p class="screen-lead">The screen you'll use most, pulled up from Home. What you sorted by voice gathers into four places. Most of the easy-to-miss moves are here, too.</p>
+          <p class="subhead">Tend to items one by one</p>
+          <div class="tips stagger">
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_edit_poster.jpg?v=20260701b"><source src="/assets/tips/t_edit.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">Tap</span><h3>Tap a title to rewrite it</h3><p>Tap the words of an item to rewrite them on the spot. Small mishearings can be smoothed out right here.</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_move_poster.jpg?v=20260701b"><source src="/assets/tips/t_move.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">Long-press → drag</span><h3>Move it elsewhere</h3><p>Long-press an item and drag to move it freely between Now, Later, Park, and Let go.</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_theme_drag_poster.jpg?v=20260701b"><source src="/assets/tips/t_theme_drag.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">Drag</span><h3>Move it to a theme</h3><p>The same drag also moves it onto a theme chip above. It joins that theme; drop it onto “Uncategorized” to remove it.</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_release_poster.jpg?v=20260701b"><source src="/assets/tips/t_release.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">Tap</span><h3>Tap the ○ to let go</h3><p>Tap the small ○ at the start of an item to gently send it to Let go. You can undo it right away.</p></div>
+            <div class="tip"><img class="thumb" src="/assets/tips/t_add.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /><span class="badge">Tap</span><h3>Add by hand with “+”</h3><p>From the faint “+” at the bottom-right of each block, you can add an item there in text.</p></div>
+          </div>
+          <p class="subhead">Group with themes</p>
+          <div class="tips stagger">
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_theme_press_poster.jpg?v=20260701b"><source src="/assets/tips/t_theme_press.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">Long-press</span><h3>Long-press a theme for its menu</h3><p>Long-press a theme chip above to bring up Always show (pin), Edit name or color, and Let go. This is the way into a theme's settings.</p></div>
+            <div class="tip"><img class="thumb" src="/assets/tips/t_theme_edit.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /><span class="badge">Tap</span><h3>Change name, color, and order</h3><p>In the theme editor, tap the name to rewrite it, pick a soft color from the color dots, and reorder using the handle on the left.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen reveal">
+        <div class="wrap">
+          <h2>Right after sorting</h2>
+          <p class="screen-lead">The moment just after you speak and it's sorted. If KUU's sorting doesn't sit right, tidy it here before you keep it.</p>
+          <div class="tips stagger">
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_remove_poster.jpg?v=20260701b"><source src="/assets/tips/t_remove.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">Tap</span><h3>Tap to drop what you don't need</h3><p>Tap an item that doesn't fit and it fades out and drops away. Tap again to bring it back.</p></div>
+            <div class="tip"><video class="thumb" autoplay loop muted playsinline preload="metadata" width="860" height="798" poster="/assets/tips/t_reclassify_poster.jpg?v=20260701b"><source src="/assets/tips/t_reclassify.mp4?v=20260701b" type="video/mp4" /></video><span class="badge">Drag</span><h3>Drag to change where it goes</h3><p>Drag an item to another block to change where it goes, right there.</p></div>
+            <div class="tip"><img class="thumb" src="/assets/tips/t_resort.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /><span class="badge">Button</span><h3>“Sort again” to fix the whole text</h3><p>If something was misheard, “Sort again” lets you fix the whole transcript and sort it once more.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen reveal">
+        <div class="wrap">
+          <h2>On Home</h2>
+          <p class="screen-lead">Some days, speaking aloud is hard. On those days, text works too.</p>
+          <div class="tips stagger">
+            <div class="tip"><img class="thumb" src="/assets/tips/t_keyboard.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /><span class="badge">Tap</span><h3>Write with the keyboard</h3><p>From “Write with the keyboard” at the bottom of Home, you can sort the same way in text, without using your voice.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq reveal">
+        <div class="wrap">
+          <h2>Common questions</h2>
+          <div class="faq-list stagger">
+            <div class="faq-item"><p class="faq-q">It doesn't sort the way I expected. The accuracy isn't quite there.</p><p class="faq-a">KUU's read on things isn't always perfect.</p><p class="faq-a">That's why you can always fix it by hand afterward (tap to rewrite, long-press and drag to move, or “Sort again”).</p><p class="faq-a">We'll keep improving how it hears and sorts, little by little.</p><p class="faq-a">You using it is what encourages us.</p></div>
+            <div class="faq-item"><p class="faq-q">When I talk for a while, it all gets merged into one.</p><p class="faq-a">When sentences run on, the breaks can be hard to find.</p><p class="faq-a">As you speak, leaving a small pause — “this, (a breath) then that” — helps it split more easily.</p><p class="faq-a">For something you've already entered, adding commas and periods in “Sort again” helps it break into pieces.</p><p class="faq-a">If it still stays merged, you can split it with a long-press drag, or rewrite it with a tap.</p></div>
+            <div class="faq-item"><p class="faq-q">It feels like I'm pushed to pay right away.</p><p class="faq-a">Speak, sort, look back — the heart of KUU stays free, always.</p><p class="faq-a">KUU+ is a quiet extra, for those who'd like to turn off ads or add a Face ID lock.</p></div>
+            <div class="faq-item"><p class="faq-q">It's hard to use when I can't speak aloud.</p><p class="faq-a">From “Write with the keyboard” at the bottom of Home, you can sort the same way in text, without using your voice.</p><img class="thumb" src="/assets/tips/t_keyboard.png?v=20260701b" width="900" height="562" loading="lazy" alt="" /></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing-note reveal">
+        <div class="wrap">
+          <p class="note">These hints appear gently on screen just once, the first time. If you miss them, that's fine — this page is always here to revisit.</p>
+        </div>
+      </section>
+
+      <section class="closing reveal">
+        <div class="wrap">
+          <p class="sub">If you haven't tried KUU yet, start here.</p>
+          <a class="cta" href="https://apps.apple.com/us/app/id6771264775?ct=lp_tips" rel="noopener">Download on the App Store</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="footer-row">
+          <a href="/en/">← Back to top</a>
+          <a href="/en/support/">Support</a>
+          <a href="/en/privacy/">Privacy</a>
+          <span>© KUU</span>
+        </div>
+      </div>
+    </footer>
+<script>
+  document.documentElement.classList.add('js');
+  addEventListener('DOMContentLoaded', function () {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  });
+</script>
+  </body>
+</html>
