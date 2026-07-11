@@ -3421,7 +3421,7 @@ PRIVACY_META = {
     },
     "en": {
         "title": "Privacy Policy — KUU",
-        "description": "KUU's privacy policy. Speech recognition and AI organization happen entirely on your device; your spoken content is never sent outside.",
+        "description": "KUU's privacy policy. Audio is processed entirely on device and never sent outside. AI organization sends only the text by default and does not store it (you can switch to on-device only in Settings).",
     },
 }
 
