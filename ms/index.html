@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f6f9fc" />
+    <meta name="robots" content="index,follow" />
+    <title>KUU — Cakap sahaja fikiran anda. AI akan menyusunnya dengan tenang.</title>
+    <meta name="description" content="KUU ialah aplikasi luahan fikiran bersuara yang tenang. Cakap sahaja apa yang bermain di fikiran anda; KUU akan menyusunnya kepada Sekarang, Nanti, Peram, dan Lepaskan." />
+    <meta property="og:title" content="KUU — Cakap sahaja fikiran anda. AI akan menyusunnya dengan tenang." />
+    <meta property="og:description" content="KUU ialah aplikasi luahan fikiran bersuara yang tenang. Cakap sahaja apa yang bermain di fikiran anda; KUU akan menyusunnya kepada Sekarang, Nanti, Peram, dan Lepaskan." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kuu-zen.com/ms/" />
+    <meta property="og:locale" content="ms_MY" />
+    <meta property="og:image" content="https://kuu-zen.com/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="KUU — Cakap sahaja fikiran anda. AI akan menyusunnya dengan tenang." />
+    <meta name="twitter:description" content="KUU ialah aplikasi luahan fikiran bersuara yang tenang. Cakap sahaja apa yang bermain di fikiran anda; KUU akan menyusunnya kepada Sekarang, Nanti, Peram, dan Lepaskan." />
+    <meta name="twitter:image" content="https://kuu-zen.com/assets/og.png" />
+    <link rel="canonical" href="https://kuu-zen.com/ms/" />
+    <link rel="alternate" hreflang="ja" href="https://kuu-zen.com/" />
+    <link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/" />
+    <link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/" />
+    <link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/" />
+    <link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/" />
+    <link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/" />
+    <link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/" />
+    <link rel="alternate" hreflang="nl" href="https://kuu-zen.com/nl/" />
+    <link rel="alternate" hreflang="id" href="https://kuu-zen.com/id/" />
+    <link rel="alternate" hreflang="ms" href="https://kuu-zen.com/ms/" />
+    <link rel="alternate" hreflang="da" href="https://kuu-zen.com/da/" />
+    <link rel="alternate" hreflang="nb" href="https://kuu-zen.com/nb/" />
+    <link rel="alternate" hreflang="sv" href="https://kuu-zen.com/sv/" />
+    <link rel="alternate" hreflang="fi" href="https://kuu-zen.com/fi/" />
+    <link rel="alternate" hreflang="fr" href="https://kuu-zen.com/fr/" />
+    <link rel="alternate" hreflang="th" href="https://kuu-zen.com/th/" />
+    <link rel="alternate" hreflang="ru" href="https://kuu-zen.com/ru/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <meta name="apple-itunes-app" content="app-id=6771264775" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "KUU",
+  "description": "KUU ialah aplikasi luahan fikiran bersuara yang tenang. Cakap sahaja apa yang bermain di fikiran anda; KUU akan menyusunnya kepada Sekarang, Nanti, Peram, dan Lepaskan.",
+  "url": "https://kuu-zen.com/ms/",
+  "image": "https://kuu-zen.com/assets/og.png",
+  "operatingSystem": "iOS",
+  "applicationCategory": "LifestyleApplication",
+  "installUrl": "https://apps.apple.com/app/id6771264775",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "MYR"
+  }
+}
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DC1R54C73B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DC1R54C73B');
+      // LP 唯一のゴール = App Store 遷移を計測。link_location は CTA の ct= (lp_hero/lp_footer/lp_tips)。
+      // GA4 は sendBeacon で送るため同一タブ遷移でも欠落しない。capture で stopPropagation 耐性を持たせる。
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="apps.apple.com"]');
+        if (!a) return;
+        var m = a.href.match(/[?&]ct=([^&]+)/);
+        gtag('event', 'app_store_click', { link_location: m ? m[1] : 'other' });
+      }, true);
+    </script>
+    <style>
+:root {
+  color-scheme: light;
+  --bg: #f6f9fc;
+  --surface: #ffffff;
+  --surface-quiet: #eff4f8;
+  --ink: #353b41;
+  --ink-soft: #6b737b;
+  --ink-faint: #939aa2;
+  --primary: #7fb2d6;
+  --primary-deep: #5e97c2;
+  --primary-soft: #dceaf4;
+  --water-action: #bfddef;
+  --water-ink: #255069;
+  --water-top: #cfe4f2;
+  --water-bottom: #9cc6e2;
+  --line: #e7edf3;
+  --cat-now: #5e97c2;
+  --cat-later: #4fa39a;
+  --cat-parked: #8c8ab8;
+  --cat-release: #aab2ba;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Apple SD Gothic Neo", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.7;
+  /* CJK 句読点 (、。) を proportional alternate で詰め組み＝中央寄せの見た目を均す。
+     "halt" は「、」を潰す副作用があるため使わない (スクショ editor と同方針)。 */
+  font-feature-settings: "palt" 1, "kern" 1;
+  font-kerning: normal;
+}
+.wrap { max-width: 660px; margin: 0 auto; padding: 0 24px; }
+section { padding: clamp(64px, 13vw, 132px) 0; }
+
+/* ---- hero ---- */
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(48px, 10vw, 96px) 24px clamp(40px, 8vw, 72px);
+  position: relative;
+}
+.wordmark {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  color: var(--primary-deep);
+  margin: 0 0 clamp(24px, 5vw, 40px) 0.42em;
+}
+.hero h1 {
+  font-size: clamp(30px, 7vw, 46px);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  margin: 0;
+}
+.hero .sub {
+  color: var(--ink-soft);
+  font-size: clamp(15px, 4vw, 17px);
+  max-width: 30em;
+  margin: clamp(16px, 4vw, 22px) auto 0;
+}
+
+/* ---- water orb (the KUU signature) ---- */
+.orb {
+  position: relative;
+  width: clamp(176px, 46vw, 248px);
+  aspect-ratio: 1;
+  margin: clamp(36px, 8vw, 60px) auto;
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(125% 120% at 50% 16%, #ffffff, var(--surface-quiet));
+  border: 1px solid var(--line);
+  box-shadow: 0 30px 64px -30px rgba(94, 151, 194, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+.orb__water {
+  position: absolute;
+  left: -28%;
+  right: -28%;
+  bottom: -12%;
+  /* 水位はスクロールで静かに下がる (--wl: JS, 0〜) ＝ 余白が増える world view */
+  height: calc(60% - var(--wl, 0px));
+  background: linear-gradient(180deg, var(--water-top), var(--water-bottom));
+  border-radius: 42% 44% 0 0 / 58% 56% 0 0;
+  animation: orb-bob 7.5s ease-in-out infinite, orb-sway 11s ease-in-out infinite;
+}
+.orb__water::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10px;
+  height: 26px;
+  background: var(--water-top);
+  opacity: 0.5;
+  border-radius: 46%;
+  animation: orb-sway 9s ease-in-out infinite reverse;
+}
+@keyframes orb-bob {
+  0%, 100% { transform: translateY(5px); }
+  50% { transform: translateY(-7px); }
+}
+@keyframes orb-sway {
+  0%, 100% { border-radius: 42% 44% 0 0 / 58% 56% 0 0; }
+  50% { border-radius: 47% 39% 0 0 / 54% 60% 0 0; }
+}
+
+/* 水中を下から上へ昇る泡 (アプリ WaterLevelView.Bubbles を CSS で再現) */
+.orb__bubbles { position: absolute; inset: 0; pointer-events: none; }
+.bubble {
+  position: absolute;
+  bottom: 0;
+  left: var(--bx);
+  width: var(--bs);
+  height: var(--bs);
+  border-radius: 50%;
+  /* 明るい芯＋淡いリム＝空気泡らしく、薄水色の上でも視認できる */
+  background: radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.28) 70%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 1.5px rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  animation: bubble-rise var(--bdur) var(--bd) linear infinite;
+}
+@keyframes bubble-rise {
+  0% { bottom: 3%; opacity: 0; transform: translateX(0); }
+  18% { opacity: 0.85; }
+  50% { transform: translateX(4px); }
+  82% { opacity: 0.5; }
+  100% { bottom: 55%; opacity: 0; transform: translateX(-3px); }
+}
+
+/* ---- cta ---- */
+.cta {
+  display: inline-block;
+  margin-top: clamp(28px, 6vw, 40px);
+  padding: 15px 30px;
+  background: var(--water-action);
+  color: var(--water-ink);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cta:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -12px rgba(37, 80, 105, 0.5); }
+.scroll-cue {
+  margin-top: clamp(36px, 8vw, 64px);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--ink-faint);
+  writing-mode: vertical-rl;
+  animation: cue 2.4s ease-in-out infinite;
+}
+@keyframes cue {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+/* ---- shared section type ---- */
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: var(--primary-deep);
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+h2 {
+  font-size: clamp(22px, 5.2vw, 30px);
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+.lead { color: var(--ink-soft); font-size: clamp(15px, 4vw, 16px); margin: 16px 0 0; }
+.scenario { color: var(--ink); font-size: clamp(16px, 4.4vw, 18px); line-height: 1.7; margin: 18px 0 0; }
+
+/* ---- why: thought list ---- */
+.thoughts { list-style: none; padding: 0; margin: 32px 0 0; }
+.thoughts li {
+  position: relative;
+  padding: 14px 0 14px 26px;
+  color: var(--ink);
+  font-size: clamp(15px, 4vw, 16px);
+  border-top: 1px solid var(--line);
+}
+.thoughts li:last-child { border-bottom: 1px solid var(--line); }
+.thoughts li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: var(--primary-soft);
+}
+.note {
+  margin: 30px 0 0;
+  padding: 22px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  color: var(--ink-soft);
+  font-size: clamp(15px, 4vw, 16px);
+}
+
+/* ---- steps ---- */
+.steps { display: grid; gap: 16px; margin-top: 36px; }
+.step {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 22px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.step .n {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  color: var(--primary-deep);
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step h3 { margin: 0 0 4px; font-size: 17px; font-weight: 600; }
+.step p { margin: 0; color: var(--ink-soft); font-size: 15px; }
+
+/* ---- app showcase (App Store style gallery) ---- */
+.app .wrap { margin-bottom: 4px; }
+.showcase {
+  display: flex;
+  gap: 18px;
+  margin-top: 28px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 6px max(24px, calc((100vw - 660px) / 2)) 10px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
+}
+.showcase::-webkit-scrollbar { display: none; }
+.shot {
+  flex: 0 0 auto;
+  width: min(64vw, 272px);
+  height: auto;
+  display: block;
+  border-radius: 28px;
+  border: 1px solid var(--line);
+  box-shadow: 0 26px 54px -30px rgba(94, 151, 194, 0.55);
+  background: var(--surface);
+  scroll-snap-align: center;
+}
+
+/* ---- matrix ---- */
+.matrix {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 36px;
+}
+.q {
+  padding: 22px 20px;
+  border-radius: 20px;
+  /* アプリの象限カードと同じ: 白地 + カテゴリ色の縦グラデ (0.10→0.24) + ラベルはカテゴリ色
+     (ResultView.swift / PlaceView.swift の tint.opacity(0.10..0.24) を再現) */
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--q, var(--primary)) 10%, #fff),
+      color-mix(in srgb, var(--q, var(--primary)) 24%, #fff));
+  border: 1px solid color-mix(in srgb, var(--q, var(--primary)) 20%, var(--line));
+}
+.q strong { display: block; color: var(--q, var(--primary)); font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.q span { color: var(--ink-soft); font-size: 13.5px; line-height: 1.6; }
+
+/* ---- privacy ---- */
+.privacy { text-align: center; }
+.privacy .lead { max-width: 30em; margin-left: auto; margin-right: auto; }
+
+/* ---- closing ---- */
+.closing { text-align: center; padding-bottom: clamp(40px, 9vw, 80px); }
+.closing h2 { font-size: clamp(24px, 6vw, 34px); }
+.closing .sub { color: var(--ink-soft); margin: 14px 0 0; font-size: clamp(15px, 4vw, 17px); }
+
+/* ---- footer ---- */
+footer {
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--ink-soft);
+  padding: 40px 0 56px;
+}
+.footer-row { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
+.footer-row a { color: var(--ink-soft); text-decoration: none; }
+.footer-row a:hover { text-decoration: underline; }
+.langs { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; padding-top: 14px; border-top: 1px dashed var(--line); }
+.langs a { color: var(--ink-soft); text-decoration: none; }
+.langs a[aria-current="true"] { color: var(--ink); font-weight: 600; }
+.langs a:hover { text-decoration: underline; }
+
+/* ---- scroll reveal (progressive enhancement) ---- */
+.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .reveal.in { opacity: 1; transform: none; }
+
+/* staggered reveal: children settle in one after another */
+.js .reveal .stagger > * { opacity: 0; transform: translateY(14px); transition: opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .reveal.in .stagger > * { opacity: 1; transform: none; }
+.js .reveal.in .stagger > *:nth-child(2) { transition-delay: 0.07s; }
+.js .reveal.in .stagger > *:nth-child(3) { transition-delay: 0.14s; }
+.js .reveal.in .stagger > *:nth-child(4) { transition-delay: 0.21s; }
+.js .reveal.in .stagger > *:nth-child(5) { transition-delay: 0.28s; }
+.js .reveal.in .stagger > *:nth-child(6) { transition-delay: 0.35s; }
+
+/* hero entrance on first load */
+.js .hero .wordmark { animation: enter 0.8s 0.05s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .hero h1 { animation: enter 0.8s 0.16s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .hero .sub { animation: enter 0.8s 0.28s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .hero .orb { animation: enter 1s 0.4s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+.js .hero .cta { animation: enter 0.8s 0.58s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+@keyframes enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .orb__water, .orb__water::before, .scroll-cue, .bubble { animation: none; }
+  .bubble { opacity: 0; }
+  .js .hero .wordmark, .js .hero h1, .js .hero .sub, .js .hero .orb, .js .hero .cta { animation: none; }
+  .js .reveal, .js .reveal .stagger > * { opacity: 1; transform: none; transition: none; }
+}
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <p class="wordmark">KUU</p>
+      <h1>Cakap, dan lapangkan fikiran anda.</h1>
+      <p class="sub">Daripada kepala yang penuh fikiran, luahkan sahaja apa yang tidak perlu anda bawa buat masa ini.</p>
+      <div class="orb" aria-hidden="true"><div class="orb__water"></div><div class="orb__bubbles"><span class="bubble" style="--bx:18%;--bs:6px;--bdur:4.6s;--bd:0s"></span><span class="bubble" style="--bx:34%;--bs:4px;--bdur:5.4s;--bd:1.4s"></span><span class="bubble" style="--bx:50%;--bs:8px;--bdur:4.0s;--bd:2.2s"></span><span class="bubble" style="--bx:62%;--bs:5px;--bdur:5.8s;--bd:0.8s"></span><span class="bubble" style="--bx:76%;--bs:7px;--bdur:4.4s;--bd:3.0s"></span><span class="bubble" style="--bx:44%;--bs:4px;--bdur:6.2s;--bd:2.6s"></span></div></div>
+      <a class="cta" href="https://apps.apple.com/my/app/id6771264775?ct=lp_hero" rel="noopener">Muat Turun di App Store</a>
+      <div class="scroll-cue" aria-hidden="true">Tatal ke bawah</div>
+    </header>
+
+    <main>
+      <section class="why">
+        <div class="wrap reveal">
+          <p class="eyebrow">Kenapa KUU</p>
+          <h2>Di dalam fikiran anda, pelbagai perkara bercampur aduk.</h2>
+          <p class="scenario">Di tengah-tengah kerja, sesuatu yang lain tiba-tiba terlintas. Anda tidak mahu melupakannya, tetapi ia bukan untuk sekarang juga.</p>
+          <p class="lead">Masukkan dalam aplikasi tugasan, ia menjadi “kerja yang perlu dibuat”; tulis dalam nota, ia mudah terkubur. Yang bersepah bukan fikiran itu sendiri, tetapi keputusan tentang “bagaimana hendak melayannya”.</p>
+          <ul class="thoughts stagger">
+        <li>Sesuatu yang anda rasa perlu dibuat</li>
+        <li>Sesuatu yang mahu difikirkan nanti</li>
+        <li>Idea yang belum berbentuk</li>
+        <li>Rasa tidak kena yang tidak dapat dijelaskan</li>
+        <li>Kebimbangan yang tiada gunanya difikirkan sekarang</li>
+          </ul>
+          <p class="note">KUU menerimanya dahulu, sebelum apa-apa disusun. Semakin banyak anda cakap, semakin surut paras air di fikiran anda.</p>
+        </div>
+      </section>
+
+      <section class="how">
+        <div class="wrap reveal">
+          <p class="eyebrow">Cara guna</p>
+          <h2>Yang perlu anda lakukan hanyalah bercakap.</h2>
+          <div class="steps stagger">
+        <div class="step"><div class="n">1</div><div><h3>Cakap</h3><p>Tidak perlu tersusun. Apabila diluahkan, perkara yang anda lupa pun turut muncul, satu demi satu.</p></div></div>
+        <div class="step"><div class="n">2</div><div><h3>Susun</h3><p>KUU menyusunnya dengan tenang kepada Sekarang, Nanti, Peram, dan Lepaskan.</p></div></div>
+        <div class="step"><div class="n">3</div><div><h3>Semak semula</h3><p>Apabila keadaan sudah tenang, semak semula dan uruskannya. Tiada apa yang dibiarkan bertimbun begitu sahaja.</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="app reveal">
+        <div class="wrap">
+          <p class="eyebrow">Aplikasi</p>
+          <h2>Inilah KUU.</h2>
+        </div>
+        <div class="showcase stagger" aria-label="Aplikasi">
+        <img class="shot" src="/assets/store/ms/01.png" width="1320" height="2868" loading="lazy" alt="Skrin aplikasi KUU 1" />
+        <img class="shot" src="/assets/store/ms/02.png" width="1320" height="2868" loading="lazy" alt="Skrin aplikasi KUU 2" />
+        <img class="shot" src="/assets/store/ms/03.png" width="1320" height="2868" loading="lazy" alt="Skrin aplikasi KUU 3" />
+        <img class="shot" src="/assets/store/ms/04.png" width="1320" height="2868" loading="lazy" alt="Skrin aplikasi KUU 4" />
+        <img class="shot" src="/assets/store/ms/05.png" width="1320" height="2868" loading="lazy" alt="Skrin aplikasi KUU 5" />
+        <img class="shot" src="/assets/store/ms/06.png" width="1320" height="2868" loading="lazy" alt="Skrin aplikasi KUU 6" />
+        <img class="shot" src="/assets/store/ms/07.png" width="1320" height="2868" loading="lazy" alt="Skrin aplikasi KUU 7" />
+        <img class="shot" src="/assets/store/ms/08.png" width="1320" height="2868" loading="lazy" alt="Skrin aplikasi KUU 8" />
+        <img class="shot" src="/assets/store/ms/09.png" width="1320" height="2868" loading="lazy" alt="Skrin aplikasi KUU 9" />
+        </div>
+      </section>
+
+      <section class="matrix-section">
+        <div class="wrap reveal">
+          <p class="eyebrow">Matriks KUU</p>
+          <h2>Tempat untuk setiap fikiran.</h2>
+          <p class="lead">Bukan kategori tugasan, tetapi cara melayan apa yang ada dalam fikiran anda.</p>
+          <div class="matrix stagger" aria-label="Matriks KUU">
+        <div class="q" style="--q: var(--cat-now)"><strong>Sekarang</strong><span>Sesuatu yang terasa lebih ringan apabila anda pandang sekejap hari ini</span></div>
+        <div class="q" style="--q: var(--cat-later)"><strong>Nanti</strong><span>Bukan sekarang — pada waktu lain</span></div>
+        <div class="q" style="--q: var(--cat-parked)"><strong>Peram</strong><span>Letakkan dahulu tanpa perlu membuat keputusan</span></div>
+        <div class="q" style="--q: var(--cat-release)"><strong>Lepaskan</strong><span>Sesuatu yang nampaknya tidak perlu dibawa lagi</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="privacy">
+        <div class="wrap reveal">
+          <p class="eyebrow">Privasi</p>
+          <h2>Suara anda kekal bersama anda.</h2>
+          <p class="lead">Pengecaman suara berlaku sepenuhnya di dalam peranti anda — suara itu sendiri tidak disimpan dan tidak dihantar. Penyusunan menggunakan AI, jadi hanya teks yang dihantar, dan itu juga tidak disimpan (anda boleh menukar kepada dalam peranti sahaja melalui tetapan). Apa yang anda cakapkan hanya disegerakkan ke iCloud peribadi anda.</p>
+        </div>
+      </section>
+
+      <section class="closing">
+        <div class="wrap reveal">
+          <h2>Selepas bercakap, fikiran terasa sedikit lebih ringan.</h2>
+          <p class="sub">Aplikasi tenang yang dicipta khas untuk itu sahaja.</p>
+          <a class="cta" href="https://apps.apple.com/my/app/id6771264775?ct=lp_footer" rel="noopener">Muat Turun di App Store</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="footer-row">
+          <a href="/ms/tips/">Petua</a>
+          <a href="/ms/support/">Sokongan</a>
+          <a href="/en/privacy/">Privasi</a>
+          <span>© KUU</span>
+        </div>
+        <nav class="langs" aria-label="Bahasa">
+      <a href="/" hreflang="ja">日本語</a>
+      <a href="/en/" hreflang="en">English</a>
+      <a href="/es/" hreflang="es">Español</a>
+      <a href="/ko/" hreflang="ko">한국어</a>
+      <a href="/zh-Hans/" hreflang="zh-Hans">简体中文</a>
+      <a href="/de/" hreflang="de">Deutsch</a>
+      <a href="/it/" hreflang="it">Italiano</a>
+      <a href="/vi/" hreflang="vi">Tiếng Việt</a>
+      <a href="/zh-Hant/" hreflang="zh-Hant">繁體中文</a>
+      <a href="/nl/" hreflang="nl">Nederlands</a>
+      <a href="/id/" hreflang="id">Bahasa Indonesia</a>
+      <a href="/ms/" hreflang="ms" aria-current="true">Bahasa Melayu</a>
+      <a href="/da/" hreflang="da">Dansk</a>
+      <a href="/nb/" hreflang="nb">Norsk bokmål</a>
+      <a href="/sv/" hreflang="sv">Svenska</a>
+      <a href="/fi/" hreflang="fi">Suomi</a>
+      <a href="/fr/" hreflang="fr">Français</a>
+      <a href="/th/" hreflang="th">ไทย</a>
+      <a href="/ru/" hreflang="ru">Русский</a>
+        </nav>
+      </div>
+    </footer>
+<script>
+  document.documentElement.classList.add('js');
+  var prefersReduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  addEventListener('DOMContentLoaded', function () {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.16 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+    if (prefersReduce) return;
+    var water = document.querySelector('.orb__water');
+    var ticking = false;
+    function update() {
+      var y = window.scrollY || 0;
+      var vh = window.innerHeight || 1;
+      // hero の水位はスクロール最初の 1 画面で静かに下がる＝余白が増える
+      if (water) water.style.setProperty('--wl', (Math.min(y / vh, 1) * 16).toFixed(1) + 'px');
+      ticking = false;
+    }
+    addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+  });
+</script>
+<script>
+  document.querySelectorAll('.showcase, .pitch-shots').forEach(function (el) {
+    var down = false, startX = 0, startScroll = 0, raf = null, lastX = 0;
+    function apply() {
+      raf = null;
+      el.scrollLeft = startScroll - (lastX - startX);
+    }
+    el.addEventListener('mousedown', function (e) {
+      down = true;
+      startX = lastX = e.clientX;
+      startScroll = el.scrollLeft;
+      // mandatory snap fights the per-frame scrollLeft write and stutters — suspend while dragging.
+      el.style.scrollSnapType = 'none';
+      el.style.cursor = 'grabbing';
+      e.preventDefault();
+    });
+    document.addEventListener('mousemove', function (e) {
+      if (!down) return;
+      lastX = e.clientX;
+      // batch to one write per frame instead of one per mousemove (which fires far more often
+      // than the display refreshes) — the latter is what caused the choppy motion.
+      if (raf == null) raf = requestAnimationFrame(apply);
+    });
+    document.addEventListener('mouseup', function () {
+      if (!down) return;
+      down = false;
+      el.style.cursor = '';
+      el.style.scrollSnapType = '';
+    });
+  });
+</script>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Support — KUU</title>
+    <meta name="description" content="Contact en veelgestelde vragen over KUU." />
+    <link rel="canonical" href="https://kuu-zen.com/nl/support/" />
+    <meta property="og:locale" content="nl_NL" />
+    <link rel="alternate" hreflang="ja" href="https://kuu-zen.com/support/" />
+    <link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/support/" />
+    <link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/support/" />
+    <link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/support/" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/support/" />
+    <link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/support/" />
+    <link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/support/" />
+    <link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/support/" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/support/" />
+    <link rel="alternate" hreflang="nl" href="https://kuu-zen.com/nl/support/" />
+    <link rel="alternate" hreflang="id" href="https://kuu-zen.com/id/support/" />
+    <link rel="alternate" hreflang="ms" href="https://kuu-zen.com/ms/support/" />
+    <link rel="alternate" hreflang="da" href="https://kuu-zen.com/da/support/" />
+    <link rel="alternate" hreflang="nb" href="https://kuu-zen.com/nb/support/" />
+    <link rel="alternate" hreflang="sv" href="https://kuu-zen.com/sv/support/" />
+    <link rel="alternate" hreflang="fi" href="https://kuu-zen.com/fi/support/" />
+    <link rel="alternate" hreflang="fr" href="https://kuu-zen.com/fr/support/" />
+    <link rel="alternate" hreflang="th" href="https://kuu-zen.com/th/support/" />
+    <link rel="alternate" hreflang="ru" href="https://kuu-zen.com/ru/support/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/support/" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <meta name="apple-itunes-app" content="app-id=6771264775" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wordt mijn stem opgeslagen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nee. KUU stuurt geen audio van je apparaat af en verwijdert het tijdelijke geluidsbestand zodra de herkenning is voltooid. Voor het sorteren wordt alleen de tekst naar een externe AI gestuurd, en ook die wordt niet bewaard. Wat overblijft, is alleen de transcriptie en het sorteerresultaat op je apparaat en in iCloud."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe zit het met iCloud-synchronisatie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Je gegevens worden gesynchroniseerd met je eigen, privé iCloud-database, alleen toegankelijk voor jou. Er is geen server van de ontwikkelaar."
+      }
+    }
+  ]
+}
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DC1R54C73B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DC1R54C73B');
+      // LP 唯一のゴール = App Store 遷移を計測。link_location は CTA の ct= (lp_hero/lp_footer/lp_tips)。
+      // GA4 は sendBeacon で送るため同一タブ遷移でも欠落しない。capture で stopPropagation 耐性を持たせる。
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="apps.apple.com"]');
+        if (!a) return;
+        var m = a.href.match(/[?&]ct=([^&]+)/);
+        gtag('event', 'app_store_click', { link_location: m ? m[1] : 'other' });
+      }, true);
+    </script>
+    <style>
+:root {
+  color-scheme: light;
+  --bg: #f6f9fc;
+  --ink: #353b41;
+  --ink-soft: #6b737b;
+  --line: #e7edf3;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Apple SD Gothic Neo", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: clamp(48px, 10vw, 96px) 24px 80px;
+}
+h1 { font-size: 28px; font-weight: 600; margin: 0 0 24px; }
+h2 { font-size: 18px; font-weight: 600; margin: 32px 0 8px; }
+p { line-height: 1.7; color: var(--ink-soft); margin: 0 0 12px; }
+a { color: var(--ink); }
+.back {
+  display: inline-block;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 14px;
+}
+.langs {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.langs a { color: var(--ink-soft); text-decoration: none; }
+.langs a[aria-current="true"] { color: var(--ink); font-weight: 600; }
+.langs a:hover { text-decoration: underline; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Support</h1>
+      <p>Bedankt dat je KUU gebruikt. Voor vragen of om een probleem te melden, kun je hieronder contact opnemen.</p>
+      <p>Herschrijven na het spreken, zelf sorteren en andere makkelijk te missen stappen zijn verzameld in <a href="/nl/tips/">Tips</a>.</p>
+
+      <h2>Contact</h2>
+      <p>Een apart supportkanaal komt binnenkort beschikbaar.</p>
+
+      <h2>Veelgestelde vragen</h2>
+      <p>
+        <strong>Wordt mijn stem opgeslagen?</strong><br />
+        Nee. KUU stuurt geen audio van je apparaat af en verwijdert het tijdelijke geluidsbestand zodra de herkenning is voltooid. Voor het sorteren wordt alleen de tekst naar een externe AI gestuurd, en ook die wordt niet bewaard. Wat overblijft, is alleen de transcriptie en het sorteerresultaat op je apparaat en in iCloud.
+      </p>
+      <p>
+        <strong>Hoe zit het met iCloud-synchronisatie?</strong><br />
+        Ja. Je gegevens worden gesynchroniseerd met je eigen, privé iCloud-database, alleen toegankelijk voor jou. Er is geen server van de ontwikkelaar.
+      </p>
+
+      <a class="back" href="/nl/">← Terug naar boven</a>
+
+      <nav class="langs" aria-label="Taal">
+      <a href="/support/" hreflang="ja">日本語</a>
+      <a href="/en/support/" hreflang="en">English</a>
+      <a href="/es/support/" hreflang="es">Español</a>
+      <a href="/ko/support/" hreflang="ko">한국어</a>
+      <a href="/zh-Hans/support/" hreflang="zh-Hans">简体中文</a>
+      <a href="/de/support/" hreflang="de">Deutsch</a>
+      <a href="/it/support/" hreflang="it">Italiano</a>
+      <a href="/vi/support/" hreflang="vi">Tiếng Việt</a>
+      <a href="/zh-Hant/support/" hreflang="zh-Hant">繁體中文</a>
+      <a href="/nl/support/" hreflang="nl" aria-current="true">Nederlands</a>
+      <a href="/id/support/" hreflang="id">Bahasa Indonesia</a>
+      <a href="/ms/support/" hreflang="ms">Bahasa Melayu</a>
+      <a href="/da/support/" hreflang="da">Dansk</a>
+      <a href="/nb/support/" hreflang="nb">Norsk bokmål</a>
+      <a href="/sv/support/" hreflang="sv">Svenska</a>
+      <a href="/fi/support/" hreflang="fi">Suomi</a>
+      <a href="/fr/support/" hreflang="fr">Français</a>
+      <a href="/th/support/" hreflang="th">ไทย</a>
+      <a href="/ru/support/" hreflang="ru">Русский</a>
+      </nav>
+    </main>
+  </body>
+</html>
