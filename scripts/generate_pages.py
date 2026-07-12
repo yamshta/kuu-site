@@ -5784,7 +5784,6 @@ def tips_html(code, d):
     <link rel="canonical" href="{url}" />
 {hreflang_links("tips", locales=TIPS_LOCALES)}
 {ICON_LINKS}
-{SMART_BANNER}
 {tips_jsonld(d)}{ga4_snippet()}
     <style>
 {TIPS_CSS}    </style>
