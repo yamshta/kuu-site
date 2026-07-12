@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>利用規約 — KUU</title>
+    <meta name="description" content="KUU の利用規約。本アプリの利用条件、禁止事項、免責事項、権利帰属、準拠法・裁判管轄などを定めます。準拠法は日本法、専属的合意管轄は東京地方裁判所です。" />
+    <link rel="canonical" href="https://kuu-zen.com/terms/" />
+    <meta property="og:locale" content="ja_JP" />
+    <link rel="alternate" hreflang="ja" href="https://kuu-zen.com/terms/" />
+    <link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/terms/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/terms/" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DC1R54C73B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DC1R54C73B');
+      // LP 唯一のゴール = App Store 遷移を計測。link_location は CTA の ct= (lp_hero/lp_footer/lp_tips)。
+      // GA4 は sendBeacon で送るため同一タブ遷移でも欠落しない。capture で stopPropagation 耐性を持たせる。
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="apps.apple.com"]');
+        if (!a) return;
+        var m = a.href.match(/[?&]ct=([^&]+)/);
+        gtag('event', 'app_store_click', { link_location: m ? m[1] : 'other' });
+      }, true);
+    </script>
+    <style>
+:root {
+  color-scheme: light;
+  --bg: #f6f9fc;
+  --ink: #353b41;
+  --ink-soft: #6b737b;
+  --line: #e7edf3;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Apple SD Gothic Neo", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: clamp(48px, 10vw, 96px) 24px 80px;
+}
+h1 { font-size: 28px; font-weight: 600; margin: 0 0 24px; }
+h2 { font-size: 18px; font-weight: 600; margin: 32px 0 8px; }
+p { line-height: 1.7; color: var(--ink-soft); margin: 0 0 12px; }
+a { color: var(--ink); }
+.back {
+  display: inline-block;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 14px;
+}
+.langs {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.langs a { color: var(--ink-soft); text-decoration: none; }
+.langs a[aria-current="true"] { color: var(--ink); font-weight: 600; }
+.langs a:hover { text-decoration: underline; }
+main { max-width: 720px; }
+h1 { font-size: 26px; }
+h2 { font-size: 17px; }
+li { line-height: 1.7; color: var(--ink-soft); margin: 4px 0; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>KUU 利用規約</h1>
+      <p>最終更新日：2026 年 5 月 20 日</p>
+      <p>この利用規約（以下「本規約」）は、KUU-app（以下「提供者」）が提供するスマートフォン用アプリケーション「KUU」（以下「本アプリ」）の利用条件を定めるものです。利用者の皆様（以下「ユーザー」）には、本規約に従って本アプリをご利用いただきます。</p>
+      <hr />
+      <h2>第 1 条（適用）</h2>
+      <p>本規約は、ユーザーと提供者との間の本アプリの利用に関わる一切の関係に適用されるものとします。</p>
+      <h2>第 2 条（本アプリの概要）</h2>
+      <p>本アプリは、頭の中の考えごと（タスク・悩み・アイデア・違和感・心配ごと・あとで考えたいこと等）を声で外に出し、「いま見る／あとで考える／寝かせる／手放す」の 4 つに整理することを支援するアプリケーションです。文字起こしおよび整理（AI 分類）はすべてお使いの iOS デバイス上で完結します。</p>
+      <h2>第 3 条（本アプリの位置づけ）</h2>
+      <ol>
+      <li>本アプリは思考の整理を助けるためのものであり、医療、法律、税務、その他の専門的助言を提供するものではありません。
+      </li>
+      <li>本アプリの分類結果は、ユーザーが自身で再評価・編集することを前提とした参考情報であり、その正確性、完全性、有効性、特定目的への適合性等を保証するものではありません。
+      </li></ol>
+      <h2>第 4 条（禁止事項）</h2>
+      <p>ユーザーは、本アプリの利用にあたり、以下の行為をしてはなりません。</p>
+      <ol>
+      <li>法令または公序良俗に違反する行為
+      </li>
+      <li>犯罪行為に関連する行為
+      </li>
+      <li>本アプリの運営を妨害するおそれのある行為
+      </li>
+      <li>本アプリのリバースエンジニアリング、逆コンパイル、または改変
+      </li>
+      <li>反社会的勢力に対して直接または間接に利益を供与する行為
+      </li>
+      <li>その他、提供者が不適切と判断する行為
+      </li></ol>
+      <h2>第 5 条（本サービスの提供の停止・変更）</h2>
+      <p>提供者は、以下のいずれかの事由があると判断した場合、ユーザーに事前に通知することなく本アプリの全部または一部の提供を停止、中断、または変更することができるものとします。</p>
+      <ol>
+      <li>本アプリに関連するコンピュータシステムの保守点検または更新を行う場合
+      </li>
+      <li>地震、落雷、火災、停電または天災などの不可抗力により、本アプリの提供が困難となった場合
+      </li>
+      <li>Apple のフレームワーク（Speech、FoundationModels、CloudKit 等）の仕様変更や提供停止により、本アプリの機能維持が困難となった場合
+      </li>
+      <li>その他、提供者が本アプリの提供が困難と判断した場合
+      </li></ol>
+      <h2>第 6 条（免責事項）</h2>
+      <ol>
+      <li>提供者は、本アプリに事実上または法律上の瑕疵（安全性、信頼性、正確性、完全性、有効性、特定の目的への適合性、セキュリティなどに関する欠陥、エラーやバグ、権利侵害などを含みます）がないことを明示的にも黙示的にも保証しておりません。
+      </li>
+      <li>提供者は、本アプリに起因してユーザーに生じたあらゆる損害について一切の責任を負いません。ただし、本アプリに関する提供者とユーザーとの間の契約（本規約を含みます）が消費者契約法に定める消費者契約となる場合、この免責規定は適用されません。
+      </li>
+      <li>ユーザーが iCloud（CloudKit）の利用に関連してデータの消失、漏洩、同期不全等の損害を被った場合、Apple 社の定める規約（iCloud 利用規約）に従うものとし、提供者は責任を負いかねます。
+      </li>
+      <li>音声認識および AI 分類はお使いの端末上の Apple フレームワークによって実行されます。これらの結果の精度、内容、挙動について、提供者は保証せず、責任を負いかねます。
+      </li>
+      <li>ユーザーが本アプリに入力・発話した内容の管理はユーザーの責任で行うものとします。
+      </li></ol>
+      <h2>第 7 条（権利帰属）</h2>
+      <ol>
+      <li>本アプリに関する知的財産権（プログラム、デザイン、商標、ロゴ等）は、すべて提供者または正当な権利者に帰属します。ユーザーによる本アプリの利用は、これら知的財産権の使用許諾を意味するものではありません。
+      </li>
+      <li>ユーザーが本アプリに入力・発話した内容に関する権利はユーザーに帰属します。提供者は当該内容にアクセスすることはなく、その権利を主張するものではありません。
+      </li></ol>
+      <h2>第 8 条（利用規約の変更）</h2>
+      <p>提供者は、必要と判断した場合には、ユーザーに事前通知することなくいつでも本規約を変更することができるものとします。変更後の規約は、本規約の公開ページに掲載された時点で効力を生じるものとし、ユーザーは変更後に本アプリの利用を継続することにより、変更後の規約に同意したものとみなします。</p>
+      <h2>第 9 条（準拠法・裁判管轄）</h2>
+      <ol>
+      <li>本規約の解釈にあたっては、日本法を準拠法とします。
+      </li>
+      <li>本アプリに関して紛争が生じた場合には、東京地方裁判所を第一審の専属的合意管轄裁判所とします。
+      </li></ol>
+      <h2>第 10 条（お問い合わせ）</h2>
+      <p>本規約に関するお問い合わせは、App Store のアプリページ内「開発元」セクションよりご連絡ください。</p>
+
+      <a class="back" href="/">← トップへ</a>
+
+      <nav class="langs" aria-label="言語">
+      <a href="/terms/" hreflang="ja" aria-current="true">日本語</a>
+      <a href="/en/terms/" hreflang="en">English</a>
+      </nav>
+    </main>
+  </body>
+</html>

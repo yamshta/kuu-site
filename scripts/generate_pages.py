@@ -10,6 +10,8 @@ Output:
 - /<locale>/index.html, /<locale>/support/index.html  for en, es, ko, zh-Hans
 - /privacy/index.html (ja), /en/privacy/index.html (en) — from content/privacy.md
   (source of truth: KUU/docs/legal/PRIVACY_POLICY.md; copy here when it changes)
+- /terms/index.html (ja), /en/terms/index.html (en) — from content/terms.md
+  (ja is the verbatim canonical legal text; copy here when it changes)
 - /sitemap.xml, /robots.txt
 
 ja is the canonical locale. New marketing copy is authored in ja first; other
@@ -78,6 +80,18 @@ def store_asset(code, n):
 GA4_MEASUREMENT_ID = "G-DC1R54C73B"
 # Privacy policy is hosted on this site in ja/en only; other locales link to en.
 PRIVACY_LOCALES = ("ja", "en")
+# Terms of Service is hosted in ja/en only; other locales link to en (same pattern as PRIVACY_LOCALES).
+TERMS_LOCALES = ("ja", "en")
+# Footer "Terms of Service" label per locale. The page itself is ja/en only, but every
+# locale's footer links to /terms/ (ja) or /en/terms/ (others) with its own localized label.
+TERMS_LABELS = {
+    "ja": "利用規約", "en": "Terms", "es": "Términos", "ko": "이용약관",
+    "zh-Hans": "使用条款", "zh-Hant": "使用條款", "de": "Nutzungsbedingungen",
+    "it": "Termini", "vi": "Điều khoản", "nl": "Voorwaarden", "id": "Ketentuan",
+    "ms": "Terma Penggunaan", "da": "Vilkår", "nb": "Vilkår", "sv": "Villkor",
+    "fi": "Käyttöehdot", "fr": "Conditions d'utilisation", "th": "ข้อกำหนดการใช้งาน",
+    "ru": "Условия использования",
+}
 # Usage tips page is ja-only for now (other locales added later, same pattern as PRIVACY_LOCALES).
 TIPS_LOCALES = ("ja", "en", "es", "ko", "zh-Hans", "zh-Hant", "de", "it", "vi",
                 "nl", "id", "ms", "da", "nb", "sv", "fi", "fr", "th", "ru")
@@ -5483,6 +5497,8 @@ def index_html(code, d):
     )
     support_href = "/support/" if not d["subdir"] else f'/{d["subdir"]}/support/'
     privacy_href = "/privacy/" if code == "ja" else "/en/privacy/"
+    terms_href = "/terms/" if code == "ja" else "/en/terms/"
+    terms_label = TERMS_LABELS.get(code, TERMS_LABELS["en"])
     # Tips page exists only for TIPS_LOCALES; link it from the footer where it does.
     tips_href = "/tips/" if not d["subdir"] else f'/{d["subdir"]}/tips/'
     tips_link = (
@@ -5596,6 +5612,7 @@ def index_html(code, d):
         <div class="footer-row">
           {tips_link}<a href="{support_href}">{d["support_label"]}</a>
           <a href="{privacy_href}">{d["privacy_label"]}</a>
+          <a href="{terms_href}">{terms_label}</a>
           <span>© KUU</span>
         </div>
         <nav class="langs" aria-label="{d["lang_switcher_aria"]}">
@@ -5686,6 +5703,8 @@ def tips_html(code, d):
     home_href = "/" if not d["subdir"] else f"/{d['subdir']}/"
     support_href = "/support/" if not d["subdir"] else f"/{d['subdir']}/support/"
     privacy_href = "/privacy/" if code == "ja" else "/en/privacy/"
+    terms_href = "/terms/" if code == "ja" else "/en/terms/"
+    terms_label = TERMS_LABELS.get(code, TERMS_LABELS["en"])
     def card(it):
         badge, title, body = it[0], it[1], it[2]
         thumb = it[3] if len(it) > 3 else ""
@@ -5821,6 +5840,7 @@ def tips_html(code, d):
           <a href="{home_href}">{d["back"]}</a>
           <a href="{support_href}">{d["support_label"]}</a>
           <a href="{privacy_href}">{d["privacy_label"]}</a>
+          <a href="{terms_href}">{terms_label}</a>
           <span>© KUU</span>
         </div>
       </div>
@@ -5838,6 +5858,17 @@ PRIVACY_META = {
     "en": {
         "title": "Privacy Policy — KUU",
         "description": "KUU's privacy policy. Audio is processed entirely on device and never sent outside. AI organization sends only the text by default, and the AI provider does not retain it (you can switch to on-device only in Settings).",
+    },
+}
+
+TERMS_META = {
+    "ja": {
+        "title": "利用規約 — KUU",
+        "description": "KUU の利用規約。本アプリの利用条件、禁止事項、免責事項、権利帰属、準拠法・裁判管轄などを定めます。準拠法は日本法、専属的合意管轄は東京地方裁判所です。",
+    },
+    "en": {
+        "title": "Terms of Service — KUU",
+        "description": "KUU's Terms of Service. Sets out the conditions of use, prohibited conduct, disclaimers, ownership of rights, and governing law and jurisdiction. Governed by Japanese law, with the Tokyo District Court as the court of exclusive agreed jurisdiction.",
     },
 }
 
@@ -5966,6 +5997,56 @@ def split_privacy_md():
     return {"ja": ja_md, "en": marker + en_md}
 
 
+def terms_html(code, body_html):
+    d = LOCALES[code]
+    meta = TERMS_META[code]
+    url = url_for(d, "terms")
+    home_href = "/" if not d["subdir"] else f"/{d['subdir']}/"
+    langs = []
+    for c in TERMS_LOCALES:
+        ld = LOCALES[c]
+        href = "/terms/" if c == "ja" else f"/{ld['subdir']}/terms/"
+        attr = ' aria-current="true"' if c == code else ""
+        langs.append(f'      <a href="{href}" hreflang="{ld["html_lang"]}"{attr}>{ld["label"]}</a>')
+    return f"""<!doctype html>
+<html lang="{d["html_lang"]}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{meta["title"]}</title>
+    <meta name="description" content="{meta["description"]}" />
+    <link rel="canonical" href="{url}" />
+    <meta property="og:locale" content="{d["og_locale"]}" />
+{hreflang_links("terms", locales=TERMS_LOCALES)}
+{ICON_LINKS}{ga4_snippet()}
+    <style>
+{PRIVACY_CSS}    </style>
+  </head>
+  <body>
+    <main>
+{body_html}
+
+      <a class="back" href="{home_href}">{d["back"]}</a>
+
+      <nav class="langs" aria-label="{d["lang_switcher_aria"]}">
+{chr(10).join(langs)}
+      </nav>
+    </main>
+  </body>
+</html>
+"""
+
+
+def split_terms_md():
+    """content/terms.md holds ja then en, separated by the en h1."""
+    md = (ROOT / "content" / "terms.md").read_text()
+    marker = "# Terms of Service for KUU"
+    ja_md, en_md = md.split(marker, 1)
+    # drop the trailing hr that separated the two documents
+    ja_md = re.sub(r"-{3,}\s*$", "", ja_md.rstrip())
+    return {"ja": ja_md, "en": marker + en_md}
+
+
 # content/<lang>/journal/<slug>.md: YAML front matter + Markdown body.
 FRONT_MATTER_RE = re.compile(r"\A---\n(.*?)\n---\n(.*)\Z", re.DOTALL)
 
@@ -6044,6 +6125,8 @@ def article_html(code, meta, articles_by_slug):
     journal_href = home_href + "journal/"
     support_href = home_href + "support/"
     privacy_href = "/privacy/" if code == "ja" else "/en/privacy/"
+    terms_href = "/terms/" if code == "ja" else "/en/terms/"
+    terms_label = TERMS_LABELS.get(code, TERMS_LABELS["en"])
 
     related = []
     hub_slug = meta.get("hub")
@@ -6126,6 +6209,7 @@ def article_html(code, meta, articles_by_slug):
       <nav class="footer-links" aria-label="{d['lang_switcher_aria']}">
         <a href="{support_href}">{d["support_label"]}</a>
         <a href="{privacy_href}">{d["privacy_label"]}</a>
+        <a href="{terms_href}">{terms_label}</a>
       </nav>
     </main>
 {DRAG_SCROLL_SCRIPT}  </body>
@@ -6199,6 +6283,7 @@ def sitemap_xml(articles_by_locale=None):
         ("support", list(LOCALES)),
         ("tips", list(TIPS_LOCALES)),
         ("privacy", list(PRIVACY_LOCALES)),
+        ("terms", list(TERMS_LOCALES)),
     ]
     urls = []
     for page, codes in clusters:
@@ -6286,6 +6371,15 @@ def main():
         (base / "privacy").mkdir(parents=True, exist_ok=True)
         page = base / "privacy" / "index.html"
         page.write_text(privacy_html(code, md_to_html(privacy_md[code])))
+        written.append(str(page.relative_to(ROOT)))
+
+    terms_md = split_terms_md()
+    for code in TERMS_LOCALES:
+        sub = LOCALES[code]["subdir"]
+        base = ROOT / sub if sub else ROOT
+        (base / "terms").mkdir(parents=True, exist_ok=True)
+        page = base / "terms" / "index.html"
+        page.write_text(terms_html(code, md_to_html(terms_md[code])))
         written.append(str(page.relative_to(ROOT)))
 
     articles_by_locale = load_articles()
