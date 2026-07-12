@@ -61,6 +61,18 @@ def tips_asset(code, name, ext):
     スクショ/動画を assets/tips/<locale>/ に置くと自動で差し替わる (#18 の段階展開用)。"""
     sub = f"{code}/" if os.path.exists(os.path.join(_TIPS_DIR, code, f"{name}.{ext}")) else ""
     return f"/assets/tips/{sub}{name}.{ext}?v={ASSET_VERSION}"
+
+
+_STORE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", "store")
+
+
+def store_asset(code, n):
+    """ロケール別 App Store スクショ (assets/store/<code>/NN.png) があればそれを、
+    無ければ en にフォールバック (tips_asset と同じ段階展開パターン。撮影済みは
+    en/es/ja/ko/zh-Hans のみで、未撮影言語は英語版を暫定表示する)。"""
+    name = f"{n:02d}.png"
+    sub = code if os.path.exists(os.path.join(_STORE_DIR, code, name)) else "en"
+    return f"/assets/store/{sub}/{name}"
 # GA4 web stream measurement ID (G-XXXXXXXXXX). Empty = no analytics tag emitted.
 # Stream: properties/539320049/dataStreams/15063638495 (kuu-zen.com)
 GA4_MEASUREMENT_ID = "G-DC1R54C73B"
@@ -5465,7 +5477,7 @@ def index_html(code, d):
         for i, (name, sub) in enumerate(d["quadrants"])
     )
     screens_html = "\n".join(
-        f'        <img class="shot" src="/assets/store/{code}/{n:02d}.png" '
+        f'        <img class="shot" src="{store_asset(code, n)}" '
         f'width="1320" height="2868" loading="lazy" alt="{d["screen_alt"]} {n}" />'
         for n in range(1, 10)
     )
@@ -6055,7 +6067,7 @@ def article_html(code, meta, articles_by_slug):
       </nav>"""
 
     pitch_shots_html = "\n".join(
-        f'          <img class="pitch-shot" src="/assets/store/{code}/{n:02d}.png" '
+        f'          <img class="pitch-shot" src="{store_asset(code, n)}" '
         f'width="1320" height="2868" loading="lazy" alt="{d["screen_alt"]} {n}" />'
         for n in range(1, 10)
     )
