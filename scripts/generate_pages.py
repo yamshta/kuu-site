@@ -2349,7 +2349,7 @@ LOCALES = {
                 ]
             ],
             [
-                "Het voelt alsof ik meteen wordt aangespoord om te betalen.",
+                "Het voelt alsof ik meteen word aangespoord om te betalen.",
                 [
                     "Praten, sorteren, terugkijken — de kern van KUU blijft voor altijd gratis.",
                     "KUU+ is een stille toevoeging voor wie advertenties wil uitschakelen of een Face ID-vergrendeling wil toevoegen."
@@ -2373,7 +2373,7 @@ LOCALES = {
         "og_locale": "id_ID",
         "label": "Bahasa Indonesia",
         "title": "KUU — Cukup bicarakan pikiran Anda. Aplikasi curahan pikiran bersuara yang dipilah AI ke 4 tempat.",
-        "description": "KUU adalah aplikasi curahan pikiran bersuara yang tenang: cukup ucapkan apa yang mengisi pikiran Anda, dan AI akan memilahnya ke empat tempat — Lihat sekarang / Pikirkan nanti / Endapkan / Lepaskan. Catatan AI yang tenang, untuk mengosongkan kepala yang sibuk.",
+        "description": "KUU adalah aplikasi curahan pikiran bersuara yang tenang: cukup ucapkan apa yang mengisi pikiran Anda, dan AI akan memilahnya ke empat tempat — Lihat sekarang / Pikirkan nanti / Endapkan / Lepaskan. Aplikasi yang tenang, untuk mengosongkan kepala yang sibuk.",
         "hero_headline": "Bicaralah, dan beri ruang di kepala Anda.",
         "hero_sub": "Dari kepala yang penuh pikiran, cukup ucapkan yang tidak perlu Anda bawa sekarang.",
         "cta": "Unduh di App Store",
@@ -2958,7 +2958,7 @@ LOCALES = {
                             [
                                 "Langt tryk → træk",
                                 "Flyt det et andet sted hen",
-                                "Tryk langt på et punkt, og træk det, for frit at flytte det mellem Nu, Senere, Hvile og Give slip.",
+                                "Tryk og hold på et punkt, og træk det, for frit at flytte det mellem Nu, Senere, Hvile og Give slip.",
                                 "t_move"
                             ],
                             [
@@ -2987,7 +2987,7 @@ LOCALES = {
                             [
                                 "Langt tryk",
                                 "Langt tryk på et tema for menuen",
-                                "Tryk langt på et tema-chip foroven, og »Vis altid (fastgør)«, »Rediger navn eller farve« og »Giv slip« dukker op. Det er her, du finder et temas indstillinger.",
+                                "Tryk og hold på et tema-chip foroven, og »Vis altid (fastgør)«, »Rediger navn eller farve« og »Give slip« dukker op. Det er her, du finder et temas indstillinger.",
                                 "t_theme_press"
                             ],
                             [
@@ -3063,7 +3063,7 @@ LOCALES = {
                 "Når jeg taler i længere tid, bliver det hele samlet i ét.",
                 [
                     "Når sætninger flyder sammen, kan det være svært at finde overgangene.",
-                    "Når du taler, gør en lille pause — »det her, (et åndedrag) og så det« — det lettere at dele op.",
+                    "Når du taler, hold en lille pause — »det her, (et åndedrag) og så det« — så bliver det lettere at dele op.",
                     "For noget, du allerede har indtastet, hjælper det at tilføje kommaer og punktummer i »Sorter igen«, så det deles op i flere stykker.",
                     "Bliver det alligevel ved med at hænge sammen, kan du dele det med et langt tryk og træk, eller omskrive det med et tryk."
                 ]
@@ -3312,7 +3312,7 @@ LOCALES = {
                 "Det føles som jeg blir presset til å betale med en gang.",
                 [
                     "Snakk, sorter, se tilbake — kjernen i KUU er alltid gratis.",
-                    "KUU+ er en stille tilleggsting, for deg som vil skru av annonser eller legge til Face ID-lås."
+                    "KUU+ er et stille tillegg, for deg som vil skru av annonser eller legge til Face ID-lås."
                 ]
             ],
             [
@@ -3707,7 +3707,7 @@ LOCALES = {
                             [
                                 "Paina pitkään",
                                 "Paina teemaa pitkään avataksesi valikon",
-                                "Kun painat yläpuolella olevaa teemamerkintää pitkään, esiin tulevat ”Näytä aina (kiinnitä)”, ”Muokkaa nimeä tai väriä” ja ”Päästä irti”. Tästä pääset teeman asetuksiin.",
+                                "Kun painat yläpuolella olevaa teemamerkintää pitkään, esiin tulevat ”Näytä aina (kiinnitä)”, ”Muokkaa nimeä tai väriä” ja ”Päästää irti”. Tästä pääset teeman asetuksiin.",
                                 "t_theme_press"
                             ],
                             [
@@ -4071,7 +4071,7 @@ LOCALES = {
         ],
         "why_note": "KUU จะรับฟังก่อน ก่อนที่จะจัดระเบียบ ยิ่งพูดออกมามากเท่าไหร่ ระดับน้ำในหัวก็ยิ่งลดลงเท่านั้น",
         "steps_eyebrow": "วิธีใช้งาน",
-        "steps_headline": "สิ่งที่ต้องทำ มีแค่พูดออกมา",
+        "steps_headline": "แค่พูดออกมาก็พอ",
         "steps": [
             [
                 "พูด",
@@ -4090,7 +4090,7 @@ LOCALES = {
         "app_headline": "นี่คือ KUU",
         "screen_alt": "หน้าจอแอป KUU",
         "matrix_eyebrow": "เมทริกซ์ KUU",
-        "matrix_headline": "ที่เก็บความคิด",
+        "matrix_headline": "ที่วางความคิด",
         "matrix_lead": "ไม่ใช่การแบ่งหมวดงาน แต่เป็นวิธีจัดการกับสิ่งที่อยู่ในหัวของคุณ",
         "quadrants": [
             [
@@ -4143,8 +4143,8 @@ LOCALES = {
         "tips_lead": "เพื่อให้หน้าจอดูเรียบง่ายและเงียบสงบ KUU จึงไม่แสดงการควบคุมส่วนใหญ่ให้เห็นชัดเจน แต่คุณสามารถแก้ไขสิ่งที่ฟังผิด หรือจัดเรียงด้วยตัวเองได้เสมอ เราจึงรวบรวมสิ่งที่มักถูกมองข้ามไว้ที่นี่",
         "tips_screens": [
             {
-                "heading": "ที่เก็บความคิด",
-                "lead": "หน้าจอที่ใช้บ่อยที่สุด ดึงขึ้นมาจากหน้าโฮม สิ่งที่จัดด้วยเสียงจะมารวมกันอยู่ใน 4 ที่เก็บ การควบคุมที่มักถูกมองข้ามส่วนใหญ่ก็อยู่ที่นี่เช่นกัน",
+                "heading": "ที่วางความคิด",
+                "lead": "หน้าจอที่ใช้บ่อยที่สุด ดึงขึ้นมาจากหน้าโฮม สิ่งที่จัดด้วยเสียงจะมารวมกันอยู่ใน 4 ที่วาง การควบคุมที่มักถูกมองข้ามส่วนใหญ่ก็อยู่ที่นี่เช่นกัน",
                 "groups": [
                     {
                         "subhead": "จัดการแต่ละรายการทีละอย่าง",
@@ -4292,7 +4292,7 @@ LOCALES = {
         "html_lang": "ru",
         "og_locale": "ru_RU",
         "label": "Русский",
-        "title": "KUU — тихий голосовой блокнот для мыслей, наводит порядок в голове",
+        "title": "KUU — тихий голосовой способ освободить голову от мыслей",
         "description": "KUU — тихое голосовое приложение для мыслей. Проговорите то, что у вас на уме, — и KUU разложит это на «Смотреть сейчас», «Подумать позже», «Дать отлежаться» и «Отпустить».",
         "hero_headline": "Проговорите — и в голове появится простор.",
         "hero_sub": "Из головы, полной мыслей, просто проговорите вслух то, что сейчас не обязательно держать в себе.",
@@ -4323,7 +4323,7 @@ LOCALES = {
             ],
             [
                 "Просмотреть",
-                "Когда всё уляжется, вернитесь и приведите дела в порядок. Ничего не скапливается без дела."
+                "Когда всё уляжется, вернитесь к ним и позаботьтесь о них. Ничего не скапливается без внимания."
             ]
         ],
         "app_eyebrow": "Приложение",
