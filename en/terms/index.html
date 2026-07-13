@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Terms of Service — KUU</title>
+    <meta name="description" content="KUU's Terms of Service. Sets out the conditions of use, prohibited conduct, disclaimers, ownership of rights, and governing law and jurisdiction. Governed by Japanese law, with the Tokyo District Court as the court of exclusive agreed jurisdiction." />
+    <link rel="canonical" href="https://kuu-zen.com/en/terms/" />
+    <meta property="og:locale" content="en_US" />
+    <link rel="alternate" hreflang="ja" href="https://kuu-zen.com/terms/" />
+    <link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/terms/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/terms/" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DC1R54C73B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DC1R54C73B');
+      // LP 唯一のゴール = App Store 遷移を計測。link_location は CTA の ct= (lp_hero/lp_footer/lp_tips)。
+      // GA4 は sendBeacon で送るため同一タブ遷移でも欠落しない。capture で stopPropagation 耐性を持たせる。
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="apps.apple.com"]');
+        if (!a) return;
+        var m = a.href.match(/[?&]ct=([^&]+)/);
+        gtag('event', 'app_store_click', { link_location: m ? m[1] : 'other' });
+      }, true);
+    </script>
+    <style>
+:root {
+  color-scheme: light;
+  --bg: #f6f9fc;
+  --ink: #353b41;
+  --ink-soft: #6b737b;
+  --line: #e7edf3;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Apple SD Gothic Neo", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: clamp(48px, 10vw, 96px) 24px 80px;
+}
+h1 { font-size: 28px; font-weight: 600; margin: 0 0 24px; }
+h2 { font-size: 18px; font-weight: 600; margin: 32px 0 8px; }
+p { line-height: 1.7; color: var(--ink-soft); margin: 0 0 12px; }
+a { color: var(--ink); }
+.back {
+  display: inline-block;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 14px;
+}
+.langs {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.langs a { color: var(--ink-soft); text-decoration: none; }
+.langs a[aria-current="true"] { color: var(--ink); font-weight: 600; }
+.langs a:hover { text-decoration: underline; }
+main { max-width: 720px; }
+h1 { font-size: 26px; }
+h2 { font-size: 17px; }
+li { line-height: 1.7; color: var(--ink-soft); margin: 4px 0; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Terms of Service for KUU</h1>
+      <p>Last updated: May 20, 2026</p>
+      <p>These Terms of Service (the "Terms") set out the conditions for using "KUU" (the "App"), a smartphone application provided by KUU-app (the "Provider"). All users (each a "User") shall use the App in accordance with these Terms.</p>
+      <hr />
+      <h2>Article 1 (Application)</h2>
+      <p>These Terms apply to every relationship between the User and the Provider concerning the use of the App.</p>
+      <h2>Article 2 (Overview of the App)</h2>
+      <p>The App is an application that helps you offload the thoughts in your head (tasks, worries, ideas, nagging feelings, concerns, things to think about later, and the like) by speaking them out loud, and organize them into four categories: "Now," "Later," "Park," and "Release." Transcription and organization (AI classification) are completed entirely on your iOS device.</p>
+      <h2>Article 3 (Nature of the App)</h2>
+      <ol>
+      <li>The App is intended to help you organize your thoughts and does not provide medical, legal, tax, or any other professional advice.
+      </li>
+      <li>The App's classification results are reference information premised on the User re-evaluating and editing them, and the Provider does not warrant their accuracy, completeness, validity, fitness for a particular purpose, or the like.
+      </li></ol>
+      <h2>Article 4 (Prohibited Conduct)</h2>
+      <p>In using the App, the User shall not engage in any of the following acts.</p>
+      <ol>
+      <li>Acts that violate laws and regulations or public order and morals
+      </li>
+      <li>Acts related to criminal conduct
+      </li>
+      <li>Acts that may interfere with the operation of the App
+      </li>
+      <li>Reverse engineering, decompiling, or modifying the App
+      </li>
+      <li>Acts that provide benefits, directly or indirectly, to antisocial forces
+      </li>
+      <li>Any other acts that the Provider deems inappropriate
+      </li></ol>
+      <h2>Article 5 (Suspension or Modification of the Service)</h2>
+      <p>The Provider may suspend, interrupt, or modify all or part of the App without prior notice to the User if the Provider determines that any of the following applies.</p>
+      <ol>
+      <li>When performing maintenance, inspection, or updates of the computer systems related to the App
+      </li>
+      <li>When providing the App becomes difficult due to force majeure such as earthquake, lightning, fire, power outage, or natural disaster
+      </li>
+      <li>When maintaining the App's functionality becomes difficult due to changes in the specifications of, or discontinuation of, Apple's frameworks (Speech, FoundationModels, CloudKit, etc.)
+      </li>
+      <li>When the Provider otherwise determines that providing the App is difficult
+      </li></ol>
+      <h2>Article 6 (Disclaimer)</h2>
+      <ol>
+      <li>The Provider makes no express or implied warranty that the App is free from factual or legal defects (including defects concerning safety, reliability, accuracy, completeness, validity, fitness for a particular purpose, and security, as well as errors, bugs, and infringement of rights).
+      </li>
+      <li>The Provider assumes no liability whatsoever for any damage arising from the App. However, this disclaimer does not apply where the contract between the Provider and the User concerning the App (including these Terms) constitutes a consumer contract as defined in the Consumer Contract Act.
+      </li>
+      <li>Should the User suffer damage such as loss, leakage, or synchronization failure of data in connection with the use of iCloud (CloudKit), the terms established by Apple (the iCloud Terms of Use) shall apply, and the Provider assumes no liability.
+      </li>
+      <li>Speech recognition and AI classification are performed by Apple's frameworks on your device. The Provider does not warrant, and assumes no liability for, the accuracy, content, or behavior of the results produced by the speech recognition or AI classification.
+      </li>
+      <li>The User shall be responsible for managing the content the User inputs or speaks into the App.
+      </li></ol>
+      <h2>Article 7 (Intellectual Property and Ownership)</h2>
+      <ol>
+      <li>The intellectual property rights concerning the App (programs, designs, trademarks, logos, etc.) all belong to the Provider or the respective rightful holders. Use of the App by the User does not constitute a license to use these intellectual property rights.
+      </li>
+      <li>The rights concerning the content the User inputs or speaks into the App belong to the User. The Provider does not access such content and does not assert any rights to it.
+      </li></ol>
+      <h2>Article 8 (Changes to These Terms)</h2>
+      <p>The Provider may change these Terms at any time without prior notice to the User whenever the Provider deems it necessary. The changed Terms take effect at the time they are posted on the public page of these Terms, and the User is deemed to have agreed to the changed Terms by continuing to use the App after the change.</p>
+      <h2>Article 9 (Governing Law and Jurisdiction)</h2>
+      <ol>
+      <li>These Terms shall be governed by and construed in accordance with the laws of Japan.
+      </li>
+      <li>In the event of a dispute concerning the App, the User and the Provider agree that the Tokyo District Court shall have exclusive jurisdiction as the court of first instance.
+      </li></ol>
+      <h2>Article 10 (Contact)</h2>
+      <p>For inquiries regarding these Terms, please contact us through the "Developer" section on the App's page in the App Store.</p>
+
+      <a class="back" href="/en/">← Back to top</a>
+
+      <nav class="langs" aria-label="Language">
+      <a href="/terms/" hreflang="ja">日本語</a>
+      <a href="/en/terms/" hreflang="en" aria-current="true">English</a>
+      </nav>
+    </main>
+  </body>
+</html>
