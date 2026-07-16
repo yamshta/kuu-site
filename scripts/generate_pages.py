@@ -47,7 +47,7 @@ BASE_URL = "https://kuu-zen.com"
 APP_RATING = {"score": "4.2", "count": 168}
 # tips のスクショ (assets/tips/*.png) はファイル名を変えず中身を差し替えるため、
 # ブラウザキャッシュ回避に日付版クエリ ?v= を付ける。スクショを更新したら日付を上げる。
-ASSET_VERSION = "20260716"
+ASSET_VERSION = "20260717"
 # これらの thumb 名は静止画でなく mp4 ループ動画で見せる（<name>.mp4 + <name>_poster.jpg）。
 # 動き（ドラッグ&ドロップ等）は動画のほうが伝わるため。iOS Safari の自動再生条件に合わせ
 # autoplay + muted + playsinline を付ける。
