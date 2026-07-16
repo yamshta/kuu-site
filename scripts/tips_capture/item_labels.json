@@ -1,0 +1,41 @@
+{
+ "now1": {
+  "nl": "De post versturen",
+  "id": "Mengirim surat",
+  "ms": "Hantar surat",
+  "da": "Send posten",
+  "nb": "Send posten",
+  "sv": "Skicka posten",
+  "fi": "Lähetä posti",
+  "fr": "Envoyer le courrier",
+  "th": "ส่งไปรษณีย์",
+  "ru": "Отправить почту",
+  "en": "Send the mail"
+ },
+ "res_now1": {
+  "nl": "Een vriend antwoorden",
+  "id": "Membalas pesan teman",
+  "ms": "Hantar balasan kepada kawan",
+  "da": "Send svar til en ven",
+  "nb": "Send svar til en venn",
+  "sv": "Skicka svar till en vän",
+  "fi": "Vastaa kaverille",
+  "fr": "Répondre à un ami",
+  "th": "ส่งคำตอบให้เพื่อน",
+  "ru": "Ответить другу",
+  "en": "Send a reply to a friend"
+ },
+ "res_now2": {
+  "nl": "Een afspraak bij de dokter maken",
+  "id": "Membuat janji dokter",
+  "ms": "Buat janji temu hospital",
+  "da": "Book tid hos lægen",
+  "nb": "Bestill time hos legen",
+  "sv": "Boka tid hos läkaren",
+  "fi": "Varaa lääkäriaika",
+  "fr": "Prendre rendez-vous à l'hôpital",
+  "th": "นัดหมายโรงพยาบาล",
+  "ru": "Записаться в больницу",
+  "en": "Schedule a doctor's appointment"
+ }
+}
