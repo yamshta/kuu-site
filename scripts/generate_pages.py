@@ -5231,19 +5231,6 @@ body {
 /* extra separation only when a subhead follows a previous group's cards */
 .tips + .subhead { margin-top: clamp(40px, 8vw, 56px); }
 
-/* ---- figure (annotated real screenshot) ---- */
-.figure {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-top: 18px;
-  border-radius: 20px;
-  border: 1px solid var(--line);
-  box-shadow: 0 22px 48px -28px rgba(94, 151, 194, 0.55);
-  background: var(--surface);
-}
-.figure + .figure { margin-top: 12px; }
-
 /* ---- tip cards ---- */
 .tips { display: grid; gap: 14px; margin-top: 18px; }
 .tip {
@@ -5732,11 +5719,6 @@ def tips_html(code, d):
         parts = []
         if g.get("subhead"):
             parts.append(f'          <p class="subhead">{g["subhead"]}</p>')
-        for name, alt in g.get("figures", []):
-            parts.append(
-                f'          <img class="figure" src="/assets/tips/{name}.png?v={ASSET_VERSION}" '
-                f'width="1000" height="1029" loading="lazy" alt="{alt}" />'
-            )
         cards = "\n".join(card(it) for it in g["items"])
         parts.append(f'          <div class="tips stagger">\n{cards}\n          </div>')
         return "\n".join(parts)
