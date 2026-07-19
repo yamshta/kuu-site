@@ -31,7 +31,7 @@
 - 送信されるのは**文字にした内容（文字起こしテキスト）だけ**です。音声は送信されません
 - 送信先は外部の AI で、開発者のサーバーを経由します
 - 送信された内容は**分類にのみ使用され、保存されません**。AI の学習にも使用されません
-- 送信対象は、話して文字になった内容のほか、手で入力・編集した内容も含みます。テーマの自動振り分け（KUU+・任意設定）を有効にしている場合は、振り分けのために保存済みの項目のタイトルとテーマ名も送信されます（いずれも分類にのみ使用され、保存されません）
+- 送信対象は、話して文字になった内容のほか、手で入力・編集した内容も含みます。テーマの自動振り分け（KUU+・任意設定）を有効にしている場合は、振り分けのために保存済みの項目のタイトル・本文とテーマ名も送信されます（いずれも分類にのみ使用され、保存されません）
 - バージョン 2.3.0 より前のアプリでは、設定「オンデバイス」で端末内のみの分類を選べます（2.3.0 以降はこの設定の提供を終了しました）
 
 ## 第 4 条（iCloud への保存と同期）
@@ -153,7 +153,7 @@ The App does not collect names, email addresses, phone numbers, location, contac
 - Only the **text of what you said (the transcript)** is sent. Your voice is never sent.
 - It is sent to an external cloud AI, relayed through the developer's server.
 - The sent text is **used only for categorization and is never stored**. It is not used to train the AI either.
-- What is sent includes not only what you spoke and transcribed, but also anything you typed or edited by hand. If automatic theme assignment (KUU+, opt-in) is enabled, the saved title and theme name of items are also sent for assignment purposes (both are used only for classification and are not stored).
+- What is sent includes not only what you spoke and transcribed, but also anything you typed or edited by hand. If automatic theme assignment (KUU+, opt-in) is enabled, the saved titles, text, and theme names of items are also sent for assignment purposes (both are used only for classification and are not stored).
 - Versions of the App before 2.3.0 let you choose on-device-only classification via "On-device" in Settings (this setting is no longer offered as of 2.3.0).
 
 ## Article 4 (iCloud Storage and Sync)
