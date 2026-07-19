@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Privacy Policy — KUU</title>
-    <meta name="description" content="KUU's privacy policy. Audio is processed entirely on device and never sent outside. AI organization sends only the text by default, and the AI provider does not retain it (you can switch to on-device only in Settings)." />
+    <meta name="description" content="KUU's privacy policy. Audio is processed entirely on device and never sent outside. AI organization sends only the text by default, and the AI provider does not retain it." />
     <link rel="canonical" href="https://kuu-zen.com/en/privacy/" />
     <meta property="og:locale" content="en_US" />
     <link rel="alternate" hreflang="ja" href="https://kuu-zen.com/privacy/" />
@@ -84,8 +84,8 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
   <body>
     <main>
       <h1>Privacy Policy for KUU</h1>
-      <p>Last updated: July 12, 2026</p>
-      <p><strong>In short:</strong> What you spoke is yours. <strong>Your voice itself is never sent outside your device.</strong> Transcription happens on your device. AI organization uses an external AI by default, but only the transcribed text is sent. It is used solely for organizing and is not retained by the AI provider. You can switch to on-device-only organization via "On-device" in Settings. What is stored lives only on your device and in your iCloud (private database). The developer does not store your content and cannot view what is received. You can delete all data from inside the app at any time. The app makes only <strong>minimal network requests</strong> for Apple's billing (StoreKit) and Google AdMob ads, and that information never includes what you said (ads disappear with KUU+). For app quality improvement and immediate awareness of production incidents, Firebase Analytics / Crashlytics are used <strong>only if you explicitly opt in</strong>, and this too never includes what you said (see Article 14).</p>
+      <p>Last updated: August X, 2026 (to be finalized to the 2.3.0 release date)</p>
+      <p><strong>In short:</strong> What you spoke is yours. <strong>Your voice itself is never sent outside your device.</strong> Transcription happens on your device. AI organization uses an external AI by default, but only the transcribed text is sent. It is used solely for organizing and is not retained by the AI provider. What is stored lives only on your device and in your iCloud (private database). The developer does not store your content and cannot view what is received. You can delete all data from inside the app at any time. The app makes only <strong>minimal network requests</strong> for Apple's billing (StoreKit) and Google AdMob ads, and that information never includes what you said (ads disappear with KUU+). For app quality improvement and immediate awareness of production incidents, Firebase Analytics / Crashlytics are used <strong>only if you explicitly opt in</strong>, and this too never includes what you said (see Article 14).</p>
       <hr />
       <h2>Article 1 (General)</h2>
       <p>KUU (the "App") is an iOS application that helps you offload thoughts from your head by speaking them out loud and organizing them. The App processes information only to the minimum extent necessary to provide its features, prioritizing user privacy.</p>
@@ -112,7 +112,9 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
       </li>
       <li>The sent text is <strong>used only for categorization and is never stored</strong>. It is not used to train the AI either.
       </li>
-      <li>You can switch to <strong>on-device-only organization</strong> (Apple's FoundationModels / on-device rules) anytime via "On-device" in Settings. In that case, the transcript never leaves the device.
+      <li>What is sent includes not only what you spoke and transcribed, but also anything you typed or edited by hand. If automatic theme assignment (KUU+, opt-in) is enabled, the saved titles, text, and theme names of items are also sent for assignment purposes (both are used only for classification and are not stored).
+      </li>
+      <li>Versions of the App before 2.3.0 let you choose on-device-only classification via "On-device" in Settings (this setting is no longer offered as of 2.3.0).
       </li></ul>
       <h2>Article 4 (iCloud Storage and Sync)</h2>
       <p>The App stores transcribed and organized text in your <strong>iCloud Private Database</strong> (CloudKit Private Database). This is Apple-provided storage that only you can access. The developer cannot view or retrieve any stored content.</p>
@@ -135,9 +137,7 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
       </li>
       <li><strong>Speech framework</strong> (Apple, runs entirely on-device)
       </li>
-      <li><strong>An external cloud AI</strong> (default AI organization. Only the text of what you said is sent; used solely for categorization, never stored, never used for AI training. Can be turned off via "On-device" in Settings.)
-      </li>
-      <li><strong>FoundationModels</strong> (Apple, runs entirely on-device. Used when "On-device" is enabled, or as fallback.)
+      <li><strong>An external cloud AI</strong> (default AI organization. Only the text of what you said is sent; used solely for categorization, never stored, never used for AI training. See Article 3.)
       </li>
       <li><strong>Apple StoreKit</strong> (KUU+ subscription purchase, renewal, cancellation. No spoken content is sent.)
       </li>

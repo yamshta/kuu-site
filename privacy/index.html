@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>プライバシーポリシー — KUU</title>
-    <meta name="description" content="KUU のプライバシーポリシー。音声はすべて端末内で処理し外部に送信しません。整理の AI 分類は既定で文字だけを送信し保存しません（設定で端末内のみにもできます）。" />
+    <meta name="description" content="KUU のプライバシーポリシー。音声はすべて端末内で処理し外部に送信しません。整理の AI 分類は既定で文字だけを送信し保存しません。" />
     <link rel="canonical" href="https://kuu-zen.com/privacy/" />
     <meta property="og:locale" content="ja_JP" />
     <link rel="alternate" hreflang="ja" href="https://kuu-zen.com/privacy/" />
@@ -84,8 +84,8 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
   <body>
     <main>
       <h1>KUU プライバシーポリシー</h1>
-      <p>最終更新日：2026 年 7 月 3 日</p>
-      <p><strong>ひとことで：</strong> あなたが話したことはあなたのものです。<strong>音声そのものは外部に送信しません</strong>。文字起こしは端末の中で行います。整理（AI 分類）には既定で外部の AI を使いますが、送られるのは文字にした内容だけで、整理にのみ使われ、保存されません（設定「オンデバイス」で端末内のみの整理に変更できます）。保存先はあなたの端末と iCloud（プライベートデータベース）だけです。開発者は内容を保存せず、受け取った内容を見ることもありません。いつでもアプリ内から全データを削除できます。アプリは Apple の課金（StoreKit）と Google AdMob の広告のために<strong>必要最小限の通信</strong>のみ行い、その情報には話した内容は含まれません（広告は KUU+ 加入で無効化できます）。アプリの品質改善と本番事故の即知化のために、<strong>ユーザーが明示的に opt-in した場合に限り</strong> Firebase Analytics / Crashlytics を利用しますが、こちらも話した内容は含みません（詳細は第 14 条）。</p>
+      <p>最終更新日：2026 年 8 月 X 日（2.3.0 リリース日に確定）</p>
+      <p><strong>ひとことで：</strong> あなたが話したことはあなたのものです。<strong>音声そのものは外部に送信しません</strong>。文字起こしは端末の中で行います。整理（AI 分類）には既定で外部の AI を使いますが、送られるのは文字にした内容だけで、整理にのみ使われ、保存されません。保存先はあなたの端末と iCloud（プライベートデータベース）だけです。開発者は内容を保存せず、受け取った内容を見ることもありません。いつでもアプリ内から全データを削除できます。アプリは Apple の課金（StoreKit）と Google AdMob の広告のために<strong>必要最小限の通信</strong>のみ行い、その情報には話した内容は含まれません（広告は KUU+ 加入で無効化できます）。アプリの品質改善と本番事故の即知化のために、<strong>ユーザーが明示的に opt-in した場合に限り</strong> Firebase Analytics / Crashlytics を利用しますが、こちらも話した内容は含みません（詳細は第 14 条）。</p>
       <hr />
       <h2>第 1 条（基本方針）</h2>
       <p>本アプリ「KUU」（以下「本アプリ」）は、頭の中の考えごとを声で外に出し、整理することを支援する iOS アプリです。本アプリは、機能提供に必要な最小限の範囲でのみ情報を扱い、ユーザーのプライバシー保護を最優先とします。</p>
@@ -112,7 +112,9 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
       </li>
       <li>送信された内容は<strong>分類にのみ使用され、保存されません</strong>。AI の学習にも使用されません
       </li>
-      <li>設定の「オンデバイス」から、<strong>端末内のみの分類</strong>（Apple の FoundationModels / 端末内ルール）へいつでも変更できます。この場合、文字も端末の外に出ません
+      <li>送信対象は、話して文字になった内容のほか、手で入力・編集した内容も含みます。テーマの自動振り分け（KUU+・任意設定）を有効にしている場合は、振り分けのために保存済みの項目のタイトル・本文とテーマ名も送信されます（いずれも分類にのみ使用され、保存されません）
+      </li>
+      <li>バージョン 2.3.0 より前のアプリでは、設定「オンデバイス」で端末内のみの分類を選べます（2.3.0 以降はこの設定の提供を終了しました）
       </li></ul>
       <h2>第 4 条（iCloud への保存と同期）</h2>
       <p>本アプリは、文字起こし結果と整理結果をあなたの <strong>iCloud のプライベートデータベース</strong>（CloudKit Private Database）にのみ保存します。これは Apple が提供するストレージで、保存内容にアクセスできるのはあなた本人だけです。本アプリの開発者は、保存された内容を閲覧することも、取得することもできません。</p>
@@ -135,9 +137,7 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
       </li>
       <li><strong>Speech フレームワーク</strong>（Apple 提供。完全に端末上で実行）
       </li>
-      <li><strong>外部の AI（クラウド）</strong>（既定の AI 分類。文字にした内容のみ送信。分類にのみ使用され、保存もされず、AI の学習にも使用されません。設定「オンデバイス」でオフにできます。詳細は第 3 条）
-      </li>
-      <li><strong>FoundationModels</strong>（Apple 提供。完全に端末上で実行。「オンデバイス」設定時と、外部 AI が使えないときのフォールバックで使用）
+      <li><strong>外部の AI（クラウド）</strong>（既定の AI 分類。文字にした内容のみ送信。分類にのみ使用され、保存もされず、AI の学習にも使用されません。詳細は第 3 条）
       </li>
       <li><strong>Apple StoreKit</strong>（KUU+ サブスクリプションの購入・更新・解約管理。話した内容は送信されません）
       </li>

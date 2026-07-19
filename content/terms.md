@@ -1,6 +1,6 @@
 # KUU 利用規約
 
-最終更新日：2026 年 5 月 20 日
+最終更新日：2026 年 8 月 X 日（マージ時に確定）
 
 この利用規約（以下「本規約」）は、KUU-app（以下「提供者」）が提供するスマートフォン用アプリケーション「KUU」（以下「本アプリ」）の利用条件を定めるものです。利用者の皆様（以下「ユーザー」）には、本規約に従って本アプリをご利用いただきます。
 
@@ -12,7 +12,7 @@
 
 ## 第 2 条（本アプリの概要）
 
-本アプリは、頭の中の考えごと（タスク・悩み・アイデア・違和感・心配ごと・あとで考えたいこと等）を声で外に出し、「いま見る／あとで考える／寝かせる／手放す」の 4 つに整理することを支援するアプリケーションです。文字起こしおよび整理（AI 分類）はすべてお使いの iOS デバイス上で完結します。
+本アプリは、頭の中の考えごと（タスク・悩み・アイデア・違和感・心配ごと・あとで考えたいこと等）を声で外に出し、「いま見る／あとで考える／寝かせる／手放す」の 4 つに整理することを支援するアプリケーションです。文字起こしはすべてお使いの iOS デバイス上で行われます。整理（AI 分類）は、入力した内容（文字）のみを外部の AI に送信して行います（分類にのみ使用され、保存されません。詳細はプライバシーポリシー第 3 条）。
 
 ## 第 3 条（本アプリの位置づけ）
 
@@ -44,7 +44,7 @@
 1. 提供者は、本アプリに事実上または法律上の瑕疵（安全性、信頼性、正確性、完全性、有効性、特定の目的への適合性、セキュリティなどに関する欠陥、エラーやバグ、権利侵害などを含みます）がないことを明示的にも黙示的にも保証しておりません。
 2. 提供者は、本アプリに起因してユーザーに生じたあらゆる損害について一切の責任を負いません。ただし、本アプリに関する提供者とユーザーとの間の契約（本規約を含みます）が消費者契約法に定める消費者契約となる場合、この免責規定は適用されません。
 3. ユーザーが iCloud（CloudKit）の利用に関連してデータの消失、漏洩、同期不全等の損害を被った場合、Apple 社の定める規約（iCloud 利用規約）に従うものとし、提供者は責任を負いかねます。
-4. 音声認識および AI 分類はお使いの端末上の Apple フレームワークによって実行されます。これらの結果の精度、内容、挙動について、提供者は保証せず、責任を負いかねます。
+4. 音声認識はお使いの端末上の Apple フレームワークによって、AI 分類は外部の AI サービスによって実行されます。これらの結果の精度、内容、挙動について、提供者は保証せず、責任を負いかねます。
 5. ユーザーが本アプリに入力・発話した内容の管理はユーザーの責任で行うものとします。
 
 ## 第 7 条（権利帰属）
@@ -69,7 +69,7 @@
 
 # Terms of Service for KUU
 
-Last updated: May 20, 2026
+Last updated: August X, 2026 (to be finalized at merge)
 
 These Terms of Service (the "Terms") set out the conditions for using "KUU" (the "App"), a smartphone application provided by KUU-app (the "Provider"). All users (each a "User") shall use the App in accordance with these Terms.
 
@@ -81,7 +81,7 @@ These Terms apply to every relationship between the User and the Provider concer
 
 ## Article 2 (Overview of the App)
 
-The App is an application that helps you offload the thoughts in your head (tasks, worries, ideas, nagging feelings, concerns, things to think about later, and the like) by speaking them out loud, and organize them into four categories: "Now," "Later," "Park," and "Release." Transcription and organization (AI classification) are completed entirely on your iOS device.
+The App is an application that helps you offload the thoughts in your head (tasks, worries, ideas, nagging feelings, concerns, things to think about later, and the like) by speaking them out loud, and organize them into four categories: "Now," "Later," "Park," and "Release." Transcription is performed entirely on your iOS device. Organization (AI classification) is performed by sending only the text of what you entered to an external AI (used solely for categorization and not retained; see Article 3 of the Privacy Policy for details).
 
 ## Article 3 (Nature of the App)
 
@@ -113,7 +113,7 @@ The Provider may suspend, interrupt, or modify all or part of the App without pr
 1. The Provider makes no express or implied warranty that the App is free from factual or legal defects (including defects concerning safety, reliability, accuracy, completeness, validity, fitness for a particular purpose, and security, as well as errors, bugs, and infringement of rights).
 2. The Provider assumes no liability whatsoever for any damage arising from the App. However, this disclaimer does not apply where the contract between the Provider and the User concerning the App (including these Terms) constitutes a consumer contract as defined in the Consumer Contract Act.
 3. Should the User suffer damage such as loss, leakage, or synchronization failure of data in connection with the use of iCloud (CloudKit), the terms established by Apple (the iCloud Terms of Use) shall apply, and the Provider assumes no liability.
-4. Speech recognition and AI classification are performed by Apple's frameworks on your device. The Provider does not warrant, and assumes no liability for, the accuracy, content, or behavior of the results produced by the speech recognition or AI classification.
+4. Speech recognition is performed by Apple's frameworks on your device, and AI classification is performed by an external AI service. The Provider does not warrant, and assumes no liability for, the accuracy, content, or behavior of the results produced by the speech recognition or AI classification.
 5. The User shall be responsible for managing the content the User inputs or speaks into the App.
 
 ## Article 7 (Intellectual Property and Ownership)
