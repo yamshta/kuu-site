@@ -1,6 +1,6 @@
 # KUU 利用規約
 
-最終更新日：2026 年 5 月 20 日
+最終更新日：2026 年 8 月 X 日（マージ時に確定）
 
 この利用規約（以下「本規約」）は、KUU-app（以下「提供者」）が提供するスマートフォン用アプリケーション「KUU」（以下「本アプリ」）の利用条件を定めるものです。利用者の皆様（以下「ユーザー」）には、本規約に従って本アプリをご利用いただきます。
 
@@ -69,7 +69,7 @@
 
 # Terms of Service for KUU
 
-Last updated: May 20, 2026
+Last updated: August X, 2026 (to be finalized at merge)
 
 These Terms of Service (the "Terms") set out the conditions for using "KUU" (the "App"), a smartphone application provided by KUU-app (the "Provider"). All users (each a "User") shall use the App in accordance with these Terms.
 
