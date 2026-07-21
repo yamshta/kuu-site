@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Datenschutzerklärung — KUU</title>
+    <meta name="description" content="Alle Audioaufnahmen werden lokal auf dem Gerät verarbeitet und nicht nach außen gesendet. Für die KI-gestützte Kategorisierung wird nur Text übertragen und nicht gespeichert." />
+    <link rel="canonical" href="https://kuu-zen.com/de/privacy/" />
+    <meta property="og:locale" content="de_DE" />
+    <link rel="alternate" hreflang="ja" href="https://kuu-zen.com/privacy/" />
+    <link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/privacy/" />
+    <link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/privacy/" />
+    <link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/privacy/" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/privacy/" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/privacy/" />
+    <link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/privacy/" />
+    <link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/privacy/" />
+    <link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/privacy/" />
+    <link rel="alternate" hreflang="nl" href="https://kuu-zen.com/nl/privacy/" />
+    <link rel="alternate" hreflang="id" href="https://kuu-zen.com/id/privacy/" />
+    <link rel="alternate" hreflang="ms" href="https://kuu-zen.com/ms/privacy/" />
+    <link rel="alternate" hreflang="da" href="https://kuu-zen.com/da/privacy/" />
+    <link rel="alternate" hreflang="nb" href="https://kuu-zen.com/nb/privacy/" />
+    <link rel="alternate" hreflang="sv" href="https://kuu-zen.com/sv/privacy/" />
+    <link rel="alternate" hreflang="fi" href="https://kuu-zen.com/fi/privacy/" />
+    <link rel="alternate" hreflang="fr" href="https://kuu-zen.com/fr/privacy/" />
+    <link rel="alternate" hreflang="th" href="https://kuu-zen.com/th/privacy/" />
+    <link rel="alternate" hreflang="ru" href="https://kuu-zen.com/ru/privacy/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/privacy/" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DC1R54C73B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DC1R54C73B');
+      // LP 唯一のゴール = App Store 遷移を計測。link_location は CTA の ct= (lp_hero/lp_footer/lp_tips)。
+      // GA4 は sendBeacon で送るため同一タブ遷移でも欠落しない。capture で stopPropagation 耐性を持たせる。
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="apps.apple.com"]');
+        if (!a) return;
+        var m = a.href.match(/[?&]ct=([^&]+)/);
+        gtag('event', 'app_store_click', { link_location: m ? m[1] : 'other' });
+      }, true);
+    </script>
+    <style>
+:root {
+  color-scheme: light;
+  --bg: #f6f9fc;
+  --ink: #353b41;
+  --ink-soft: #6b737b;
+  --line: #e7edf3;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Apple SD Gothic Neo", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: clamp(48px, 10vw, 96px) 24px 80px;
+}
+h1 { font-size: 28px; font-weight: 600; margin: 0 0 24px; }
+h2 { font-size: 18px; font-weight: 600; margin: 32px 0 8px; }
+p { line-height: 1.7; color: var(--ink-soft); margin: 0 0 12px; }
+a { color: var(--ink); }
+.back {
+  display: inline-block;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 14px;
+}
+.langs {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.langs a { color: var(--ink-soft); text-decoration: none; }
+.langs a[aria-current="true"] { color: var(--ink); font-weight: 600; }
+.langs a:hover { text-decoration: underline; }
+main { max-width: 720px; }
+h1 { font-size: 26px; }
+h2 { font-size: 17px; }
+li { line-height: 1.7; color: var(--ink-soft); margin: 4px 0; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>&gt; Dies ist eine Referenzübersetzung. Maßgeblich ist die japanische Fassung.</p>
+      <h1>KUU Datenschutzrichtlinie</h1>
+      <p>Letzte Aktualisierung: 21. Juli 2026</p>
+      <p><strong>Kurz gesagt:</strong> Was Sie sagen, gehört Ihnen. <strong>Ihre Stimme selbst wird niemals nach außen gesendet.</strong> Die Transkription erfolgt auf Ihrem Gerät. Für die Organisation (KI-Kategorisierung) wird eine externe KI verwendet, aber es wird nur der transkribierte Text gesendet. Dieser wird ausschließlich für die Organisation verwendet und nicht gespeichert (in der iOS-Version können Sie in den Einstellungen unter „Auf dem Gerät“ zu einer rein geräteinternen Organisation wechseln. <strong>Die Android-Version sendet immer an die externe KI; es gibt keine Option für eine Organisation auf dem Gerät</strong>). Gespeichert wird auf Ihrem Gerät und in der iOS-Version zusätzlich in Ihrer iCloud (private Datenbank) (die Android-Version speichert nur auf dem Gerät). Der Entwickler speichert Ihre Inhalte nicht und kann die empfangenen Inhalte nicht einsehen. Sie können jederzeit alle Daten innerhalb der App löschen. Die App führt nur <strong>absolut notwendige Netzwerkkommunikation</strong> für Abrechnungen (iOS=StoreKit／Android=RevenueCat) und Werbung von Google AdMob durch, wobei diese Informationen niemals Ihre gesprochenen Inhalte umfassen (Werbung wird durch ein KUU+-Abonnement deaktiviert). Zur Qualitätsverbesserung wird die Nutzung gemessen, aber auch dies schließt Ihre gesprochenen Inhalte nicht ein (iOS erfordert ein Opt-in des Nutzers, Android führt standardmäßig eine inhaltsfreie Messung durch. Details in Artikel 14).</p>
+      <hr />
+      <h2>Artikel 1 (Grundlegendes)</h2>
+      <p>Diese Anwendung „KUU“ (nachfolgend „diese App“) ist eine App, die Sie dabei unterstützt, Ihre Gedanken laut auszusprechen und zu ordnen. Es gibt eine <strong>iOS- und eine Android-Version</strong>, und diese Richtlinie gilt für beide. Diese App verarbeitet Informationen nur im für die Bereitstellung der Funktionen absolut notwendigen Umfang und räumt dem Schutz der Privatsphäre der Nutzer höchste Priorität ein.</p>
+      <h2>Artikel 2 (Erfasste und gespeicherte Informationen)</h2>
+      <p>Diese App verarbeitet ausschließlich die folgenden Informationen:</p>
+      <ol>
+      <li><strong>Ihre gesprochenen Inhalte (Audiodaten)</strong> — Aufgenommene Audiodaten werden nur während der Transkription vorübergehend im lokalen Speicher des Geräts abgelegt und unmittelbar nach Abschluss der Verarbeitung gelöscht. Sie werden nicht an einen Server gesendet.
+      </li>
+      <li><strong>Transkriptions- und Organisationsergebnisse (Text)</strong> — Werden gespeichert, damit Sie sie selbst einsehen können (iOS-Version: auf dem Gerät und in Ihrer privaten iCloud-Datenbank; Android-Version: nur auf dem Gerät. Details in Artikel 4).
+      </li>
+      <li><strong>App-Einstellungen</strong> — Notwendige Einstellungswerte für den Betrieb der App wie Thema, Schriftgröße, Zustand des „Wasserpegels im Kopf“.
+      </li></ol>
+      <p>Diese App erfasst keine personenbezogenen Daten wie Name, E-Mail-Adresse, Telefonnummer, Standortinformationen, Kontakte, Kalender, Fotos oder Gerätekennungen.</p>
+      <h2>Artikel 3 (Spracherkennung und KI-Kategorisierung)</h2>
+      <p><strong>Die Spracherkennung (Transkription)</strong> erfolgt vollständig auf Ihrem iOS-Gerät.</p>
+      <ul>
+      <li>Spracherkennung: Verwendet Apples Speech-Framework (on-device). Die Audiodaten selbst werden niemals außerhalb des Geräts gesendet.
+      </li></ul>
+      <p><strong>Die KI-Kategorisierung</strong> verwendet eine externe KI.</p>
+      <ul>
+      <li>Gesendet wird <strong>nur der Inhalt des Gesprochenen (der transkribierte Text)</strong>. Die Audiodaten werden nicht gesendet.
+      </li>
+      <li>Der Empfänger ist eine externe KI, die über den Server des Entwicklers (über ein Backend zu Googles Gemini) weitergeleitet wird.
+      </li>
+      <li>Die gesendeten Inhalte werden <strong>ausschließlich zur Kategorisierung verwendet und nicht gespeichert</strong>. Sie werden auch nicht zum Trainieren der KI verwendet.
+      </li>
+      <li><strong>iOS-Version</strong>: Sie können jederzeit in den Einstellungen unter „Auf dem Gerät“ zu einer <strong>rein geräteinternen Kategorisierung</strong> (Apples FoundationModels / geräteinterne Regeln) wechseln. In diesem Fall verlässt auch der Text das Gerät nicht.
+      </li></ul>
+      <p><strong>Zur Android-Version:</strong> Die Android-Version bietet keine Organisationsmethode (Kategorisierung), die vollständig auf dem Gerät abläuft. Wenn Sie eine Organisation durchführen, wird der transkribierte Text <strong>immer</strong> an die externe KI (Googles Gemini über unser Backend) gesendet. Einen Wechsel zu „Auf dem Gerät“ wie in der iOS-Version gibt es nicht. Es wird nur der transkribierte Inhalt gesendet, nicht die Stimme selbst, und der gesendete Text wird ausschließlich zur Kategorisierung verwendet, nicht gespeichert und auch nicht zum Trainieren der KI genutzt. Die Transkription (Spracherkennung) selbst findet vollständig auf dem Gerät statt.</p>
+      <h2>Artikel 4 (Speicherung und Synchronisierung)</h2>
+      <p><strong>iOS-Version:</strong> Die Transkriptions- und Organisationsergebnisse werden ausschließlich in Ihrer <strong>privaten iCloud-Datenbank</strong> (CloudKit Private Database) gespeichert. Dies ist ein von Apple bereitgestellter Speicher, auf den nur Sie selbst zugreifen können. Der Entwickler dieser App kann die gespeicherten Inhalte weder einsehen noch abrufen. Für die Nutzung von iCloud gilt die Datenschutzrichtlinie von Apple.</p>
+      <p><strong>Android-Version:</strong> Die Transkriptions- und Organisationsergebnisse werden <strong>nur auf diesem Gerät</strong> gespeichert. Eine automatische Cloud-Synchronisierung findet nicht statt. Bei einem Gerätewechsel können Sie die Daten über „Stimme &amp; Daten“ in der App in eine Datei exportieren und auf dem neuen Gerät importieren. Den Speicherort der Exportdatei wählen Sie selbst (auf dem Gerät, in Ihrer Cloud-Speicher-App etc.). Der Entwickler hat keinen Zugriff auf diese Datei.</p>
+      <h2>Artikel 5 (Verwendungszweck)</h2>
+      <p>Die verarbeiteten Informationen werden ausschließlich für die folgenden Zwecke verwendet:</p>
+      <ol>
+      <li>Erstellung von Transkriptionen aus Ihrer Stimme und deren Anzeige für Sie
+      </li>
+      <li>Kategorisierung der Transkriptionen in „Jetzt ansehen / Später bedenken / Ruhen lassen / Loslassen“ und deren Anzeige für Sie
+      </li>
+      <li>Speicherung und Anzeige Ihrer früher gesprochenen Inhalte, damit Sie sie selbst einsehen können
+      </li>
+      <li>Beibehaltung der für den Betrieb der App notwendigen Einstellungswerte
+      </li></ol>
+      <h2>Artikel 6 (Nutzung externer Dienste)</h2>
+      <p>Diese App nutzt die folgenden externen Dienste zur Bereitstellung ihrer Funktionen. <strong>Ihre Stimme selbst wird an keinen dieser Dienste gesendet.</strong></p>
+      <ul>
+      <li><strong>iCloud / CloudKit</strong> (nur iOS-Version. Von Apple bereitgestellt. Speicherung und Synchronisierung nur in Ihrer eigenen privaten Datenbank)
+      </li>
+      <li><strong>Spracherkennung</strong> (iOS-Version: Apples Speech-Framework; Android-Version: geräteinterne Spracherkennungs-Engine. Beide laufen auf dem Gerät; Ihre Stimme wird nicht nach außen gesendet)
+      </li>
+      <li><strong>Externe KI (Cloud)</strong> (KI-Kategorisierung. Nur der transkribierte Inhalt wird gesendet. Wird ausschließlich zur Kategorisierung verwendet, nicht gespeichert und nicht zum Trainieren der KI genutzt. In der iOS-Version kann dies über die Einstellung „Auf dem Gerät“ deaktiviert werden, aber <strong>die Android-Version sendet immer an die externe KI</strong>. Details in Artikel 3)
+      </li>
+      <li><strong>FoundationModels</strong> (nur iOS-Version. Von Apple bereitgestellt. Läuft vollständig auf dem Gerät. Wird bei aktivierter „Auf dem Gerät“-Einstellung und als Fallback verwendet, wenn die externe KI nicht verfügbar ist)
+      </li>
+      <li><strong>Abrechnungsdienste</strong> (iOS-Version: <strong>Apple StoreKit</strong>; Android-Version: <strong>RevenueCat</strong>. Kauf, Verlängerung, Kündigung und Verwaltung des KUU+-Abonnementstatus. Ihre gesprochenen Inhalte werden nicht gesendet. Zu RevenueCat siehe Artikel 7 und die <a href="https://www.revenuecat.com/privacy" rel="noopener">RevenueCat-Datenschutzrichtlinie</a>)
+      </li>
+      <li><strong>Play Integrity API (über Firebase App Check; nur Android-Version)</strong> (Integritätsnachweis für Gerät und App, um zu bestätigen, dass Anfragen an die Klassifizierungs-API von einer legitimen App stammen. Enthält keine gesprochenen Inhalte oder benutzeridentifizierende Informationen)
+      </li>
+      <li><strong>Google AdMob (Google Mobile Ads SDK)</strong> (Nur wenn kein KUU+-Abonnement besteht, wird ein nativer Werbeplatz zwischen den Abschnitten auf dem „Was du gesagt hast“-Bildschirm angezeigt. Ihre gesprochenen Inhalte werden nicht gesendet. Details in Artikel 13)
+      </li>
+      <li><strong>Firebase Analytics</strong> (Von Google bereitgestellt. Zur Qualitätsverbesserung der App. In der iOS-Version <strong>nur, wenn der Nutzer in den Einstellungen explizit zustimmt (Opt-in)</strong>; in der Android-Version werden <strong>standardmäßig</strong> inhaltsfreie Nutzungsereignisse gesendet (in beiden Fällen werden keine gesprochenen Inhalte gesendet). Die iOS-Version nutzt bei Opt-in auch <strong>Crashlytics</strong>, aber <strong>die Android-Version enthält kein Crashlytics</strong>. Details in Artikel 14)
+      </li></ul>
+      <p>Der Server dieser App dient lediglich als Relay für die KI-Kategorisierung und speichert keinerlei Inhalte (zustandslos). Es werden keine Authentifizierungsdienste verwendet, die ein persönliches Konto erfordern.</p>
+      <h2>Artikel 7 (Weitergabe an Dritte)</h2>
+      <p>Der Entwickler dieser App hat keine Möglichkeit, auf Ihre gesprochenen Inhalte, Transkriptionsergebnisse oder Organisationsergebnisse zuzugreifen und gibt diese nicht an Dritte weiter.</p>
+      <p>Zum Zweck der Auslieferung von Werbung an Nutzer ohne KUU+-Abonnement werden Informationen, die Google AdMob für die Werbeauslieferung benötigt, an Google gesendet. Dazu gehören Gerätekennungen, Werbe-ID, Gerätesprache, Region, grobe Standortinformationen und Informationen zu Werbeinteraktionen (Details in Artikel 13; es gilt die AdMob-Datenschutzrichtlinie von Google). Während Sie ein KUU+-Abonnement haben, findet diese Datenübertragung nicht statt.</p>
+      <p>Wenn Sie in der <strong>Android-Version</strong> ein KUU+-Abonnement abschließen, werden Kaufinformationen (Produkt-ID, Preis, Kaufdatum etc.) an RevenueCat, Inc. zur Abwicklung des Kaufs und zur Verwaltung Ihres Abonnementstatus (aktiv/inaktiv) gesendet. Ihre gesprochenen Inhalte werden nicht gesendet. Details zur Datenverarbeitung durch RevenueCat finden Sie in der <a href="https://www.revenuecat.com/privacy" rel="noopener">RevenueCat-Datenschutzrichtlinie</a>.</p>
+      <p>Eine Offenlegung erfolgt nur, wenn dies gesetzlich vorgeschrieben ist und nach dem vorgeschriebenen Verfahren.</p>
+      <h2>Artikel 8 (Löschung von Daten)</h2>
+      <p>Sie können jederzeit alle Daten über „Einstellungen → Stimme &amp; Daten → Gespeicherte Inhalte löschen“ in der App löschen. Dadurch werden die Daten auf dem Gerät (bei der iOS-Version auch die Daten in der privaten iCloud-Datenbank) vollständig entfernt. Gelöschte Daten können nicht wiederhergestellt werden.</p>
+      <p>Bei der Deinstallation dieser App werden die Daten auf dem Gerät gelöscht. Die iCloud-Daten der iOS-Version können über die Apple-Einstellungen (Einstellungen → Apple-ID → iCloud → Speicher verwalten) gelöscht werden. Da die Android-Version Daten nur auf dem Gerät speichert, werden diese bei der Deinstallation entfernt.</p>
+      <h2>Artikel 9 (Sicherheitsmaßnahmen)</h2>
+      <ul>
+      <li><strong>iOS-Version</strong>: Temporäre Audiodateien während der Aufnahme werden durch die Dateischutzfunktion von iOS (<code>FileProtectionType.complete</code>) verschlüsselt und sind bei gesperrtem Gerät unzugänglich. Die Kommunikation mit iCloud wird von Apple per SSL/TLS verschlüsselt.
+      </li>
+      <li><strong>Android-Version</strong>: Aufgenommene Audiodaten werden nicht einmal als temporäre Datei auf die Festplatte geschrieben, sondern nur im Speicher verarbeitet und sofort nach der Erkennung verworfen. Gespeicherte Transkriptions- und Organisationsergebnisse werden im app-spezifischen Bereich von Android gespeichert und sind für andere Apps unzugänglich. Sie sind zudem von der automatischen Cloud-Sicherung von Android ausgeschlossen.
+      </li>
+      <li>Jegliche Kommunikation mit der externen KI wird verschlüsselt (HTTPS/TLS). Der Server des Entwicklers dient nur als Relay für die Kategorisierung und speichert keine Inhalte (zustandslos).
+      </li></ul>
+      <h2>Artikel 10 (Nutzung durch Minderjährige)</h2>
+      <p>Diese App wird mit der Altersfreigabe 4+ angeboten, ist aber aufgrund ihres Charakters (Gedankenorganisation) für Nutzer gedacht, die lesen und schreiben können. Minderjährige sollten die App nur mit Zustimmung eines Erziehungsberechtigten nutzen.</p>
+      <h2>Artikel 11 (Änderungen dieser Richtlinie)</h2>
+      <p>Diese Richtlinie kann aufgrund von Gesetzesänderungen, neuen Funktionen oder Änderungen in den Spezifikationen der Frameworks oder Richtlinien der jeweiligen Plattformen (Apple / Google) überarbeitet werden. Wesentliche Änderungen werden bei einem App-Update oder auf der öffentlichen Seite dieser Richtlinie bekannt gegeben.</p>
+      <h2>Artikel 12 (Kontakt)</h2>
+      <p>Anfragen zu dieser Richtlinie richten Sie bitte über den Abschnitt „Entwickler“ auf der App-Seite im App Store oder bei Google Play oder über „Einstellungen → Kontakt“ in der App an uns.</p>
+      <h2>Artikel 13 (Werbung und App Tracking Transparency)</h2>
+      <p>Solange Sie kein KUU+-Abonnement haben, zeigt diese App einen einzigen nativen Werbeplatz von Google AdMob auf dem „Was du gesagt hast“-Bildschirm an. Die Werbung selbst wird dezent zwischen den Abschnitten platziert, um die Atmosphäre von KUU zu wahren.</p>
+      <ul>
+      <li><strong>Ihre gesprochenen Inhalte werden niemals für Werbung verwendet.</strong> (Die Werbung greift nicht auf Transkriptionen, Organisationsergebnisse oder Themen zu.)
+      </li>
+      <li>Für die Werbeauslieferung kann Google AdMob Gerätekennungen (einschließlich IDFA), Werbe-ID, grobe Standortinformationen (Coarse Location), Diagnosedaten und Produktinteraktionen (Interaktionen mit Werbung innerhalb der App) erfassen.
+      </li>
+      <li><strong>iOS-Version</strong>: Eine <strong>App Tracking Transparency</strong> (ATT)-Aufforderung wird einmalig direkt vor der ersten Werbeanzeige angezeigt. Auch wenn Sie ablehnen, wird Werbung angezeigt, aber die an Google gesendeten Informationen sind auf einen begrenzten Umfang (nicht personalisiert) beschränkt. Sie können die ATT-Berechtigung jederzeit in den iOS-Einstellungen unter „Datenschutz &amp; Sicherheit“ → „Tracking“ ändern.
+      </li>
+      <li><strong>Android-Version</strong>: ATT ist ein reiner iOS-Mechanismus und existiert nicht auf Android. Stattdessen wird die <strong>Werbe-ID (Advertising ID)</strong> von Google für die Werbeauslieferung verwendet. Sie können die Personalisierung von Werbung in den Einstellungen Ihres Geräts unter „Einstellungen → Datenschutz → Anzeigen“ (die Formulierung kann je nach Gerät und Android-Version variieren) deaktivieren oder Ihre Werbe-ID zurücksetzen. Zusätzlich befolgt die Android-Version die in anwendbaren Regionen wie der EU angezeigte Einwilligungsverwaltung (UMP).
+      </li>
+      <li><strong>Mit einem KUU+-Abonnement werden jegliche Werbung und die damit verbundene Datenübertragung gestoppt.</strong>
+      </li>
+      <li>Details zur Datenverarbeitung durch Google AdMob finden Sie in der <a href="https://support.google.com/admob/answer/6128543" rel="noopener">Google AdMob-Datenschutzrichtlinie</a>.
+      </li></ul>
+      <h2>Artikel 14 (Nutzung von Firebase Analytics / Crashlytics)</h2>
+      <p><strong>Das in diesem Artikel beschriebene Opt-in-Verfahren gilt für die iOS-Version. Für die Android-Version siehe den Abschnitt „Zur Android-Version“ am Ende dieses Artikels.</strong></p>
+      <p><strong>Die iOS-Version</strong> kann zur Qualitätsverbesserung der App und zur sofortigen Erkennung von Produktionsproblemen Googles Firebase Analytics (aggregierte Nutzungsdaten) und Firebase Crashlytics (Absturzberichte) verwenden. <strong>Diese Funktion ist standardmäßig AUS (keine Datenübertragung) und wird nur aktiviert, wenn Sie in „Einstellungen → Daten &amp; Diagnose“ explizit zustimmen (Opt-in).</strong></p>
+      <ul>
+      <li><strong>Gesendete Informationen</strong>:
+      <ul>
+      <li>Eine von Firebase automatisch ausgestellte anonymisierte Installations-ID (basiert auf IDFV; keine direkt persönlich identifizierbare Kennung).
+      </li>
+      <li>Aggregierte Signale zu In-App-Ereignissen (z. B. Abschluss von Aufnahmesitzungen, Anzeige/Konversion von Paywalls, Abschluss des Onboardings. Numerische Werte werden in groben, gebündelten Einheiten gesendet).
+      </li>
+      <li>Symbolisierte Stack-Traces bei abnormaler Beendigung der App.
+      </li></ul>
+      </li>
+      <li><strong>Nicht gesendete Informationen</strong>: Ihre gesprochenen Inhalte (Audio), Transkriptionen, KI-Organisationsergebnisse und die von Ihnen festgelegten Themennamen sind <strong>auf Typebene so konzipiert, dass sie nicht gesendet werden können</strong> (die Implementierung der API verhindert die Übergabe von Zeichenkettenwerten an das Analyse-SDK).
+      </li>
+      <li><strong>Solange kein Opt-in erfolgt ist, findet keinerlei Kommunikation mit Firebase statt</strong> (einschließlich aller oben genannten Kategorien).
+      </li>
+      <li><strong>Möglichkeit zum Beenden der Übertragung</strong>: Sie können den Schalter in „Einstellungen → Daten &amp; Diagnose“ jederzeit auf AUS stellen. Dadurch wird die bisherige Installations-ID verworfen und alle auf dem Gerät gespeicherten, noch nicht gesendeten Absturzprotokolle werden gelöscht.
+      </li>
+      <li>Empfänger ist Google LLC (USA). Es gelten die <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase-Datenschutzinformationen</a> von Google.
+      </li></ul>
+      <p><strong>Zur Android-Version:</strong> Die Android-Version verwendet Firebase Analytics und sendet zur Produktverbesserung <strong>inhaltsfreie Nutzungsereignisse</strong> (gebündelte Werte wie Bildschirmwechsel und Häufigkeit der Funktionsnutzung) sowie eine von Firebase ausgestellte anonyme App-Instanz-ID. <strong>Im Gegensatz zur iOS-Version ist dies standardmäßig aktiviert.</strong> Ihre gesprochenen Inhalte (Audio), Transkriptionen, Organisationsergebnisse und Themennamen <strong>können nicht gesendet werden</strong>, da die API des Analyse-SDKs so konzipiert ist, dass keine Zeichenkettenwerte übergeben werden können. <strong>Die Android-Version enthält kein Crashlytics und sendet keine Absturzberichte.</strong> Empfänger ist Google LLC (USA); es gelten die <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase-Datenschutzinformationen</a> von Google.</p>
+
+      <a class="back" href="/de/">← Zurück nach oben</a>
+
+      <nav class="langs" aria-label="Sprache">
+      <a href="/privacy/" hreflang="ja">日本語</a>
+      <a href="/en/privacy/" hreflang="en">English</a>
+      <a href="/es/privacy/" hreflang="es">Español</a>
+      <a href="/ko/privacy/" hreflang="ko">한국어</a>
+      <a href="/zh-Hans/privacy/" hreflang="zh-Hans">简体中文</a>
+      <a href="/zh-Hant/privacy/" hreflang="zh-Hant">繁體中文</a>
+      <a href="/de/privacy/" hreflang="de" aria-current="true">Deutsch</a>
+      <a href="/it/privacy/" hreflang="it">Italiano</a>
+      <a href="/vi/privacy/" hreflang="vi">Tiếng Việt</a>
+      <a href="/nl/privacy/" hreflang="nl">Nederlands</a>
+      <a href="/id/privacy/" hreflang="id">Bahasa Indonesia</a>
+      <a href="/ms/privacy/" hreflang="ms">Bahasa Melayu</a>
+      <a href="/da/privacy/" hreflang="da">Dansk</a>
+      <a href="/nb/privacy/" hreflang="nb">Norsk bokmål</a>
+      <a href="/sv/privacy/" hreflang="sv">Svenska</a>
+      <a href="/fi/privacy/" hreflang="fi">Suomi</a>
+      <a href="/fr/privacy/" hreflang="fr">Français</a>
+      <a href="/th/privacy/" hreflang="th">ไทย</a>
+      <a href="/ru/privacy/" hreflang="ru">Русский</a>
+      </nav>
+    </main>
+  </body>
+</html>

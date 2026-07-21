@@ -78,8 +78,11 @@ def store_asset(code, n):
 # GA4 web stream measurement ID (G-XXXXXXXXXX). Empty = no analytics tag emitted.
 # Stream: properties/539320049/dataStreams/15063638495 (kuu-zen.com)
 GA4_MEASUREMENT_ID = "G-DC1R54C73B"
-# Privacy policy is hosted on this site in ja/en only; other locales link to en.
-PRIVACY_LOCALES = ("ja", "en")
+# Privacy policy is hosted in all supported locales. ja is the authoritative legal
+# text; other locales are reference translations (auto-maintained by
+# scripts/translate_privacy.py via Gemini). See content/privacy/<code>.md.
+PRIVACY_LOCALES = ("ja", "en", "es", "ko", "zh-Hans", "zh-Hant", "de", "it", "vi",
+                   "nl", "id", "ms", "da", "nb", "sv", "fi", "fr", "th", "ru")
 # Terms of Service is hosted in ja/en only; other locales link to en (same pattern as PRIVACY_LOCALES).
 TERMS_LOCALES = ("ja", "en")
 # Footer "Terms of Service" label per locale. The page itself is ja/en only, but every
@@ -5832,16 +5835,9 @@ def tips_html(code, d):
 """
 
 
-PRIVACY_META = {
-    "ja": {
-        "title": "プライバシーポリシー — KUU",
-        "description": "KUU のプライバシーポリシー。音声はすべて端末内で処理し外部に送信しません。整理の AI 分類は既定で文字だけを送信し保存しません（設定で端末内のみにもできます）。",
-    },
-    "en": {
-        "title": "Privacy Policy — KUU",
-        "description": "KUU's privacy policy. Audio is processed entirely on device and never sent outside. AI organization sends only the text by default, and the AI provider does not retain it (you can switch to on-device only in Settings).",
-    },
-}
+# Per-locale title/description, maintained alongside the translations by
+# scripts/translate_privacy.py (ja/en are seeded there).
+PRIVACY_META = json.loads((ROOT / "content" / "privacy" / "meta.json").read_text())
 
 TERMS_META = {
     "ja": {
@@ -5970,13 +5966,14 @@ def privacy_html(code, body_html):
 
 
 def split_privacy_md():
-    """content/privacy.md holds ja then en, separated by the en h1."""
-    md = (ROOT / "content" / "privacy.md").read_text()
-    marker = "# Privacy Policy for KUU"
-    ja_md, en_md = md.split(marker, 1)
-    # drop the trailing hr that separated the two documents
-    ja_md = re.sub(r"-{3,}\s*$", "", ja_md.rstrip())
-    return {"ja": ja_md, "en": marker + en_md}
+    """Per-locale privacy policy from content/privacy/<code>.md.
+    ja is the authoritative legal text; other locales are reference translations."""
+    out = {}
+    for code in PRIVACY_LOCALES:
+        p = ROOT / "content" / "privacy" / f"{code}.md"
+        if p.exists():
+            out[code] = p.read_text()
+    return out
 
 
 def terms_html(code, body_html):

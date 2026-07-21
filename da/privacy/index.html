@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Privatlivspolitik — KUU</title>
+    <meta name="description" content="Al lyd behandles på din enhed og sendes ikke eksternt. Til AI-klassificering for organisering sendes kun tekst, og den gemmes ikke." />
+    <link rel="canonical" href="https://kuu-zen.com/da/privacy/" />
+    <meta property="og:locale" content="da_DK" />
+    <link rel="alternate" hreflang="ja" href="https://kuu-zen.com/privacy/" />
+    <link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/privacy/" />
+    <link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/privacy/" />
+    <link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/privacy/" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/privacy/" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/privacy/" />
+    <link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/privacy/" />
+    <link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/privacy/" />
+    <link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/privacy/" />
+    <link rel="alternate" hreflang="nl" href="https://kuu-zen.com/nl/privacy/" />
+    <link rel="alternate" hreflang="id" href="https://kuu-zen.com/id/privacy/" />
+    <link rel="alternate" hreflang="ms" href="https://kuu-zen.com/ms/privacy/" />
+    <link rel="alternate" hreflang="da" href="https://kuu-zen.com/da/privacy/" />
+    <link rel="alternate" hreflang="nb" href="https://kuu-zen.com/nb/privacy/" />
+    <link rel="alternate" hreflang="sv" href="https://kuu-zen.com/sv/privacy/" />
+    <link rel="alternate" hreflang="fi" href="https://kuu-zen.com/fi/privacy/" />
+    <link rel="alternate" hreflang="fr" href="https://kuu-zen.com/fr/privacy/" />
+    <link rel="alternate" hreflang="th" href="https://kuu-zen.com/th/privacy/" />
+    <link rel="alternate" hreflang="ru" href="https://kuu-zen.com/ru/privacy/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/privacy/" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DC1R54C73B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DC1R54C73B');
+      // LP 唯一のゴール = App Store 遷移を計測。link_location は CTA の ct= (lp_hero/lp_footer/lp_tips)。
+      // GA4 は sendBeacon で送るため同一タブ遷移でも欠落しない。capture で stopPropagation 耐性を持たせる。
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="apps.apple.com"]');
+        if (!a) return;
+        var m = a.href.match(/[?&]ct=([^&]+)/);
+        gtag('event', 'app_store_click', { link_location: m ? m[1] : 'other' });
+      }, true);
+    </script>
+    <style>
+:root {
+  color-scheme: light;
+  --bg: #f6f9fc;
+  --ink: #353b41;
+  --ink-soft: #6b737b;
+  --line: #e7edf3;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Apple SD Gothic Neo", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: clamp(48px, 10vw, 96px) 24px 80px;
+}
+h1 { font-size: 28px; font-weight: 600; margin: 0 0 24px; }
+h2 { font-size: 18px; font-weight: 600; margin: 32px 0 8px; }
+p { line-height: 1.7; color: var(--ink-soft); margin: 0 0 12px; }
+a { color: var(--ink); }
+.back {
+  display: inline-block;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 14px;
+}
+.langs {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.langs a { color: var(--ink-soft); text-decoration: none; }
+.langs a[aria-current="true"] { color: var(--ink); font-weight: 600; }
+.langs a:hover { text-decoration: underline; }
+main { max-width: 720px; }
+h1 { font-size: 26px; }
+h2 { font-size: 17px; }
+li { line-height: 1.7; color: var(--ink-soft); margin: 4px 0; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>&gt; Dette er en referenceoversættelse for nemheds skyld. Den japanske version er den autoritative tekst.</p>
+      <h1>Privatlivspolitik for KUU</h1>
+      <p>Sidst opdateret: 21. juli 2026</p>
+      <p><strong>Kort sagt:</strong> Det, du siger, er dit. <strong>Selve din stemme bliver aldrig sendt uden for din enhed.</strong> Transskribering sker på din enhed. Til organisering bruges en ekstern AI, men det er kun den transskriberede tekst, der sendes. Den bruges udelukkende til organisering og gemmes ikke (på iOS kan du skifte til organisering kun på enheden via "På enheden" i Indstillinger; <strong>Android-versionen sender kun til den eksterne AI — der er ingen organisering på enheden</strong>). Det, der gemmes, ligger kun på din enhed, og på iOS også i din private iCloud-database (Android gemmer kun på enheden). Udvikleren gemmer ikke dit indhold og kan ikke se, hvad der modtages. Du kan til enhver tid slette alle data indefra i appen. Appen foretager kun den <strong>absolut nødvendige netværkskommunikation</strong> til fakturering (StoreKit på iOS / RevenueCat på Android) og Google AdMob-reklamer, og disse oplysninger indeholder aldrig det, du har sagt (reklamer forsvinder med KUU+). Brugsdata måles for at forbedre kvaliteten, men dette indeholder heller aldrig det, du har sagt (iOS er bruger-opt-in; Android sender som standard målinger uden indhold — se Artikel 14).</p>
+      <hr />
+      <h2>Artikel 1 (Grundlæggende politik)</h2>
+      <p>KUU ("Appen") er en applikation (tilgængelig på <strong>iOS og Android</strong>), der hjælper dig med at få tanker ud af hovedet ved at sige dem højt og organisere dem. Denne politik gælder for begge versioner. Appen behandler kun oplysninger i det omfang, det er absolut nødvendigt for at levere dens funktioner, og prioriterer brugerens privatliv højest.</p>
+      <h2>Artikel 2 (Oplysninger, der indhentes og gemmes)</h2>
+      <p>Appen håndterer udelukkende følgende oplysninger:</p>
+      <ol>
+      <li><strong>Brugerens indtalte indhold (lyddata)</strong> — Den optagede lyd gemmes midlertidigt i en lokal buffer på enheden, kun mens transskriberingen foregår. Den slettes øjeblikkeligt efter behandlingen. Den sendes aldrig til nogen server.
+      </li>
+      <li><strong>Transskriberingsresultater og organiseringsresultater (tekst)</strong> — Gemmes, så du selv kan gennemse dem (iOS: på din enhed og i din private iCloud-database; Android: kun på enheden — se Artikel 4).
+      </li>
+      <li><strong>Indstillinger i appen</strong> — Tema, tekststørrelse, vandstand i hovedet og andre indstillingsværdier, der er nødvendige for appens funktion.
+      </li></ol>
+      <p>Appen indsamler ikke personlige oplysninger såsom navn, e-mailadresse, telefonnummer, lokation, kontakter, kalender, billeder eller enhedsidentifikatorer.</p>
+      <h2>Artikel 3 (Om talegenkendelse og AI-organisering)</h2>
+      <p><strong>Talegenkendelse (transskribering)</strong> udføres udelukkende på din iOS-enhed:</p>
+      <ul>
+      <li>Talegenkendelse: Apples Speech-framework (på enheden). Selve din stemme sendes aldrig uden for enheden.
+      </li></ul>
+      <p><strong>AI-organisering (kategorisering)</strong> bruger en ekstern AI:</p>
+      <ul>
+      <li>Det er kun <strong>teksten fra det, du har sagt (transskriptionen)</strong>, der sendes. Din stemme sendes aldrig.
+      </li>
+      <li>Den sendes til en ekstern cloud-AI (Googles Gemini via udviklerens backend), videresendt gennem udviklerens server.
+      </li>
+      <li>Den sendte tekst bruges <strong>udelukkende til kategorisering og gemmes aldrig</strong>. Den bruges heller ikke til at træne AI'en.
+      </li>
+      <li><strong>På iOS</strong> kan du til enhver tid skifte til <strong>organisering udelukkende på enheden</strong> (Apples FoundationModels / regler på enheden) via "På enheden" i Indstillinger. I så fald forlader teksten heller aldrig enheden.
+      </li></ul>
+      <p><strong>Om Android-versionen:</strong> Android-versionen tilbyder ikke en organiseringsmetode, der udelukkende foregår på enheden. Når du organiserer, bliver den transskriberede tekst <strong>altid</strong> sendt til den eksterne AI (Googles Gemini via vores backend). Der er ingen "På enheden"-kontakt som på iOS. Det er kun den transskriberede tekst, der sendes — selve din stemme sendes aldrig, og den sendte tekst bruges udelukkende til kategorisering og bliver hverken gemt eller brugt til at træne AI'en. Selve transskriberingen (talegenkendelsen) foregår udelukkende på enheden.</p>
+      <h2>Artikel 4 (Lagring og synkronisering)</h2>
+      <p><strong>iOS-versionen:</strong> Appen gemmer transskriberede og organiserede tekster udelukkende i din <strong>private iCloud-database</strong> (CloudKit Private Database). Dette er et lager leveret af Apple, som kun du har adgang til. Appens udvikler kan hverken se eller hente det gemte indhold. Brugen af iCloud er underlagt Apples privatlivspolitik.</p>
+      <p><strong>Android-versionen:</strong> Transskriberede og organiserede tekster gemmes <strong>udelukkende på denne enhed</strong>. Der er ingen automatisk synkronisering til skyen. Ved skift af enhed kan du eksportere til en fil fra "Stemmeføring &amp; data" i appen og importere den på den nye enhed. Du vælger selv, hvor filen gemmes (på enheden, i din cloud-lagerapp osv.). Udvikleren har ikke adgang til denne fil.</p>
+      <h2>Artikel 5 (Formål med brugen)</h2>
+      <p>De håndterede oplysninger bruges udelukkende til følgende formål:</p>
+      <ol>
+      <li>At generere transskriptioner fra brugerens stemme og vise dem.
+      </li>
+      <li>At kategorisere transskriptioner i "Se nu / Tænk over senere / Lad ligge / Giv slip" og vise dem for brugeren.
+      </li>
+      <li>At gemme og vise tidligere indtalt indhold, så brugeren selv kan gennemse det.
+      </li>
+      <li>At bevare de indstillingsværdier, der er nødvendige for appens funktion.
+      </li></ol>
+      <h2>Artikel 6 (Brug af eksterne tjenester)</h2>
+      <p>Appen bruger følgende eksterne tjenester for at levere sine funktioner. <strong>Selve din stemme sendes ikke til nogen af disse tjenester.</strong></p>
+      <ul>
+      <li><strong>iCloud / CloudKit</strong> (kun iOS-versionen. Leveret af Apple. Gemmer og synkroniserer kun i din egen private database)
+      </li>
+      <li><strong>Talegenkendelse</strong> (iOS-versionen bruger Apples Speech-framework, Android-versionen bruger enhedens interne talegenkendelsesmotor. Begge kører på enheden, og lyden sendes ikke uden for enheden)
+      </li>
+      <li><strong>Ekstern AI (cloud)</strong> (AI-organisering. Kun den transskriberede tekst sendes. Bruges udelukkende til kategorisering, gemmes ikke og bruges ikke til AI-træning. På iOS kan dette slås fra via "På enheden" i Indstillinger, men <strong>Android-versionen sender kun til den eksterne AI</strong>. Se detaljer i Artikel 3)
+      </li>
+      <li><strong>FoundationModels</strong> (kun iOS-versionen. Leveret af Apple. Kører udelukkende på enheden. Bruges, når "På enheden" er aktiveret, og som fallback, når den eksterne AI ikke er tilgængelig)
+      </li>
+      <li><strong>Faktureringstjenester</strong> (iOS-versionen bruger <strong>Apple StoreKit</strong>, Android-versionen bruger <strong>RevenueCat</strong>. Til køb, fornyelse, opsigelse og rettighedsstyring af KUU+-abonnementet. Indtalt indhold sendes ikke. For RevenueCat, se Artikel 7 og <a href="https://www.revenuecat.com/privacy" rel="noopener">RevenueCats privatlivspolitik</a>)
+      </li>
+      <li><strong>Play Integrity API (via Firebase App Check. Kun Android-versionen)</strong> (For at bekræfte, at anmodninger til klassificerings-API'en kommer fra en legitim app, via en attestering af enhedens og appens integritet. Indeholder ikke indtalt indhold eller brugeridentificerende oplysninger)
+      </li>
+      <li><strong>Google AdMob (Google Mobile Ads SDK)</strong> (Kun når KUU+ ikke er aktivt, vises én enkelt native annonce mellem sektioner på skærmen "Det du har sagt". Indtalt indhold sendes ikke. Se detaljer i Artikel 13)
+      </li>
+      <li><strong>Firebase Analytics</strong> (Leveret af Google. Til forbedring af appens kvalitet. På iOS-versionen <strong>kun hvis brugeren eksplicit tilmelder sig (opt-in) i Indstillinger</strong>; på Android-versionen sendes brugsdatahændelser uden indhold <strong>som standard</strong> (i begge tilfælde sendes indtalt indhold ikke). iOS-versionen bruger også <strong>Crashlytics</strong> ved tilmelding, men <strong>Android-versionen inkluderer ikke Crashlytics</strong>. Se detaljer i Artikel 14)
+      </li></ul>
+      <p>Appens server fungerer udelukkende som et minimalt relæ for AI-organisering og gemmer intet indhold (er stateless). Der bruges ingen autentificeringstjenester, der kræver en personlig konto.</p>
+      <h2>Artikel 7 (Videregivelse til tredjepart)</h2>
+      <p>Appens udvikler har ingen mulighed for at tilgå brugerens indtalte indhold, transskriberingsresultater eller organiseringsresultater og videregiver ikke disse til nogen tredjepart.</p>
+      <p>For at levere reklamer til brugere, der ikke abonnerer på KUU+, sendes oplysninger, som Google AdMob kræver til reklamelevering – herunder enhedsidentifikatorer, reklame-ID, enhedens sprog og region, omtrentlig placering og oplysninger om interaktion med reklamer – til Google (se Artikel 13; Googles AdMob-privatlivspolitik gælder). Mens KUU+ er aktivt, sker denne informationsoverførsel ikke.</p>
+      <p>Når du abonnerer på KUU+ på <strong>Android-versionen</strong>, sendes købsoplysninger (produkt-ID, pris, købsdato osv.) til RevenueCat, Inc. for at håndtere købet og dine rettigheder (aktiv/inaktiv). Indtalt indhold sendes ikke. Se detaljer om RevenueCats datahåndtering i <a href="https://www.revenuecat.com/privacy" rel="noopener">RevenueCats privatlivspolitik</a>.</p>
+      <p>Oplysninger vil kun blive videregivet, hvis det er påkrævet ved lov, og i overensstemmelse med de gældende procedurer.</p>
+      <h2>Artikel 8 (Sletning af data)</h2>
+      <p>Brugeren kan til enhver tid slette alle data fra "Indstillinger → Stemmeføring &amp; data → Slet det, der er gemt" inde i appen. Dette fjerner permanent data på enheden (og på iOS-versionen også data i den private iCloud-database). Slettede data kan ikke gendannes.</p>
+      <p>Hvis du afinstallerer appen, slettes data på enheden. På iOS-versionen kan data i iCloud fjernes via Apples indstillinger (Indstillinger → Apple-id → iCloud → Administrer lagringsplads). Da Android-versionen kun gemmer data på enheden, slettes de ved afinstallation.</p>
+      <h2>Artikel 9 (Sikkerhedsforanstaltninger)</h2>
+      <ul>
+      <li><strong>iOS-versionen</strong>: Midlertidige lydfiler under optagelse krypteres af iOS' filbeskyttelse (<code>FileProtectionType.complete</code>) og er utilgængelige, når enheden er låst. Kommunikation med iCloud krypteres af Apple via SSL/TLS.
+      </li>
+      <li><strong>Android-versionen</strong>: Optaget lyd skrives aldrig til disken, heller ikke som en midlertidig fil; den behandles udelukkende i hukommelsen og kasseres umiddelbart efter genkendelse. Gemte transskriptioner og organiseringsresultater ligger i appens private lagerområde, utilgængeligt for andre apps, og er udelukket fra Androids automatiske backup til skyen.
+      </li>
+      <li>Al kommunikation med den eksterne AI er krypteret (HTTPS/TLS). Udviklerens server videresender kun anmodninger om organisering og gemmer intet indhold (er stateless).
+      </li></ul>
+      <h2>Artikel 10 (Brug af mindreårige)</h2>
+      <p>Appen har en aldersgrænse på 4+, men dens natur (organisering af tanker) forudsætter, at brugeren kan læse og skrive. Hvis mindreårige bruger appen, skal de have samtykke fra en værge.</p>
+      <h2>Artikel 11 (Ændringer i denne politik)</h2>
+      <p>Denne politik kan blive opdateret som følge af lovændringer, tilføjelse af funktioner eller ændringer i specifikationerne for hver platforms (Apple / Google) frameworks eller politikker. Væsentlige ændringer vil blive annonceret via en app-opdatering eller på den offentlige side for denne politik.</p>
+      <h2>Artikel 12 (Kontakt)</h2>
+      <p>For henvendelser vedrørende denne politik, bedes du kontakte os via "Udvikler"-sektionen på appens side i App Store eller Google Play, eller via "Indstillinger → Kontakt" inde i appen.</p>
+      <h2>Artikel 13 (Om reklamer og App Tracking Transparency)</h2>
+      <p>Når du ikke abonnerer på KUU+, viser appen én enkelt native annonce fra Google AdMob mellem sektionerne på skærmen "Det du har sagt". Selve reklamen vises diskret for at bevare KUU's visuelle ro.</p>
+      <ul>
+      <li><strong>Dit indtalte indhold bruges aldrig til reklamer.</strong> (Reklamer konsulterer ikke dine transskriptioner, organiseringsresultater eller temaer).
+      </li>
+      <li>For at levere reklamer kan Google AdMob indsamle enhedsidentifikatorer (inklusive IDFA), reklame-ID, Coarse Location (omtrentlig placering), Diagnostics og Product Interaction (oplysninger om interaktion med reklamer i appen).
+      </li>
+      <li><strong>iOS-versionen</strong>: En <strong>App Tracking Transparency</strong> (ATT) prompt vises én gang, lige før den første reklame. Reklamer vil stadig blive vist, hvis du afviser, men de oplysninger, der sendes til Google, vil være begrænsede (ikke-personaliserede). Du kan til enhver tid ændre ATT-tilladelsen i iOS under "Indstillinger" → "Anonymitet &amp; sikkerhed" → "Tracking".
+      </li>
+      <li><strong>Android-versionen</strong>: ATT er en funktion, der er specifik for iOS, og findes ikke på Android. I stedet bruges Googles <strong>Reklame-id (Advertising ID)</strong> til reklamelevering. Du kan fravælge personaliserede reklamer eller nulstille dit reklame-id fra din enheds "Indstillinger → Privatliv → Annoncer" (ordlyden kan variere afhængigt af enhed og Android-version). Android-versionen overholder også den samtykkestyring (UMP), der vises i relevante regioner som f.eks. EU.
+      </li>
+      <li><strong>Når du abonnerer på KUU+, stopper alle reklamer og den relaterede dataoverførsel.</strong>
+      </li>
+      <li>For detaljer om AdMobs datahåndtering, se venligst <a href="https://support.google.com/admob/answer/6128543" rel="noopener">Google AdMobs privatlivspolitik</a>.
+      </li></ul>
+      <h2>Artikel 14 (Om brug af Firebase Analytics / Crashlytics)</h2>
+      <p><strong>Tilvalgsmodellen (opt-in) i denne artikel gælder for iOS-versionen. For Android-versionen, se "Om Android-versionen" i slutningen af denne artikel.</strong></p>
+      <p><strong>På iOS</strong> kan appen, med henblik på kvalitetsforbedring og øjeblikkelig varsling om produktionsfejl, bruge Googles Firebase Analytics (aggregeret brugsdata) og Firebase Crashlytics (nedbrudsrapportering). <strong>Denne funktion er som standard SLÅET FRA (ingen data sendes) og aktiveres kun, hvis du eksplicit tilmelder dig (opt-in) via "Indstillinger → Data &amp; diagnostik".</strong></p>
+      <ul>
+      <li><strong>Oplysninger, der sendes</strong>:
+      <ul>
+      <li>Et anonymiseret installations-ID, som Firebase automatisk udsteder (baseret på IDFV; det er ikke en direkte personlig identifikator)
+      </li>
+      <li>Aggregerede signaler om hændelser i appen (fuldførelse af optagelsessession, visning/konvertering på betalingsmur, gennemførelse af onboarding osv. Numeriske værdier sendes i grupperede, grove intervaller.)
+      </li>
+      <li>Symboliserede crash stack traces, når appen lukker unormalt
+      </li></ul>
+      </li>
+      <li><strong>Oplysninger, der ikke sendes</strong>: Dit indtalte indhold (lyd), transskriptioner, AI-organiserede resultater (tekst) og de temanavne, du indstiller, er <strong>designet til at være umulige at sende på typeniveau</strong> (implementeringens API forhindrer, at strengværdier kan sendes til analyse-SDK'et).
+      </li>
+      <li><strong>I perioder, hvor du ikke er tilmeldt, forekommer der ingen kommunikation med Firebase overhovedet</strong> (herunder alle ovenstående kategorier).
+      </li>
+      <li><strong>Sådan stopper du afsendelse</strong>: Du kan til enhver tid slå kontakten i "Indstillinger → Data &amp; diagnostik" FRA. Når den slås fra, kasseres tidligere installations-ID'er, og eventuelle usendte nedbrudslogfiler, der er gemt lokalt på enheden, slettes.
+      </li>
+      <li>Modtageren er Google LLC (USA). Googles <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase Privacy Information</a> gælder.
+      </li></ul>
+      <p><strong>Om Android-versionen:</strong> Android-versionen bruger Firebase Analytics til at sende <strong>brugsdatahændelser uden indhold</strong> til produktforbedring (grupperede værdier som skærmskift og antal gange en funktion er brugt) samt et anonymt App Instance ID udstedt af Firebase. <strong>I modsætning til iOS er dette aktiveret som standard.</strong> Dit indtalte indhold (lyd), transskriptioner, organiserede resultater (tekst) og temanavne <strong>kan ikke sendes</strong> — analyse-SDK'ets API er designet, så strengværdier ikke kan videregives til det. <strong>Android-versionen inkluderer ikke Crashlytics og sender ingen nedbrudsrapporter.</strong> Modtageren er Google LLC (USA); Googles <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase Privacy Information</a> gælder.</p>
+
+      <a class="back" href="/da/">← Tilbage til toppen</a>
+
+      <nav class="langs" aria-label="Sprog">
+      <a href="/privacy/" hreflang="ja">日本語</a>
+      <a href="/en/privacy/" hreflang="en">English</a>
+      <a href="/es/privacy/" hreflang="es">Español</a>
+      <a href="/ko/privacy/" hreflang="ko">한국어</a>
+      <a href="/zh-Hans/privacy/" hreflang="zh-Hans">简体中文</a>
+      <a href="/zh-Hant/privacy/" hreflang="zh-Hant">繁體中文</a>
+      <a href="/de/privacy/" hreflang="de">Deutsch</a>
+      <a href="/it/privacy/" hreflang="it">Italiano</a>
+      <a href="/vi/privacy/" hreflang="vi">Tiếng Việt</a>
+      <a href="/nl/privacy/" hreflang="nl">Nederlands</a>
+      <a href="/id/privacy/" hreflang="id">Bahasa Indonesia</a>
+      <a href="/ms/privacy/" hreflang="ms">Bahasa Melayu</a>
+      <a href="/da/privacy/" hreflang="da" aria-current="true">Dansk</a>
+      <a href="/nb/privacy/" hreflang="nb">Norsk bokmål</a>
+      <a href="/sv/privacy/" hreflang="sv">Svenska</a>
+      <a href="/fi/privacy/" hreflang="fi">Suomi</a>
+      <a href="/fr/privacy/" hreflang="fr">Français</a>
+      <a href="/th/privacy/" hreflang="th">ไทย</a>
+      <a href="/ru/privacy/" hreflang="ru">Русский</a>
+      </nav>
+    </main>
+  </body>
+</html>

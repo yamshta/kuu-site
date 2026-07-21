@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Chính sách Quyền riêng tư — KUU</title>
+    <meta name="description" content="Toàn bộ âm thanh được xử lý ngay trên thiết bị và không gửi ra bên ngoài. Tính năng phân loại bằng AI chỉ gửi văn bản và không lưu trữ." />
+    <link rel="canonical" href="https://kuu-zen.com/vi/privacy/" />
+    <meta property="og:locale" content="vi_VN" />
+    <link rel="alternate" hreflang="ja" href="https://kuu-zen.com/privacy/" />
+    <link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/privacy/" />
+    <link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/privacy/" />
+    <link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/privacy/" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/privacy/" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/privacy/" />
+    <link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/privacy/" />
+    <link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/privacy/" />
+    <link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/privacy/" />
+    <link rel="alternate" hreflang="nl" href="https://kuu-zen.com/nl/privacy/" />
+    <link rel="alternate" hreflang="id" href="https://kuu-zen.com/id/privacy/" />
+    <link rel="alternate" hreflang="ms" href="https://kuu-zen.com/ms/privacy/" />
+    <link rel="alternate" hreflang="da" href="https://kuu-zen.com/da/privacy/" />
+    <link rel="alternate" hreflang="nb" href="https://kuu-zen.com/nb/privacy/" />
+    <link rel="alternate" hreflang="sv" href="https://kuu-zen.com/sv/privacy/" />
+    <link rel="alternate" hreflang="fi" href="https://kuu-zen.com/fi/privacy/" />
+    <link rel="alternate" hreflang="fr" href="https://kuu-zen.com/fr/privacy/" />
+    <link rel="alternate" hreflang="th" href="https://kuu-zen.com/th/privacy/" />
+    <link rel="alternate" hreflang="ru" href="https://kuu-zen.com/ru/privacy/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/privacy/" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DC1R54C73B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DC1R54C73B');
+      // LP 唯一のゴール = App Store 遷移を計測。link_location は CTA の ct= (lp_hero/lp_footer/lp_tips)。
+      // GA4 は sendBeacon で送るため同一タブ遷移でも欠落しない。capture で stopPropagation 耐性を持たせる。
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="apps.apple.com"]');
+        if (!a) return;
+        var m = a.href.match(/[?&]ct=([^&]+)/);
+        gtag('event', 'app_store_click', { link_location: m ? m[1] : 'other' });
+      }, true);
+    </script>
+    <style>
+:root {
+  color-scheme: light;
+  --bg: #f6f9fc;
+  --ink: #353b41;
+  --ink-soft: #6b737b;
+  --line: #e7edf3;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Apple SD Gothic Neo", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: clamp(48px, 10vw, 96px) 24px 80px;
+}
+h1 { font-size: 28px; font-weight: 600; margin: 0 0 24px; }
+h2 { font-size: 18px; font-weight: 600; margin: 32px 0 8px; }
+p { line-height: 1.7; color: var(--ink-soft); margin: 0 0 12px; }
+a { color: var(--ink); }
+.back {
+  display: inline-block;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 14px;
+}
+.langs {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.langs a { color: var(--ink-soft); text-decoration: none; }
+.langs a[aria-current="true"] { color: var(--ink); font-weight: 600; }
+.langs a:hover { text-decoration: underline; }
+main { max-width: 720px; }
+h1 { font-size: 26px; }
+h2 { font-size: 17px; }
+li { line-height: 1.7; color: var(--ink-soft); margin: 4px 0; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>&gt; Đây là bản dịch tham khảo. Phiên bản tiếng Nhật là văn bản chính thức.</p>
+      <h1>Chính sách Quyền riêng tư của KUU</h1>
+      <p>Cập nhật lần cuối: Ngày 21 tháng 7 năm 2026</p>
+      <p><strong>Tóm tắt:</strong> Những gì bạn nói là của bạn. <strong>Giọng nói của bạn sẽ không được gửi ra bên ngoài</strong>. Việc chuyển thành văn bản được thực hiện ngay trên thiết bị của bạn. Việc sắp xếp (phân loại bằng AI) có sử dụng AI bên ngoài, nhưng chỉ có nội dung văn bản được gửi đi, chỉ dùng để sắp xếp và không được lưu trữ (phiên bản iOS có thể đổi sang chế độ sắp xếp chỉ trên thiết bị trong Cài đặt &gt; "Trên thiết bị". <strong>Phiên bản Android chỉ gửi đến AI bên ngoài, không có tùy chọn sắp xếp trên thiết bị</strong>). Dữ liệu được lưu trên thiết bị của bạn và, đối với phiên bản iOS, trong iCloud (cơ sở dữ liệu riêng tư) (phiên bản Android chỉ lưu trên thiết bị). Nhà phát triển không lưu trữ nội dung và cũng không thể xem nội dung đã nhận. Bạn có thể xóa toàn bộ dữ liệu từ bên trong ứng dụng bất kỳ lúc nào. Ứng dụng chỉ thực hiện <strong>truyền dữ liệu tối thiểu cần thiết</strong> cho việc thanh toán (iOS=StoreKit／Android=RevenueCat) và quảng cáo Google AdMob, và thông tin đó không bao gồm nội dung bạn đã nói (quảng cáo sẽ bị vô hiệu hóa khi bạn đăng ký KUU+). Chúng tôi có đo lường tình hình sử dụng để cải thiện chất lượng, nhưng việc này cũng không bao gồm nội dung bạn đã nói (iOS yêu cầu người dùng đồng ý (opt-in), Android mặc định thực hiện đo lường không chứa nội dung (content-free). Chi tiết tại Điều 14).</p>
+      <hr />
+      <h2>Điều 1 (Chính sách cơ bản)</h2>
+      <p>Ứng dụng "KUU" (sau đây gọi là "Ứng dụng này") là một ứng dụng hỗ trợ bạn giải tỏa những suy nghĩ trong đầu bằng cách nói ra và sắp xếp chúng. Ứng dụng có <strong>phiên bản iOS và Android</strong>, và chính sách này áp dụng cho cả hai. Ứng dụng này chỉ xử lý thông tin trong phạm vi tối thiểu cần thiết để cung cấp các tính năng, và ưu tiên hàng đầu là bảo vệ quyền riêng tư của người dùng.</p>
+      <h2>Điều 2 (Thông tin thu thập và lưu trữ)</h2>
+      <p>Thông tin mà Ứng dụng này xử lý chỉ giới hạn trong những mục sau:</p>
+      <ol>
+      <li><strong>Nội dung người dùng nói (dữ liệu âm thanh)</strong> — Âm thanh đã ghi âm chỉ được lưu tạm thời trong khu vực tạm của thiết bị trong quá trình chuyển thành văn bản, và sẽ bị xóa ngay lập tức sau khi xử lý xong. Dữ liệu này không được gửi đến máy chủ.
+      </li>
+      <li><strong>Kết quả chuyển thành văn bản và kết quả sắp xếp (văn bản)</strong> — Được lưu trữ để bạn có thể xem lại (phiên bản iOS: trên thiết bị và trong cơ sở dữ liệu riêng tư iCloud; phiên bản Android: chỉ trên thiết bị. Chi tiết tại Điều 4).
+      </li>
+      <li><strong>Cài đặt trong ứng dụng</strong> — Các giá trị cài đặt cần thiết cho hoạt động của ứng dụng như chủ đề, cỡ chữ, trạng thái mực nước trong đầu.
+      </li></ol>
+      <p>Ứng dụng này không thu thập các thông tin cá nhân như họ tên, địa chỉ email, số điện thoại, thông tin vị trí, danh bạ, lịch, ảnh, hay mã nhận dạng thiết bị.</p>
+      <h2>Điều 3 (Về nhận dạng giọng nói và phân loại bằng AI)</h2>
+      <p><strong>Nhận dạng giọng nói (Chuyển thành văn bản)</strong> hoàn toàn được thực hiện trên thiết bị iOS của bạn.</p>
+      <ul>
+      <li>Nhận dạng giọng nói: Sử dụng Speech framework của Apple (trên thiết bị). Bản thân giọng nói không được gửi ra khỏi thiết bị.
+      </li></ul>
+      <p><strong>Phân loại bằng AI (Phân loại danh mục)</strong> sử dụng AI bên ngoài.</p>
+      <ul>
+      <li>Chỉ có <strong>nội dung đã được chuyển thành văn bản (transcript)</strong> được gửi đi. Giọng nói không được gửi đi.
+      </li>
+      <li>Dữ liệu được gửi đến một AI bên ngoài, thông qua máy chủ của nhà phát triển (qua backend đến Gemini của Google).
+      </li>
+      <li>Nội dung được gửi <strong>chỉ được sử dụng để phân loại và không được lưu trữ</strong>. Nó cũng không được sử dụng để huấn luyện AI.
+      </li>
+      <li><strong>Đối với phiên bản iOS</strong>, bạn có thể chuyển sang <strong>chế độ phân loại chỉ trên thiết bị</strong> (FoundationModels của Apple / các quy tắc trên thiết bị) bất kỳ lúc nào thông qua mục "Trên thiết bị" trong Cài đặt. Trong trường hợp này, văn bản cũng sẽ không được gửi ra khỏi thiết bị.
+      </li></ul>
+      <p><strong>Về phiên bản Android:</strong> Phiên bản Android không cung cấp phương thức sắp xếp (phân loại) hoàn toàn trên thiết bị. Khi bạn thực hiện sắp xếp, văn bản đã được chuyển đổi <strong>bắt buộc</strong> được gửi đến AI bên ngoài (Gemini của Google thông qua backend của chúng tôi). Không có tùy chọn chuyển đổi sang "Trên thiết bị" như phiên bản iOS. Chỉ có nội dung văn bản được gửi đi, bản thân giọng nói không được gửi đi, và văn bản được gửi chỉ được sử dụng để phân loại, không được lưu trữ và cũng không được dùng để huấn luyện AI. Quá trình chuyển thành văn bản (nhận dạng giọng nói) được thực hiện hoàn toàn trên thiết bị.</p>
+      <h2>Điều 4 (Lưu trữ và đồng bộ hóa)</h2>
+      <p><strong>Phiên bản iOS:</strong> Kết quả chuyển thành văn bản và kết quả sắp xếp chỉ được lưu trong <strong>cơ sở dữ liệu riêng tư iCloud của bạn</strong> (CloudKit Private Database). Đây là không gian lưu trữ do Apple cung cấp, và chỉ có bạn mới có thể truy cập nội dung đã lưu. Nhà phát triển của Ứng dụng này không thể xem hay lấy được nội dung đã lưu. Việc sử dụng iCloud tuân theo chính sách quyền riêng tư của Apple.</p>
+      <p><strong>Phiên bản Android:</strong> Kết quả chuyển thành văn bản và kết quả sắp xếp chỉ được lưu <strong>trên thiết bị này</strong>. Ứng dụng không thực hiện đồng bộ hóa đám mây tự động. Khi đổi thiết bị, bạn có thể xuất dữ liệu ra tệp từ mục "Giọng nói &amp; Dữ liệu" trong ứng dụng và nhập vào thiết bị mới. Người dùng tự chọn nơi lưu tệp (trong thiết bị, ứng dụng lưu trữ đám mây của bạn, v.v.). Nhà phát triển không thể truy cập vào tệp này.</p>
+      <h2>Điều 5 (Mục đích sử dụng)</h2>
+      <p>Thông tin được xử lý chỉ được sử dụng cho các mục đích sau:</p>
+      <ol>
+      <li>Tạo văn bản từ giọng nói và hiển thị cho người dùng
+      </li>
+      <li>Phân loại văn bản thành "Xem ngay / Để sau / Gác lại / Buông bỏ" và hiển thị cho người dùng
+      </li>
+      <li>Lưu trữ và hiển thị những nội dung người dùng đã nói để họ có thể tự xem lại
+      </li>
+      <li>Duy trì các giá trị cài đặt cần thiết cho hoạt động của ứng dụng
+      </li></ol>
+      <h2>Điều 6 (Sử dụng các dịch vụ bên ngoài)</h2>
+      <p>Ứng dụng này sử dụng các dịch vụ bên ngoài sau đây để cung cấp tính năng. <strong>Bản thân giọng nói không được gửi đến bất kỳ dịch vụ nào trong số này</strong>.</p>
+      <ul>
+      <li><strong>iCloud / CloudKit</strong> (Chỉ phiên bản iOS. Do Apple cung cấp. Chỉ lưu trữ và đồng bộ hóa vào cơ sở dữ liệu riêng tư của bạn)
+      </li>
+      <li><strong>Nhận dạng giọng nói</strong> (Phiên bản iOS: Speech framework của Apple, phiên bản Android: công cụ nhận dạng giọng nói trên thiết bị. Cả hai đều chạy trên thiết bị, giọng nói không được gửi ra bên ngoài)
+      </li>
+      <li><strong>AI bên ngoài (đám mây)</strong> (Phân loại bằng AI. Chỉ gửi nội dung văn bản. Chỉ được sử dụng để phân loại, không được lưu trữ, không được dùng để huấn luyện AI. Phiên bản iOS có thể tắt tính năng này qua Cài đặt &gt; "Trên thiết bị", nhưng <strong>phiên bản Android chỉ gửi đến AI bên ngoài</strong>. Chi tiết tại Điều 3)
+      </li>
+      <li><strong>FoundationModels</strong> (Chỉ phiên bản iOS. Do Apple cung cấp. Hoàn toàn chạy trên thiết bị. Được sử dụng khi cài đặt "Trên thiết bị" được bật, hoặc làm phương án dự phòng khi không thể sử dụng AI bên ngoài)
+      </li>
+      <li><strong>Dịch vụ thanh toán</strong> (Phiên bản iOS: <strong>Apple StoreKit</strong>, phiên bản Android: <strong>RevenueCat</strong>. Quản lý việc mua, gia hạn, hủy và trạng thái quyền của gói đăng ký KUU+. Nội dung đã nói không được gửi đi. Về RevenueCat, xem Điều 7 và <a href="https://www.revenuecat.com/privacy" rel="noopener">Chính sách Quyền riêng tư của RevenueCat</a>)
+      </li>
+      <li><strong>Play Integrity API (qua Firebase App Check. Chỉ phiên bản Android)</strong> (Chứng thực tính toàn vẹn của thiết bị/ứng dụng để xác nhận rằng yêu cầu đến API phân loại được gửi từ một ứng dụng hợp lệ. Không chứa nội dung đã nói hay thông tin nhận dạng người dùng)
+      </li>
+      <li><strong>Google AdMob (Google Mobile Ads SDK)</strong> (Chỉ khi chưa đăng ký KUU+, hiển thị một khung quảng cáo tự nhiên giữa các phần trong màn hình "Những điều đã nói". Nội dung đã nói không được gửi đi. Chi tiết tại Điều 13)
+      </li>
+      <li><strong>Firebase Analytics</strong> (Do Google cung cấp. Để cải thiện chất lượng ứng dụng. Phiên bản iOS: <strong>chỉ khi người dùng đồng ý (opt-in) một cách rõ ràng trong Cài đặt</strong>, phiên bản Android: <strong>mặc định</strong> gửi các sự kiện sử dụng không chứa nội dung (content-free) (cả hai trường hợp đều không gửi nội dung đã nói). Phiên bản iOS cũng sử dụng <strong>Crashlytics</strong> khi người dùng đồng ý, nhưng <strong>phiên bản Android không tích hợp Crashlytics</strong>. Chi tiết tại Điều 14)
+      </li></ul>
+      <p>Máy chủ của Ứng dụng này chỉ là một máy chủ tối giản, không lưu trữ trạng thái (stateless), chỉ làm nhiệm vụ trung chuyển cho việc phân loại bằng AI và hoàn toàn không lưu trữ nội dung. Ứng dụng không sử dụng các dịch vụ xác thực yêu cầu tài khoản cá nhân.</p>
+      <h2>Điều 7 (Cung cấp cho bên thứ ba)</h2>
+      <p>Nhà phát triển của Ứng dụng này không có phương tiện nào để truy cập nội dung bạn đã nói, kết quả chuyển thành văn bản, hay kết quả sắp xếp, và không cung cấp những thông tin này cho bất kỳ bên thứ ba nào.</p>
+      <p>Với mục đích phân phối quảng cáo cho người dùng chưa đăng ký KUU+, các thông tin mà Google AdMob yêu cầu để phân phối quảng cáo như mã nhận dạng thiết bị, ID quảng cáo, ngôn ngữ và khu vực của thiết bị, thông tin vị trí ước chừng, thông tin về lượt nhấp vào quảng cáo, v.v., sẽ được gửi đến Google (chi tiết tại Điều 13, chính sách quyền riêng tư AdMob của Google sẽ được áp dụng). Khi bạn đã đăng ký KUU+, việc truyền thông tin này sẽ không xảy ra.</p>
+      <p>Khi bạn đăng ký KUU+ trên <strong>phiên bản Android</strong>, thông tin mua hàng (ID sản phẩm, giá, ngày giờ mua, v.v.) sẽ được gửi đến RevenueCat, Inc. để quản lý quá trình xử lý mua hàng và quyền lợi (xác định trạng thái hợp lệ/không hợp lệ). Nội dung đã nói không được gửi đi. Vui lòng xem <a href="https://www.revenuecat.com/privacy" rel="noopener">Chính sách Quyền riêng tư của RevenueCat</a> để biết chi tiết về cách xử lý dữ liệu của RevenueCat.</p>
+      <p>Chúng tôi chỉ tuân thủ việc tiết lộ thông tin khi có yêu cầu bắt buộc theo pháp luật và sẽ thực hiện theo các thủ tục quy định.</p>
+      <h2>Điều 8 (Xóa dữ liệu)</h2>
+      <p>Người dùng có thể xóa toàn bộ dữ liệu bất kỳ lúc nào từ "Cài đặt → Giọng nói &amp; Dữ liệu → Xóa những gì đã lưu" bên trong ứng dụng. Việc xóa sẽ loại bỏ hoàn toàn dữ liệu trên thiết bị (và, đối với phiên bản iOS, cả dữ liệu trên cơ sở dữ liệu riêng tư iCloud). Dữ liệu đã xóa không thể được khôi phục.</p>
+      <p>Khi gỡ cài đặt Ứng dụng này, dữ liệu trên thiết bị sẽ bị xóa. Dữ liệu trên iCloud của phiên bản iOS có thể được xóa từ Cài đặt của Apple (Cài đặt → Apple ID → iCloud → Quản lý dung lượng). Phiên bản Android chỉ lưu dữ liệu trên thiết bị, nên dữ liệu sẽ bị xóa khi gỡ cài đặt.</p>
+      <h2>Điều 9 (Biện pháp quản lý an toàn)</h2>
+      <ul>
+      <li><strong>Phiên bản iOS</strong>: Các tệp âm thanh tạm thời trong quá trình ghi âm được mã hóa bằng tính năng bảo vệ tệp của iOS (<code>FileProtectionType.complete</code>) và không thể truy cập khi thiết bị bị khóa. Giao tiếp với iCloud được Apple mã hóa bằng SSL/TLS.
+      </li>
+      <li><strong>Phiên bản Android</strong>: Âm thanh đã ghi âm không được ghi ra đĩa ngay cả dưới dạng tệp tạm thời; nó chỉ được xử lý trong bộ nhớ và bị hủy ngay lập tức sau khi nhận dạng. Kết quả chuyển thành văn bản và sắp xếp được lưu trong khu vực riêng của ứng dụng trên Android, không thể truy cập bởi các ứng dụng khác, và cũng được loại trừ khỏi tính năng sao lưu đám mây tự động của Android.
+      </li>
+      <li>Tất cả giao tiếp với AI bên ngoài đều được mã hóa (HTTPS/TLS). Máy chủ của nhà phát triển chỉ làm nhiệm vụ trung chuyển cho việc phân loại và không lưu trữ nội dung (stateless).
+      </li></ul>
+      <h2>Điều 10 (Sử dụng bởi người vị thành niên)</h2>
+      <p>Ứng dụng này được xếp hạng 4+, nhưng do tính chất sắp xếp suy nghĩ, chúng tôi giả định người dùng ở độ tuổi có thể đọc và viết. Nếu người vị thành niên sử dụng ứng dụng, vui lòng sử dụng sau khi có sự đồng ý của người giám hộ.</p>
+      <h2>Điều 11 (Thay đổi chính sách quyền riêng tư)</h2>
+      <p>Chính sách này có thể được sửa đổi do thay đổi pháp luật, bổ sung tính năng, hoặc thay đổi trong đặc tả của các framework hay chính sách của các nền tảng (Apple / Google). Trong trường hợp có những thay đổi quan trọng, chúng tôi sẽ thông báo khi cập nhật ứng dụng hoặc trên trang công khai của chính sách này.</p>
+      <h2>Điều 12 (Liên hệ)</h2>
+      <p>Mọi thắc mắc liên quan đến chính sách này, vui lòng liên hệ qua mục "Nhà phát triển" trên trang ứng dụng tại App Store hoặc Google Play, hoặc qua "Cài đặt → Liên hệ" bên trong ứng dụng.</p>
+      <h2>Điều 13 (Về quảng cáo và App Tracking Transparency)</h2>
+      <p>Trong thời gian bạn chưa đăng ký gói KUU+, Ứng dụng này sẽ hiển thị một khung quảng cáo tự nhiên duy nhất do Google AdMob cung cấp trên màn hình "Những điều đã nói". Bản thân quảng cáo được hiển thị một cách kín đáo giữa các phần của màn hình để duy trì không gian của KUU.</p>
+      <ul>
+      <li><strong>Nội dung bạn nói sẽ không bao giờ được sử dụng cho mục đích quảng cáo</strong> (quảng cáo không tham chiếu đến kết quả chuyển văn bản, kết quả phân loại, hay chủ đề của bạn).
+      </li>
+      <li>Để phân phối quảng cáo, Google AdMob có thể thu thập các mã nhận dạng thiết bị (bao gồm IDFA), ID quảng cáo, Vị trí ước chừng (Coarse Location), Chẩn đoán, và Tương tác sản phẩm (thông tin tương tác với quảng cáo trong ứng dụng).
+      </li>
+      <li><strong>Phiên bản iOS</strong>: Lời nhắc <strong>App Tracking Transparency</strong> (ATT) sẽ được hiển thị một lần duy nhất, ngay trước khi quảng cáo đầu tiên xuất hiện. Quảng cáo vẫn sẽ được hiển thị ngay cả khi bạn không cho phép, nhưng thông tin gửi đến Google sẽ bị giới hạn (không được cá nhân hóa). Bạn có thể thay đổi trạng thái cho phép ATT bất kỳ lúc nào trong "Cài đặt" → "Quyền riêng tư &amp; Bảo mật" → "Theo dõi" của iOS.
+      </li>
+      <li><strong>Phiên bản Android</strong>: ATT là cơ chế độc quyền của iOS và không có trên Android. Thay vào đó, <strong>ID quảng cáo (Advertising ID)</strong> của Google được sử dụng để phân phối quảng cáo. Bạn có thể từ chối cá nhân hóa quảng cáo hoặc đặt lại ID quảng cáo của mình từ "Cài đặt → Quyền riêng tư → Quảng cáo" trên thiết bị của bạn (cách diễn đạt có thể khác nhau tùy theo thiết bị và phiên bản Android). Đồng thời, phiên bản Android sẽ tuân thủ cơ chế quản lý sự đồng ý (UMP) được hiển thị ở các khu vực áp dụng như EU.
+      </li>
+      <li><strong>Đăng ký KUU+ sẽ dừng tất cả quảng cáo và việc truyền dữ liệu liên quan.</strong>
+      </li>
+      <li>Để biết chi tiết về cách xử lý dữ liệu của Google AdMob, vui lòng xem <a href="https://support.google.com/admob/answer/6128543" rel="noopener">Chính sách Quyền riêng tư của Google AdMob</a>.
+      </li></ul>
+      <h2>Điều 14 (Về việc sử dụng Firebase Analytics / Crashlytics)</h2>
+      <p><strong>Phương thức yêu cầu sự đồng ý (opt-in) trong Điều này áp dụng cho phiên bản iOS. Đối với phiên bản Android, vui lòng xem mục "Về phiên bản Android" ở cuối Điều này.</strong></p>
+      <p><strong>Phiên bản iOS</strong>, để cải thiện chất lượng ứng dụng và nhận biết ngay lập tức các sự cố trên thực tế, có thể sử dụng Firebase Analytics của Google (tổng hợp tình hình sử dụng) và Firebase Crashlytics (báo cáo sự cố). <strong>Tính năng này mặc định là TẮT (không gửi dữ liệu) và chỉ hoạt động khi người dùng đồng ý (opt-in) một cách rõ ràng qua "Cài đặt → Dữ liệu &amp; Chẩn đoán".</strong></p>
+      <ul>
+      <li><strong>Thông tin được gửi</strong>:
+      <ul>
+      <li>ID cài đặt ẩn danh do Firebase tự động cấp (dựa trên IDFV; không phải là mã nhận dạng trực tiếp cá nhân).
+      </li>
+      <li>Tín hiệu tổng hợp về các sự kiện thao tác trong ứng dụng (sự kiện tổng hợp như hoàn thành phiên ghi âm, hiển thị/chuyển đổi Paywall, hoàn thành Onboarding. Các giá trị số được gửi ở dạng phân loại theo nhóm (bucket) với độ chi tiết thấp).
+      </li>
+      <li>Dấu vết ngăn xếp (stack trace) của sự cố (đã được symbol hóa) khi ứng dụng bị đóng đột ngột.
+      </li></ul>
+      </li>
+      <li><strong>Thông tin không được gửi</strong>: Nội dung bạn nói (âm thanh), kết quả chuyển thành văn bản, văn bản kết quả phân loại AI, và tên chủ đề bạn đặt đều <strong>được thiết kế ở cấp độ loại (type-level) để không thể gửi đi</strong> (về mặt triển khai, API được thiết kế để không thể truyền giá trị chuỗi cho SDK đo lường).
+      </li>
+      <li><strong>Trong thời gian bạn chưa đồng ý (opt-in), hoàn toàn không có bất kỳ giao tiếp nào với Firebase xảy ra</strong>, bao gồm tất cả các thông tin nêu trên.
+      </li>
+      <li><strong>Cách ngừng gửi</strong>: Bạn có thể TẮT nút gạt trong "Cài đặt → Dữ liệu &amp; Chẩn đoán" bất kỳ lúc nào. Khi TẮT, các ID cài đặt trước đó sẽ bị hủy, và các nhật ký sự cố chưa gửi được lưu trữ trên thiết bị cũng sẽ bị xóa.
+      </li>
+      <li>Bên nhận là Google LLC (Hoa Kỳ). <a href="https://firebase.google.com/support/privacy" rel="noopener">Thông tin Quyền riêng tư của Firebase</a> của Google sẽ được áp dụng.
+      </li></ul>
+      <p><strong>Về phiên bản Android:</strong> Phiên bản Android sử dụng Firebase Analytics và gửi các <strong>sự kiện sử dụng không chứa nội dung (content-free)</strong> để cải thiện sản phẩm (các giá trị được phân nhóm như số lần chuyển màn hình và số lần sử dụng tính năng) cùng với một ID phiên bản ứng dụng (App Instance ID) ẩn danh do Firebase cấp. <strong>Khác với phiên bản iOS, tính năng này được bật theo mặc định.</strong> Nội dung bạn nói (âm thanh), kết quả chuyển thành văn bản, kết quả sắp xếp và tên chủ đề <strong>không thể được gửi đi</strong> do thiết kế của SDK đo lường không cho phép truyền giá trị chuỗi. <strong>Phiên bản Android không tích hợp Crashlytics và không gửi báo cáo sự cố.</strong> Bên nhận là Google LLC (Hoa Kỳ); <a href="https://firebase.google.com/support/privacy" rel="noopener">Thông tin Quyền riêng tư của Firebase</a> của Google sẽ được áp dụng.</p>
+
+      <a class="back" href="/vi/">← Về đầu trang</a>
+
+      <nav class="langs" aria-label="Ngôn ngữ">
+      <a href="/privacy/" hreflang="ja">日本語</a>
+      <a href="/en/privacy/" hreflang="en">English</a>
+      <a href="/es/privacy/" hreflang="es">Español</a>
+      <a href="/ko/privacy/" hreflang="ko">한국어</a>
+      <a href="/zh-Hans/privacy/" hreflang="zh-Hans">简体中文</a>
+      <a href="/zh-Hant/privacy/" hreflang="zh-Hant">繁體中文</a>
+      <a href="/de/privacy/" hreflang="de">Deutsch</a>
+      <a href="/it/privacy/" hreflang="it">Italiano</a>
+      <a href="/vi/privacy/" hreflang="vi" aria-current="true">Tiếng Việt</a>
+      <a href="/nl/privacy/" hreflang="nl">Nederlands</a>
+      <a href="/id/privacy/" hreflang="id">Bahasa Indonesia</a>
+      <a href="/ms/privacy/" hreflang="ms">Bahasa Melayu</a>
+      <a href="/da/privacy/" hreflang="da">Dansk</a>
+      <a href="/nb/privacy/" hreflang="nb">Norsk bokmål</a>
+      <a href="/sv/privacy/" hreflang="sv">Svenska</a>
+      <a href="/fi/privacy/" hreflang="fi">Suomi</a>
+      <a href="/fr/privacy/" hreflang="fr">Français</a>
+      <a href="/th/privacy/" hreflang="th">ไทย</a>
+      <a href="/ru/privacy/" hreflang="ru">Русский</a>
+      </nav>
+    </main>
+  </body>
+</html>

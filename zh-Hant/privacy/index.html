@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>隱私權政策 — KUU</title>
+    <meta name="description" content="KUU 的隱私權政策。所有語音皆於裝置端處理，不會傳送至外部。用於整理的 AI 分類功能僅會傳送文字，且不會儲存。" />
+    <link rel="canonical" href="https://kuu-zen.com/zh-Hant/privacy/" />
+    <meta property="og:locale" content="zh_TW" />
+    <link rel="alternate" hreflang="ja" href="https://kuu-zen.com/privacy/" />
+    <link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/privacy/" />
+    <link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/privacy/" />
+    <link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/privacy/" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/privacy/" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/privacy/" />
+    <link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/privacy/" />
+    <link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/privacy/" />
+    <link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/privacy/" />
+    <link rel="alternate" hreflang="nl" href="https://kuu-zen.com/nl/privacy/" />
+    <link rel="alternate" hreflang="id" href="https://kuu-zen.com/id/privacy/" />
+    <link rel="alternate" hreflang="ms" href="https://kuu-zen.com/ms/privacy/" />
+    <link rel="alternate" hreflang="da" href="https://kuu-zen.com/da/privacy/" />
+    <link rel="alternate" hreflang="nb" href="https://kuu-zen.com/nb/privacy/" />
+    <link rel="alternate" hreflang="sv" href="https://kuu-zen.com/sv/privacy/" />
+    <link rel="alternate" hreflang="fi" href="https://kuu-zen.com/fi/privacy/" />
+    <link rel="alternate" hreflang="fr" href="https://kuu-zen.com/fr/privacy/" />
+    <link rel="alternate" hreflang="th" href="https://kuu-zen.com/th/privacy/" />
+    <link rel="alternate" hreflang="ru" href="https://kuu-zen.com/ru/privacy/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/privacy/" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DC1R54C73B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DC1R54C73B');
+      // LP 唯一のゴール = App Store 遷移を計測。link_location は CTA の ct= (lp_hero/lp_footer/lp_tips)。
+      // GA4 は sendBeacon で送るため同一タブ遷移でも欠落しない。capture で stopPropagation 耐性を持たせる。
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="apps.apple.com"]');
+        if (!a) return;
+        var m = a.href.match(/[?&]ct=([^&]+)/);
+        gtag('event', 'app_store_click', { link_location: m ? m[1] : 'other' });
+      }, true);
+    </script>
+    <style>
+:root {
+  color-scheme: light;
+  --bg: #f6f9fc;
+  --ink: #353b41;
+  --ink-soft: #6b737b;
+  --line: #e7edf3;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Apple SD Gothic Neo", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: clamp(48px, 10vw, 96px) 24px 80px;
+}
+h1 { font-size: 28px; font-weight: 600; margin: 0 0 24px; }
+h2 { font-size: 18px; font-weight: 600; margin: 32px 0 8px; }
+p { line-height: 1.7; color: var(--ink-soft); margin: 0 0 12px; }
+a { color: var(--ink); }
+.back {
+  display: inline-block;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 14px;
+}
+.langs {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.langs a { color: var(--ink-soft); text-decoration: none; }
+.langs a[aria-current="true"] { color: var(--ink); font-weight: 600; }
+.langs a:hover { text-decoration: underline; }
+main { max-width: 720px; }
+h1 { font-size: 26px; }
+h2 { font-size: 17px; }
+li { line-height: 1.7; color: var(--ink-soft); margin: 4px 0; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>&gt; 本文件為方便使用者理解而提供的參考翻譯。一切內容以日文版為準。</p>
+      <h1>KUU 隱私權政策</h1>
+      <p>最後更新日期：2026 年 7 月 21 日</p>
+      <p><strong>簡而言之：</strong> 您所說的內容屬於您自己。<strong>您的聲音本身不會傳送到外部</strong>。語音轉文字在您的裝置上進行。整理（AI 分類）功能會使用外部 AI，但僅會傳送文字內容，且只用於整理，不會被儲存（iOS 版可於「設定」中切換為「裝置端」模式，僅在裝置內整理。<strong>Android 版僅提供傳送至外部 AI 的選項，無裝置端整理功能</strong>）。資料儲存於您的裝置上，iOS 版亦會儲存於您的 iCloud（私密資料庫）（Android 版僅儲存於裝置內）。開發者不會儲存您的內容，也無法查看收到的內容。您可以隨時從 App 內刪除所有資料。本 App 僅會為了處理付款（iOS=StoreKit／Android=RevenueCat）及顯示 Google AdMob 廣告進行<strong>最低限度的網路通訊</strong>，其中不包含您所說的內容（加入 KUU+ 可停用廣告）。為改善品質，我們會評估使用情況，但其中亦不包含您所說的內容（iOS 版採使用者自主選擇加入，Android 版預設啟用不含內容的評估。詳情請見第 14 條）。</p>
+      <hr />
+      <h2>第 1 條（基本方針）</h2>
+      <p>本應用程式「KUU」（下稱「本 App」）是一款協助您將腦中的思緒透過聲音抒發並加以整理的工具。本 App 有 <strong>iOS 版與 Android 版</strong>，本政策適用於兩者。本 App 僅在提供功能所必需的最小範圍內處理資訊，並以保護使用者隱私為最優先考量。</p>
+      <h2>第 2 條（取得與儲存的資訊）</h2>
+      <p>本 App 處理的資訊僅限於以下項目：</p>
+      <ol>
+      <li><strong>使用者所說的內容（語音資料）</strong> — 錄製的語音僅在語音轉文字處理期間，暫時儲存於裝置內的暫存區，處理完成後將立即刪除，不會傳送至伺服器。
+      </li>
+      <li><strong>語音轉文字結果與整理結果（文字）</strong> — 為了讓您能回顧，這些資料會被儲存（iOS 版儲存於裝置及 iCloud 私密資料庫；Android 版僅儲存於裝置內。詳情請見第 4 條）。
+      </li>
+      <li><strong>App 內設定</strong> — 主題、字體大小、頭腦水位狀態等 App 運作所需的設定值。
+      </li></ol>
+      <p>本 App 不會取得您的姓名、電子郵件地址、電話號碼、位置資訊、聯絡人、行事曆、照片、裝置識別碼等個人資訊。</p>
+      <h2>第 3 條（關於語音辨識與 AI 分類）</h2>
+      <p><strong>語音辨識（語音轉文字）</strong> 全部在您的 iOS 裝置上完成。</p>
+      <ul>
+      <li>語音辨識：使用 Apple 的 Speech 框架（裝置端）。您的聲音本身不會被傳送到裝置外部。
+      </li></ul>
+      <p><strong>AI 分類（類別劃分）</strong> 使用外部的 AI。</p>
+      <ul>
+      <li>傳送的<strong>只有文字化的內容（語音轉文字後的文本）</strong>。您的聲音不會被傳送。
+      </li>
+      <li>傳送對象為外部 AI，會經由開發者的伺服器（透過後端伺服器傳送至 Google 的 Gemini）。
+      </li>
+      <li>傳送的內容<strong>僅用於分類，不會被儲存</strong>，亦不會被用於 AI 的學習。
+      </li>
+      <li><strong>iOS 版</strong>可隨時透過「設定」中的「裝置端」選項，切換為<strong>僅在裝置內分類</strong>（使用 Apple 的 FoundationModels / 裝置端規則）。此模式下，文字內容亦不會傳送到裝置外部。
+      </li></ul>
+      <p><strong>關於 Android 版：</strong> Android 版未提供僅在裝置內完成的整理（分類）方式。當您進行整理時，語音轉文字後的文本<strong>必定會</strong>傳送至外部 AI（經由本公司的後端伺服器傳送至 Google 的 Gemini）。沒有像 iOS 版一樣可切換至「裝置端」模式的選項。僅會傳送文字內容，您的聲音本身不會被傳送，且傳送的文本僅用於分類，不會被儲存或用於 AI 學習。語音轉文字（語音辨識）本身是在裝置內完成。</p>
+      <h2>第 4 條（儲存與同步）</h2>
+      <p><strong>iOS 版：</strong> 語音轉文字結果與整理結果，僅會儲存於您的 <strong>iCloud 私密資料庫</strong>（CloudKit Private Database）。這是由 Apple 提供的儲存空間，只有您本人能夠存取儲存的內容。本 App 的開發者無法閱覽或取得已儲存的內容。關於 iCloud 的使用條款與安全性，適用 Apple 的隱私權政策。</p>
+      <p><strong>Android 版：</strong> 語音轉文字結果與整理結果<strong>僅儲存於此裝置上</strong>。本 App 不提供自動雲端同步功能。更換裝置時，您可以從 App 內的「聲音與資料」將資料匯出為檔案，再於新裝置上匯入。匯出位置由使用者自行選擇（裝置內部、您使用的雲端儲存 App 等）。開發者無法存取此檔案。</p>
+      <h2>第 5 條（使用目的）</h2>
+      <p>所處理的資訊僅用於以下目的：</p>
+      <ol>
+      <li>從語音生成文字稿並向使用者顯示。
+      </li>
+      <li>將文字稿分類為「現在看／稍後想／放著／放下」並向使用者顯示。
+      </li>
+      <li>儲存並顯示使用者過去所說的內容，以便使用者本人回顧。
+      </li>
+      <li>保存 App 運作所需的設定值。
+      </li></ol>
+      <h2>第 6 條（外部服務的使用）</h2>
+      <p>為提供功能，本 App 使用以下外部服務。<strong>您的聲音本身不會傳送給任何一方服務</strong>。</p>
+      <ul>
+      <li><strong>iCloud / CloudKit</strong>（僅限 iOS 版。由 Apple 提供。僅儲存與同步至您自己的私密資料庫）
+      </li>
+      <li><strong>語音辨識</strong>（iOS 版使用 Apple 的 Speech 框架，Android 版使用裝置內的語音辨識引擎。兩者皆在裝置上執行，語音不會傳送至裝置外部）
+      </li>
+      <li><strong>外部 AI（雲端）</strong>（用於 AI 分類。僅傳送文字化的內容。僅用於分類，不會被儲存，亦不會用於 AI 的學習。iOS 版可於「設定」中選擇「裝置端」模式以停用，但 <strong>Android 版僅提供傳送至外部 AI 的選項</strong>。詳情請見第 3 條）
+      </li>
+      <li><strong>FoundationModels</strong>（僅限 iOS 版。由 Apple 提供。完全在裝置上執行。於「裝置端」模式啟用時，或在外部 AI 無法使用時作為備用方案）
+      </li>
+      <li><strong>付款服務</strong>（iOS 版為 <strong>Apple StoreKit</strong>，Android 版為 <strong>RevenueCat</strong>。用於管理 KUU+ 訂閱的購買、續訂、取消及權益狀態。您所說的內容不會被傳送。關於 RevenueCat，請見第 7 條及 <a href="https://www.revenuecat.com/privacy" rel="noopener">RevenueCat 隱私權政策</a>）
+      </li>
+      <li><strong>Play Integrity API（透過 Firebase App Check，僅限 Android 版）</strong>（用於驗證傳送至分類 API 的請求是否來自正版 App 的裝置與應用程式完整性證明。不包含您所說的內容或可識別使用者的資訊）
+      </li>
+      <li><strong>Google AdMob（Google Mobile Ads SDK）</strong>（僅在未加入 KUU+ 時，於「說過的話」畫面的段落間顯示一則原生廣告。您所說的內容不會被傳送。詳情請見第 13 條）
+      </li>
+      <li><strong>Firebase Analytics</strong>（由 Google 提供。用於改善 App 品質。iOS 版<strong>僅在使用者於「設定」中明確選擇加入（opt-in）時</strong>啟用；Android 版<strong>預設</strong>傳送不含內容的使用情況事件（兩者皆不會傳送您所說的內容）。iOS 版在使用者選擇加入後亦會使用 <strong>Crashlytics</strong>，但 <strong>Android 版未包含 Crashlytics</strong>。詳情請見第 14 條）
+      </li></ul>
+      <p>本 App 的伺服器僅為轉發 AI 分類請求的最小化設置，不儲存任何內容（stateless）。本 App 不使用需要個人帳戶的認證服務。</p>
+      <h2>第 7 條（向第三方提供資訊）</h2>
+      <p>本 App 開發者沒有任何途徑可存取使用者所說的內容、語音轉文字結果或整理結果，亦不會將這些資訊提供給任何第三方。</p>
+      <p>為向未訂閱 KUU+ 的使用者投放廣告，本 App 會將 Google AdMob 投放廣告所需的資訊傳送給 Google，包含裝置識別碼、廣告 ID、裝置語言、地區、概略位置資訊、廣告點擊資訊等（詳情請見第 13 條，適用 Google 的 AdMob 隱私權政策）。在您加入 KUU+ 期間，不會發生此類資訊傳送。</p>
+      <p>在 <strong>Android 版</strong>上訂閱 KUU+ 時，為處理購買程序及管理您的權益（有效／無效的判斷），您的購買資訊（商品 ID、價格、購買日期等）將會傳送至 RevenueCat, Inc.。您所說的內容不會被傳送。關於 RevenueCat 的資料處理詳情，請參閱 <a href="https://www.revenuecat.com/privacy" rel="noopener">RevenueCat 隱私權政策</a>。</p>
+      <p>僅在法律要求必須揭露資訊時，才會遵循法定程序辦理。</p>
+      <h2>第 8 條（資料的刪除）</h2>
+      <p>使用者可隨時透過 App 內的「設定 → 聲音與資料 → 刪除已儲存的內容」來刪除所有資料。執行此操作將會完全清除裝置上的資料（iOS 版亦包含 iCloud 私密資料庫上的資料）。已清除的資料無法復原。</p>
+      <p>解除安裝本 App 時，裝置上的資料將被刪除。iOS 版儲存於 iCloud 上的資料，可透過 Apple 的設定（設定 → Apple ID → iCloud → 管理儲存空間）進行刪除。Android 版僅將資料儲存於裝置內，因此解除安裝即會刪除資料。</p>
+      <h2>第 9 條（安全管理措施）</h2>
+      <ul>
+      <li><strong>iOS 版</strong>：錄音期間的暫存語音檔案會透過 iOS 的檔案保護功能（<code>FileProtectionType.complete</code>）加密，在裝置鎖定時無法存取。與 iCloud 的通訊由 Apple 透過 SSL/TLS 加密。
+      </li>
+      <li><strong>Android 版</strong>：錄製的語音即使作為暫存檔也不會寫入磁碟，僅在記憶體中處理，辨識完成後立即捨棄。已儲存的語音轉文字與整理結果位於 Android 的 App 專用儲存空間，其他 App 無法存取，且已將其從 Android 的自動雲端備份對象中排除。
+      </li>
+      <li>與外部 AI 的所有通訊均經過加密（HTTPS/TLS）。開發者的伺服器僅轉發分類請求，不儲存任何內容（stateless）。
+      </li></ul>
+      <h2>第 10 條（未成年人使用）</h2>
+      <p>本 App 的年齡分級為 4+，但考量其整理思緒的性質，預設使用者為具備讀寫能力的年齡。未成年人使用本 App 時，請務必在監護人同意下進行。</p>
+      <h2>第 11 條（隱私權政策的變更）</h2>
+      <p>本政策可能因應法令變更、功能增修、或各平台（Apple / Google）框架或政策規格變動而修訂。若有重大變更，將於 App 更新時或於本政策的公開頁面上公告。</p>
+      <h2>第 12 條（聯絡我們）</h2>
+      <p>若您對本政策有任何疑問，請透過 App Store 或 Google Play 應用程式頁面中的「開發者」區塊，或 App 內的「設定 → 聯絡我們」與我們聯繫。</p>
+      <h2>第 13 條（關於廣告與 App Tracking Transparency）</h2>
+      <p>僅在您未訂閱 KUU+ 期間，本 App 會在「說過的話」畫面的段落之間，顯示一則由 Google AdMob 提供的原生廣告。為維持 KUU 的世界觀，廣告本身會以低調的形式呈現。</p>
+      <ul>
+      <li><strong>您所說的內容絕不會被用於廣告</strong>（廣告不會參考您的文字稿、分類結果或主題）。
+      </li>
+      <li>為投放廣告，Google AdMob 可能會收集裝置識別碼（包含 IDFA）、廣告 ID、概略位置資訊（Coarse Location）、診斷資訊、產品互動（App 內的廣告互動資訊）等。
+      </li>
+      <li><strong>iOS 版</strong>：我們會在首次顯示廣告前，顯示一次 <strong>App Tracking Transparency</strong> (ATT) 提示。即使您不同意，廣告仍會顯示，但傳送給 Google 的資訊將受到限制（非個人化）。您可隨時於 iOS 的「設定」→「隱私權與安全性」→「追蹤」中更改 ATT 的許可狀態。
+      </li>
+      <li><strong>Android 版</strong>：ATT 為 iOS 專有機制，Android 上沒有此功能。取而代之的是，Google 的<strong>廣告 ID (Advertising ID)</strong> 會被用於廣告投放。您可從裝置的「設定 → 隱私權 → 廣告」（措辭可能因裝置及 Android 版本而異）中選擇停用廣告個人化或重設廣告 ID。此外，Android 版會遵循在歐盟等適用地區顯示的同意聲明管理（UMP）規範。
+      </li>
+      <li><strong>訂閱 KUU+ 後，所有廣告及相關的資訊傳送將會停止</strong>。
+      </li>
+      <li>關於 Google AdMob 的資料處理詳情，請參閱 <a href="https://support.google.com/admob/answer/6128543" rel="noopener">Google AdMob 隱私權政策</a>。
+      </li></ul>
+      <h2>第 14 條（關於 Firebase Analytics / Crashlytics 的使用）</h2>
+      <p><strong>本條款的自主選擇加入（opt-in）方式適用於 iOS 版。關於 Android 版，請參閱本條末尾的「關於 Android 版」說明。</strong></p>
+      <p><strong>iOS 版</strong>為改善 App 品質及即時掌握線上問題，可能會使用 Google 的 Firebase Analytics（使用情況彙整）及 Firebase Crashlytics（當機報告）。<strong>此功能預設為關閉（不傳送任何資料），僅在使用者於「設定 → 資料與診斷」中明確選擇加入（opt-in）時才會啟用。</strong></p>
+      <ul>
+      <li><strong>傳送的資訊</strong>：
+      <ul>
+      <li>由 Firebase 自動產生的匿名化安裝 ID（基於 IDFV，非直接識別個人的識別碼）。
+      </li>
+      <li>App 內操作事件的彙整信號（如錄音工作階段是否完成、付費牆的顯示與轉換、新手引導完成等彙整用事件。數值會以分桶後的粗略粒度傳送）。
+      </li>
+      <li>App 異常終止時的當機堆疊追蹤（crash stack trace）（已符號化）。
+      </li></ul>
+      </li>
+      <li><strong>不傳送的資訊</strong>：您所說的內容（語音）、語音轉文字結果、AI 分類結果的文本、以及您設定的主題名稱，<strong>在設計上從類型層級（type level）就無法傳送</strong>（在程式實作上，API 不允許將字串值傳遞給分析 SDK）。
+      </li>
+      <li><strong>在未選擇加入期間，您的裝置不會與 Firebase 發生任何通訊</strong>，包含上述所有資訊。
+      </li>
+      <li><strong>停止傳送的方式</strong>：您可隨時將「設定 → 資料與診斷」的開關切換為關閉。關閉後，過去的安裝 ID 將被捨棄，儲存於裝置本機上未傳送的當機日誌也會被刪除。
+      </li>
+      <li>接收方為 Google LLC（美國）。適用 Google 的 <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase Privacy Information</a>。
+      </li></ul>
+      <p><strong>關於 Android 版：</strong> Android 版使用 Firebase Analytics 來傳送<strong>不含內容（content-free）的使用情況事件</strong>（如畫面轉換、功能使用次數等分桶值）及由 Firebase 產生的匿名 App Instance ID，以利產品改善。<strong>與 iOS 版不同，此功能為預設啟用。</strong> 您所說的內容（語音）、語音轉文字結果、整理結果的文本及主題名稱，因分析 SDK 的 API 在設計上不允許傳遞字串值，故<strong>無法被傳送</strong>。<strong>Android 版未包含 Crashlytics，不會傳送當機報告。</strong> 接收方為 Google LLC（美國），適用 Google 的 <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase Privacy Information</a>。</p>
+
+      <a class="back" href="/zh-Hant/">← 返回頂部</a>
+
+      <nav class="langs" aria-label="語言">
+      <a href="/privacy/" hreflang="ja">日本語</a>
+      <a href="/en/privacy/" hreflang="en">English</a>
+      <a href="/es/privacy/" hreflang="es">Español</a>
+      <a href="/ko/privacy/" hreflang="ko">한국어</a>
+      <a href="/zh-Hans/privacy/" hreflang="zh-Hans">简体中文</a>
+      <a href="/zh-Hant/privacy/" hreflang="zh-Hant" aria-current="true">繁體中文</a>
+      <a href="/de/privacy/" hreflang="de">Deutsch</a>
+      <a href="/it/privacy/" hreflang="it">Italiano</a>
+      <a href="/vi/privacy/" hreflang="vi">Tiếng Việt</a>
+      <a href="/nl/privacy/" hreflang="nl">Nederlands</a>
+      <a href="/id/privacy/" hreflang="id">Bahasa Indonesia</a>
+      <a href="/ms/privacy/" hreflang="ms">Bahasa Melayu</a>
+      <a href="/da/privacy/" hreflang="da">Dansk</a>
+      <a href="/nb/privacy/" hreflang="nb">Norsk bokmål</a>
+      <a href="/sv/privacy/" hreflang="sv">Svenska</a>
+      <a href="/fi/privacy/" hreflang="fi">Suomi</a>
+      <a href="/fr/privacy/" hreflang="fr">Français</a>
+      <a href="/th/privacy/" hreflang="th">ไทย</a>
+      <a href="/ru/privacy/" hreflang="ru">Русский</a>
+      </nav>
+    </main>
+  </body>
+</html>
