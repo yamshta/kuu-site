@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Kebijakan Privasi — KUU</title>
+    <meta name="description" content="Semua audio diproses di perangkat dan tidak dikirim ke luar. Untuk klasifikasi AI, hanya teks yang dikirim dan tidak disimpan." />
+    <link rel="canonical" href="https://kuu-zen.com/id/privacy/" />
+    <meta property="og:locale" content="id_ID" />
+    <link rel="alternate" hreflang="ja" href="https://kuu-zen.com/privacy/" />
+    <link rel="alternate" hreflang="en" href="https://kuu-zen.com/en/privacy/" />
+    <link rel="alternate" hreflang="es" href="https://kuu-zen.com/es/privacy/" />
+    <link rel="alternate" hreflang="ko" href="https://kuu-zen.com/ko/privacy/" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://kuu-zen.com/zh-Hans/privacy/" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://kuu-zen.com/zh-Hant/privacy/" />
+    <link rel="alternate" hreflang="de" href="https://kuu-zen.com/de/privacy/" />
+    <link rel="alternate" hreflang="it" href="https://kuu-zen.com/it/privacy/" />
+    <link rel="alternate" hreflang="vi" href="https://kuu-zen.com/vi/privacy/" />
+    <link rel="alternate" hreflang="nl" href="https://kuu-zen.com/nl/privacy/" />
+    <link rel="alternate" hreflang="id" href="https://kuu-zen.com/id/privacy/" />
+    <link rel="alternate" hreflang="ms" href="https://kuu-zen.com/ms/privacy/" />
+    <link rel="alternate" hreflang="da" href="https://kuu-zen.com/da/privacy/" />
+    <link rel="alternate" hreflang="nb" href="https://kuu-zen.com/nb/privacy/" />
+    <link rel="alternate" hreflang="sv" href="https://kuu-zen.com/sv/privacy/" />
+    <link rel="alternate" hreflang="fi" href="https://kuu-zen.com/fi/privacy/" />
+    <link rel="alternate" hreflang="fr" href="https://kuu-zen.com/fr/privacy/" />
+    <link rel="alternate" hreflang="th" href="https://kuu-zen.com/th/privacy/" />
+    <link rel="alternate" hreflang="ru" href="https://kuu-zen.com/ru/privacy/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuu-zen.com/privacy/" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DC1R54C73B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DC1R54C73B');
+      // LP 唯一のゴール = App Store 遷移を計測。link_location は CTA の ct= (lp_hero/lp_footer/lp_tips)。
+      // GA4 は sendBeacon で送るため同一タブ遷移でも欠落しない。capture で stopPropagation 耐性を持たせる。
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="apps.apple.com"]');
+        if (!a) return;
+        var m = a.href.match(/[?&]ct=([^&]+)/);
+        gtag('event', 'app_store_click', { link_location: m ? m[1] : 'other' });
+      }, true);
+    </script>
+    <style>
+:root {
+  color-scheme: light;
+  --bg: #f6f9fc;
+  --ink: #353b41;
+  --ink-soft: #6b737b;
+  --line: #e7edf3;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Apple SD Gothic Neo", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: clamp(48px, 10vw, 96px) 24px 80px;
+}
+h1 { font-size: 28px; font-weight: 600; margin: 0 0 24px; }
+h2 { font-size: 18px; font-weight: 600; margin: 32px 0 8px; }
+p { line-height: 1.7; color: var(--ink-soft); margin: 0 0 12px; }
+a { color: var(--ink); }
+.back {
+  display: inline-block;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 14px;
+}
+.langs {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.langs a { color: var(--ink-soft); text-decoration: none; }
+.langs a[aria-current="true"] { color: var(--ink); font-weight: 600; }
+.langs a:hover { text-decoration: underline; }
+main { max-width: 720px; }
+h1 { font-size: 26px; }
+h2 { font-size: 17px; }
+li { line-height: 1.7; color: var(--ink-soft); margin: 4px 0; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>&gt; Ini adalah terjemahan referensi untuk kemudahan Anda. Versi bahasa Jepang adalah teks yang otoritatif.</p>
+      <h1>Kebijakan Privasi KUU</h1>
+      <p>Terakhir diperbarui: 21 Juli 2026</p>
+      <p><strong>Singkatnya:</strong> Apa yang Anda ucapkan adalah milik Anda. <strong>Suara Anda sendiri tidak akan pernah dikirim ke luar</strong>. Transkripsi terjadi di dalam perangkat Anda. Pengorganisasian (klasifikasi AI) menggunakan AI eksternal, tetapi yang dikirimkan hanyalah teks hasil transkripsi, yang hanya digunakan untuk pengorganisasian dan tidak disimpan (versi iOS dapat diubah ke pengorganisasian hanya di perangkat melalui "Di Perangkat" pada Pengaturan. <strong>Versi Android hanya mengirim ke AI eksternal dan tidak memiliki opsi pengorganisasian di perangkat</strong>). Data disimpan di perangkat Anda, dan untuk versi iOS, juga di iCloud Anda (database privat) (versi Android hanya menyimpan di perangkat). Pengembang tidak menyimpan konten Anda dan tidak dapat melihat apa yang diterima. Anda dapat menghapus semua data dari dalam aplikasi kapan saja. Aplikasi hanya melakukan <strong>komunikasi minimal yang diperlukan</strong> untuk penagihan (iOS=StoreKit/Android=RevenueCat) dan iklan Google AdMob, dan informasi tersebut tidak pernah menyertakan apa yang Anda ucapkan (iklan dapat dinonaktifkan dengan berlangganan KUU+). Kami mengukur penggunaan untuk meningkatkan kualitas, tetapi ini juga tidak pernah menyertakan apa yang Anda ucapkan (iOS memerlukan persetujuan pengguna (opt-in), Android mengirimkan pengukuran bebas-konten secara default. Lihat Pasal 14 untuk detailnya).</p>
+      <hr />
+      <h2>Pasal 1 (Kebijakan Dasar)</h2>
+      <p>Aplikasi ini, "KUU" ("Aplikasi ini"), adalah aplikasi yang membantu Anda menuangkan dan mengorganisasi pikiran di kepala Anda dengan mengucapkannya. Terdapat <strong>versi iOS dan Android</strong>, dan kebijakan ini berlaku untuk keduanya. Aplikasi ini hanya memproses informasi dalam lingkup minimal yang diperlukan untuk menyediakan fungsinya, dengan memprioritaskan perlindungan privasi pengguna.</p>
+      <h2>Pasal 2 (Informasi yang Diperoleh dan Disimpan)</h2>
+      <p>Informasi yang ditangani oleh Aplikasi ini terbatas pada hal-hal berikut:</p>
+      <ol>
+      <li><strong>Konten yang Anda ucapkan (data audio)</strong> — Audio yang direkam disimpan sementara di area temporer perangkat hanya selama proses transkripsi, dan segera dihapus setelah proses selesai. Data ini tidak dikirim ke server mana pun.
+      </li>
+      <li><strong>Hasil transkripsi dan pengorganisasian (teks)</strong> — Disimpan agar Anda dapat meninjaunya kembali (versi iOS: di perangkat dan di database privat iCloud Anda; versi Android: hanya di dalam perangkat. Lihat Pasal 4 untuk detailnya).
+      </li>
+      <li><strong>Pengaturan dalam aplikasi</strong> — Nilai pengaturan yang diperlukan untuk pengoperasian aplikasi, seperti tema, ukuran teks, dan status level air di kepala.
+      </li></ol>
+      <p>Aplikasi ini tidak memperoleh informasi pribadi seperti nama, alamat email, nomor telepon, informasi lokasi, kontak, kalender, foto, atau pengidentifikasi perangkat.</p>
+      <h2>Pasal 3 (Mengenai Pengenalan Suara dan Klasifikasi AI)</h2>
+      <p><strong>Pengenalan suara (transkripsi)</strong> sepenuhnya dilakukan di dalam perangkat iOS Anda.</p>
+      <ul>
+      <li>Pengenalan suara: Menggunakan kerangka kerja Speech dari Apple (di perangkat). Suara Anda sendiri tidak pernah dikirim ke luar perangkat.
+      </li></ul>
+      <p><strong>Klasifikasi AI (pengorganisasian)</strong> menggunakan AI eksternal.</p>
+      <ul>
+      <li>Yang dikirimkan <strong>hanyalah konten dalam bentuk tulisan (teks transkripsi)</strong>. Suara Anda tidak dikirimkan.
+      </li>
+      <li>Tujuan pengiriman adalah AI eksternal, melalui server pengembang (melalui backend ke Gemini dari Google).
+      </li>
+      <li>Konten yang dikirim <strong>hanya digunakan untuk klasifikasi dan tidak disimpan</strong>. Konten tersebut juga tidak digunakan untuk melatih AI.
+      </li>
+      <li><strong>Versi iOS</strong> dapat diubah kapan saja ke <strong>klasifikasi hanya di perangkat</strong> (FoundationModels dari Apple / aturan di perangkat) melalui "Di Perangkat" pada Pengaturan. Dalam kasus ini, teks juga tidak akan keluar dari perangkat.
+      </li></ul>
+      <p><strong>Tentang versi Android:</strong> Versi Android tidak menyediakan metode pengorganisasian (klasifikasi) yang sepenuhnya berjalan di perangkat. Saat Anda melakukan pengorganisasian, teks hasil transkripsi <strong>selalu</strong> dikirim ke AI eksternal (Gemini dari Google melalui backend kami). Tidak ada opsi "Di Perangkat" seperti pada versi iOS. Yang dikirimkan hanyalah konten dalam bentuk tulisan, suara Anda sendiri tidak dikirimkan, dan teks yang dikirim hanya digunakan untuk klasifikasi, tidak disimpan, dan tidak digunakan untuk melatih AI. Proses transkripsi (pengenalan suara) itu sendiri sepenuhnya berjalan di perangkat.</p>
+      <h2>Pasal 4 (Penyimpanan dan Sinkronisasi)</h2>
+      <p><strong>Versi iOS:</strong> Hasil transkripsi dan pengorganisasian hanya disimpan di <strong>database privat iCloud Anda</strong> (CloudKit Private Database). Ini adalah penyimpanan yang disediakan oleh Apple, dan hanya Anda yang dapat mengakses konten yang tersimpan. Pengembang Aplikasi ini tidak dapat melihat atau mengambil konten yang tersimpan. Penggunaan iCloud tunduk pada kebijakan privasi Apple.</p>
+      <p><strong>Versi Android:</strong> Hasil transkripsi dan pengorganisasian disimpan <strong>hanya di perangkat ini</strong>. Tidak ada sinkronisasi cloud otomatis. Saat berganti perangkat, Anda dapat mengekspor data ke file dari "Suara &amp; Data" di dalam aplikasi, lalu mengimpornya di perangkat baru. Anda sendiri yang memilih tujuan ekspor (di dalam perangkat, aplikasi penyimpanan cloud yang Anda gunakan, dll.). Pengembang tidak dapat mengakses file ini.</p>
+      <h2>Pasal 5 (Tujuan Penggunaan)</h2>
+      <p>Informasi yang ditangani hanya akan digunakan untuk tujuan berikut:</p>
+      <ol>
+      <li>Menghasilkan transkripsi dari suara dan menampilkannya kepada pengguna
+      </li>
+      <li>Mengklasifikasikan transkripsi ke dalam "Lihat Sekarang / Pikirkan Nanti / Simpan Dulu / Lepaskan" dan menampilkannya kepada pengguna
+      </li>
+      <li>Menyimpan dan menampilkan konten yang telah diucapkan pengguna di masa lalu agar dapat ditinjau kembali oleh pengguna
+      </li>
+      <li>Menyimpan nilai pengaturan yang diperlukan untuk pengoperasian aplikasi
+      </li></ol>
+      <h2>Pasal 6 (Penggunaan Layanan Eksternal)</h2>
+      <p>Aplikasi ini menggunakan layanan eksternal berikut untuk menyediakan fungsinya. <strong>Suara Anda sendiri tidak dikirim ke layanan mana pun.</strong></p>
+      <ul>
+      <li><strong>iCloud / CloudKit</strong> (hanya versi iOS. Disediakan oleh Apple. Hanya disimpan dan disinkronkan ke database privat Anda sendiri)
+      </li>
+      <li><strong>Pengenalan suara</strong> (versi iOS: kerangka kerja Speech dari Apple, versi Android: mesin pengenalan suara di perangkat. Keduanya berjalan di perangkat, suara tidak dikirim ke luar perangkat)
+      </li>
+      <li><strong>AI eksternal (cloud)</strong> (Klasifikasi AI. Hanya konten dalam bentuk tulisan yang dikirim. Hanya digunakan untuk klasifikasi, tidak disimpan, dan tidak digunakan untuk melatih AI. Pada versi iOS dapat dinonaktifkan melalui "Di Perangkat" pada Pengaturan, tetapi <strong>versi Android hanya mengirim ke AI eksternal</strong>. Lihat Pasal 3)
+      </li>
+      <li><strong>FoundationModels</strong> (hanya versi iOS. Disediakan oleh Apple. Berjalan sepenuhnya di perangkat. Digunakan saat pengaturan "Di Perangkat" aktif, atau sebagai cadangan saat AI eksternal tidak tersedia)
+      </li>
+      <li><strong>Layanan penagihan</strong> (versi iOS: <strong>Apple StoreKit</strong>, versi Android: <strong>RevenueCat</strong>. Untuk pembelian, perpanjangan, pembatalan, dan pengelolaan status langganan KUU+. Konten yang Anda ucapkan tidak dikirim. Mengenai RevenueCat, lihat Pasal 7 dan <a href="https://www.revenuecat.com/privacy" rel="noopener">Kebijakan Privasi RevenueCat</a>)
+      </li>
+      <li><strong>Play Integrity API (melalui Firebase App Check. Hanya versi Android)</strong> (Atestasi integritas perangkat/aplikasi untuk memastikan permintaan ke API klasifikasi berasal dari aplikasi yang sah. Tidak mengandung konten yang Anda ucapkan atau informasi yang mengidentifikasi pengguna)
+      </li>
+      <li><strong>Google AdMob (Google Mobile Ads SDK)</strong> (Hanya saat tidak berlangganan KUU+, menampilkan 1 slot iklan native di antara bagian-bagian pada layar "Yang Telah Diucapkan". Konten yang Anda ucapkan tidak dikirim. Lihat Pasal 13 untuk detailnya)
+      </li>
+      <li><strong>Firebase Analytics</strong> (Disediakan oleh Google. Untuk peningkatan kualitas aplikasi. Pada versi iOS, <strong>hanya jika pengguna secara eksplisit memilih ikut (opt-in) di Pengaturan</strong>; pada versi Android, event penggunaan bebas-konten dikirim <strong>secara default</strong> (keduanya tidak mengirimkan konten yang Anda ucapkan). Versi iOS juga menggunakan <strong>Crashlytics</strong> dengan sistem opt-in, tetapi <strong>versi Android tidak menyertakan Crashlytics</strong>. Lihat Pasal 14 untuk detailnya)
+      </li></ul>
+      <p>Server Aplikasi ini bersifat minimal dan hanya berfungsi sebagai perantara untuk klasifikasi AI, serta tidak menyimpan konten apa pun (stateless). Kami tidak menggunakan layanan autentikasi yang memerlukan akun pribadi.</p>
+      <h2>Pasal 7 (Pemberian kepada Pihak Ketiga)</h2>
+      <p>Pengembang Aplikasi ini tidak memiliki cara untuk mengakses konten yang Anda ucapkan, hasil transkripsi, atau hasil pengorganisasian, dan tidak akan memberikannya kepada pihak ketiga.</p>
+      <p>Untuk tujuan menayangkan iklan kepada pengguna yang tidak berlangganan KUU+, informasi yang diperlukan oleh Google AdMob untuk penayangan iklan akan dikirim ke Google. Informasi ini dapat mencakup pengidentifikasi perangkat, ID iklan, bahasa dan wilayah perangkat, perkiraan lokasi, dan informasi interaksi dengan iklan (lihat Pasal 13; kebijakan privasi AdMob dari Google berlaku). Selama Anda berlangganan KUU+, pengiriman informasi ini tidak akan terjadi.</p>
+      <p>Saat Anda berlangganan KUU+ pada <strong>versi Android</strong>, informasi pembelian (ID produk, harga, tanggal pembelian, dll.) akan dikirim ke RevenueCat, Inc. untuk memproses pembelian dan mengelola status langganan (aktif/tidak aktif). Konten yang Anda ucapkan tidak dikirim. Untuk detail penanganan data oleh RevenueCat, silakan tinjau <a href="https://www.revenuecat.com/privacy" rel="noopener">Kebijakan Privasi RevenueCat</a>.</p>
+      <p>Kami hanya akan mengungkapkan informasi sesuai dengan prosedur yang ditetapkan jika diwajibkan oleh hukum.</p>
+      <h2>Pasal 8 (Penghapusan Data)</h2>
+      <p>Pengguna dapat menghapus semua data kapan saja dari "Pengaturan → Suara &amp; Data → Hapus yang tersimpan" di dalam aplikasi. Tindakan ini akan menghapus secara permanen data di perangkat (dan, pada versi iOS, juga data di database privat iCloud). Data yang telah dihapus tidak dapat dipulihkan.</p>
+      <p>Saat Anda menghapus instalan Aplikasi ini, data di perangkat akan dihapus. Untuk versi iOS, data di iCloud dapat dihapus melalui Pengaturan Apple (Pengaturan → Apple ID → iCloud → Kelola Penyimpanan). Karena versi Android hanya menyimpan data di perangkat, data akan terhapus saat aplikasi dihapus instalannya.</p>
+      <h2>Pasal 9 (Tindakan Pengamanan)</h2>
+      <ul>
+      <li><strong>Versi iOS</strong>: File audio sementara selama perekaman dienkripsi oleh fitur perlindungan file iOS (<code>FileProtectionType.complete</code>) dan tidak dapat diakses saat perangkat terkunci. Komunikasi dengan iCloud dienkripsi oleh Apple menggunakan SSL/TLS.
+      </li>
+      <li><strong>Versi Android</strong>: Audio yang direkam tidak ditulis ke disk, bahkan sebagai file sementara; audio hanya diproses di memori dan langsung dibuang setelah proses pengenalan selesai. Hasil transkripsi dan pengorganisasian yang disimpan berada di area penyimpanan khusus aplikasi Android dan tidak dapat diakses oleh aplikasi lain. Data ini juga dikecualikan dari cadangan cloud otomatis Android.
+      </li>
+      <li>Semua komunikasi dengan AI eksternal dienkripsi (HTTPS/TLS). Server pengembang hanya berfungsi sebagai perantara untuk klasifikasi dan tidak menyimpan konten (stateless).
+      </li></ul>
+      <h2>Pasal 10 (Penggunaan oleh Anak di Bawah Umur)</h2>
+      <p>Aplikasi ini memiliki peringkat usia 4+, tetapi karena sifatnya untuk mengorganisasi pikiran, aplikasi ini ditujukan untuk pengguna yang sudah dapat membaca dan menulis. Jika digunakan oleh anak di bawah umur, harap gunakan dengan persetujuan dari orang tua atau wali.</p>
+      <h2>Pasal 11 (Perubahan Kebijakan Privasi)</h2>
+      <p>Kebijakan ini dapat direvisi karena perubahan undang-undang, penambahan fitur, atau perubahan spesifikasi kerangka kerja atau kebijakan dari setiap platform (Apple / Google). Jika ada perubahan penting, kami akan memberitahukannya saat pembaruan aplikasi atau di halaman publikasi kebijakan ini.</p>
+      <h2>Pasal 12 (Kontak)</h2>
+      <p>Untuk pertanyaan mengenai kebijakan ini, silakan hubungi kami melalui bagian "Pengembang" di halaman aplikasi di App Store atau Google Play, atau melalui "Pengaturan → Kontak" di dalam aplikasi.</p>
+      <h2>Pasal 13 (Mengenai Iklan dan App Tracking Transparency)</h2>
+      <p>Selama Anda tidak berlangganan KUU+, Aplikasi ini hanya akan menampilkan satu slot iklan native dari Google AdMob di antara bagian-bagian pada layar "Yang Telah Diucapkan". Iklan itu sendiri ditampilkan secara halus di antara bagian layar untuk menjaga suasana KUU.</p>
+      <ul>
+      <li><strong>Konten yang Anda ucapkan tidak akan pernah digunakan untuk iklan</strong> (iklan tidak mengacu pada hasil transkripsi, klasifikasi, atau tema).
+      </li>
+      <li>Untuk menayangkan iklan, Google AdMob dapat mengumpulkan pengidentifikasi perangkat (termasuk IDFA), ID iklan, Coarse Location (perkiraan lokasi), Diagnostics, dan Product Interaction (informasi interaksi dengan iklan di dalam aplikasi).
+      </li>
+      <li><strong>Versi iOS</strong>: Permintaan <strong>App Tracking Transparency</strong> (ATT) akan ditampilkan satu kali, tepat sebelum iklan pertama muncul. Iklan akan tetap ditampilkan meskipun Anda menolak, tetapi informasi yang dikirim ke Google akan terbatas (tanpa personalisasi). Status izin ATT dapat diubah kapan saja di "Pengaturan" → "Privasi &amp; Keamanan" → "Pelacakan" pada iOS.
+      </li>
+      <li><strong>Versi Android</strong>: ATT adalah mekanisme khusus iOS dan tidak ada di Android. Sebagai gantinya, <strong>ID Iklan (Advertising ID)</strong> dari Google digunakan untuk penayangan iklan. Anda dapat memilih untuk tidak menerima personalisasi iklan atau mengatur ulang ID iklan Anda dari "Pengaturan → Privasi → Iklan" di perangkat Anda (istilah dapat bervariasi tergantung pada perangkat dan versi Android). Selain itu, versi Android mematuhi manajemen persetujuan (UMP) yang ditampilkan di wilayah yang berlaku seperti Uni Eropa.
+      </li>
+      <li><strong>Berlangganan KUU+ akan menghentikan semua iklan dan pengiriman data terkait.</strong>
+      </li>
+      <li>Untuk detail mengenai penanganan data oleh Google AdMob, silakan tinjau <a href="https://support.google.com/admob/answer/6128543" rel="noopener">Kebijakan privasi Google AdMob</a>.
+      </li></ul>
+      <h2>Pasal 14 (Mengenai Penggunaan Firebase Analytics / Crashlytics)</h2>
+      <p><strong>Sistem opt-in pada pasal ini berlaku untuk versi iOS. Untuk versi Android, silakan lihat "Tentang versi Android" di akhir pasal ini.</strong></p>
+      <p><strong>Versi iOS</strong>, untuk meningkatkan kualitas aplikasi dan mengetahui insiden produksi secara langsung, dapat menggunakan Firebase Analytics (agregasi penggunaan) dan Firebase Crashlytics (laporan kerusakan) dari Google. <strong>Fitur ini secara default NONAKTIF (tidak ada data yang dikirim) dan hanya berfungsi jika pengguna secara eksplisit memilih ikut (opt-in) melalui "Pengaturan → Data &amp; Diagnostik".</strong></p>
+      <ul>
+      <li><strong>Informasi yang dikirim</strong>:
+      <ul>
+      <li>ID instalasi anonim yang diterbitkan secara otomatis oleh Firebase (berdasarkan IDFV; bukan pengidentifikasi yang secara langsung mengidentifikasi individu).
+      </li>
+      <li>Sinyal agregat dari event tindakan dalam aplikasi (misalnya, penyelesaian sesi rekaman, tampilan/konversi Paywall, penyelesaian Onboarding. Nilai numerik dikirim dalam granularitas kasar yang dikelompokkan).
+      </li>
+      <li>Jejak tumpukan (stack trace) kerusakan yang telah disimbolkan saat aplikasi berhenti secara tidak normal.
+      </li></ul>
+      </li>
+      <li><strong>Informasi yang tidak dikirim</strong>: Konten yang Anda ucapkan (audio), hasil transkripsi, teks hasil klasifikasi AI, dan nama tema yang Anda atur <strong>dirancang agar tidak dapat dikirim pada level tipe data</strong> (secara implementasi, API-nya tidak memungkinkan nilai string diteruskan ke SDK pengukuran).
+      </li>
+      <li><strong>Selama tidak diaktifkan (opt-in), tidak ada komunikasi apa pun dengan Firebase yang terjadi</strong>, termasuk semua informasi di atas.
+      </li>
+      <li><strong>Cara menghentikan pengiriman</strong>: Anda dapat menonaktifkannya kapan saja dengan mematikan tombol di "Pengaturan → Data &amp; Diagnostik". Saat dinonaktifkan, ID instalasi sebelumnya akan dibuang, dan log kerusakan yang belum terkirim yang tersimpan di perangkat lokal juga akan dihapus.
+      </li>
+      <li>Penerima data adalah Google LLC (Amerika Serikat). <a href="https://firebase.google.com/support/privacy" rel="noopener">Informasi Privasi Firebase</a> dari Google berlaku.
+      </li></ul>
+      <p><strong>Tentang versi Android:</strong> Versi Android menggunakan Firebase Analytics dan mengirimkan <strong>event penggunaan bebas-konten</strong> untuk peningkatan produk (nilai yang dikelompokkan seperti transisi layar dan jumlah penggunaan fitur) beserta App Instance ID anonim yang diterbitkan oleh Firebase. <strong>Berbeda dengan iOS, fitur ini aktif secara default.</strong> Konten yang Anda ucapkan (audio), hasil transkripsi, teks hasil pengorganisasian, dan nama tema <strong>tidak dapat dikirim</strong> karena desain SDK pengukuran yang tidak memungkinkan nilai string diteruskan. <strong>Versi Android tidak menyertakan Crashlytics dan tidak mengirimkan laporan kerusakan.</strong> Penerima data adalah Google LLC (Amerika Serikat); <a href="https://firebase.google.com/support/privacy" rel="noopener">Informasi Privasi Firebase</a> dari Google berlaku.</p>
+
+      <a class="back" href="/id/">← Kembali ke atas</a>
+
+      <nav class="langs" aria-label="Bahasa">
+      <a href="/privacy/" hreflang="ja">日本語</a>
+      <a href="/en/privacy/" hreflang="en">English</a>
+      <a href="/es/privacy/" hreflang="es">Español</a>
+      <a href="/ko/privacy/" hreflang="ko">한국어</a>
+      <a href="/zh-Hans/privacy/" hreflang="zh-Hans">简体中文</a>
+      <a href="/zh-Hant/privacy/" hreflang="zh-Hant">繁體中文</a>
+      <a href="/de/privacy/" hreflang="de">Deutsch</a>
+      <a href="/it/privacy/" hreflang="it">Italiano</a>
+      <a href="/vi/privacy/" hreflang="vi">Tiếng Việt</a>
+      <a href="/nl/privacy/" hreflang="nl">Nederlands</a>
+      <a href="/id/privacy/" hreflang="id" aria-current="true">Bahasa Indonesia</a>
+      <a href="/ms/privacy/" hreflang="ms">Bahasa Melayu</a>
+      <a href="/da/privacy/" hreflang="da">Dansk</a>
+      <a href="/nb/privacy/" hreflang="nb">Norsk bokmål</a>
+      <a href="/sv/privacy/" hreflang="sv">Svenska</a>
+      <a href="/fi/privacy/" hreflang="fi">Suomi</a>
+      <a href="/fr/privacy/" hreflang="fr">Français</a>
+      <a href="/th/privacy/" hreflang="th">ไทย</a>
+      <a href="/ru/privacy/" hreflang="ru">Русский</a>
+      </nav>
+    </main>
+  </body>
+</html>

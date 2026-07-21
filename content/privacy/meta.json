@@ -1,0 +1,78 @@
+{
+  "ja": {
+    "title": "プライバシーポリシー — KUU",
+    "description": "KUU のプライバシーポリシー。音声はすべて端末内で処理し外部に送信しません。整理の AI 分類は文字だけを送信し保存しません。"
+  },
+  "en": {
+    "title": "Privacy Policy — KUU",
+    "description": "KUU's privacy policy. Audio is processed entirely on device and never sent outside. AI organization sends only the text, and the provider does not retain it."
+  },
+  "fr": {
+    "title": "Politique de confidentialité — KUU",
+    "description": "L'audio est entièrement traité sur l'appareil et n'est pas envoyé à l'extérieur. La classification par IA pour l'organisation envoie uniquement le texte et ne le sauvegarde pas."
+  },
+  "es": {
+    "title": "Política de Privacidad — KUU",
+    "description": "Todo el audio se procesa en el dispositivo y no se envía al exterior. La clasificación con IA para la organización envía solo el texto y no lo almacena."
+  },
+  "ko": {
+    "title": "개인정보 처리방침 — KUU",
+    "description": "모든 음성은 기기 내에서 처리되며 외부로 전송되지 않습니다. AI 정리 분류 기능은 텍스트만 전송하며 저장하지 않습니다."
+  },
+  "zh-Hans": {
+    "title": "隐私政策 — KUU",
+    "description": "KUU 的隐私政策。所有语音均在设备端处理，不会发送至外部。用于整理的 AI 分类仅发送文本，且不会保存。"
+  },
+  "zh-Hant": {
+    "title": "隱私權政策 — KUU",
+    "description": "KUU 的隱私權政策。所有語音皆於裝置端處理，不會傳送至外部。用於整理的 AI 分類功能僅會傳送文字，且不會儲存。"
+  },
+  "de": {
+    "title": "Datenschutzerklärung — KUU",
+    "description": "Alle Audioaufnahmen werden lokal auf dem Gerät verarbeitet und nicht nach außen gesendet. Für die KI-gestützte Kategorisierung wird nur Text übertragen und nicht gespeichert."
+  },
+  "it": {
+    "title": "Informativa sulla privacy — KUU",
+    "description": "Tutto l'audio viene elaborato sul dispositivo e non viene inviato all'esterno. La classificazione AI per l'organizzazione invia solo il testo e non lo salva."
+  },
+  "vi": {
+    "title": "Chính sách Quyền riêng tư — KUU",
+    "description": "Toàn bộ âm thanh được xử lý ngay trên thiết bị và không gửi ra bên ngoài. Tính năng phân loại bằng AI chỉ gửi văn bản và không lưu trữ."
+  },
+  "nl": {
+    "title": "Privacybeleid — KUU",
+    "description": "Alle audio wordt op het apparaat zelf verwerkt en niet extern verzonden. Voor de AI-classificatie om te organiseren wordt alleen tekst verzonden en niet opgeslagen."
+  },
+  "id": {
+    "title": "Kebijakan Privasi — KUU",
+    "description": "Semua audio diproses di perangkat dan tidak dikirim ke luar. Untuk klasifikasi AI, hanya teks yang dikirim dan tidak disimpan."
+  },
+  "ms": {
+    "title": "Dasar Privasi — KUU",
+    "description": "Semua audio diproses dalam peranti dan tidak dihantar ke luar. Klasifikasi AI untuk penyusunan hanya menghantar teks dan tidak menyimpannya."
+  },
+  "da": {
+    "title": "Privatlivspolitik — KUU",
+    "description": "Al lyd behandles på din enhed og sendes ikke eksternt. Til AI-klassificering for organisering sendes kun tekst, og den gemmes ikke."
+  },
+  "nb": {
+    "title": "Personvernerklæring — KUU",
+    "description": "All lyd behandles på enheten og sendes ikke eksternt. For AI-kategorisering sendes kun tekst, og denne blir ikke lagret."
+  },
+  "sv": {
+    "title": "Integritetspolicy — KUU",
+    "description": "All röstdata behandlas lokalt på din enhet och skickas inte externt. AI-klassificeringen för organisering skickar endast text, som inte sparas."
+  },
+  "fi": {
+    "title": "Tietosuojakäytäntö — KUU",
+    "description": "Kaikki ääni käsitellään laitteella, eikä sitä lähetetä ulkopuolisille. Tekoälypohjainen luokittelu lähettää ainoastaan tekstin, jota ei tallenneta."
+  },
+  "th": {
+    "title": "นโยบายความเป็นส่วนตัว — KUU",
+    "description": "เสียงทั้งหมดจะประมวลผลภายในอุปกรณ์และไม่มีการส่งออกไปภายนอก ส่วนการจัดหมวดหมู่ด้วย AI จะส่งเพียงข้อความเท่านั้นและไม่มีการจัดเก็บ"
+  },
+  "ru": {
+    "title": "Политика конфиденциальности — KUU",
+    "description": "Всё аудио обрабатывается на устройстве и не отправляется за его пределы. Для AI-классификации и организации данных отправляется только текст, без его сохранения."
+  }
+}
