@@ -84,17 +84,18 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
   <body>
     <main>
       <h1>KUU プライバシーポリシー</h1>
-      <p>最終更新日：2026 年 7 月 3 日</p>
-      <p><strong>ひとことで：</strong> あなたが話したことはあなたのものです。<strong>音声そのものは外部に送信しません</strong>。文字起こしは端末の中で行います。整理（AI 分類）には既定で外部の AI を使いますが、送られるのは文字にした内容だけで、整理にのみ使われ、保存されません（設定「オンデバイス」で端末内のみの整理に変更できます）。保存先はあなたの端末と iCloud（プライベートデータベース）だけです。開発者は内容を保存せず、受け取った内容を見ることもありません。いつでもアプリ内から全データを削除できます。アプリは Apple の課金（StoreKit）と Google AdMob の広告のために<strong>必要最小限の通信</strong>のみ行い、その情報には話した内容は含まれません（広告は KUU+ 加入で無効化できます）。アプリの品質改善と本番事故の即知化のために、<strong>ユーザーが明示的に opt-in した場合に限り</strong> Firebase Analytics / Crashlytics を利用しますが、こちらも話した内容は含みません（詳細は第 14 条）。</p>
+      <p>最終更新日：2026 年 7 月 21 日</p>
+      <p>本ポリシーは <strong>iOS 版・Android 版</strong>の両方に適用されます。プラットフォーム間で挙動が異なる箇所は、その都度明記します。</p>
+      <p><strong>ひとことで：</strong> あなたが話したことはあなたのものです。<strong>音声そのものは外部に送信しません</strong>。文字起こしは端末の中で行います。整理（AI 分類）には外部の AI を使いますが、送られるのは文字にした内容だけで、整理にのみ使われ、保存されません（iOS 版は設定「オンデバイス」で端末内のみの整理に変更できます。<strong>Android 版は外部 AI 送信のみで、オンデバイス整理はありません</strong>）。保存先はあなたの端末と、iOS 版では iCloud（プライベートデータベース）です（Android 版は端末内のみ）。開発者は内容を保存せず、受け取った内容を見ることもありません。いつでもアプリ内から全データを削除できます。アプリは課金（iOS=StoreKit／Android=RevenueCat）と Google AdMob の広告のために<strong>必要最小限の通信</strong>のみ行い、その情報には話した内容は含まれません（広告は KUU+ 加入で無効化できます）。品質改善のため利用状況の計測を行いますが、こちらも話した内容は含みません（iOS はユーザー opt-in、Android は content-free な計測を既定で実施。詳細は第 14 条）。</p>
       <hr />
       <h2>第 1 条（基本方針）</h2>
-      <p>本アプリ「KUU」（以下「本アプリ」）は、頭の中の考えごとを声で外に出し、整理することを支援する iOS アプリです。本アプリは、機能提供に必要な最小限の範囲でのみ情報を扱い、ユーザーのプライバシー保護を最優先とします。</p>
+      <p>本アプリ「KUU」（以下「本アプリ」）は、頭の中の考えごとを声で外に出し、整理することを支援するアプリです。<strong>iOS 版・Android 版</strong>があり、本ポリシーは両方に適用されます。本アプリは、機能提供に必要な最小限の範囲でのみ情報を扱い、ユーザーのプライバシー保護を最優先とします。</p>
       <h2>第 2 条（取得・保存する情報）</h2>
       <p>本アプリが取り扱う情報は、以下に限られます。</p>
       <ol>
       <li><strong>ユーザーが話した内容（音声データ）</strong> — 録音した音声は文字起こしの処理中のみ端末内の一時領域に保存され、処理完了後すみやかに削除されます。サーバーには送信されません。
       </li>
-      <li><strong>文字起こし結果と整理結果（テキスト）</strong> — あなた自身が見返せるように、端末および iCloud（プライベートデータベース）に保存されます。
+      <li><strong>文字起こし結果と整理結果（テキスト）</strong> — あなた自身が見返せるように保存されます（iOS 版は端末および iCloud プライベートデータベース、Android 版は端末内のみ。詳細は第 4 条）。
       </li>
       <li><strong>アプリ内設定</strong> — テーマ、文字サイズ、頭の水位状態などのアプリ動作に必要な設定値。
       </li></ol>
@@ -104,19 +105,20 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
       <ul>
       <li>音声認識：Apple の Speech フレームワーク（オンデバイス）を使用します。音声そのものが端末の外に送信されることはありません
       </li></ul>
-      <p><strong>AI 分類（カテゴリ分け）</strong> は、既定で外部の AI を使用します。</p>
+      <p><strong>AI 分類（カテゴリ分け）</strong> は、外部の AI を使用します。</p>
       <ul>
       <li>送信されるのは<strong>文字にした内容（文字起こしテキスト）だけ</strong>です。音声は送信されません
       </li>
-      <li>送信先は外部の AI で、開発者のサーバーを経由します
+      <li>送信先は外部の AI で、開発者のサーバー（バックエンド経由で Google の Gemini）を経由します
       </li>
       <li>送信された内容は<strong>分類にのみ使用され、保存されません</strong>。AI の学習にも使用されません
       </li>
-      <li>設定の「オンデバイス」から、<strong>端末内のみの分類</strong>（Apple の FoundationModels / 端末内ルール）へいつでも変更できます。この場合、文字も端末の外に出ません
+      <li><strong>iOS 版</strong>は、設定の「オンデバイス」から、<strong>端末内のみの分類</strong>（Apple の FoundationModels / 端末内ルール）へいつでも変更できます。この場合、文字も端末の外に出ません
       </li></ul>
-      <h2>第 4 条（iCloud への保存と同期）</h2>
-      <p>本アプリは、文字起こし結果と整理結果をあなたの <strong>iCloud のプライベートデータベース</strong>（CloudKit Private Database）にのみ保存します。これは Apple が提供するストレージで、保存内容にアクセスできるのはあなた本人だけです。本アプリの開発者は、保存された内容を閲覧することも、取得することもできません。</p>
-      <p>iCloud の利用条件・セキュリティについては、Apple のプライバシーポリシーが適用されます。</p>
+      <p><strong>Android 版について：</strong> Android 版は、端末内のみで完結する整理（分類）方式を提供していません。整理を行うと、文字起こしされたテキストは<strong>必ず</strong>外部の AI（当社のバックエンド経由で Google の Gemini）に送信されます。iOS 版のような「オンデバイス」への切り替えはありません。送信されるのは文字にした内容のみで、音声そのものは送信されず、送信されたテキストは分類にのみ使用され、保存も AI 学習にも使用されません。文字起こし（音声認識）自体は端末内で完結します。</p>
+      <h2>第 4 条（保存と同期）</h2>
+      <p><strong>iOS 版：</strong> 文字起こし結果と整理結果を、あなたの <strong>iCloud のプライベートデータベース</strong>（CloudKit Private Database）にのみ保存します。これは Apple が提供するストレージで、保存内容にアクセスできるのはあなた本人だけです。本アプリの開発者は、保存された内容を閲覧することも、取得することもできません。iCloud の利用条件・セキュリティについては、Apple のプライバシーポリシーが適用されます。</p>
+      <p><strong>Android 版：</strong> 文字起こし結果と整理結果は、<strong>この端末にのみ</strong>保存されます。自動的なクラウド同期は行っていません。機種変更の際は、アプリ内の「声とデータ」からファイルへ書き出し、新しい端末で読み込むことができます。書き出し先はユーザーご自身が選択します（端末内・お使いのクラウドストレージアプリ等）。開発者はこのファイルにアクセスできません。</p>
       <h2>第 5 条（利用目的）</h2>
       <p>取り扱う情報は、以下の目的でのみ利用します。</p>
       <ol>
@@ -131,42 +133,45 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
       <h2>第 6 条（外部サービスの利用）</h2>
       <p>本アプリは、機能提供のために以下の外部サービスを利用します。<strong>音声そのものは、いずれのサービスにも送信されません</strong>。</p>
       <ul>
-      <li><strong>iCloud / CloudKit</strong>（Apple 提供。あなた自身のプライベートデータベースにのみ保存・同期）
+      <li><strong>iCloud / CloudKit</strong>（iOS 版のみ。Apple 提供。あなた自身のプライベートデータベースにのみ保存・同期）
       </li>
-      <li><strong>Speech フレームワーク</strong>（Apple 提供。完全に端末上で実行）
+      <li><strong>音声認識</strong>（iOS 版は Apple の Speech フレームワーク、Android 版は端末内の音声認識エンジン。いずれも端末上で実行し、音声は端末外に送信しません）
       </li>
-      <li><strong>外部の AI（クラウド）</strong>（既定の AI 分類。文字にした内容のみ送信。分類にのみ使用され、保存もされず、AI の学習にも使用されません。設定「オンデバイス」でオフにできます。詳細は第 3 条）
+      <li><strong>外部の AI（クラウド）</strong>（AI 分類。文字にした内容のみ送信。分類にのみ使用され、保存もされず、AI の学習にも使用されません。iOS 版は設定「オンデバイス」でオフにできますが、<strong>Android 版は外部 AI 送信のみ</strong>です。詳細は第 3 条）
       </li>
-      <li><strong>FoundationModels</strong>（Apple 提供。完全に端末上で実行。「オンデバイス」設定時と、外部 AI が使えないときのフォールバックで使用）
+      <li><strong>FoundationModels</strong>（iOS 版のみ。Apple 提供。完全に端末上で実行。「オンデバイス」設定時と、外部 AI が使えないときのフォールバックで使用）
       </li>
-      <li><strong>Apple StoreKit</strong>（KUU+ サブスクリプションの購入・更新・解約管理。話した内容は送信されません）
+      <li><strong>課金サービス</strong>（iOS 版は <strong>Apple StoreKit</strong>、Android 版は <strong>RevenueCat</strong>。KUU+ サブスクリプションの購入・更新・解約・権利状態の管理。話した内容は送信されません。RevenueCat については第 7 条・<a href="https://www.revenuecat.com/privacy" rel="noopener">RevenueCat プライバシーポリシー</a>）
+      </li>
+      <li><strong>Play Integrity API（Firebase App Check 経由。Android 版のみ）</strong>（分類 API へのリクエストが正規のアプリから送られたことを確認するための、端末・アプリの完全性証明。話した内容やユーザーを特定する情報は含まれません）
       </li>
       <li><strong>Google AdMob（Google Mobile Ads SDK）</strong>（KUU+ 未加入時のみ、「話したこと」画面に節間のネイティブ広告 1 枠を表示。話した内容は送信されません。詳細は第 13 条）
       </li>
-      <li><strong>Firebase Analytics / Crashlytics</strong>（Google 提供。アプリの品質改善・安定性監視のため、<strong>ユーザーが Settings で明示的に opt-in した場合にのみ</strong>利用します。話した内容は送信されません。詳細は第 14 条）
+      <li><strong>Firebase Analytics</strong>（Google 提供。アプリの品質改善のため。iOS 版は<strong>ユーザーが Settings で明示的に opt-in した場合にのみ</strong>、Android 版は content-free な利用状況イベントを<strong>既定で</strong>送信します（いずれも話した内容は送信しません）。iOS 版は <strong>Crashlytics</strong> も opt-in で利用しますが、<strong>Android 版は Crashlytics を搭載していません</strong>。詳細は第 14 条）
       </li></ul>
-      <p>本アプリのサーバーは AI 分類の中継のみを行う最小限のもので、内容を一切保存しません（ステートレス）。個人アカウントを要する認証サービスは使用しません。アクセス解析・クラッシュレポートはユーザーの opt-in を前提としてのみ動作します。</p>
+      <p>本アプリのサーバーは AI 分類の中継のみを行う最小限のもので、内容を一切保存しません（ステートレス）。個人アカウントを要する認証サービスは使用しません。</p>
       <h2>第 7 条（第三者提供）</h2>
       <p>本アプリの開発者は、ユーザーが話した内容、文字起こし結果、整理結果にアクセスする手段を持たず、これらを第三者に提供しません。</p>
       <p>KUU+ 未加入のユーザーに広告を配信する目的で、Google AdMob に対して端末識別子・広告 ID・端末の言語・地域・概略の位置情報・広告のクリック情報など、AdMob が広告配信のために必要とする情報が Google に送信されます（詳細は第 13 条、Google の AdMob プライバシーポリシーが適用されます）。KUU+ に加入している間は、この情報送信は発生しません。</p>
+      <p><strong>Android 版</strong>で KUU+ にご加入いただく際は、購入処理と権利（有効／無効の判定）の管理のため、RevenueCat, Inc. に購入情報（商品 ID・価格・購入日時等）が送信されます。話した内容は送信されません。RevenueCat のデータ取り扱いの詳細は <a href="https://www.revenuecat.com/privacy" rel="noopener">RevenueCat プライバシーポリシー</a> をご確認ください。</p>
       <p>法令に基づき開示が義務付けられた場合に限り、所定の手続きに従い対応します。</p>
       <h2>第 8 条（データの削除）</h2>
-      <p>ユーザーは、アプリ内の「設定 → 声とデータ → 保存していることの削除」からいつでも全データを削除できます。削除を行うと、端末上のデータおよび iCloud（プライベートデータベース）上のデータが完全に消去されます。消去したデータの復元はできません。</p>
-      <p>本アプリをアンインストールした場合、端末上のデータは削除されます。iCloud 上のデータは、Apple の設定（設定 → Apple ID → iCloud → ストレージ管理）から削除できます。</p>
+      <p>ユーザーは、アプリ内の「設定 → 声とデータ → 保存していることの削除」からいつでも全データを削除できます。削除を行うと、端末上のデータ（iOS 版は iCloud プライベートデータベース上のデータも含む）が完全に消去されます。消去したデータの復元はできません。</p>
+      <p>本アプリをアンインストールした場合、端末上のデータは削除されます。iOS 版の iCloud 上のデータは、Apple の設定（設定 → Apple ID → iCloud → ストレージ管理）から削除できます。Android 版は端末内保存のみのため、アンインストールで削除されます。</p>
       <h2>第 9 条（安全管理措置）</h2>
       <ul>
-      <li>録音中の一時音声ファイルは、iOS のファイル保護機能（<code>FileProtectionType.complete</code>）により暗号化され、デバイスロック中はアクセスできません
+      <li><strong>iOS 版</strong>：録音中の一時音声ファイルは、iOS のファイル保護機能（<code>FileProtectionType.complete</code>）により暗号化され、デバイスロック中はアクセスできません。iCloud との通信は Apple が SSL/TLS で暗号化します
       </li>
-      <li>iCloud との通信は Apple が SSL/TLS で暗号化します
+      <li><strong>Android 版</strong>：録音した音声は一時ファイルとしてもディスクに書き出さず、メモリ上でのみ処理し、認識処理後にただちに破棄します。保存された文字起こし・整理結果は Android のアプリ専用領域に保存され、他のアプリからはアクセスできません。また Android の自動クラウドバックアップの対象から除外しています
       </li>
-      <li>本アプリは独自サーバーを持たないため、開発者側で取り扱う情報そのものが存在しません
+      <li>外部の AI への通信はすべて暗号化（HTTPS/TLS）されます。開発者のサーバーは分類の中継のみで内容を保存しません（ステートレス）
       </li></ul>
       <h2>第 10 条（未成年者の利用）</h2>
       <p>本アプリは年齢区分 4+ で提供されますが、思考の整理という性質上、文字を読み書きできる年齢以上での利用を想定しています。未成年者が利用する場合は、保護者の同意を得たうえで利用してください。</p>
       <h2>第 11 条（プライバシーポリシーの変更）</h2>
-      <p>本ポリシーは、法令の変更、機能の追加、Apple のフレームワーク仕様変更等により、改定されることがあります。重要な変更がある場合は、アプリのアップデート時または本ポリシーの公開ページで告知します。</p>
+      <p>本ポリシーは、法令の変更、機能の追加、各プラットフォーム（Apple / Google）のフレームワークやポリシーの仕様変更等により、改定されることがあります。重要な変更がある場合は、アプリのアップデート時または本ポリシーの公開ページで告知します。</p>
       <h2>第 12 条（お問い合わせ）</h2>
-      <p>本ポリシーに関するお問い合わせは、App Store のアプリページ内「開発元」セクションよりご連絡ください。</p>
+      <p>本ポリシーに関するお問い合わせは、App Store または Google Play のアプリページ内「開発元」セクション、あるいはアプリ内「設定 → お問い合わせ」よりご連絡ください。</p>
       <h2>第 13 条（広告と App Tracking Transparency について）</h2>
       <p>本アプリは KUU+ サブスクリプションに加入していない期間のみ、Google AdMob によるネイティブ広告を「話したこと」画面で 1 枠だけ表示します。広告そのものは KUU の世界観を保つため、画面の節間に控えめに表示されます。</p>
       <ul>
@@ -174,16 +179,17 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
       </li>
       <li>広告配信のために Google AdMob は端末識別子（IDFA を含む）、広告 ID、Coarse Location（概略の位置情報）、Diagnostics、Product Interaction（アプリ内の広告との接触情報）等を収集する場合があります
       </li>
-      <li>iOS の <strong>App Tracking Transparency</strong>（ATT）プロンプトを最初の広告表示直前に 1 回だけ表示します。ユーザーが許諾しない場合でも広告は表示されますが、Google に送信される情報は限定的な範囲（パーソナライズなし）になります
+      <li><strong>iOS 版</strong>：<strong>App Tracking Transparency</strong>（ATT）プロンプトを最初の広告表示直前に 1 回だけ表示します。ユーザーが許諾しない場合でも広告は表示されますが、Google に送信される情報は限定的な範囲（パーソナライズなし）になります。ATT 許諾状態は iOS の「設定」→「プライバシーとセキュリティ」→「トラッキング」からいつでも変更できます
       </li>
-      <li>ATT 許諾状態は iOS の「設定」→「プライバシーとセキュリティ」→「トラッキング」からいつでも変更できます
+      <li><strong>Android 版</strong>：ATT は iOS 専有の仕組みのため Android にはありません。代わりに Google の<strong>広告 ID（Advertising ID）</strong>が広告配信に使用されます。端末の「設定 → プライバシー → 広告」（端末や Android バージョンにより文言は異なります）から、広告のパーソナライズをオプトアウトしたり、広告 ID をリセットしたりできます。あわせて、Android 版では EU 等の対象地域で表示される同意管理（UMP）に従います
       </li>
       <li><strong>KUU+ に加入すると広告と関連する情報送信はすべて停止します</strong>
       </li>
       <li>Google AdMob によるデータ取り扱いの詳細は <a href="https://support.google.com/admob/answer/6128543" rel="noopener">Google AdMob プライバシーポリシー</a> をご確認ください
       </li></ul>
       <h2>第 14 条（Firebase Analytics / Crashlytics の利用について）</h2>
-      <p>本アプリは、アプリの品質改善および本番事故の即知化のために、Google の Firebase Analytics（利用状況の集計）および Firebase Crashlytics（クラッシュレポート）を利用することがあります。<strong>本機能は既定で OFF（送信なし）であり、ユーザーが「設定 → データと診断」で明示的に opt-in した場合に限り動作します。</strong></p>
+      <p><strong>本条の opt-in 方式は iOS 版に適用されます。Android 版については本条末尾の「Android 版について」をご覧ください。</strong></p>
+      <p><strong>iOS 版</strong>は、アプリの品質改善および本番事故の即知化のために、Google の Firebase Analytics（利用状況の集計）および Firebase Crashlytics（クラッシュレポート）を利用することがあります。<strong>本機能は既定で OFF（送信なし）であり、ユーザーが「設定 → データと診断」で明示的に opt-in した場合に限り動作します。</strong></p>
       <ul>
       <li><strong>送信される情報</strong>:
       <ul>
@@ -202,6 +208,7 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
       </li>
       <li>送信先は Google LLC（米国）です。Google の <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase Privacy Information</a> が適用されます
       </li></ul>
+      <p><strong>Android 版について：</strong> Android 版は Firebase Analytics を利用し、プロダクト改善のための <strong>content-free（内容を含まない）な利用状況イベント</strong>（画面の遷移や機能の利用回数などのバケット値）と、Firebase が発行する匿名の App Instance ID を送信します。<strong>iOS 版と異なり、これは既定で有効です。</strong> 話した内容（音声）・文字起こし・整理結果のテキスト・テーマ名は、計測 SDK に文字列値を渡せない設計により<strong>送信できません</strong>。<strong>Android 版は Crashlytics を搭載しておらず、クラッシュレポートは送信しません。</strong> 送信先は Google LLC（米国）で、Google の <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase Privacy Information</a> が適用されます。</p>
 
       <a class="back" href="/">← トップへ</a>
 
