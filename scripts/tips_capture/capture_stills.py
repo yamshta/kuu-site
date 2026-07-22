@@ -30,7 +30,9 @@ BUNDLE = "com.KUU-app.dev"
 LABELS = json.load(open(os.path.join(HERE, "labels.json")))["labels"]
 REGION = {"nl": "nl_NL", "id": "id_ID", "ms": "ms_MY", "da": "da_DK",
           "nb": "nb_NO", "sv": "sv_SE", "fi": "fi_FI", "fr": "fr_FR",
-          "th": "th_TH", "ru": "ru_RU", "en": "en_US"}
+          "th": "th_TH", "ru": "ru_RU", "en": "en_US", "ja": "ja_JP",
+          "es": "es_ES", "ko": "ko_KR", "zh-Hans": "zh_CN", "zh-Hant": "zh_TW",
+          "de": "de_DE", "it": "it_IT", "vi": "vi_VN"}
 
 # t_add のクロップ上端 (native)。既定 780 は「左右カードとも行を切らない」カットラインだが、
 # 折返しの多い言語は行帯域が変わるため目視レビューで調整した値を持つ
@@ -156,6 +158,22 @@ def capture_locale(udid, wda, lc, outdir, app_path):
     shot(udid, src)
     compose(src, os.path.join(outdir, "t_theme_edit.png"),
             (0, 368, 1206, 753), (240, round((row["y"] + row["height"] / 2) * 3)))
+
+    # 5. t_lock: 設定 (声とデータ) → ロック画面「いま見る」トグル。円 = 行右端のスイッチ。
+    launch(udid, lc, "-KUUSeedScenario", "saved", "-KUUScreenshotSlot", "place",
+           "-KUUPlaceExpanded", "1")
+    footer = wda.find_all('name == "placeFooter.voiceAndData"')
+    wda.click(footer[0])
+    time.sleep(1.3)
+    toggle = wda.find_all('name == "settings.lockScreenLiveActivity"')
+    r = wda.rect(toggle[0])
+    cy = round((r["y"] + r["height"] / 2) * 3)          # 行中心 (native)
+    sw_x = round((r["x"] + r["width"] - 34) * 3)         # スイッチ = 行右端 -34pt
+    crop_y = min(max(0, cy - 376), 2622 - 753)          # 行を中央に、画面内へクランプ
+    src = os.path.join(outdir, "_settings_full.png")
+    shot(udid, src)
+    compose(src, os.path.join(outdir, "t_lock.png"),
+            (0, crop_y, 1206, 753), (sw_x, cy))
 
 
 if __name__ == "__main__":

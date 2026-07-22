@@ -17,7 +17,8 @@
    "fr": "Modifier les thèmes…",
    "th": "แก้ไขหัวข้อ...",
    "ru": "Изменить темы…",
-   "en": "Edit themes…"
+   "en": "Edit themes…",
+   "ja": "テーマを編集…"
   },
   "theme_work": {
    "nl": "Werk",
@@ -30,7 +31,8 @@
    "fr": "Travail",
    "th": "งาน",
    "ru": "Работа",
-   "en": "Work"
+   "en": "Work",
+   "ja": "仕事"
   },
   "sort_again": {
    "nl": "Opnieuw verdelen",
@@ -43,7 +45,8 @@
    "fr": "Trier à nouveau",
    "th": "จัดใหม่",
    "ru": "Разобрать заново",
-   "en": "Sort again"
+   "en": "Sort again",
+   "ja": "分け直す"
   },
   "keyboard": {
    "nl": "Schrijven met het toetsenbord",
@@ -56,7 +59,8 @@
    "fr": "Écrire avec le clavier",
    "th": "เขียนด้วยแป้นพิมพ์",
    "ru": "Написать с клавиатуры",
-   "en": "Write with the keyboard"
+   "en": "Write with the keyboard",
+   "ja": "キーボードで書く"
   }
  }
 }
