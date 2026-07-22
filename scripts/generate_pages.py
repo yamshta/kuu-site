@@ -283,6 +283,13 @@ LOCALES = {
             #         "付くのは、あなたが付けたときか、KUU+ で「自動で振り分け」をオンにしたときだけ。いつでも解除できます。",
             #     ],
             # ),
+            (
+                "ロック画面に「いま見る」を出したい。",
+                [
+                "設定を開き、「ロック画面に『いま見る』を表示」をオンにしてください。",
+                "その日の「いま見る」が、ロック画面にそっと出ます。通知は鳴らさず、「いま見る」が空になると消えます。",
+                ],
+            ),
         ],
         "tips_support_before": "音声入力のあとの書き直しや、自分での仕分けなど、気づきにくい操作は",
         "tips_support_after": "にまとめています。",
@@ -448,7 +455,14 @@ LOCALES = {
                     "From “Write with the keyboard” at the bottom of Home, you can sort the same way in text, without using your voice."
                 ],
                 "t_keyboard"
-            ]
+            ],
+            (
+                "I want to show “Now” on my Lock Screen.",
+                [
+                "Open Settings and turn on “Show ‘Now’ on the Lock Screen”.",
+                "Today’s “Now” rests quietly on your Lock Screen. No notification sound, and it disappears once “Now” is empty.",
+                ],
+            ),
         ],
         "tips_support_before": "Rewriting after you speak, sorting by hand — the moves that are easy to miss are gathered in",
         "tips_support_after": ".",
@@ -669,7 +683,14 @@ LOCALES = {
                     "Desde «Escribir con el teclado», en la parte inferior del inicio, puedes separar igual por escrito, sin usar la voz."
                 ],
                 "t_keyboard"
-            ]
+            ],
+            (
+                "Quiero mostrar «Ahora» en la pantalla de bloqueo.",
+                [
+                "Abre Ajustes y activa «Mostrar “Ahora” en la pantalla de bloqueo».",
+                "El «Ahora» de hoy aparece con calma en tu pantalla de bloqueo. Sin sonido de notificación, y desaparece cuando «Ahora» queda vacío.",
+                ],
+            ),
         ],
         "tips_support_before": "Los gestos discretos —como reescribir lo dictado o separar a tu manera— están reunidos en",
         "tips_support_after": ".",
@@ -890,7 +911,14 @@ LOCALES = {
                     "홈 아래쪽 ‘키보드로 쓰기’에서, 목소리 없이 글자로도 똑같이 나눌 수 있습니다."
                 ],
                 "t_keyboard"
-            ]
+            ],
+            (
+                "잠금 화면에 ‘지금 보기’를 띄우고 싶어요.",
+                [
+                "설정을 열고 “잠금 화면에 ‘지금 보기’ 표시”를 켜세요.",
+                "오늘의 ‘지금 보기’가 잠금 화면에 살며시 나타납니다. 알림음은 울리지 않고, ‘지금 보기’가 비면 사라집니다.",
+                ],
+            ),
         ],
         "tips_support_before": "음성 입력 뒤의 고쳐 쓰기나, 직접 나누기 등, 눈에 잘 띄지 않는 조작은",
         "tips_support_after": "에 모아 두었습니다.",
@@ -1111,7 +1139,14 @@ LOCALES = {
                     "从主页下方的“用键盘写”，不出声、用文字，也能一样地分好。"
                 ],
                 "t_keyboard"
-            ]
+            ],
+            (
+                "想在锁屏上显示“现在看”。",
+                [
+                "打开设置，开启“在锁屏上显示‘现在看’”。",
+                "当天的“现在看”会静静地出现在锁屏上。不会发出通知提示音，当“现在看”清空后便会消失。",
+                ],
+            ),
         ],
         "tips_support_before": "语音输入之后的修改、自己动手的分类等不易察觉的操作，都汇总在",
         "tips_support_after": "里。",
@@ -1418,7 +1453,14 @@ LOCALES = {
                     "Über „Mit Tastatur schreiben“ unten auf dem Home-Screen kannst du auch ohne Stimme als Text genauso sortieren."
                 ],
                 "t_keyboard"
-            ]
+            ],
+            (
+                "Ich möchte „Jetzt ansehen“ auf dem Sperrbildschirm zeigen.",
+                [
+                "Öffne die Einstellungen und aktiviere „‚Jetzt ansehen‘ auf dem Sperrbildschirm anzeigen“.",
+                "Das „Jetzt ansehen“ von heute erscheint ruhig auf deinem Sperrbildschirm. Kein Benachrichtigungston, und es verschwindet, sobald „Jetzt ansehen“ leer ist.",
+                ],
+            ),
         ],
         "tips_support_before": "Das Überarbeiten nach der Spracheingabe, das Sortieren von Hand und andere leicht zu übersehende Schritte sind gesammelt in",
         "tips_support_after": ".",
@@ -1658,7 +1700,14 @@ LOCALES = {
                     "Da «Scrivi con la tastiera» in fondo alla Home puoi dividere allo stesso modo scrivendo, senza usare la voce."
                 ],
                 "t_keyboard"
-            ]
+            ],
+            (
+                "Voglio mostrare «Vedere ora» nella schermata di blocco.",
+                [
+                "Apri Impostazioni e attiva «Mostra “Vedere ora” nella schermata di blocco».",
+                "Il «Vedere ora» di oggi appare con calma nella schermata di blocco. Nessun suono di notifica, e scompare quando «Vedere ora» è vuoto.",
+                ],
+            ),
         ],
         "tips_support_before": "Riscrivere dopo aver parlato, ordinare a mano e altri gesti facili da non notare sono raccolti in",
         "tips_support_after": ".",
@@ -1898,7 +1947,14 @@ LOCALES = {
                     "Từ “Viết bằng bàn phím” ở dưới Trang chủ, bạn có thể chia y như vậy bằng chữ mà không cần dùng giọng nói."
                 ],
                 "t_keyboard"
-            ]
+            ],
+            (
+                "Tôi muốn hiển thị “Xem lúc này” trên Màn hình khóa.",
+                [
+                "Mở Cài đặt và bật “Hiển thị ‘Xem lúc này’ trên Màn hình khóa”.",
+                "“Xem lúc này” của hôm nay hiện ra lặng lẽ trên Màn hình khóa. Không có âm báo, và nó biến mất khi “Xem lúc này” trống.",
+                ],
+            ),
         ],
         "tips_support_before": "Những thao tác dễ bị bỏ sót — như chỉnh lại sau khi nhập bằng giọng nói, hay tự tay phân loại — được gom lại trong",
         "tips_support_after": ".",
@@ -2138,7 +2194,14 @@ LOCALES = {
                     "從主畫面下方的「用鍵盤寫」，不出聲、用文字，也能一樣地分好。"
                 ],
                 "t_keyboard"
-            ]
+            ],
+            (
+                "想在鎖定畫面顯示「現在看看」。",
+                [
+                "打開設定，開啟「在鎖定畫面顯示『現在看看』」。",
+                "當天的「現在看看」會靜靜地出現在鎖定畫面上。不會發出通知提示音，當「現在看看」清空後就會消失。",
+                ],
+            ),
         ],
         "tips_support_before": "語音輸入之後的修改、自己動手的分類等不易察覺的操作，都彙整在",
         "tips_support_after": "裡。",
@@ -2378,7 +2441,14 @@ LOCALES = {
                     "Via «Typen met het toetsenbord» onderaan Home kun je ook zonder je stem, als tekst, op dezelfde manier sorteren."
                 ],
                 "t_keyboard"
-            ]
+            ],
+            (
+                "Ik wil “Nu bekijken” op mijn toegangsscherm tonen.",
+                [
+                "Open Instellingen en zet “Toon ‘Nu bekijken’ op het toegangsscherm” aan.",
+                "Het “Nu bekijken” van vandaag verschijnt rustig op je toegangsscherm. Geen meldingsgeluid, en het verdwijnt zodra “Nu bekijken” leeg is.",
+                ],
+            ),
         ],
         "tips_support_before": "Herschrijven na het spreken, zelf sorteren en andere makkelijk te missen stappen zijn verzameld in",
         "tips_support_after": ".",
@@ -2618,7 +2688,14 @@ LOCALES = {
                     "Lewat “Tulis dengan keyboard” di bagian bawah Beranda, Anda bisa memilah dengan cara yang sama lewat teks, tanpa perlu bersuara."
                 ],
                 "t_keyboard"
-            ]
+            ],
+            (
+                "Saya ingin menampilkan “Lihat sekarang” di Layar Terkunci.",
+                [
+                "Buka Pengaturan dan aktifkan “Tampilkan ‘Lihat sekarang’ di Layar Terkunci”.",
+                "“Lihat sekarang” hari ini muncul dengan tenang di Layar Terkunci Anda. Tanpa suara notifikasi, dan menghilang saat “Lihat sekarang” kosong.",
+                ],
+            ),
         ],
         "tips_support_before": "Menulis ulang setelah bicara, memilah sendiri — cara-cara yang mudah terlewat, terkumpul di",
         "tips_support_after": ".",
@@ -2858,7 +2935,14 @@ LOCALES = {
                     "Melalui “Tulis dengan papan kekunci” di bahagian bawah Laman Utama, anda boleh menyusun dengan cara yang sama dalam bentuk teks, tanpa menggunakan suara."
                 ],
                 "t_keyboard"
-            ]
+            ],
+            (
+                "Saya mahu paparkan “Sekarang” pada Skrin Kunci.",
+                [
+                "Buka Tetapan dan hidupkan “Papar ‘Sekarang’ pada Skrin Kunci”.",
+                "“Sekarang” hari ini muncul dengan tenang pada Skrin Kunci anda. Tiada bunyi pemberitahuan, dan ia hilang apabila “Sekarang” kosong.",
+                ],
+            ),
         ],
         "tips_support_before": "Penyuntingan selepas input suara, penyusunan secara manual, dan gerak kerja lain yang mudah terlepas pandang dikumpulkan dalam",
         "tips_support_after": ".",
@@ -3098,7 +3182,14 @@ LOCALES = {
                     "Via »Skriv med tastaturet« nederst på Hjem kan du sortere på samme måde med tekst, uden at bruge stemmen."
                 ],
                 "t_keyboard"
-            ]
+            ],
+            (
+                "Jeg vil vise »Nu« på låseskærmen.",
+                [
+                "Åbn Indstillinger, og slå »Vis ›Nu‹ på låseskærmen« til.",
+                "Dagens »Nu« vises roligt på din låseskærm. Ingen notifikationslyd, og det forsvinder, når »Nu« er tomt.",
+                ],
+            ),
         ],
         "tips_support_before": "Rettelser efter du har talt, sortering med egen hånd og andre greb, det er let at overse, er samlet i",
         "tips_support_after": ".",
@@ -3338,7 +3429,14 @@ LOCALES = {
                     "Fra «Skriv med tastaturet» nederst på Hjem kan du sortere på samme måte med tekst, uten å bruke stemmen."
                 ],
                 "t_keyboard"
-            ]
+            ],
+            (
+                "Jeg vil vise «Nå» på låseskjermen.",
+                [
+                "Åpne Innstillinger og slå på «Vis ‘Nå’ på låseskjermen».",
+                "Dagens «Nå» vises rolig på låseskjermen. Ingen varsellyd, og det forsvinner når «Nå» er tomt.",
+                ],
+            ),
         ],
         "tips_support_before": "Å skrive om etter at du har snakket, sortere for hånd — bevegelsene som er lette å overse, er samlet i",
         "tips_support_after": ".",
@@ -3578,7 +3676,14 @@ LOCALES = {
                     "Via \"Skriv med tangentbordet\" längst ner på hemskärmen kan du sortera på samma sätt med text, utan att använda rösten."
                 ],
                 "t_keyboard"
-            ]
+            ],
+            (
+                "Jag vill visa ”Nu” på låsskärmen.",
+                [
+                "Öppna Inställningar och slå på ”Visa ’Nu’ på låsskärmen”.",
+                "Dagens ”Nu” visas stilla på din låsskärm. Inget aviseringsljud, och det försvinner när ”Nu” är tomt.",
+                ],
+            ),
         ],
         "tips_support_before": "Att skriva om efter att du pratat, sortera för hand och andra lätt-att-missa funktioner finns samlade i",
         "tips_support_after": ".",
@@ -3818,7 +3923,14 @@ LOCALES = {
                     "Koti-näytön alareunan ”Kirjoita näppäimistöllä” -toiminnolla voit lajitella samalla tavalla tekstinä, ilman ääntä."
                 ],
                 "t_keyboard"
-            ]
+            ],
+            (
+                "Haluan näyttää ”Nyt” lukitulla näytöllä.",
+                [
+                "Avaa Asetukset ja ota käyttöön ”Näytä ’Nyt’ lukitulla näytöllä”.",
+                "Tämän päivän ”Nyt” näkyy rauhallisesti lukitulla näytöllä. Ei ilmoitusääntä, ja se katoaa, kun ”Nyt” on tyhjä.",
+                ],
+            ),
         ],
         "tips_support_before": "Puheen jälkeinen muokkaaminen, käsin lajittelu ja muut helposti huomaamatta jäävät toiminnot on koottu sivulle",
         "tips_support_after": ".",
@@ -4058,7 +4170,14 @@ LOCALES = {
                     "Depuis « Écrire avec le clavier » en bas de l'accueil, vous pouvez trier de la même façon par écrit, sans utiliser votre voix."
                 ],
                 "t_keyboard"
-            ]
+            ],
+            (
+                "Je veux afficher « Voir maintenant » sur l’écran verrouillé.",
+                [
+                "Ouvrez Réglages et activez « Afficher “Voir maintenant” sur l’écran verrouillé ».",
+                "Le « Voir maintenant » du jour apparaît doucement sur votre écran verrouillé. Aucun son de notification, et il disparaît lorsque « Voir maintenant » est vide.",
+                ],
+            ),
         ],
         "tips_support_before": "Réécrire après avoir parlé, trier à la main — les gestes faciles à manquer sont rassemblés dans",
         "tips_support_after": ".",
@@ -4298,7 +4417,14 @@ LOCALES = {
                     "จาก “พิมพ์ด้วยแป้นพิมพ์” ที่ด้านล่างของหน้าโฮม คุณสามารถจัดหมวดหมู่ด้วยตัวอักษรได้เหมือนกัน โดยไม่ต้องใช้เสียง"
                 ],
                 "t_keyboard"
-            ]
+            ],
+            (
+                "อยากให้ “ดูตอนนี้” แสดงบนหน้าจอล็อก",
+                [
+                "เปิดการตั้งค่า แล้วเปิด “แสดง ‘ดูตอนนี้’ บนหน้าจอล็อก”",
+                "“ดูตอนนี้” ของวันนี้จะปรากฏอย่างเงียบๆ บนหน้าจอล็อก ไม่มีเสียงแจ้งเตือน และจะหายไปเมื่อ “ดูตอนนี้” ว่างเปล่า",
+                ],
+            ),
         ],
         "tips_support_before": "การแก้ไขข้อความหลังพูด หรือการจัดเรียงด้วยตัวเอง สิ่งที่มักถูกมองข้ามเหล่านี้ เรารวบรวมไว้ที่",
         "tips_support_after": "",
@@ -4538,7 +4664,14 @@ LOCALES = {
                     "Через «Написать с клавиатуры» внизу главного экрана можно разбирать мысли текстом, без голоса — точно так же."
                 ],
                 "t_keyboard"
-            ]
+            ],
+            (
+                "Хочу показать «Смотреть сейчас» на экране блокировки.",
+                [
+                "Откройте Настройки и включите «Показать „Смотреть сейчас“ на экране блокировки».",
+                "Сегодняшнее «Смотреть сейчас» спокойно появляется на экране блокировки. Без звука уведомления, и оно исчезает, когда «Смотреть сейчас» становится пустым.",
+                ],
+            ),
         ],
         "tips_support_before": "Исправление текста после голосового ввода, разбор вручную — неочевидные приёмы собраны на странице",
         "tips_support_after": ".",
