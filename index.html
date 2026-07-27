@@ -421,6 +421,29 @@ footer {
   .js .hero .wordmark, .js .hero h1, .js .hero .sub, .js .hero .orb, .js .hero .cta { animation: none; }
   .js .reveal, .js .reveal .stagger > * { opacity: 1; transform: none; transition: none; }
 }
+/* ---- journal links ---- */
+.journal { border-top: 1px solid var(--line); padding: clamp(48px, 9vw, 80px) 0; }
+.reads { list-style: none; padding: 0; margin: 26px 0 0; }
+.reads li { border-top: 1px solid var(--line); }
+.reads li:last-child { border-bottom: 1px solid var(--line); }
+.reads a {
+  display: block;
+  padding: 16px 0;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: clamp(15px, 4vw, 16px);
+  line-height: 1.65;
+}
+.reads a:hover { color: var(--primary-deep); }
+.journal .more {
+  display: inline-block;
+  margin-top: 22px;
+  color: var(--primary-deep);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+.journal .more:hover { text-decoration: underline; }
     </style>
   </head>
   <body>
@@ -508,6 +531,20 @@ footer {
           <h2>話したあと、すこし頭が軽い。</h2>
           <p class="sub">それだけのための、静かなアプリです。</p>
           <a class="cta" href="https://apps.apple.com/jp/app/id6771264775?ct=lp_footer" rel="noopener">App Store で入手</a>
+        </div>
+      </section>
+
+      <section class="journal">
+        <div class="wrap reveal">
+          <p class="eyebrow">読みもの</p>
+          <h2>考えごとの、扱い方。</h2>
+          <p class="lead">眠れない夜、ごちゃごちゃする頭。それぞれの付き合い方を、書いています。</p>
+          <ul class="reads stagger">
+            <li><a href="/journal/brain-dump-yarikata/">ブレインダンプのやり方。頭の中を全部出す、いちばん簡単な思考整理法</a></li>
+            <li><a href="/journal/kangaesugi-yametai/">考えすぎて疲れる夜に。同じことを何度も考えてしまうときの4つの対処法</a></li>
+            <li><a href="/journal/nerumae-kangaegoto/">寝る前の考えごとで眠れない夜に。頭を静かにする3つの習慣</a></li>
+          </ul>
+          <a class="more" href="/journal/">読みものをすべて見る →</a>
         </div>
       </section>
     </main>
