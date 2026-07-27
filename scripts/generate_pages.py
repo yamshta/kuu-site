@@ -44,7 +44,9 @@ OG_IMAGE = "https://kuu-zen.com/assets/og.png"
 BASE_URL = "https://kuu-zen.com"
 # App Store の実評価 (社会的証明として journal 記事の CTA に表示)。
 # 取得元: https://itunes.apple.com/lookup?id=6771264775&country=jp — 定期的に手動で更新する。
-APP_RATING = {"score": "4.2", "count": 168}
+# 手動更新: https://itunes.apple.com/lookup?id=6771264775&country=jp の
+# averageUserRating / userRatingCount を丸めて転記（生成物を実行日時非依存に保つため動的取得はしない）
+APP_RATING = {"score": "4.4", "count": 610}
 # tips のスクショ (assets/tips/*.png) はファイル名を変えず中身を差し替えるため、
 # ブラウザキャッシュ回避に日付版クエリ ?v= を付ける。スクショを更新したら日付を上げる。
 ASSET_VERSION = "20260717"
