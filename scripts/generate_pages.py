@@ -6265,12 +6265,24 @@ FRONT_MATTER_RE = re.compile(r"\A---\n(.*?)\n---\n(.*)\Z", re.DOTALL)
 ARCHETYPE_LABELS = {"pain": "悩み", "method": "方法", "scene": "場面"}
 
 
+def validate_faq(path, faq):
+    """任意の front matter `faq:` を検証する。無ければ何もしない（既存記事は無差分のまま）。"""
+    if faq is None:
+        return
+    if not isinstance(faq, list):
+        raise ValueError(f"{path}: faq must be a list")
+    for item in faq:
+        if not isinstance(item, dict) or not item.get("q") or not item.get("a"):
+            raise ValueError(f"{path}: faq item requires non-empty q and a: {item!r}")
+
+
 def parse_article_md(path):
     raw = path.read_text()
     m = FRONT_MATTER_RE.match(raw)
     if not m:
         raise ValueError(f"{path}: missing YAML front matter (--- ... ---)")
     meta = yaml.safe_load(m.group(1)) or {}
+    validate_faq(path, meta.get("faq"))
     body_md = m.group(2).strip()
     meta["body_html"] = md_lib.markdown(body_md, extensions=["extra", "sane_lists"])
     # 読了時間: 日本語 ~550字/分。記号込みの概算で十分
@@ -6317,7 +6329,7 @@ def article_jsonld(code, d, meta, url):
             {"@type": "ListItem", "position": 3, "name": meta["title"], "item": url},
         ],
     }
-    return (
+    out = (
         '    <script type="application/ld+json">\n'
         + json.dumps(article, ensure_ascii=False, indent=2)
         + "\n    </script>\n"
@@ -6325,6 +6337,26 @@ def article_jsonld(code, d, meta, url):
         + json.dumps(breadcrumb, ensure_ascii=False, indent=2)
         + "\n    </script>"
     )
+    faq = meta.get("faq")
+    if faq:
+        faq_data = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": item["q"],
+                    "acceptedAnswer": {"@type": "Answer", "text": item["a"]},
+                }
+                for item in faq
+            ],
+        }
+        out += (
+            '\n    <script type="application/ld+json">\n'
+            + json.dumps(faq_data, ensure_ascii=False, indent=2)
+            + "\n    </script>"
+        )
+    return out
 
 
 def article_html(code, meta, articles_by_slug):
