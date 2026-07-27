@@ -100,6 +100,9 @@ TIPS_LOCALES = ("ja", "en", "es", "ko", "zh-Hans", "zh-Hant", "de", "it", "vi",
                 "nl", "id", "ms", "da", "nb", "sv", "fi", "fr", "th", "ru")
 # Content SEO articles (/journal/<slug>/) are ja-only for now, same pattern as TIPS_LOCALES.
 JOURNAL_LOCALES = ("ja",)
+# LP に載せる代表記事 (この順で表示)。残りはハブ /journal/ へ送る。
+# 記事を消してここを直し忘れると生成時に ValueError で落ちる。
+JOURNAL_LP_PICKS = ("brain-dump-yarikata", "kangaesugi-yametai", "nerumae-kangaegoto")
 
 LOCALES = {
     "ja": {
@@ -296,6 +299,9 @@ LOCALES = {
         "back": "← トップへ",
         # Journal (content SEO articles): pain/method/persona/scene archetypes, KUU-first ではなく悩み起点。
         "journal_eyebrow": "読みもの",
+        "journal_lp_headline": "考えごとの、扱い方。",
+        "journal_lp_lead": "眠れない夜、ごちゃごちゃする頭。それぞれの付き合い方を、書いています。",
+        "journal_lp_more": "読みものをすべて見る",
         "journal_hub_title": "読みもの — KUU",
         "journal_hub_description": "頭の中がいっぱいになったときの、考えごととの付き合い方。",
         "journal_hub_lead": "頭の中がいっぱいになったときに、少し軽くするためのヒント。",
@@ -5026,6 +5032,34 @@ footer {
 }
 """
 
+# LP の読みもの導線 (最後の CTA の後ろ)。journal を持たないロケールの LP を
+# 1 バイトも変えないよう、BASE_CSS 本体ではなく該当ロケールにだけ足す。
+LP_JOURNAL_CSS = """\
+/* ---- journal links ---- */
+.journal { border-top: 1px solid var(--line); padding: clamp(48px, 9vw, 80px) 0; }
+.reads { list-style: none; padding: 0; margin: 26px 0 0; }
+.reads li { border-top: 1px solid var(--line); }
+.reads li:last-child { border-bottom: 1px solid var(--line); }
+.reads a {
+  display: block;
+  padding: 16px 0;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: clamp(15px, 4vw, 16px);
+  line-height: 1.65;
+}
+.reads a:hover { color: var(--primary-deep); }
+.journal .more {
+  display: inline-block;
+  margin-top: 22px;
+  color: var(--primary-deep);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+.journal .more:hover { text-decoration: underline; }
+"""
+
 REVEAL_SCRIPT = """\
 <script>
   document.documentElement.classList.add('js');
@@ -5632,7 +5666,7 @@ def faq_jsonld(d):
     )
 
 
-def index_html(code, d):
+def index_html(code, d, journal_articles=()):
     url = url_for(d, "index")
     cta_base = app_store_cta_url(code)
     thoughts_html = "\n".join(f"        <li>{t}</li>" for t in d["thoughts"])
@@ -5662,6 +5696,36 @@ def index_html(code, d):
         if code in TIPS_LOCALES
         else ""
     )
+    # Journal exists only for JOURNAL_LOCALES; other locales render no section at all.
+    journal_href = "/journal/" if not d["subdir"] else f'/{d["subdir"]}/journal/'
+    picks = []
+    if journal_articles:
+        by_slug = {a["slug"]: a for a in journal_articles}
+        missing = [s for s in JOURNAL_LP_PICKS if s not in by_slug]
+        if missing:
+            raise ValueError(f"JOURNAL_LP_PICKS has unknown slugs for {code}: {missing}")
+        picks = [by_slug[s] for s in JOURNAL_LP_PICKS]
+    journal_section = ""
+    journal_css = ""
+    if picks:
+        journal_css = LP_JOURNAL_CSS
+        reads_html = "\n".join(
+            f'            <li><a href="{journal_href}{a["slug"]}/">{a["title"]}</a></li>'
+            for a in picks
+        )
+        journal_section = f"""
+      <section class="journal">
+        <div class="wrap reveal">
+          <p class="eyebrow">{d["journal_eyebrow"]}</p>
+          <h2>{d["journal_lp_headline"]}</h2>
+          <p class="lead">{d["journal_lp_lead"]}</p>
+          <ul class="reads stagger">
+{reads_html}
+          </ul>
+          <a class="more" href="{journal_href}">{d["journal_lp_more"]} →</a>
+        </div>
+      </section>
+"""
     return f"""<!doctype html>
 <html lang="{d["html_lang"]}">
   <head>
@@ -5691,7 +5755,7 @@ def index_html(code, d):
 {website_jsonld()}
 {organization_jsonld()}{ga4_snippet()}
     <style>
-{BASE_CSS}    </style>
+{BASE_CSS}{journal_css}    </style>
   </head>
   <body>
     <header class="hero">
@@ -5763,7 +5827,7 @@ def index_html(code, d):
           <a class="cta" href="{cta_base}?ct=lp_footer" rel="noopener">{d["cta"]}</a>
         </div>
       </section>
-    </main>
+{journal_section}    </main>
 
     <footer>
       <div class="wrap">
@@ -6491,6 +6555,8 @@ def main():
             if key not in d:
                 d[key] = en.get(key, ja[key])
 
+    articles_by_locale = load_articles()
+
     written = []
     for code, d in LOCALES.items():
         sub = d["subdir"]
@@ -6498,7 +6564,7 @@ def main():
         (base / "support").mkdir(parents=True, exist_ok=True)
         idx = base / "index.html"
         sup = base / "support" / "index.html"
-        idx.write_text(index_html(code, d))
+        idx.write_text(index_html(code, d, articles_by_locale.get(code, ())))
         sup.write_text(support_html(code, d))
         written.append(str(idx.relative_to(ROOT)))
         written.append(str(sup.relative_to(ROOT)))
@@ -6529,7 +6595,6 @@ def main():
         page.write_text(terms_html(code, md_to_html(terms_md[code])))
         written.append(str(page.relative_to(ROOT)))
 
-    articles_by_locale = load_articles()
     for code in JOURNAL_LOCALES:
         items = articles_by_locale[code]
         by_slug = {a["slug"]: a for a in items}
