@@ -5579,6 +5579,39 @@ def app_jsonld(code, d, url):
     )
 
 
+# Brand entity signals for Google SERP (WebSite name/alternateName, Organization logo/sameAs).
+# url is fixed to the site root regardless of locale — these describe the site/org, not the page.
+def website_jsonld():
+    data = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "KUU",
+        "alternateName": ["クー", "KUU アプリ", "kuu app"],
+        "url": f"{BASE_URL}/",
+    }
+    return (
+        '    <script type="application/ld+json">\n'
+        + json.dumps(data, ensure_ascii=False, indent=2)
+        + "\n    </script>"
+    )
+
+
+def organization_jsonld():
+    data = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "KUU",
+        "url": f"{BASE_URL}/",
+        "logo": f"{BASE_URL}/assets/favicon-192.png",
+        "sameAs": [APP_STORE_URL],
+    }
+    return (
+        '    <script type="application/ld+json">\n'
+        + json.dumps(data, ensure_ascii=False, indent=2)
+        + "\n    </script>"
+    )
+
+
 def faq_jsonld(d):
     data = {
         "@context": "https://schema.org",
@@ -5654,7 +5687,9 @@ def index_html(code, d):
 {hreflang_links("index")}
 {ICON_LINKS}
 {SMART_BANNER}
-{app_jsonld(code, d, url)}{ga4_snippet()}
+{app_jsonld(code, d, url)}
+{website_jsonld()}
+{organization_jsonld()}{ga4_snippet()}
     <style>
 {BASE_CSS}    </style>
   </head>
