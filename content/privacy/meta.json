@@ -1,11 +1,11 @@
 {
   "ja": {
     "title": "プライバシーポリシー — KUU",
-    "description": "KUU のプライバシーポリシー。音声はすべて端末内で処理し外部に送信しません。整理の AI 分類は文字だけを送信し保存しません。"
+    "description": "KUU のプライバシーポリシー。アプリが音声を保存・送信することはありません。整理の AI 分類は文字だけを送信し、保存されません。"
   },
   "en": {
     "title": "Privacy Policy — KUU",
-    "description": "KUU's privacy policy. Audio is processed entirely on device and never sent outside. AI organization sends only the text, and the provider does not retain it."
+    "description": "KUU's privacy policy. The app never stores or sends your voice. AI organization sends only the text, and the provider does not retain it."
   },
   "fr": {
     "title": "Politique de confidentialité — KUU",

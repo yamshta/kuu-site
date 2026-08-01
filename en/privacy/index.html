@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Privacy Policy — KUU</title>
-    <meta name="description" content="KUU's privacy policy. Audio is processed entirely on device and never sent outside. AI organization sends only the text, and the provider does not retain it." />
+    <meta name="description" content="KUU's privacy policy. The app never stores or sends your voice. AI organization sends only the text, and the provider does not retain it." />
     <link rel="canonical" href="https://kuu-zen.com/en/privacy/" />
     <meta property="og:locale" content="en_US" />
     <link rel="alternate" hreflang="ja" href="https://kuu-zen.com/privacy/" />
@@ -101,23 +101,23 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
   <body>
     <main>
       <h1>Privacy Policy for KUU</h1>
-      <p>Last updated: July 21, 2026</p>
-      <p><strong>In short:</strong> What you spoke is yours. <strong>Your voice itself is never sent outside your device.</strong> Transcription happens on your device. AI organization uses an external AI, but only the transcribed text is sent. It is used solely for organizing and is not retained by the AI provider (on iOS you can switch to on-device-only organization via "On-device" in Settings; <strong>the Android version sends to the external AI only — there is no on-device organization</strong>). What is stored lives only on your device, and on iOS also in your iCloud private database (Android stores on the device only). The developer does not store your content and cannot view what is received. You can delete all data from inside the app at any time. The app makes only <strong>minimal network requests</strong> for billing (StoreKit on iOS / RevenueCat on Android) and Google AdMob ads, and that information never includes what you said (ads disappear with KUU+). Usage is measured to improve quality, but this too never includes what you said (iOS is user opt-in; Android sends content-free measurement by default — see Article 14).</p>
+      <p>Last updated: August X, 2026 (to be finalized to the publication date)</p>
+      <p><strong>In short:</strong> What you spoke is yours. <strong>The App never sends your voice itself anywhere.</strong> On iPhone and Android devices, transcription also happens on the device. <strong>The Apple Watch version of the App does no recording at all</strong> — it receives only the text produced by the standard watch input (dictation, Scribble, or keyboard); when you choose dictation, the listening is handled by Apple's own system (see Article 3). AI organization uses an external AI, but only the transcribed text is sent. It is used solely for organizing and is not retained by the AI provider. What is stored lives only on your device, and on iOS also in your iCloud private database (Android stores on the device only). The developer does not store your content and cannot view what is received. You can delete all data from inside the app at any time. The app makes only <strong>minimal network requests</strong> for billing (StoreKit on iOS / RevenueCat on Android) and Google AdMob ads, and that information never includes what you said (ads disappear with KUU+). Usage is measured to improve quality, but this too never includes what you said (iOS is user opt-in; Android sends content-free measurement by default — see Article 14).</p>
       <hr />
       <h2>Article 1 (General)</h2>
-      <p>KUU (the "App") is an application (available on <strong>iOS and Android</strong>) that helps you offload thoughts from your head by speaking them out loud and organizing them. This policy applies to both versions. The App processes information only to the minimum extent necessary to provide its features, prioritizing user privacy.</p>
+      <p>KUU (the "App") is an application (available on <strong>iOS — iPhone and Apple Watch — and Android</strong>) that helps you offload thoughts from your head by speaking them out loud and organizing them. This policy applies to all of them. The App processes information only to the minimum extent necessary to provide its features, prioritizing user privacy.</p>
       <h2>Article 2 (Information Handled)</h2>
       <p>The App handles only the following:</p>
       <ol>
-      <li><strong>Audio you record</strong> — Stored temporarily in a device-local cache only during transcription. Deleted immediately after processing. Never sent to any server.
+      <li><strong>Audio you record</strong> — Stored temporarily in a device-local cache only during transcription. Deleted immediately after processing. Never sent to any server. <strong>The Apple Watch version of the App does no recording at all</strong> (see Article 3).
       </li>
-      <li><strong>Transcribed and organized text</strong> — Saved so you can review what you have said (iOS: on your device and in your iCloud private database; Android: on the device only — see Article 4).
+      <li><strong>Transcribed and organized text</strong> — Saved so you can review what you have said (iOS: on your device and in your iCloud private database; Android: on the device only. On a paired Apple Watch, only the recent titles in each category are stored, for display — see Article 4).
       </li>
       <li><strong>App settings</strong> — Theme, text size, head-water-level state, and other values required to run the App.
       </li></ol>
       <p>The App does not collect names, email addresses, phone numbers, location, contacts, calendar, photos, or device identifiers.</p>
       <h2>Article 3 (Speech Recognition and AI Organization)</h2>
-      <p><strong>Speech recognition (transcription)</strong> is performed entirely on your iOS device:</p>
+      <p>On iPhone (iOS) and on Android, <strong>speech recognition (transcription)</strong> is performed entirely on your own device (for Apple Watch, see the end of this Article):</p>
       <ul>
       <li>Speech recognition: Apple's Speech framework (on-device). Your voice itself is never sent off the device.
       </li></ul>
@@ -129,12 +129,16 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
       </li>
       <li>The sent text is <strong>used only for categorization and is never stored</strong>. It is not used to train the AI either.
       </li>
-      <li><strong>On iOS</strong>, you can switch to <strong>on-device-only organization</strong> (Apple's FoundationModels / on-device rules) anytime via "On-device" in Settings. In that case, the transcript never leaves the device.
+      <li>What is sent includes not only what you spoke and transcribed, but also anything you typed or edited by hand. If automatic theme assignment (KUU+, opt-in) is enabled, the saved titles, text, and theme names of items are also sent for assignment purposes (all are used only for classification and are not stored).
+      </li>
+      <li><strong>On iOS</strong>, versions of the App before 2.3.0 let you choose on-device-only classification via "On-device" in Settings (this setting is no longer offered as of 2.3.0).
       </li></ul>
-      <p><strong>About the Android version:</strong> The Android version does not offer on-device-only organization. When you organize, the transcribed text is <strong>always</strong> sent to the external AI (Google's Gemini via our backend). There is no "On-device" switch as on iOS. Only the transcribed text is sent — your voice itself is never sent, and the sent text is used solely for categorization and is neither stored nor used to train the AI. Transcription (speech recognition) itself runs entirely on the device.</p>
+      <p><strong>About the Android version:</strong> The Android version does not offer on-device-only organization. When you organize, the transcribed text is <strong>always</strong> sent to the external AI (Google's Gemini via our backend). Only the transcribed text is sent — your voice itself is never sent, and the sent text is used solely for categorization and is neither stored nor used to train the AI. Transcription (speech recognition) itself runs entirely on the device.</p>
+      <p><strong>About the Apple Watch version:</strong> The Apple Watch version of the App does not record audio or perform speech recognition itself. Input uses the standard watchOS text input (your choice of dictation, Scribble, or keyboard), and the App receives only the resulting text. When you choose dictation, speech recognition is performed as an Apple (watchOS) feature; how it is processed — including whether it happens on the device or on Apple's servers — depends on your device, settings, and language, and is <strong>governed by Apple's privacy policy</strong>. The App cannot access that audio and never receives or stores it. The resulting text is handled exactly like text you spoke on iPhone (AI organization under this Article; storage under Article 4).</p>
       <h2>Article 4 (Storage and Sync)</h2>
       <p><strong>iOS:</strong> The App stores transcribed and organized text in your <strong>iCloud Private Database</strong> (CloudKit Private Database). This is Apple-provided storage that only you can access. The developer cannot view or retrieve any stored content. The use of iCloud is subject to Apple's privacy policy.</p>
       <p><strong>Android:</strong> Transcribed and organized text is stored <strong>on this device only</strong>. There is no automatic cloud sync. When switching devices, you can export to a file from "Voice &amp; Data" in the App and import it on the new device. You choose where the file is saved (on device, in your cloud storage app, etc.). The developer cannot access that file.</p>
+      <p><strong>Apple Watch:</strong> For display, a portion of your organized text (the recent titles in each category) is transferred to your paired Apple Watch via Apple's device-to-device communication (Watch Connectivity) and is <strong>also stored on the watch</strong>. Text you enter on the Apple Watch is transferred to your iPhone the same way. No developer server is involved in this transfer or storage.</p>
       <h2>Article 5 (Purpose of Use)</h2>
       <p>Handled information is used only for:</p>
       <ol>
@@ -151,11 +155,13 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
       <ul>
       <li><strong>iCloud / CloudKit</strong> (iOS only. Apple, only your own private database)
       </li>
-      <li><strong>Speech recognition</strong> (iOS: Apple's Speech framework; Android: the device's on-device speech engine. Both run on the device; your voice is never sent off the device.)
+      <li><strong>Speech recognition</strong> (iOS: Apple's Speech framework; Android: the device's on-device speech engine. Both run on the device; your voice is never sent off the device. <strong>The Apple Watch version performs no in-app speech recognition and uses the standard watchOS input</strong> — see Article 3.)
       </li>
-      <li><strong>An external cloud AI</strong> (AI organization. Only the text of what you said is sent; used solely for categorization, never stored, never used for AI training. On iOS it can be turned off via "On-device" in Settings, but <strong>the Android version sends to the external AI only</strong>. See Article 3.)
+      <li><strong>Standard watchOS text input</strong> (Apple Watch only. Apple. Your choice of dictation, Scribble, or keyboard. When you choose dictation, speech recognition is performed as an Apple feature and is governed by Apple's privacy policy. The App cannot access that audio. See Article 3.)
       </li>
-      <li><strong>FoundationModels</strong> (iOS only. Apple, runs entirely on-device. Used when "On-device" is enabled, or as fallback.)
+      <li><strong>Watch Connectivity</strong> (Apple Watch only. Apple. Passes display text directly between your iPhone and your Apple Watch. No developer server is involved. See Article 4.)
+      </li>
+      <li><strong>An external cloud AI</strong> (AI organization. Only the text of what you said is sent; used solely for categorization, never stored, never used for AI training. See Article 3.)
       </li>
       <li><strong>Billing</strong> (iOS: <strong>Apple StoreKit</strong>; Android: <strong>RevenueCat</strong>. KUU+ subscription purchase, renewal, cancellation, and entitlement management. No spoken content is sent. For RevenueCat see Article 7 and the <a href="https://www.revenuecat.com/privacy" rel="noopener">RevenueCat privacy policy</a>.)
       </li>
@@ -174,11 +180,14 @@ code { font-size: 0.9em; background: #eff4f8; padding: 1px 5px; border-radius: 4
       <h2>Article 8 (Data Deletion)</h2>
       <p>You can delete all data at any time from "Settings → Voice &amp; Data → Delete what's stored" inside the App. This permanently removes data on the device (and, on iOS, also in the iCloud Private Database). Deleted data cannot be recovered.</p>
       <p>Uninstalling the App deletes local data. On iOS, iCloud data can be removed via Settings → Apple ID → iCloud → Manage Storage. The Android version stores data on the device only, so it is removed on uninstall.</p>
+      <p><strong>Apple Watch:</strong> When you delete all data, the display data already transferred to your Apple Watch is replaced with empty content the next time the watch connects. Deleting the app from your Apple Watch also removes the display data stored on it.</p>
       <h2>Article 9 (Security)</h2>
       <ul>
       <li><strong>iOS:</strong> Temporary audio files during recording are encrypted by iOS file protection (<code>FileProtectionType.complete</code>) and inaccessible while the device is locked. Communication with iCloud is encrypted by Apple via SSL/TLS
       </li>
       <li><strong>Android:</strong> Recorded audio is never written to disk even as a temporary file; it is processed in memory only and discarded immediately after recognition. Stored transcripts and organized results live in the app's private storage, inaccessible to other apps, and are excluded from Android's automatic cloud backup
+      </li>
+      <li><strong>Apple Watch:</strong> The handoff between your iPhone and your Apple Watch is carried by Apple's Watch Connectivity and does not pass through any developer server. What is stored on the Apple Watch is limited to display text (the recent titles in each category); no audio is stored
       </li>
       <li>All communication with the external AI is encrypted (HTTPS/TLS). The developer's server only relays organization requests and stores no content (stateless)
       </li></ul>
