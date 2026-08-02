@@ -54,11 +54,11 @@ TARGETS = {
 SEED_META = {
     "ja": {
         "title": "プライバシーポリシー — KUU",
-        "description": "KUU のプライバシーポリシー。音声はすべて端末内で処理し外部に送信しません。整理の AI 分類は文字だけを送信し保存しません。",
+        "description": "KUU のプライバシーポリシー。アプリが音声を保存・送信することはありません。整理の AI 分類は文字だけを送信し、保存されません。",
     },
     "en": {
         "title": "Privacy Policy — KUU",
-        "description": "KUU's privacy policy. Audio is processed entirely on device and never sent outside. AI organization sends only the text, and the provider does not retain it.",
+        "description": "KUU's privacy policy. The app never stores or sends your voice. AI organization sends only the text, and the provider does not retain it.",
     },
 }
 
@@ -98,6 +98,12 @@ def translate_body(ja, en, name, article, key):
         f"- CRITICAL: never blur Article 3 — the Android version ALWAYS sends the "
         f"transcribed text to the external AI (Google's Gemini) when organizing, "
         f"with no on-device option.\n"
+        f"- CRITICAL: never blur the Apple Watch passages — on Apple Watch the App "
+        f"does NOT record and does NOT run speech recognition; it receives only the "
+        f"text produced by the standard watchOS input. When the user picks dictation, "
+        f"the recognition is Apple's own and MAY happen on the device OR on Apple's "
+        f"servers. Do NOT assert either one: keep it as a stated possibility governed "
+        f"by Apple's privacy policy.\n"
         f"- At the very top, before the H1, add one blockquote line, translated into "
         f"the target language, meaning: 'This is a reference translation for "
         f"convenience. The Japanese version is the authoritative text.'\n"
@@ -113,8 +119,8 @@ def translate_meta(name, key):
         f"Translate these two short strings for a privacy policy page into {name}. "
         f'Return ONLY compact JSON {{"title":"...","description":"..."}}.\n'
         f'title (ja): "プライバシーポリシー — KUU"\n'
-        f'description (ja): "KUU のプライバシーポリシー。音声はすべて端末内で処理し外部に'
-        f'送信しません。整理の AI 分類は文字だけを送信し保存しません。"\n'
+        f'description (ja): "KUU のプライバシーポリシー。アプリが音声を保存・送信すること'
+        f'はありません。整理の AI 分類は文字だけを送信し、保存されません。"\n'
         f"Keep 'KUU' as-is in the title."
     )
     raw = gemini(prompt, key).strip()
