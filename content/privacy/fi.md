@@ -1,130 +1,139 @@
-> Tämä on viitteellinen käännös. Virallinen ja sitova teksti on japaninkielinen versio.
+> Tämä on viitteellinen käännös. Japaninkielinen versio on virallinen ja määräävä.
 
 # KUU:n tietosuojakäytäntö
 
-Päivitetty viimeksi: 21. heinäkuuta 2026
+Viimeksi päivitetty: 2. elokuuta 2026
 
-**Lyhyesti:** Se, mitä puhut, on sinun. **Itse puhetta ei lähetetä ulkopuolelle.** Puheentunnistus tapahtuu laitteesi sisällä. Järjestelyyn (tekoälyluokitteluun) käytetään ulkoista tekoälyä, mutta sinne lähetetään ainoastaan tekstimuotoinen sisältö. Sitä käytetään vain järjestelyyn, eikä sitä tallenneta (iOS-versiossa voit vaihtaa asetuksista laitteen sisäiseen järjestelyyn. **Android-versiossa käytetään ainoastaan ulkoista tekoälyä, eikä laitteen sisäistä järjestelyä ole saatavilla**). Tiedot tallennetaan laitteeseesi ja iOS-versiossa myös iCloudiin (yksityiseen tietokantaan). Android-versiossa tiedot tallennetaan vain laitteen sisälle. Kehittäjä ei tallenna sisältöäsi eikä näe vastaanotettuja tietoja. Voit poistaa kaikki tiedot milloin tahansa sovelluksen sisältä. Sovellus tekee ainoastaan **välttämättömät verkkopyynnöt** laskutusta (iOS=StoreKit／Android=RevenueCat) ja Google AdMob -mainoksia varten, eivätkä nämä tiedot sisällä puheesi sisältöä (mainokset poistuvat KUU+-tilauksella). Laadun parantamiseksi keräämme käyttötietoja, mutta nekään eivät sisällä puheesi sisältöä (iOS:ssä käyttäjän suostumuksella, Androidissa sisältöneutraali mittaus oletuksena. Lisätietoja artiklassa 14).
+**Lyhyesti:** Se, mitä puhut, on sinun. **Sovellus ei koskaan lähetä itse ääntä minnekään.** iPhonella ja Android-laitteilla myös tekstiksi muuntaminen tapahtuu laitteen sisällä. **Sovelluksen Apple Watch -versio ei tee lainkaan äänityksiä** – se vastaanottaa ainoastaan tekstin, joka on tuotettu kellon vakiomuotoisilla syöttötavoilla (sanelu, käsinkirjoitus tai näppäimistö); kun valitset sanelun, kuuntelun hoitaa Applen oma järjestelmä (ks. 3. artikla). Järjestelyssä (tekoälyluokittelussa) käytetään ulkoista tekoälyä, mutta sinne lähetetään vain tekstiksi muunnettu sisältö. Sitä käytetään ainoastaan järjestelyyn, eikä sitä tallenneta. Tiedot tallennetaan laitteeseesi ja iOS-versiossa myös iCloudin yksityiseen tietokantaan (Android-versio tallentaa vain laitteeseen). Kehittäjä ei tallenna sisältöäsi eikä voi tarkastella vastaanotettua sisältöä. Voit poistaa kaikki tiedot milloin tahansa sovelluksen sisältä. Sovellus tekee **vain välttämättömät verkkoyhteydet** laskutusta (iOS=StoreKit／Android=RevenueCat) ja Google AdMob -mainoksia varten, eivätkä nämä tiedot koskaan sisällä puhumaasi sisältöä (mainokset poistuvat KUU+-tilauksella). Laadun parantamiseksi keräämme käyttötietoja, mutta nämäkään tiedot eivät sisällä puhumaasi sisältöä (iOS-versiossa käyttäjä antaa suostumuksensa, Android-versiossa lähetetään oletusarvoisesti sisältövapaata mittausdataa – ks. 14. artikla).
 
 ---
 
 ## Artikla 1 (Yleiset periaatteet)
 
-Tämä sovellus, ”KUU” (jäljempänä ”sovellus”), on suunniteltu auttamaan sinua purkamaan ja järjestämään ajatuksiasi puhumalla ne ääneen. Sovelluksesta on saatavilla **iOS- ja Android-versiot**, ja tämä käytäntö koskee molempia. Sovellus käsittelee tietoja ainoastaan toimintojen tarjoamiseksi välttämättömässä laajuudessa ja asettaa käyttäjän yksityisyyden suojan etusijalle.
+Tämä sovellus, ”KUU” (jäljempänä ”sovellus”), on suunniteltu auttamaan sinua purkamaan ajatuksiasi ääneen puhumalla ja järjestämään ne. Saatavilla on **iOS-versio (iPhone ja Apple Watch) sekä Android-versio**, ja tämä käytäntö koskee niitä kaikkia. Sovellus käsittelee tietoja vain siinä vähimmäislaajuudessa, joka on tarpeen sen toimintojen tarjoamiseksi, asettaen käyttäjän yksityisyyden suojan etusijalle.
 
 ## Artikla 2 (Kerättävät ja tallennettavat tiedot)
 
 Sovellus käsittelee ainoastaan seuraavia tietoja:
 
-1.  **Käyttäjän puhuma sisältö (äänidata)** — Nauhoitettu ääni tallennetaan väliaikaisesti laitteen sisäiseen muistiin ainoastaan puheentunnistuksen ajaksi ja poistetaan välittömästi käsittelyn jälkeen. Äänidataa ei lähetetä palvelimille.
-2.  **Puheentunnistuksen ja järjestelyn tulokset (teksti)** — Tallennetaan, jotta voit itse tarkastella niitä myöhemmin (iOS-versiossa laitteeseen ja iCloudin yksityiseen tietokantaan, Android-versiossa ainoastaan laitteen sisälle. Lisätietoja artiklassa 4).
-3.  **Sovelluksen asetukset** — Teema, tekstikoko, pään vesitason tila ja muut sovelluksen toiminnan kannalta tarpeelliset asetusarvot.
+1.  **Käyttäjän puhuma sisältö (äänidata)** — Tallennettu ääni säilytetään väliaikaisesti laitteen sisäisessä muistissa ainoastaan tekstiksi muuntamisen ajan, ja se poistetaan välittömästi käsittelyn jälkeen. Sitä ei lähetetä palvelimille. **Sovelluksen Apple Watch -versio ei tee lainkaan äänityksiä** (ks. 3. artikla).
+2.  **Tekstiksi muunnettu sisältö ja järjestelytulokset (teksti)** — Tallennetaan, jotta voit itse tarkastella niitä myöhemmin (iOS-versiossa laitteeseen ja iCloudin yksityiseen tietokantaan, Android-versiossa ainoastaan laitteeseen. Paritettuun Apple Watchiin tallennetaan ainoastaan kunkin luokan viimeisimmät otsikot näyttämistä varten. Ks. 4. artikla).
+3.  **Sovelluksen sisäiset asetukset** — Teema, tekstin koko, pään vedenpinnan tila ja muut sovelluksen toiminnan kannalta tarpeelliset asetusarvot.
 
 Sovellus ei kerää henkilötietoja, kuten nimeä, sähköpostiosoitetta, puhelinnumeroa, sijaintitietoja, yhteystietoja, kalenteritietoja, valokuvia tai laitetunnisteita.
 
-## Artikla 3 (Tietoa puheentunnistuksesta ja tekoälyluokittelusta)
+## Artikla 3 (Puheentunnistus ja tekoälyllä tapahtuva järjestely)
 
-**Puheentunnistus (tekstiksi muuntaminen)** tapahtuu kokonaisuudessaan käyttämässäsi iOS-laitteessa.
+**Puheentunnistus (tekstiksi muuntaminen)** tapahtuu iPhonessa (iOS-versio) ja Android-laitteissa kokonaisuudessaan omalla laitteellasi (Apple Watch -version osalta katso tämän artiklan loppu).
 
--   Puheentunnistus: Käytämme Applen Speech-kehystä (laitteen sisäinen). Itse puhetta ei koskaan lähetetä laitteen ulkopuolelle.
+-   Puheentunnistus: Käyttää Applen Speech-kehystä (laitteessa). Itse ääntä ei koskaan lähetetä laitteen ulkopuolelle.
 
-**Tekoälyluokittelu (kategorisointi)** käyttää ulkoista tekoälyä.
+**Tekoälyllä tapahtuva järjestely (luokittelu)** käyttää ulkoista tekoälyä.
 
--   Ainoastaan **tekstimuotoinen sisältö (puheentunnistuksen tulos)** lähetetään. Ääntä ei lähetetä.
+-   Lähetettävä tieto on **ainoastaan tekstiksi muunnettu sisältö (transkriptio)**. Ääntä ei lähetetä.
 -   Tiedot lähetetään ulkoiselle tekoälylle kehittäjän palvelimen kautta (taustajärjestelmän kautta Googlen Geminille).
--   Lähetettyä sisältöä käytetään **ainoastaan luokitteluun, eikä sitä tallenneta**. Sitä ei myöskään käytetä tekoälyn opettamiseen.
--   **iOS-versiossa** voit milloin tahansa vaihtaa **laitteen sisäiseen luokitteluun** (Applen FoundationModels / laitteen sisäiset säännöt) asetusten ”Laitteen sisäinen” -valinnalla. Tällöin myöskään tekstiä ei lähetetä laitteen ulkopuolelle.
+-   Lähetettyä sisältöä **käytetään ainoastaan luokitteluun, eikä sitä tallenneta**. Sitä ei myöskään käytetä tekoälyn opettamiseen.
+-   Lähetettävä sisältö kattaa puhutun ja tekstiksi muunnetun sisällön lisäksi myös käsin syötetyn tai muokatun sisällön. Jos automaattinen teemojen määritys (KUU+, vapaaehtoinen asetus) on käytössä, myös tallennettujen kohteiden otsikot, tekstit ja teemojen nimet lähetetään määritystä varten (kaikkia käytetään vain luokitteluun, eikä niitä tallenneta).
+-   **iOS-version** 2.3.0 aiemmissa versioissa käyttäjä voi valita ainoastaan laitteessa tapahtuvan luokittelun asetuksella ”Laitteessa” (tätä asetusta ei enää tarjota versiosta 2.3.0 alkaen).
 
-**Tietoa Android-versiosta:** Android-versio ei tarjoa laitteen sisällä tapahtuvaa järjestelyä (luokittelua). Kun järjestät ajatuksia, tekstiksi muunnettu sisältö lähetetään **aina** ulkoiselle tekoälylle (Googlen Geminille taustajärjestelmämme kautta). iOS-version kaltaista ”Laitteen sisäinen” -valintaa ei ole. Ainoastaan tekstimuotoinen sisältö lähetetään – itse puhetta ei lähetetä, ja lähetettyä tekstiä käytetään vain luokitteluun, eikä sitä tallenneta tai käytetä tekoälyn opettamiseen. Itse puheentunnistus tapahtuu laitteen sisällä.
+**Tietoja Android-versiosta:** Android-versio ei tarjoa ainoastaan laitteessa tapahtuvaa järjestelytapaa (luokittelua). Kun suoritat järjestelyn, tekstiksi muunnettu sisältö lähetetään **aina** ulkoiselle tekoälylle (Googlen Geminille taustajärjestelmämme kautta). Vain tekstiksi muunnettu sisältö lähetetään – itse ääntä ei lähetetä, ja lähetettyä tekstiä käytetään ainoastaan luokitteluun, eikä sitä tallenneta tai käytetä tekoälyn opettamiseen. Itse tekstiksi muuntaminen (puheentunnistus) tapahtuu kokonaisuudessaan laitteessa.
+
+**Tietoja Apple Watch -versiosta:** Sovelluksen Apple Watch -versio ei tallenna ääntä eikä suorita puheentunnistusta. Syöttämiseen käytetään watchOS:n vakiomuotoista tekstinsyöttöä (käyttäjä valitsee sanelun, käsinkirjoituksen tai näppäimistön), ja sovellus vastaanottaa ainoastaan syötön tuloksena syntyneen tekstin. Kun valitset sanelun, puheentunnistus suoritetaan Applen (watchOS) toimintona, ja sen käsittelytapa – mukaan lukien se, tapahtuuko se laitteessa vai lähetetäänkö data Applen palvelimille – riippuu laitteestasi, asetuksistasi ja kielestäsi, ja siihen **sovelletaan Applen tietosuojakäytäntöä**. Sovellus ei pääse käsiksi tähän äänidataan, eikä se vastaanota tai tallenna sitä. Vastaanotettua tekstiä käsitellään samalla tavalla kuin iPhonella puhuttua tekstiä (tämän artiklan mukainen tekoälyjärjestely, 4. artiklan mukainen tallennus).
 
 ## Artikla 4 (Tallennus ja synkronointi)
 
-**iOS-versio:** Puheentunnistuksen ja järjestelyn tulokset tallennetaan ainoastaan sinun **iCloudin yksityiseen tietokantaasi** (CloudKit Private Database). Tämä on Applen tarjoama tallennustila, johon vain sinulla on pääsy. Tämän sovelluksen kehittäjä ei voi tarkastella eikä hakea tallennettua sisältöä. iCloudin käyttöön sovelletaan Applen tietosuojakäytäntöä.
+**iOS-versio:** Tekstiksi muunnettu sisältö ja järjestelytulokset tallennetaan ainoastaan omaan **iCloudin yksityiseen tietokantaasi** (CloudKit Private Database). Tämä on Applen tarjoama tallennustila, johon vain sinulla on pääsy. Sovelluksen kehittäjä ei voi tarkastella tai hakea tallennettua sisältöä. iCloudin käyttöön sovelletaan Applen tietosuojakäytäntöä.
 
-**Android-versio:** Puheentunnistuksen ja järjestelyn tulokset tallennetaan **ainoastaan tähän laitteeseen**. Automaattista pilvisynkronointia ei ole. Laitetta vaihtaessasi voit viedä tiedot tiedostoon sovelluksen ”Ääni ja data” -osiosta ja tuoda ne uuteen laitteeseen. Valitset itse vientikohteen (laitteen sisäinen muisti, käyttämäsi pilvitallennussovellus jne.). Kehittäjällä ei ole pääsyä tähän tiedostoon.
+**Android-versio:** Tekstiksi muunnettu sisältö ja järjestelytulokset tallennetaan **ainoastaan tähän laitteeseen**. Automaattista pilvisynkronointia ei ole. Laitetta vaihtaessasi voit viedä tiedot tiedostoon sovelluksen kohdasta ”Ääni ja data” ja tuoda ne uuteen laitteeseen. Valitset itse vientikohteen (laitteen sisäinen muisti, käyttämäsi pilvitallennussovellus jne.). Kehittäjällä ei ole pääsyä tähän tiedostoon.
 
-## Artikla 5 (Käyttötarkoitus)
+**Apple Watch -versio:** Näyttämistä varten osa järjestellyistä tuloksista (kunkin luokan viimeisimmät otsikot) siirretään paritettuun Apple Watchiin Applen laitteiden välisellä viestinnällä (Watch Connectivity) ja **tallennetaan myös Apple Watchiin**. Apple Watchilla syöttämäsi teksti siirretään iPhoneen samalla mekanismilla. Kehittäjän palvelin ei osallistu tähän siirtoon tai tallennukseen.
+
+## Artikla 5 (Käyttötarkoitukset)
 
 Käsiteltäviä tietoja käytetään ainoastaan seuraaviin tarkoituksiin:
 
-1.  Puheentunnistustulosten luomiseen äänestä ja niiden näyttämiseen käyttäjälle
-2.  Puheentunnistustulosten luokitteluun kategorioihin ”Käsiteltävät”, ”Myöhemmin”, ”Haudottavat” ja ”Hylättävät” ja niiden näyttämiseen käyttäjälle
-3.  Käyttäjän aiempien puheiden tallentamiseen ja näyttämiseen käyttäjän itsensä tarkasteltavaksi
-4.  Sovelluksen toiminnan kannalta välttämättömien asetusten ylläpitämiseen
+1.  Äänen muuntaminen tekstiksi ja sen näyttäminen käyttäjälle
+2.  Tekstiksi muunnetun sisällön luokittelu kategorioihin ”Heti”, ”Myöhemmin”, ”Sivuun” ja ”Pois” ja niiden näyttäminen käyttäjälle
+3.  Käyttäjän aiemmin puhuman sisällön tallentaminen ja näyttäminen käyttäjän omaa tarkastelua varten
+4.  Sovelluksen toiminnan kannalta tarpeellisten asetusarvojen ylläpito
 
-## Artikla 6 (Ulkopuolisten palveluiden käyttö)
+## Artikla 6 (Ulkoisten palveluiden käyttö)
 
-Sovellus käyttää toimintojensa tarjoamiseen seuraavia ulkopuolisia palveluita. **Itse puhetta ei lähetetä mihinkään näistä palveluista.**
+Sovellus käyttää toimintojensa tarjoamiseen seuraavia ulkoisia palveluita. **Itse ääntä ei lähetetä mihinkään näistä palveluista.**
 
--   **iCloud / CloudKit** (vain iOS-versio. Applen tarjoama. Tallennus ja synkronointi ainoastaan omaan yksityiseen tietokantaasi)
--   **Puheentunnistus** (iOS-versiossa Applen Speech-kehys, Android-versiossa laitteen sisäinen puheentunnistusmoottori. Molemmat suoritetaan laitteessa, eikä ääntä lähetetä laitteen ulkopuolelle)
--   **Ulkoinen tekoäly (pilvipalvelu)** (Tekoälyluokittelu. Vain tekstimuotoinen sisältö lähetetään. Käytetään ainoastaan luokitteluun, ei tallenneta eikä käytetä tekoälyn opettamiseen. iOS-versiossa tämän voi kytkeä pois päältä asetuksella ”Laitteen sisäinen”, mutta **Android-versiossa käytetään ainoastaan ulkoista tekoälyä**. Lisätietoja artiklassa 3)
--   **FoundationModels** (vain iOS-versio. Applen tarjoama. Toimii täysin laitteen sisällä. Käytetään, kun ”Laitteen sisäinen” -asetus on päällä tai vararatkaisuna, jos ulkoinen tekoäly ei ole käytettävissä)
--   **Laskutuspalvelut** (iOS-versiossa **Apple StoreKit**, Android-versiossa **RevenueCat**. KUU+-tilauksen ostaminen, uusiminen, peruuttaminen ja käyttöoikeuksien hallinta. Puheen sisältöä ei lähetetä. Lisätietoja RevenueCatista artiklassa 7 ja [RevenueCatin tietosuojakäytännössä](https://www.revenuecat.com/privacy))
--   **Play Integrity API (Firebase App Checkin kautta, vain Android-versio)** (Laitteen ja sovelluksen eheyden varmentaminen sen varmistamiseksi, että luokittelu-API:lle tehdyt pyynnöt tulevat laillisesta sovelluksesta. Ei sisällä puheen sisältöä tai käyttäjää yksilöiviä tietoja)
--   **Google AdMob (Google Mobile Ads SDK)** (Vain kun KUU+-tilaus ei ole aktiivinen. Näyttää yhden natiivimainoksen osioiden välissä ”Puhutut asiat” -näkymässä. Puheen sisältöä ei lähetetä. Lisätietoja artiklassa 13)
--   **Firebase Analytics** (Googlen tarjoama. Sovelluksen laadun parantamiseen. iOS-versiossa **vain, jos käyttäjä antaa siihen nimenomaisen suostumuksensa asetuksissa**, Android-versiossa sisältöneutraaleja käyttötapahtumia lähetetään **oletusarvoisesti** (kummassakaan tapauksessa puheen sisältöä ei lähetetä). iOS-versio käyttää suostumuksella myös **Crashlytics**-palvelua, mutta **Android-versio ei sisällä Crashlyticsiä**. Lisätietoja artiklassa 14)
+-   **iCloud / CloudKit** (vain iOS-versio. Applen tarjoama. Tallennus ja synkronointi vain omaan yksityiseen tietokantaasi)
+-   **Puheentunnistus** (iOS-versiossa Applen Speech-kehys, Android-versiossa laitteen sisäinen puheentunnistusmoottori. Molemmat suoritetaan laitteessa; ääntä ei lähetetä laitteen ulkopuolelle. **Sovelluksen Apple Watch -versio ei suorita omaa puheentunnistusta, vaan käyttää watchOS:n vakiomuotoista syöttöä**. Ks. 3. artikla)
+-   **watchOS:n vakiomuotoinen tekstinsyöttö** (vain Apple Watch -versio. Applen tarjoama. Käyttäjä valitsee sanelun, käsinkirjoituksen tai näppäimistön. Sanelua käytettäessä puheentunnistus suoritetaan Applen toimintona ja siihen sovelletaan Applen tietosuojakäytäntöä. Sovellus ei pääse käsiksi ääneen. Ks. 3. artikla)
+-   **Watch Connectivity** (vain Apple Watch -versio. Applen tarjoama. Välittää näyttötarkoitukseen käytettävää tekstiä suoraan iPhonen ja Apple Watchin välillä. Kehittäjän palvelin ei osallistu tähän. Ks. 4. artikla)
+-   **Ulkoinen tekoäly (pilvipalvelu)** (Tekoälyjärjestely. Vain tekstiksi muunnettu sisältö lähetetään. Käytetään ainoastaan luokitteluun, ei tallenneta, eikä käytetä tekoälyn opettamiseen. Ks. 3. artikla)
+-   **Laskutuspalvelut** (iOS-versiossa **Apple StoreKit**, Android-versiossa **RevenueCat**. KUU+-tilauksen osto, uusiminen, peruutus ja käyttöoikeuden hallinta. Puhuttua sisältöä ei lähetetä. Lisätietoja RevenueCatista 7. artiklassa ja [RevenueCatin tietosuojakäytännössä](https://www.revenuecat.com/privacy))
+-   **Play Integrity API (Firebase App Checkin kautta. Vain Android-versio)** (Varmistaa, että luokittelu-API:lle tehdyt pyynnöt tulevat laillisesta sovelluksesta laitteen/sovelluksen eheystodistuksen avulla. Ei sisällä puhuttua sisältöä tai käyttäjää yksilöiviä tietoja)
+-   **Google AdMob (Google Mobile Ads SDK)** (Vain kun KUU+-tilaus ei ole voimassa. Yksi natiivimainospaikka osioiden välissä ”Puhutut asiat” -näkymässä. Puhuttua sisältöä ei lähetetä. Ks. 13. artikla)
+-   **Firebase Analytics** (Googlen tarjoama. Sovelluksen laadun parantamiseen. iOS-versiossa **käytössä vain, jos käyttäjä nimenomaisesti hyväksyy sen Asetuksissa**; Android-versiossa sisältövapaita käyttötapahtumia lähetetään **oletusarvoisesti** (kummassakaan tapauksessa puhuttua sisältöä ei lähetetä). iOS-versio käyttää myös **Crashlyticsiä** suostumuksella, mutta **Android-versio ei sisällä Crashlyticsiä**. Ks. 14. artikla)
 
-Sovelluksen palvelin on minimalistinen ja toimii ainoastaan tekoälyluokittelun välittäjänä, eikä se tallenna mitään sisältöä (tilaton). Emme käytä henkilökohtaista tiliä vaativia todennuspalveluita.
+Sovelluksen palvelin on minimaalinen ja toimii ainoastaan tekoälyjärjestelypyyntöjen välittäjänä, eikä se tallenna mitään sisältöä (stateless). Sovellus ei käytä henkilökohtaista tiliä vaativia todennuspalveluita.
 
 ## Artikla 7 (Tietojen luovuttaminen kolmansille osapuolille)
 
-Sovelluksen kehittäjällä ei ole keinoja päästä käsiksi käyttäjän puhumaan sisältöön, puheentunnistuksen tuloksiin tai järjestelyn tuloksiin, eikä hän luovuta niitä kolmansille osapuolille.
+Sovelluksen kehittäjällä ei ole keinoja päästä käsiksi käyttäjän puhumaan sisältöön, sen tekstiversioihin tai järjestelytuloksiin, eikä hän luovuta niitä kolmansille osapuolille.
 
-Mainosten näyttämiseksi käyttäjille, jotka eivät ole tilanneet KUU+:aa, Google AdMobille lähetetään sen mainonnan tarjoamiseen tarvitsemia tietoja, kuten laitetunnisteita, mainostunnisteita, laitteen kieltä ja aluetta, karkeita sijaintitietoja ja mainosvuorovaikutustietoja (lisätietoja artiklassa 13, sovelletaan Googlen AdMobin tietosuojakäytäntöä). Kun KUU+-tilaus on aktiivinen, näitä tietoja ei lähetetä.
+Mainosten näyttämiseksi käyttäjille, jotka eivät ole tilanneet KUU+:aa, Googlelle lähetetään Google AdMobin mainosten toimittamiseen tarvitsemia tietoja, kuten laitetunnisteita, mainostunnisteita, laitteen kieltä ja aluetta, karkeaa sijaintitietoa ja mainosten vuorovaikutustietoja (ks. 13. artikla; sovelletaan Googlen AdMobin tietosuojakäytäntöä). KUU+-tilauksen ollessa voimassa tätä tiedonsiirtoa ei tapahdu.
 
-Kun tilaat KUU+:n **Android-versiossa**, ostotiedot (tuotetunnus, hinta, ostopäivämäärä jne.) lähetetään RevenueCat, Inc. -yhtiölle oston käsittelyä ja käyttöoikeuden (voimassa/ei voimassa) hallintaa varten. Puheen sisältöä ei lähetetä. Lisätietoja RevenueCatin tietojenkäsittelystä löydät [RevenueCatin tietosuojakäytännöstä](https://www.revenuecat.com/privacy).
+Kun tilaat KUU+:n **Android-versiossa**, ostotiedot (tuotetunnus, hinta, ostopäivämäärä jne.) lähetetään RevenueCat, Inc:lle ostotapahtuman ja käyttöoikeuden (voimassa/ei voimassa) hallintaa varten. Puhuttua sisältöä ei lähetetä. Lisätietoja RevenueCatin tietojenkäsittelystä löydät [RevenueCatin tietosuojakäytännöstä](https://www.revenuecat.com/privacy).
 
-Tietoja luovutetaan ainoastaan lain niin vaatiessa ja säädettyjä menettelytapoja noudattaen.
+Tietoja luovutetaan ainoastaan, jos laki niin vaatii, ja noudattaen säädettyjä menettelytapoja.
 
 ## Artikla 8 (Tietojen poistaminen)
 
-Käyttäjä voi poistaa kaikki tiedot milloin tahansa sovelluksen sisältä kohdasta ”Asetukset → Ääni ja data → Poista tallennetut asiat”. Poistaminen hävittää pysyvästi laitteella olevat tiedot (ja iOS-versiossa myös iCloudin yksityisessä tietokannassa olevat tiedot). Poistettuja tietoja ei voi palauttaa.
+Käyttäjä voi milloin tahansa poistaa kaikki tiedot sovelluksen kohdasta ”Asetukset → Ääni ja data → Poista tallennetut asiat”. Tämä poistaa pysyvästi kaikki tiedot laitteelta (ja iOS-versiossa myös iCloudin yksityisestä tietokannasta). Poistettuja tietoja ei voi palauttaa.
 
-Sovelluksen asennuksen poistaminen poistaa laitteella olevat tiedot. iOS-versiossa iCloudissa olevat tiedot voi poistaa Applen asetuksista (Asetukset → Apple ID → iCloud → Hallitse tallennustilaa). Android-versio tallentaa tiedot vain laitteen sisälle, joten ne poistuvat asennuksen poiston yhteydessä.
+Sovelluksen asennuksen poistaminen poistaa laitteella olevat tiedot. iOS-versiossa iCloudissa olevat tiedot voi poistaa Applen asetuksista (Asetukset → Apple ID → iCloud → Hallitse tallennustilaa). Android-versio tallentaa tiedot vain laitteeseen, joten ne poistuvat asennuksen poiston yhteydessä.
+
+**Apple Watch -versio:** Kun poistat kaikki tiedot, myös Apple Watchiin jo siirretyt näyttötiedot korvataan tyhjällä sisällöllä seuraavan kerran, kun kello yhdistetään. Sovelluksen poistaminen Apple Watchista poistaa myös kellon sisälle tallennetut näyttötiedot.
 
 ## Artikla 9 (Turvatoimet)
 
--   **iOS-versio**: Nauhoituksen aikaiset väliaikaiset äänitiedostot salataan iOS:n tiedostosuojaustoiminnolla (`FileProtectionType.complete`), eikä niihin pääse käsiksi laitteen ollessa lukittuna. Yhteys iCloudiin on Applen SSL/TLS-salaama.
--   **Android-versio**: Nauhoitettua ääntä ei kirjoiteta levylle edes väliaikaisesti; se käsitellään ainoastaan muistissa ja hävitetään välittömästi tunnistuksen jälkeen. Tallennetut puheentunnistus- ja järjestelytulokset säilytetään sovelluksen yksityisellä tallennusalueella, johon muilla sovelluksilla ei ole pääsyä. Ne on myös suljettu Androidin automaattisen pilvivarmuuskopioinnin ulkopuolelle.
--   Kaikki tiedonsiirto ulkoiselle tekoälylle on salattua (HTTPS/TLS). Kehittäjän palvelin ainoastaan välittää järjestelypyyntöjä eikä tallenna mitään sisältöä (tilaton).
+-   **iOS-versio**: Äänityksen aikaiset väliaikaiset äänitiedostot salataan iOS:n tiedostosuojaustoiminnolla (`FileProtectionType.complete`), eivätkä ne ole käytettävissä, kun laite on lukittuna. Tiedonsiirto iCloudin kanssa on Applen salaama SSL/TLS-protokollalla.
+-   **Android-versio**: Tallennettua ääntä ei kirjoiteta levylle edes väliaikaisesti; se käsitellään ainoastaan muistissa ja poistetaan välittömästi tunnistuksen jälkeen. Tallennetut tekstiversiot ja järjestelytulokset säilytetään sovelluksen yksityisellä tallennusalueella, johon muut sovellukset eivät pääse käsiksi, ja ne on jätetty Androidin automaattisen pilvivarmuuskopioinnin ulkopuolelle.
+-   **Apple Watch -versio**: Tiedonsiirto iPhonen ja Apple Watchin välillä tapahtuu Applen Watch Connectivity -yhteydellä, eikä se kulje kehittäjän palvelimen kautta. Apple Watchiin tallennetaan ainoastaan näyttötarkoitukseen käytettävää tekstiä (kunkin luokan viimeisimmät otsikot); ääntä ei tallenneta.
+-   Kaikki tiedonsiirto ulkoisen tekoälyn kanssa on salattu (HTTPS/TLS). Kehittäjän palvelin ainoastaan välittää järjestelypyyntöjä eikä tallenna mitään sisältöä (stateless).
 
 ## Artikla 10 (Alaikäisten käyttö)
 
-Sovelluksen ikäraja on 4+, mutta sen luonteen (ajatusten järjestely) vuoksi sen oletetaan olevan tarkoitettu luku- ja kirjoitustaitoisille käyttäjille. Alaikäisten tulee käyttää sovellusta huoltajan suostumuksella.
+Sovelluksen ikäraja on 4+, mutta sen luonteen (ajatusten järjestely) vuoksi sen oletetaan olevan tarkoitettu lukutaitoisille käyttäjille. Alaikäisten tulee käyttää sovellusta huoltajan suostumuksella.
 
-## Artikla 11 (Muutokset tähän tietosuojakäytäntöön)
+## Artikla 11 (Muutokset tähän käytäntöön)
 
-Tätä käytäntöä voidaan päivittää lakimuutosten, uusien ominaisuuksien tai alustojen (Apple / Google) kehysten tai käytäntöjen muutosten vuoksi. Merkittävistä muutoksista ilmoitetaan sovelluspäivityksen yhteydessä tai tämän käytännön julkisella sivulla.
+Tätä käytäntöä voidaan päivittää lainsäädännön muutosten, uusien toimintojen lisäämisen tai alustojen (Apple / Google) kehysten tai käytäntöjen muutosten vuoksi. Merkittävistä muutoksista ilmoitetaan sovelluspäivityksen yhteydessä tai tämän käytännön julkisella sivulla.
 
-## Artikla 12 (Yhteydenotot)
+## Artikla 12 (Yhteydenotto)
 
-Tähän käytäntöön liittyvissä kysymyksissä voit ottaa yhteyttä App Storen tai Google Playn sovellussivun ”Kehittäjä”-osion kautta tai sovelluksen sisältä kohdasta ”Asetukset → Ota yhteyttä”.
+Tätä käytäntöä koskevissa kysymyksissä voit ottaa yhteyttä App Storen tai Google Playn sovellussivun ”Kehittäjä”-osion kautta tai sovelluksen sisältä kohdasta ”Asetukset → Yhteydenotto”.
 
-## Artikla 13 (Tietoa mainoksista ja App Tracking Transparency -kehyksestä)
+## Artikla 13 (Mainonta ja App Tracking Transparency)
 
-Kun et ole tilannut KUU+:aa, sovellus näyttää yhden Google AdMobin tarjoaman natiivimainoksen ”Puhutut asiat” -näkymän osioiden välissä. Mainokset on muotoiltu hienovaraisesti KUU:n visuaalisen ilmeen säilyttämiseksi.
+Kun et ole tilannut KUU+:aa, sovellus näyttää yhden natiivimainospaikan osioiden välissä ”Puhutut asiat” -näkymässä Google AdMobin toimittamana. Mainokset on suunniteltu hillityiksi KUU:n yleisilmeen säilyttämiseksi.
 
--   **Puhumaasi sisältöä ei koskaan käytetä mainontaan.** Mainokset eivät hyödynnä puheentunnistustuloksiasi, järjestelytuloksiasi tai teemojasi.
--   Mainonnan tarjoamiseksi Google AdMob saattaa kerätä laitetunnisteita (mukaan lukien IDFA), mainostunnisteen, karkean sijainnin, diagnostiikkatietoja ja tuoteinteraktiotietoja (mainoksiin liittyvä vuorovaikutus sovelluksessa).
--   **iOS-versio**: **App Tracking Transparency** (ATT) -suostumuspyyntö näytetään kerran, juuri ennen ensimmäistä mainosta. Mainoksia näytetään, vaikka kieltäytyisit, mutta Googlelle lähetettävät tiedot ovat rajallisia (ei-personoituja). Voit muuttaa ATT-lupaa milloin tahansa iOS:n asetuksista: ”Asetukset → Tietosuoja ja suojaus → Seuranta”.
--   **Android-versio**: ATT on vain iOS-ominaisuus, eikä sitä ole Androidissa. Sen sijaan mainonnan tarjoamiseen käytetään Googlen **mainostunnistetta (Advertising ID)**. Voit kieltäytyä mainosten personoinnista tai nollata mainostunnisteesi laitteen asetuksista: ”Asetukset → Tietosuoja → Mainokset” (sanat voivat vaihdella laitteen ja Android-version mukaan). Lisäksi Android-versio noudattaa sovellettavilla alueilla, kuten EU:ssa, näytettävää suostumustenhallintaa (UMP).
--   **KUU+-tilaus lopettaa kaikki mainokset ja niihin liittyvän tiedonsiirron.**
+-   **Puhumaasi sisältöä ei koskaan käytetä mainontaan.** Mainokset eivät hyödynnä tekstiversioitasi, järjestelytuloksiasi tai teemojasi.
+-   Mainosten toimittamiseksi Google AdMob voi kerätä laitetunnisteita (mukaan lukien IDFA), mainostunnisteen, karkean sijainnin, diagnostiikkatietoja ja tuotteen vuorovaikutustietoja (mainoksiin liittyvä vuorovaikutus sovelluksessa).
+-   **iOS-versio**: **App Tracking Transparency** (ATT) -suostumuspyyntö näytetään kerran juuri ennen ensimmäistä mainosta. Mainoksia näytetään, vaikka kieltäytyisit, mutta Googlelle lähetettävät tiedot ovat rajoitettuja (ei-personoituja). Voit muuttaa ATT-lupaa milloin tahansa iOS:n kohdasta ”Asetukset → Tietosuoja ja suojaus → Seuranta”.
+-   **Android-versio**: ATT on vain iOS:n ominaisuus, eikä sitä ole Androidissa. Sen sijaan mainosten toimittamiseen käytetään Googlen **mainostunnistetta (Advertising ID)**. Voit kieltäytyä mainosten personoinnista tai nollata mainostunnisteesi laitteesi kohdasta ”Asetukset → Yksityisyys → Mainokset” (sanat voivat vaihdella laitteen ja Android-version mukaan). Android-versio noudattaa myös soveltuvilla alueilla, kuten EU:ssa, näytettävää suostumustenhallintaa (UMP).
+-   **KUU+-tilaus lopettaa kaiken mainonnan ja siihen liittyvän tiedonsiirron.**
 -   Lisätietoja AdMobin tietojenkäsittelystä löydät [Google AdMobin tietosuojakäytännöstä](https://support.google.com/admob/answer/6128543).
 
-## Artikla 14 (Tietoa Firebase Analyticsin ja Crashlyticsin käytöstä)
+## Artikla 14 (Firebase Analyticsin ja Crashlyticsin käytöstä)
 
-**Tämän artiklan suostumukseen perustuva malli koskee iOS-versiota. Android-version osalta katso tämän artiklan lopussa oleva kohta ”Tietoa Android-versiosta”.**
+**Tämän artiklan suostumukseen perustuva malli koskee iOS-versiota. Android-version osalta katso tämän artiklan lopussa oleva kohta ”Tietoja Android-versiosta”.**
 
-**iOS-versio** saattaa käyttää sovelluksen laadun parantamiseen ja tuotantovirheiden nopeaan havaitsemiseen Googlen Firebase Analyticsia (koostetut käyttötiedot) ja Firebase Crashlyticsia (kaatumisraportit). **Tämä toiminto on oletusarvoisesti POIS PÄÄLTÄ (tietoja ei lähetetä) ja aktivoituu vain, jos käyttäjä antaa siihen nimenomaisen suostumuksensa kohdassa ”Asetukset → Data ja diagnostiikka”.**
+**iOS-versio** voi käyttää Googlen Firebase Analyticsia (käyttötietojen koonti) ja Firebase Crashlyticsia (kaatumisraportit) sovelluksen laadun parantamiseksi ja tuotantovirheiden välittömään havaitsemiseen. **Tämä toiminto on oletusarvoisesti pois päältä (tietoja ei lähetetä), ja se aktivoituu vain, jos käyttäjä nimenomaisesti hyväksyy sen sovelluksen kohdassa ”Asetukset → Data ja diagnostiikka”.**
 
 -   **Lähetettävät tiedot**:
-    -   Firebasen automaattisesti luoma anonymisoitu asennustunniste (perustuu IDFV:hen; ei suoraan henkilöön yhdistettävä tunniste).
-    -   Koostetut signaalit sovelluksen sisäisistä tapahtumista (esim. nauhoitussession onnistuminen, maksumuurin näyttäminen/konversio, perehdytyksen suorittaminen. Numeeriset arvot lähetetään karkealla, ryhmitellyllä tarkkuudella).
-    -   Symboloitu kaatumisraportti (stack trace), kun sovellus sulkeutuu odottamatta.
--   **Ei-lähetettävät tiedot**: Puhumasi sisältö (ääni), puheentunnistuksen tulokset, tekoälyn luokittelutulokset ja asettamasi teemojen nimet on **suunniteltu niin, ettei niitä voi teknisesti lähettää** (toteutuksen rajapinta estää merkkijonoarvojen välittämisen analytiikka-SDK:lle).
--   **Kun suostumusta ei ole annettu, mitään yhteydenpitoa Firebaseen ei tapahdu.**
--   **Lähettämisen lopettaminen**: Voit kytkeä asetuksen pois päältä milloin tahansa kohdassa ”Asetukset → Data ja diagnostiikka”. Kun asetus kytketään pois, aiempi asennustunniste hylätään ja laitteelle tallennetut lähettämättömät kaatumisraportit poistetaan.
--   Tietojen vastaanottaja on Google LLC (Yhdysvallat). Sovelletaan Googlen [Firebase Privacy Information](https://firebase.google.com/support/privacy) -tietoja.
+    -   Firebasen automaattisesti luoma anonymisoitu asennustunniste (perustuu IDFV:hen; ei ole suora henkilötunniste)
+    -   Koottuja signaaleja sovelluksen sisäisistä toiminnoista (esim. äänityssession onnistuminen, maksumuurin näyttö/konversio, perehdytyksen suoritus. Numeeriset arvot lähetetään karkealla, ryhmitellyllä tarkkuudella.)
+    -   Symboloitu kaatumisjäljitys (crash stack trace), kun sovellus sulkeutuu odottamatta
+-   **Tietoja, joita ei lähetetä**: Puhumasi sisältö (ääni), tekstiksi muunnettu sisältö, tekoälyn järjestelytulokset ja asettamasi teemojen nimet on **rakenteellisesti estetty lähettämästä** (toteutuksen API on suunniteltu niin, ettei merkkijonoarvoja voi välittää analytiikka-SDK:lle).
+-   **Kun suostumusta ei ole annettu, mitään tiedonsiirtoa Firebaseen ei tapahdu** (mukaan lukien kaikki yllä mainitut tiedot).
+-   **Tiedonlähetyksen lopettaminen**: Voit kytkeä asetuksen pois päältä milloin tahansa kohdassa ”Asetukset → Data ja diagnostiikka”. Kun asetus kytketään pois, aiemmat asennustunnisteet hylätään ja laitteelle tallennetut lähettämättömät kaatumislokit poistetaan.
+-   Tietojen vastaanottaja on Google LLC (Yhdysvallat). Sovelletaan Googlen [Firebase Privacy Information](https://firebase.google.com/support/privacy) -käytäntöä.
 
-**Tietoa Android-versiosta:** Android-versio käyttää Firebase Analyticsia ja lähettää tuotekehitystä varten **sisältöneutraaleja käyttötapahtumia** (ryhmiteltyjä arvoja, kuten näkymien välillä siirtymisiä ja toimintojen käyttökertoja) sekä Firebasen luoman anonyymin sovellusesiintymän tunnisteen (App Instance ID). **Toisin kuin iOS-versiossa, tämä on oletusarvoisesti käytössä.** Puhumaasi sisältöä (ääntä), puheentunnistuksen tuloksia, järjestelytuloksia tai teemojen nimiä **ei voida lähettää**, sillä analytiikka-SDK:n rajapinta on suunniteltu niin, ettei sille voi välittää merkkijonoarvoja. **Android-versio ei sisällä Crashlyticsiä, eikä se lähetä kaatumisraportteja.** Tietojen vastaanottaja on Google LLC (Yhdysvallat), ja sovelletaan Googlen [Firebase Privacy Information](https://firebase.google.com/support/privacy) -tietoja.
+**Tietoja Android-versiosta:** Android-versio käyttää Firebase Analyticsia ja lähettää tuotekehitystä varten **sisältövapaita käyttötapahtumia** (ryhmiteltyjä arvoja, kuten näkymien vaihtoja ja toimintojen käyttökertoja) sekä Firebasen luoman anonyymin sovellusesiintymän tunnisteen (App Instance ID). **Toisin kuin iOS-versiossa, tämä on oletusarvoisesti käytössä.** Puhuttua sisältöä (ääni), tekstiksi muunnettua sisältöä, järjestelytuloksia tai teemojen nimiä **ei voida lähettää** – analytiikka-SDK on suunniteltu niin, ettei sille voi välittää merkkijonoarvoja. **Android-versio ei sisällä Crashlyticsiä eikä lähetä kaatumisraportteja.** Tietojen vastaanottaja on Google LLC (Yhdysvallat); sovelletaan Googlen [Firebase Privacy Information](https://firebase.google.com/support/privacy) -käytäntöä.

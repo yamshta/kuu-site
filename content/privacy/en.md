@@ -1,6 +1,6 @@
 # Privacy Policy for KUU
 
-Last updated: August X, 2026 (to be finalized to the publication date)
+Last updated: August 2, 2026
 
 **In short:** What you spoke is yours. **The App never sends your voice itself anywhere.** On iPhone and Android devices, transcription also happens on the device. **The Apple Watch version of the App does no recording at all** — it receives only the text produced by the standard watch input (dictation, Scribble, or keyboard); when you choose dictation, the listening is handled by Apple's own system (see Article 3). AI organization uses an external AI, but only the transcribed text is sent. It is used solely for organizing and is not retained by the AI provider. What is stored lives only on your device, and on iOS also in your iCloud private database (Android stores on the device only). The developer does not store your content and cannot view what is received. You can delete all data from inside the app at any time. The app makes only **minimal network requests** for billing (StoreKit on iOS / RevenueCat on Android) and Google AdMob ads, and that information never includes what you said (ads disappear with KUU+). Usage is measured to improve quality, but this too never includes what you said (iOS is user opt-in; Android sends content-free measurement by default — see Article 14).
 

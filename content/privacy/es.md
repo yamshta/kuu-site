@@ -1,130 +1,139 @@
-> Esta es una traducción de referencia para su comodidad. La versión japonesa es el texto de referencia.
+> Esta es una traducción de referencia para su comodidad. La versión en japonés es el texto autoritativo.
 
 # Política de privacidad de KUU
 
-Última actualización: 21 de julio de 2026
+Última actualización: 2 de agosto de 2026
 
-**En resumen:** Lo que usted dice es suyo. **Su voz nunca se envía fuera de su dispositivo**. La transcripción se realiza en su dispositivo. La organización (clasificación por IA) utiliza una IA externa, pero solo se envía el texto transcrito, se utiliza únicamente para la organización y no se almacena (en la versión para iOS, puede cambiar a la organización solo en el dispositivo a través de la opción «En el dispositivo» en los ajustes; **la versión para Android solo envía a la IA externa, no dispone de organización en el dispositivo**). Los datos se guardan en su dispositivo y, en la versión para iOS, también en su base de datos privada de iCloud (la versión para Android solo guarda en el dispositivo). El desarrollador no almacena su contenido ni puede ver lo que se recibe. Puede eliminar todos los datos desde la aplicación en cualquier momento. La aplicación realiza únicamente las **comunicaciones mínimas necesarias** para la facturación (StoreKit en iOS / RevenueCat en Android) y los anuncios de Google AdMob, y esa información nunca incluye lo que usted ha dicho (los anuncios se desactivan con la suscripción a KUU+). Se mide el uso para mejorar la calidad, pero esto tampoco incluye nunca lo que usted ha dicho (en iOS es con consentimiento explícito del usuario; en Android, la medición sin contenido se realiza por defecto; consulte el Artículo 14).
+**En resumen:** Lo que usted dice es suyo. **La aplicación nunca envía el audio de su voz al exterior**. En dispositivos iPhone y Android, la transcripción también se realiza en el propio dispositivo. **La versión de la aplicación para Apple Watch no realiza grabaciones**; solo recibe el texto producido por los métodos de entrada estándar de watchOS (dictado, escritura a mano o teclado). Cuando elige el dictado, el reconocimiento de voz lo realiza el sistema de Apple (consulte el Artículo 3). Para la organización se utiliza una IA externa, pero solo se envía el contenido transcrito en texto. Este se utiliza únicamente para la organización y no se almacena. El contenido se guarda en su dispositivo y, en la versión de iOS, también en su base de datos privada de iCloud (la versión de Android solo guarda en el dispositivo). El desarrollador no almacena su contenido ni puede ver lo que se recibe. Puede eliminar todos sus datos desde la aplicación en cualquier momento. La aplicación solo realiza las **comunicaciones mínimas necesarias** para la facturación (StoreKit en iOS / RevenueCat en Android) y los anuncios de Google AdMob. Dicha información nunca incluye lo que usted ha dicho (los anuncios se desactivan con la suscripción a KUU+). Se mide el uso para mejorar la calidad, pero esta medición tampoco incluye lo que usted ha dicho (en iOS es opcional para el usuario; en Android se realiza por defecto una medición sin contenido; consulte el Artículo 14).
 
 ---
 
 ## Artículo 1 (Principios básicos)
 
-Esta aplicación, «KUU» (en adelante, «esta Aplicación»), es una aplicación que le ayuda a sacar los pensamientos de su cabeza expresándolos en voz alta y organizándolos. Existen **versiones para iOS y Android**, y esta política se aplica a ambas. Esta Aplicación maneja la información únicamente en la medida mínima necesaria para proporcionar sus funciones, priorizando la protección de la privacidad del usuario.
+La aplicación «KUU» (en adelante, «la aplicación») está diseñada para ayudarle a exteriorizar y organizar sus pensamientos hablándolos en voz alta. Existen versiones para **iOS (iPhone y Apple Watch) y Android**, y esta política se aplica a todas ellas. La aplicación gestiona la información en la medida mínima necesaria para ofrecer sus funciones, dando la máxima prioridad a la protección de la privacidad del usuario.
 
 ## Artículo 2 (Información recopilada y almacenada)
 
-La información que maneja esta Aplicación se limita a lo siguiente:
+La información que gestiona la aplicación se limita a lo siguiente:
 
-1.  **Contenido hablado por el usuario (datos de audio)** — El audio grabado se almacena temporalmente en un área local del dispositivo solo durante el proceso de transcripción y se elimina inmediatamente después de que finalice el procesamiento. No se envía a ningún servidor.
-2.  **Resultados de la transcripción y organización (texto)** — Se guardan para que usted pueda revisarlos (en la versión para iOS, en el dispositivo y en su base de datos privada de iCloud; en la versión para Android, solo en el dispositivo; consulte el Artículo 4).
-3.  **Ajustes de la aplicación** — Valores de configuración necesarios para el funcionamiento de la aplicación, como el tema, el tamaño del texto y el estado del nivel de agua en la cabeza.
+1.  **El contenido de lo que usted dice (datos de audio)** — El audio grabado se almacena temporalmente en un área del dispositivo solo durante el proceso de transcripción, y se elimina inmediatamente después de finalizar dicho proceso. No se envía a ningún servidor. **La versión de la aplicación para Apple Watch no realiza grabaciones** (consulte el Artículo 3).
+2.  **Resultados de la transcripción y organización (texto)** — Se guardan para que usted pueda consultarlos (en la versión de iOS, en el dispositivo y en su base de datos privada de iCloud; en la versión de Android, solo en el dispositivo. En un Apple Watch enlazado, solo se guardan los títulos recientes de cada categoría para su visualización; consulte el Artículo 4).
+3.  **Ajustes de la aplicación** — El tema, el tamaño del texto, el estado del nivel de agua mental y otros valores de configuración necesarios para el funcionamiento de la aplicación.
 
-Esta Aplicación no recopila información personal como nombre, dirección de correo electrónico, número de teléfono, información de ubicación, contactos, calendario, fotos o identificadores de dispositivo.
+La aplicación no recopila datos personales como nombre, dirección de correo electrónico, número de teléfono, ubicación, contactos, calendario, fotos o identificadores de dispositivo.
 
-## Artículo 3 (Reconocimiento de voz y clasificación por IA)
+## Artículo 3 (Reconocimiento de voz y clasificación con IA)
 
-El **reconocimiento de voz (transcripción)** se realiza íntegramente en su dispositivo iOS.
+En iPhone (versión de iOS) y en dispositivos Android, el **reconocimiento de voz (transcripción)** se realiza íntegramente en su propio dispositivo (para la versión de Apple Watch, consulte el final de este artículo).
 
--   Reconocimiento de voz: Utiliza el framework Speech de Apple (en el dispositivo). El audio en sí nunca se envía fuera del dispositivo.
+-   Reconocimiento de voz: Se utiliza el framework Speech de Apple (en el dispositivo). El audio de su voz nunca se envía fuera del dispositivo.
 
-La **clasificación por IA (categorización)** utiliza una IA externa.
+La **clasificación con IA (categorización)** utiliza una IA externa.
 
--   Solo se envía el **contenido textual (el texto transcrito)**. El audio no se envía.
--   El destino es una IA externa, a través del servidor del desarrollador (que a su vez se comunica con Gemini de Google a través de nuestro backend).
+-   Solo se envía **el contenido en texto (el texto transcrito)**. El audio de su voz no se envía.
+-   El destino es una IA externa, a través del servidor del desarrollador (backend que se comunica con Gemini de Google).
 -   El contenido enviado se **utiliza únicamente para la clasificación y no se almacena**. Tampoco se utiliza para el entrenamiento de la IA.
--   En la **versión para iOS**, puede cambiar en cualquier momento a la **clasificación solo en el dispositivo** (FoundationModels de Apple / reglas en el dispositivo) desde la opción «En el dispositivo» en los ajustes. En este caso, el texto tampoco sale del dispositivo.
+-   El contenido enviado incluye no solo lo que ha hablado y se ha transcrito, sino también lo que ha introducido o editado manualmente. Si la asignación automática de temas (KUU+, opcional) está activada, también se envían los títulos, el cuerpo del texto y los nombres de los temas de los elementos ya guardados para realizar la asignación (en todos los casos, se utilizan únicamente para la clasificación y no se almacenan).
+-   En la **versión de iOS**, las versiones de la aplicación anteriores a la 2.3.0 permitían elegir una clasificación exclusiva en el dispositivo a través del ajuste «En el dispositivo» (este ajuste dejó de ofrecerse a partir de la versión 2.3.0).
 
-**Acerca de la versión para Android:** La versión para Android no ofrece un método de organización (clasificación) que se complete únicamente en el dispositivo. Al organizar, el texto transcrito se envía **siempre** a la IA externa (Gemini de Google a través de nuestro backend). No existe la opción de cambiar a «En el dispositivo» como en la versión para iOS. Solo se envía el contenido textual; el audio en sí no se envía, y el texto enviado se utiliza únicamente para la clasificación, no se almacena ni se usa para el entrenamiento de la IA. La transcripción (reconocimiento de voz) en sí se completa dentro del dispositivo.
+**Acerca de la versión de Android:** La versión de Android no ofrece un método de organización (clasificación) que se complete únicamente en el dispositivo. Al organizar, el texto transcrito se envía **siempre** a la IA externa (Gemini de Google a través de nuestro backend). Únicamente se envía el contenido en texto; la voz en sí nunca se envía, y el texto enviado se utiliza exclusivamente para la clasificación, no se almacena ni se usa para el entrenamiento de la IA. La transcripción (reconocimiento de voz) sí se realiza íntegramente en el dispositivo.
+
+**Acerca de la versión para Apple Watch:** La versión de la aplicación para Apple Watch no graba audio ni realiza el reconocimiento de voz por sí misma. Para la entrada de datos, utiliza la entrada de texto estándar de watchOS (a elección del usuario: dictado, escritura a mano o teclado), y la aplicación solo recibe el texto resultante. Si elige el dictado, el reconocimiento de voz lo realiza una función de Apple (watchOS); su procesamiento —incluyendo si se realiza en el dispositivo o si se envía a los servidores de Apple— depende de su modelo de dispositivo, su configuración y su idioma, y **se rige por la política de privacidad de Apple**. La aplicación no puede acceder a dicho audio y nunca lo recibe ni lo almacena. El texto resultante se trata de la misma manera que el texto hablado en el iPhone (clasificación con IA según este artículo; almacenamiento según el Artículo 4).
 
 ## Artículo 4 (Almacenamiento y sincronización)
 
-**Versión para iOS:** Los resultados de la transcripción y organización se almacenan únicamente en su **base de datos privada de iCloud** (CloudKit Private Database). Este es un almacenamiento proporcionado por Apple al que solo usted puede acceder. El desarrollador de esta Aplicación no puede ver ni obtener el contenido almacenado. El uso de iCloud está sujeto a la política de privacidad de Apple.
+**Versión de iOS:** Los resultados de la transcripción y la organización se almacenan únicamente en su **base de datos privada de iCloud** (CloudKit Private Database). Este es un servicio de almacenamiento proporcionado por Apple al que solo usted puede acceder. El desarrollador de la aplicación no puede ver ni obtener el contenido almacenado. Las condiciones de uso y la seguridad de iCloud se rigen por la política de privacidad de Apple.
 
-**Versión para Android:** Los resultados de la transcripción y organización se almacenan **únicamente en este dispositivo**. No se realiza una sincronización automática en la nube. Al cambiar de dispositivo, puede exportar los datos a un archivo desde «Voz y datos» en la aplicación e importarlos en el nuevo dispositivo. Usted elige dónde guardar el archivo (en el dispositivo, en su aplicación de almacenamiento en la nube, etc.). El desarrollador no puede acceder a este archivo.
+**Versión de Android:** Los resultados de la transcripción y la organización se almacenan **únicamente en este dispositivo**. No se realiza una sincronización automática en la nube. Al cambiar de dispositivo, puede exportar los datos a un archivo desde «Voz y datos» en la aplicación e importarlos en el nuevo dispositivo. Usted elige dónde se guarda el archivo (en el dispositivo, en su aplicación de almacenamiento en la nube, etc.). El desarrollador no puede acceder a dicho archivo.
+
+**Versión para Apple Watch:** Para su visualización, una parte de los resultados de la organización (los títulos recientes de cada categoría) se transfiere al Apple Watch enlazado mediante la comunicación entre dispositivos de Apple (Watch Connectivity) y **se almacena también en el Apple Watch**. El texto que introduce en el Apple Watch se transfiere al iPhone por el mismo mecanismo. El servidor del desarrollador no interviene en esta transferencia ni en este almacenamiento.
 
 ## Artículo 5 (Finalidad del uso)
 
-La información manejada se utiliza únicamente para los siguientes fines:
+La información gestionada se utiliza únicamente para las siguientes finalidades:
 
-1.  Generar transcripciones a partir de la voz y mostrárselas al usuario.
-2.  Clasificar las transcripciones en «Ver ahora / Pensar después / Reposar / Soltar» y mostrárselas al usuario.
-3.  Almacenar y mostrar el contenido hablado previamente por el usuario para que pueda revisarlo.
-4.  Mantener los valores de configuración necesarios para el funcionamiento de la aplicación.
+1.  Generar transcripciones a partir de su voz y mostrárselas.
+2.  Clasificar las transcripciones en «Ver ahora / Pensar después / Aparcar / Soltar» y mostrárselas.
+3.  Almacenar y mostrar el contenido que ha hablado previamente para que usted pueda consultarlo.
+4.  Conservar los ajustes necesarios para el funcionamiento de la aplicación.
 
-## Artículo 6 (Uso de servicios externos)
+## Artículo 6 (Servicios externos utilizados)
 
-Esta Aplicación utiliza los siguientes servicios externos para proporcionar sus funciones. **El audio en sí no se envía a ninguno de estos servicios**.
+La aplicación utiliza los siguientes servicios externos para ofrecer sus funciones. **El audio de su voz no se envía a ninguno de estos servicios**.
 
--   **iCloud / CloudKit** (solo en la versión para iOS. Proporcionado por Apple. Almacenamiento y sincronización solo en su propia base de datos privada).
--   **Reconocimiento de voz** (en la versión para iOS, el framework Speech de Apple; en la versión para Android, el motor de reconocimiento de voz del dispositivo. Ambos se ejecutan en el dispositivo y el audio no se envía fuera de él).
--   **IA externa (nube)** (Clasificación por IA. Solo se envía el contenido textual. Se utiliza únicamente para la clasificación, no se almacena ni se usa para el entrenamiento de la IA. En la versión para iOS se puede desactivar desde «En el dispositivo» en los ajustes, pero **la versión para Android solo envía a la IA externa**. Consulte el Artículo 3).
--   **FoundationModels** (solo en la versión para iOS. Proporcionado por Apple. Se ejecuta completamente en el dispositivo. Se utiliza cuando la opción «En el dispositivo» está activada o como alternativa cuando la IA externa no está disponible).
--   **Servicios de facturación** (en la versión para iOS, **Apple StoreKit**; en la versión para Android, **RevenueCat**. Para la compra, renovación, cancelación y gestión del estado de la suscripción a KUU+. No se envía el contenido hablado. Para RevenueCat, consulte el Artículo 7 y la [política de privacidad de RevenueCat](https://www.revenuecat.com/privacy)).
--   **Play Integrity API (a través de Firebase App Check. Solo en la versión para Android)** (Atestación de la integridad del dispositivo y la aplicación para confirmar que las solicitudes a la API de clasificación provienen de una aplicación legítima. No contiene el contenido hablado ni información que identifique al usuario).
--   **Google AdMob (SDK de Google Mobile Ads)** (Solo cuando no se está suscrito a KUU+, muestra un anuncio nativo en la pantalla «Lo que has dicho». No se envía el contenido hablado. Consulte el Artículo 13).
--   **Firebase Analytics** (Proporcionado por Google. Para la mejora de la calidad de la aplicación. En la versión para iOS, **solo si el usuario lo activa explícitamente en los Ajustes**; en la versión para Android, se envían eventos de uso sin contenido **por defecto** (en ningún caso se envía el contenido hablado). La versión para iOS también utiliza **Crashlytics** si el usuario lo activa, pero **la versión para Android no incluye Crashlytics**. Consulte el Artículo 14).
+-   **iCloud / CloudKit** (solo en la versión de iOS; proporcionado por Apple; almacenamiento y sincronización únicamente en su propia base de datos privada).
+-   **Reconocimiento de voz** (en la versión de iOS, el framework Speech de Apple; en la versión de Android, el motor de reconocimiento de voz del dispositivo; ambos se ejecutan en el dispositivo y el audio no se envía al exterior. **La versión para Apple Watch no realiza reconocimiento de voz propio, sino que utiliza la entrada estándar de watchOS**; consulte el Artículo 3).
+-   **Entrada de texto estándar de watchOS** (solo en la versión para Apple Watch; proporcionado por Apple; el usuario elige entre dictado, escritura a mano o teclado. El reconocimiento de voz del dictado lo realiza una función de Apple y se rige por su política de privacidad. La aplicación no puede acceder a dicho audio; consulte el Artículo 3).
+-   **Watch Connectivity** (solo en la versión para Apple Watch; proporcionado por Apple; transfiere directamente el texto para visualización entre el iPhone y el Apple Watch. El servidor del desarrollador no interviene; consulte el Artículo 4).
+-   **IA externa (en la nube)** (para la clasificación con IA; solo se envía el contenido en texto; se utiliza únicamente para la clasificación, no se almacena ni se usa para el entrenamiento de la IA; consulte el Artículo 3).
+-   **Servicios de facturación** (en la versión de iOS, **Apple StoreKit**; en la versión de Android, **RevenueCat**; para la compra, renovación, cancelación y gestión del estado de la suscripción a KUU+. No se envía el contenido de lo que dice. Para RevenueCat, consulte el Artículo 7 y la [política de privacidad de RevenueCat](https://www.revenuecat.com/privacy)).
+-   **API Play Integrity (a través de Firebase App Check; solo en la versión de Android)** (para verificar que las solicitudes a la API de clasificación provienen de una aplicación legítima, mediante una certificación de integridad del dispositivo y la aplicación. No contiene el contenido de lo que dice ni información que identifique al usuario).
+-   **Google AdMob (SDK de Google Mobile Ads)** (solo si no tiene una suscripción a KUU+; muestra un anuncio nativo entre secciones en la pantalla «Lo que has dicho». No se envía el contenido de lo que dice; consulte el Artículo 13).
+-   **Firebase Analytics** (proporcionado por Google; para la mejora de la calidad de la aplicación. En la versión de iOS, **solo se utiliza si el usuario lo acepta explícitamente en los Ajustes**; en la versión de Android, se envían por **defecto** eventos de uso sin contenido (en ambos casos, no se envía el contenido de lo que dice). La versión de iOS también utiliza **Crashlytics** con aceptación explícita, pero **la versión de Android no incluye Crashlytics**. Consulte el Artículo 14).
 
-El servidor de esta Aplicación es mínimo y solo actúa como intermediario para la clasificación por IA, sin almacenar ningún contenido (es *stateless*). No se utilizan servicios de autenticación que requieran cuentas personales.
+El servidor de la aplicación es mínimo y sin estado (stateless), y solo actúa como intermediario para la clasificación con IA (no almacena contenido). No utiliza servicios de autenticación que requieran una cuenta personal.
 
-## Artículo 7 (Cesión a terceros)
+## Artículo 7 (Comunicación a terceros)
 
-El desarrollador de esta Aplicación no tiene medios para acceder al contenido hablado por el usuario, a los resultados de la transcripción o a los resultados de la organización, y no los cederá a terceros.
+El desarrollador de la aplicación no tiene medios para acceder al contenido de lo que usted dice, a las transcripciones ni a los resultados de la organización, y no los comunica a terceros.
 
-Con el fin de mostrar publicidad a los usuarios no suscritos a KUU+, se enviará a Google información que Google AdMob requiere para la publicación de anuncios, como identificadores de dispositivo, ID de publicidad, idioma y región del dispositivo, ubicación aproximada e información sobre la interacción con los anuncios (consulte el Artículo 13; se aplica la política de privacidad de AdMob de Google). Mientras esté suscrito a KUU+, este envío de información no se producirá.
+Con el fin de mostrar anuncios a los usuarios no suscritos a KUU+, se envía a Google la información que Google AdMob requiere para la publicación de anuncios, como identificadores de dispositivo, ID de publicidad, idioma y región del dispositivo, ubicación aproximada e información sobre la interacción con los anuncios (consulte el Artículo 13; se aplica la política de privacidad de AdMob de Google). Mientras la suscripción a KUU+ esté activa, esta transmisión de información no se produce.
 
-Al suscribirse a KUU+ en la **versión para Android**, la información de la compra (ID del producto, precio, fecha de compra, etc.) se enviará a RevenueCat, Inc. para gestionar el proceso de compra y el estado de la suscripción (activa/inactiva). No se envía el contenido hablado. Para más detalles sobre el manejo de datos de RevenueCat, consulte la [política de privacidad de RevenueCat](https://www.revenuecat.com/privacy).
+En la versión de **Android**, al suscribirse a KUU+, la información de la compra (ID del producto, precio, fecha de compra, etc.) se envía a RevenueCat, Inc. para gestionar la compra y sus derechos (activos/inactivos). No se envía el contenido de lo que dice. Para más detalles sobre el tratamiento de datos de RevenueCat, consulte su [política de privacidad](https://www.revenuecat.com/privacy).
 
-Solo se divulgará información si así lo exige la ley, siguiendo los procedimientos establecidos.
+La información solo se comunicará cuando la ley exija su divulgación, siguiendo los procedimientos establecidos.
 
 ## Artículo 8 (Eliminación de datos)
 
-El usuario puede eliminar todos los datos en cualquier momento desde «Ajustes → Voz y datos → Eliminar lo guardado» dentro de la aplicación. Esta acción borrará permanentemente los datos del dispositivo (y, en la versión para iOS, también los datos de la base de datos privada de iCloud). Los datos eliminados no se pueden recuperar.
+Usted puede eliminar todos sus datos en cualquier momento desde «Ajustes → Voz y datos → Eliminar lo guardado» dentro de la aplicación. Esta acción borrará permanentemente los datos del dispositivo (y, en la versión de iOS, también los de la base de datos privada de iCloud). Los datos eliminados no se pueden recuperar.
 
-Al desinstalar esta Aplicación, se eliminarán los datos del dispositivo. En la versión para iOS, los datos de iCloud se pueden eliminar desde los ajustes de Apple (Ajustes → ID de Apple → iCloud → Gestionar almacenamiento de la cuenta). En la versión para Android, como los datos solo se guardan en el dispositivo, se eliminan al desinstalar la aplicación.
+Al desinstalar la aplicación, se eliminan los datos del dispositivo. En la versión de iOS, los datos de iCloud se pueden eliminar desde los Ajustes de Apple (Ajustes → ID de Apple → iCloud → Gestionar almacenamiento). En la versión de Android, como los datos solo se guardan en el dispositivo, se eliminan al desinstalar la aplicación.
+
+**Versión para Apple Watch:** Al eliminar todos los datos, los datos de visualización ya transferidos al Apple Watch se reemplazarán por contenido vacío la próxima vez que el reloj se conecte. Si elimina la aplicación de su Apple Watch, los datos de visualización guardados en él también se eliminarán.
 
 ## Artículo 9 (Medidas de seguridad)
 
--   **Versión para iOS**: Los archivos de audio temporales durante la grabación están cifrados por la protección de archivos de iOS (`FileProtectionType.complete`) y son inaccesibles mientras el dispositivo está bloqueado. La comunicación con iCloud es cifrada por Apple mediante SSL/TLS.
--   **Versión para Android**: El audio grabado no se escribe en el disco, ni siquiera como archivo temporal; se procesa únicamente en la memoria y se descarta inmediatamente después del reconocimiento. Los resultados de la transcripción y organización guardados se almacenan en el área privada de la aplicación en Android, inaccesible para otras aplicaciones, y se excluyen de la copia de seguridad automática en la nube de Android.
--   Toda la comunicación con la IA externa está cifrada (HTTPS/TLS). El servidor del desarrollador solo actúa como intermediario para la clasificación y no almacena contenido (es *stateless*).
+-   **Versión de iOS**: Los archivos de audio temporales durante la grabación se cifran mediante la protección de archivos de iOS (`FileProtectionType.complete`) y son inaccesibles mientras el dispositivo está bloqueado. La comunicación con iCloud es cifrada por Apple mediante SSL/TLS.
+-   **Versión de Android**: El audio grabado no se escribe en el disco, ni siquiera como archivo temporal; se procesa únicamente en la memoria y se descarta inmediatamente después del reconocimiento. Las transcripciones y los resultados de la organización guardados se almacenan en el área privada de la aplicación en Android, inaccesible para otras aplicaciones, y se excluyen de la copia de seguridad automática en la nube de Android.
+-   **Versión para Apple Watch**: La transferencia entre el iPhone y el Apple Watch se realiza mediante Watch Connectivity de Apple y no pasa por ningún servidor del desarrollador. Lo que se almacena en el Apple Watch se limita al texto para visualización (los títulos recientes de cada categoría); no se almacena audio.
+-   Toda la comunicación con la IA externa está cifrada (HTTPS/TLS). El servidor del desarrollador solo actúa como intermediario para la clasificación y no almacena contenido (es sin estado o stateless).
 
-## Artículo 10 (Uso por menores de edad)
+## Artículo 10 (Uso por parte de menores)
 
-Esta Aplicación tiene una clasificación de edad de 4+, pero debido a su naturaleza de organización de pensamientos, se asume que será utilizada por personas con capacidad de leer y escribir. Si un menor de edad utiliza la aplicación, debe hacerlo con el consentimiento de sus padres o tutores.
+La aplicación tiene una clasificación de edad de 4+, pero por su naturaleza (organización de pensamientos), se asume que será utilizada por personas con capacidad de leer y escribir. Los menores de edad deben utilizar la aplicación con el consentimiento de sus padres o tutores.
 
 ## Artículo 11 (Modificaciones de esta política de privacidad)
 
-Esta política puede ser revisada debido a cambios en la legislación, adición de funciones o cambios en las especificaciones de los frameworks o políticas de cada plataforma (Apple / Google). En caso de cambios importantes, se notificará en la actualización de la aplicación o en la página pública de esta política.
+Esta política puede ser modificada debido a cambios en la legislación, la adición de nuevas funciones o cambios en las especificaciones de los frameworks o políticas de cada plataforma (Apple / Google). En caso de cambios importantes, se notificará al actualizar la aplicación o en la página pública de esta política.
 
 ## Artículo 12 (Contacto)
 
-Para consultas sobre esta política, póngase en contacto con nosotros a través de la sección «Desarrollador» en la página de la aplicación en la App Store o Google Play, o a través de «Ajustes → Contacto» dentro de la aplicación.
+Para consultas sobre esta política, póngase en contacto con nosotros a través de la sección «Desarrollador» en la página de la aplicación en la App Store o Google Play, o mediante «Ajustes → Contacto» dentro de la aplicación.
 
 ## Artículo 13 (Publicidad y Transparencia en el Seguimiento de Apps)
 
-Esta Aplicación muestra un único anuncio nativo servido por Google AdMob en la pantalla «Lo que has dicho» solo durante el período en que no se está suscrito a KUU+. El anuncio en sí se muestra de forma discreta entre las secciones de la pantalla para mantener la estética de KUU.
+Cuando no tiene una suscripción a KUU+, la aplicación muestra un anuncio nativo de Google AdMob entre las secciones de la pantalla «Lo que has dicho». Los anuncios se presentan de forma discreta para mantener la estética de KUU.
 
--   **El contenido que usted habla nunca se utiliza para la publicidad** (los anuncios no consultan sus transcripciones, resultados de clasificación o temas).
--   Para la publicación de anuncios, Google AdMob puede recopilar identificadores de dispositivo (incluido el IDFA), ID de publicidad, ubicación aproximada (Coarse Location), datos de diagnóstico e interacciones con el producto (información sobre la interacción con los anuncios dentro de la aplicación).
--   **Versión para iOS**: Se mostrará una única vez un aviso de **Transparencia en el Seguimiento de Apps** (ATT) justo antes de que aparezca el primer anuncio. Los anuncios se seguirán mostrando aunque el usuario no dé su consentimiento, pero la información enviada a Google será limitada (sin personalización). El estado del consentimiento de ATT se puede cambiar en cualquier momento en «Ajustes» → «Privacidad y seguridad» → «Seguimiento» de iOS.
--   **Versión para Android**: ATT es un mecanismo exclusivo de iOS y no existe en Android. En su lugar, se utiliza el **ID de publicidad** de Google para la publicación de anuncios. Puede optar por no recibir anuncios personalizados o restablecer su ID de publicidad desde los «Ajustes → Privacidad → Anuncios» de su dispositivo (la redacción puede variar según el dispositivo y la versión de Android). Además, la versión para Android cumple con la gestión de consentimiento (UMP) que se muestra en las regiones aplicables, como la UE.
--   **Al suscribirse a KUU+, se detienen todos los anuncios y el envío de datos relacionado con ellos**.
--   Para más detalles sobre el manejo de datos por parte de Google AdMob, consulte la [política de privacidad de Google AdMob](https://support.google.com/admob/answer/6128543).
+-   **El contenido de lo que dice nunca se utiliza para fines publicitarios** (los anuncios no consultan sus transcripciones, resultados de organización ni temas).
+-   Para la publicación de anuncios, Google AdMob puede recopilar identificadores de dispositivo (incluido el IDFA), ID de publicidad, ubicación aproximada (Coarse Location), datos de diagnóstico e interacciones con el producto (interacciones con los anuncios dentro de la aplicación).
+-   **Versión de iOS**: Se muestra una solicitud de **Transparencia en el Seguimiento de Apps** (ATT) una única vez, justo antes de mostrar el primer anuncio. Los anuncios se seguirán mostrando aunque rechace la solicitud, pero la información enviada a Google será limitada (no personalizada). Puede cambiar el permiso de ATT en cualquier momento en «Ajustes → Privacidad y seguridad → Rastreo» de iOS.
+-   **Versión de Android**: ATT es un mecanismo exclusivo de iOS y no existe en Android. En su lugar, se utiliza el **ID de publicidad** de Google para la publicación de anuncios. Puede optar por no recibir publicidad personalizada o restablecer su ID de publicidad desde los «Ajustes → Privacidad → Anuncios» de su dispositivo (la redacción puede variar según el dispositivo y la versión de Android). Además, la versión de Android cumple con la gestión del consentimiento (UMP) que se muestra en las regiones aplicables, como la UE.
+-   **La suscripción a KUU+ detiene toda la publicidad y la transmisión de datos asociada**.
+-   Para más detalles sobre el tratamiento de datos de AdMob, consulte la [política de privacidad de Google AdMob](https://support.google.com/admob/answer/6128543).
 
 ## Artículo 14 (Uso de Firebase Analytics / Crashlytics)
 
-**El modelo de consentimiento explícito (opt-in) de este artículo se aplica a la versión para iOS. Para la versión para Android, consulte la sección «Acerca de la versión para Android» al final de este artículo.**
+**Este artículo, en lo que respecta al método de aceptación voluntaria (opt-in), se aplica a la versión de iOS. Para la versión de Android, consulte el apartado «Acerca de la versión de Android» al final de este artículo.**
 
-La **versión para iOS** puede utilizar Firebase Analytics de Google (para agregar datos de uso) y Firebase Crashlytics (para informes de fallos) con el fin de mejorar la calidad de la aplicación y detectar incidentes en producción de inmediato. **Esta función está DESACTIVADA por defecto (no se envían datos) y solo se activa si el usuario da su consentimiento explícito en «Ajustes → Datos y diagnóstico».**
+La **versión de iOS**, para mejorar la calidad de la aplicación y detectar inmediatamente incidentes en producción, puede utilizar Firebase Analytics de Google (para agregar datos de uso) y Firebase Crashlytics (para informes de fallos). **Esta función está DESACTIVADA por defecto (no se envía ningún dato) y solo se activa si el usuario la acepta explícitamente en «Ajustes → Datos y diagnóstico».**
 
--   **Información enviada**:
-    -   Un ID de instalación anonimizado emitido automáticamente por Firebase (basado en el IDFV; no es un identificador que identifique personalmente al usuario de forma directa).
-    -   Señales agregadas de eventos de interacción dentro de la aplicación (eventos para agregar datos como la finalización de sesiones de grabación, visualizaciones y conversiones de la pantalla de pago, finalización del onboarding, etc. Los valores numéricos se envían con una granularidad aproximada y agrupada).
-    -   Trazas de la pila de llamadas (*stack traces*) simbolizadas cuando la aplicación se cierra de forma inesperada.
--   **Información que no se envía**: El contenido hablado (audio), los resultados de la transcripción, el texto de los resultados de la clasificación por IA y los nombres de los temas configurados por el usuario están **diseñados a nivel de tipo para que no puedan ser enviados** (la implementación de la API impide pasar valores de tipo cadena de texto al SDK de análisis).
--   **Mientras el consentimiento no esté activado, no se produce ninguna comunicación con Firebase en absoluto**, incluyendo toda la información mencionada anteriormente.
--   **Cómo detener el envío**: Puede desactivar el interruptor en «Ajustes → Datos y diagnóstico» en cualquier momento. Al desactivarlo, se descartan los ID de instalación anteriores y se eliminan los informes de fallos no enviados que estuvieran guardados localmente en el dispositivo.
+-   **Información que se envía**:
+    -   Un ID de instalación anonimizado emitido automáticamente por Firebase (basado en el IDFV; no es un identificador personal directo).
+    -   Señales agregadas de eventos dentro de la aplicación (eventos agregados como la finalización de sesiones de grabación, la visualización/conversión de la pantalla de pago, la finalización del tutorial, etc. Los valores numéricos se envían con una granularidad aproximada y agrupada).
+    -   Trazas de la pila de llamadas (stack traces) simbolizadas cuando la aplicación se cierra de forma inesperada.
+-   **Información que no se envía**: El contenido de lo que dice (audio), las transcripciones, el texto de los resultados de la clasificación con IA y los nombres de los temas que usted establece están diseñados para que **no puedan enviarse a nivel de tipo** (la implementación de la API impide pasar valores de tipo cadena de texto al SDK de análisis).
+-   **Mientras la función no esté aceptada, no se produce ninguna comunicación con Firebase** (incluidas todas las categorías anteriores).
+-   **Cómo dejar de enviar datos**: Puede desactivar el interruptor en «Ajustes → Datos y diagnóstico» en cualquier momento. Al desactivarlo, los ID de instalación anteriores se descartan y los registros de fallos no enviados que estuvieran guardados en el dispositivo se eliminan.
 -   El destinatario es Google LLC (Estados Unidos). Se aplica la [Información de privacidad de Firebase](https://firebase.google.com/support/privacy) de Google.
 
-**Acerca de la versión para Android:** La versión para Android utiliza Firebase Analytics para enviar **eventos de uso sin contenido** para la mejora del producto (valores agrupados como transiciones de pantalla y recuentos de uso de funciones) y un ID de instancia de la aplicación anónimo emitido por Firebase. **A diferencia de la versión para iOS, esta función está activada por defecto.** El contenido hablado (audio), las transcripciones, el texto de los resultados de la organización y los nombres de los temas **no pueden ser enviados**, ya que la API del SDK de análisis está diseñada para no poder pasar valores de tipo cadena de texto. **La versión para Android no incluye Crashlytics y no envía informes de fallos.** El destinatario es Google LLC (Estados Unidos); se aplica la [Información de privacidad de Firebase](https://firebase.google.com/support/privacy) de Google.
+**Acerca de la versión de Android:** La versión de Android utiliza Firebase Analytics para enviar **eventos de uso sin contenido** con el fin de mejorar el producto (valores agrupados como transiciones de pantalla y recuentos de uso de funciones), además de un ID de instancia de la aplicación anónimo emitido por Firebase. **A diferencia de iOS, esta función está habilitada por defecto.** El contenido de lo que dice (audio), las transcripciones, el texto de los resultados de la organización y los nombres de los temas **no se pueden enviar**, ya que la API del SDK de análisis está diseñada para no poder pasar valores de tipo cadena de texto. **La versión de Android no incluye Crashlytics y no envía informes de fallos.** El destinatario es Google LLC (Estados Unidos); se aplica la [Información de privacidad de Firebase](https://firebase.google.com/support/privacy) de Google.
