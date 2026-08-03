@@ -446,6 +446,76 @@ footer {
   .js .hero .wordmark, .js .hero h1, .js .hero .sub, .js .hero .orb, .js .hero .cta { animation: none; }
   .js .reveal, .js .reveal .stagger > * { opacity: 1; transform: none; transition: none; }
 }
+/* ---- hero sort card (orb 代替の擬似UI) ---- */
+.hero-sort {
+  width: min(360px, 88vw);
+  margin: clamp(32px, 7vw, 52px) auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 30px 64px -30px rgba(94, 151, 194, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  text-align: left;
+}
+.hero-sort__label {
+  margin: 0 0 8px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+}
+.hero-sort__said {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--surface-quiet);
+  border-radius: 14px 14px 14px 4px;
+  padding: 12px 14px;
+}
+.hero-sort__ai {
+  margin: 16px 0 10px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+}
+.hero-sort__chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+.hero-sort__chips li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  background: var(--surface);
+}
+.hero-sort__chips li::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--dot, var(--ink-faint));
+  opacity: 0.55;
+}
+.hero-sort__chips li.on {
+  background: var(--dot);
+  border-color: transparent;
+  color: #fff;
+  font-weight: 600;
+}
+.hero-sort__chips li.on::before { background: rgba(255, 255, 255, 0.85); opacity: 1; }
+.js .hero .hero-sort { animation: enter 1s 0.4s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+@media (prefers-reduced-motion: reduce) {
+  .js .hero .hero-sort { animation: none; }
+}
 /* ---- journal links ---- */
 .journal { border-top: 1px solid var(--line); padding: clamp(48px, 9vw, 80px) 0; }
 .reads { list-style: none; padding: 0; margin: 26px 0 0; }
@@ -476,7 +546,12 @@ footer {
       <p class="wordmark">KUU</p>
       <h1>話して、あたまに余白を。</h1>
       <p class="sub">考えごとでいっぱいになった頭から、いま持たなくていいものを、声に出すだけ。</p>
-      <div class="orb" aria-hidden="true"><div class="orb__water"></div><div class="orb__bubbles"><span class="bubble" style="--bx:18%;--bs:6px;--bdur:4.6s;--bd:0s"></span><span class="bubble" style="--bx:34%;--bs:4px;--bdur:5.4s;--bd:1.4s"></span><span class="bubble" style="--bx:50%;--bs:8px;--bdur:4.0s;--bd:2.2s"></span><span class="bubble" style="--bx:62%;--bs:5px;--bdur:5.8s;--bd:0.8s"></span><span class="bubble" style="--bx:76%;--bs:7px;--bdur:4.4s;--bd:3.0s"></span><span class="bubble" style="--bx:44%;--bs:4px;--bdur:6.2s;--bd:2.6s"></span></div></div>
+      <div class="hero-sort" aria-hidden="true">
+        <p class="hero-sort__label">話したこと</p>
+        <p class="hero-sort__said">「あの件、ずっと頭の隅にある……」</p>
+        <p class="hero-sort__ai">KUU が、静かに分ける</p>
+        <ul class="hero-sort__chips"><li style="--dot:var(--cat-now)">いま見る</li><li class="on" style="--dot:var(--cat-later)">あとで考える</li><li style="--dot:var(--cat-parked)">寝かせる</li><li style="--dot:var(--cat-release)">手放す</li></ul>
+      </div>
       <a class="cta" href="https://apps.apple.com/jp/app/id6771264775?ct=lp_hero" rel="noopener">App Store で入手</a>
       <div class="scroll-cue" aria-hidden="true">下へ</div>
     </header>

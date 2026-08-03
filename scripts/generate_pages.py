@@ -103,6 +103,9 @@ TIPS_LOCALES = ("ja", "en", "es", "ko", "zh-Hans", "zh-Hant", "de", "it", "vi",
                 "nl", "id", "ms", "da", "nb", "sv", "fi", "fr", "th", "ru")
 # Content SEO articles (/journal/<slug>/) are ja-only for now, same pattern as TIPS_LOCALES.
 JOURNAL_LOCALES = ("ja",)
+# Hero 擬似UIカードを出すロケール（未指定ロケールは orb のまま。
+# LOCALES の欠損キー補完で ja の hero_said が全ロケールに継承されるため、明示 opt-in にする）
+HERO_SORT_LOCALES = ("ja",)
 # LP に載せる代表記事 (この順で表示)。残りはハブ /journal/ へ送る。
 # 記事を消してここを直し忘れると生成時に ValueError で落ちる。
 JOURNAL_LP_PICKS = ("brain-dump-yarikata", "kangaesugi-yametai", "nerumae-kangaegoto")
@@ -118,6 +121,12 @@ LOCALES = {
         # Hero
         "hero_headline": "話して、あたまに余白を。",
         "hero_sub": "考えごとでいっぱいになった頭から、いま持たなくていいものを、声に出すだけ。",
+        # Hero 擬似UIカード: このキーを定義したロケールだけ orb をカードに置き換える（試作）。
+        # 発話例と点灯カテゴリ（quadrants の index）はセットで意味が通ること
+        "hero_said": "あの件、ずっと頭の隅にある……",
+        "hero_said_label": "話したこと",
+        "hero_sort_label": "KUU が、静かに分ける",
+        "hero_sort_on": 1,
         "cta": "App Store で入手",
         "scroll_cue": "下へ",
         # Why
@@ -5037,6 +5046,79 @@ footer {
 
 # LP の読みもの導線 (最後の CTA の後ろ)。journal を持たないロケールの LP を
 # 1 バイトも変えないよう、BASE_CSS 本体ではなく該当ロケールにだけ足す。
+HERO_SORT_CSS = """\
+/* ---- hero sort card (orb 代替の擬似UI) ---- */
+.hero-sort {
+  width: min(360px, 88vw);
+  margin: clamp(32px, 7vw, 52px) auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 30px 64px -30px rgba(94, 151, 194, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  text-align: left;
+}
+.hero-sort__label {
+  margin: 0 0 8px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+}
+.hero-sort__said {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--surface-quiet);
+  border-radius: 14px 14px 14px 4px;
+  padding: 12px 14px;
+}
+.hero-sort__ai {
+  margin: 16px 0 10px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+}
+.hero-sort__chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+.hero-sort__chips li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  background: var(--surface);
+}
+.hero-sort__chips li::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--dot, var(--ink-faint));
+  opacity: 0.55;
+}
+.hero-sort__chips li.on {
+  background: var(--dot);
+  border-color: transparent;
+  color: #fff;
+  font-weight: 600;
+}
+.hero-sort__chips li.on::before { background: rgba(255, 255, 255, 0.85); opacity: 1; }
+.js .hero .hero-sort { animation: enter 1s 0.4s both cubic-bezier(0.22, 0.61, 0.36, 1); }
+@media (prefers-reduced-motion: reduce) {
+  .js .hero .hero-sort { animation: none; }
+}
+"""
+
 LP_JOURNAL_CSS = """\
 /* ---- journal links ---- */
 .journal { border-top: 1px solid var(--line); padding: clamp(48px, 9vw, 80px) 0; }
@@ -5710,6 +5792,25 @@ def index_html(code, d, journal_articles=()):
         picks = [by_slug[s] for s in JOURNAL_LP_PICKS]
     journal_section = ""
     journal_css = ""
+    if code in HERO_SORT_LOCALES:
+        cat_vars = ("--cat-now", "--cat-later", "--cat-parked", "--cat-release")
+        chips = ""
+        for i, (label, _) in enumerate(d["quadrants"]):
+            # f-string 式内にバックスラッシュを書くと Python 3.11 以前で SyntaxError
+            # になるため、class 属性は式の外で組む。
+            on = ' class="on"' if i == d["hero_sort_on"] else ""
+            chips += f'<li{on} style="--dot:var({cat_vars[i]})">{label}</li>'
+        hero_visual = f"""      <div class="hero-sort" aria-hidden="true">
+        <p class="hero-sort__label">{d["hero_said_label"]}</p>
+        <p class="hero-sort__said">「{d["hero_said"]}」</p>
+        <p class="hero-sort__ai">{d["hero_sort_label"]}</p>
+        <ul class="hero-sort__chips">{chips}</ul>
+      </div>"""
+        hero_css = HERO_SORT_CSS
+    else:
+        hero_visual = ('      <div class="orb" aria-hidden="true"><div class="orb__water"></div>'
+                       f'<div class="orb__bubbles">{BUBBLES_HTML}</div></div>')
+        hero_css = ""
     if picks:
         journal_css = LP_JOURNAL_CSS
         reads_html = "\n".join(
@@ -5758,14 +5859,14 @@ def index_html(code, d, journal_articles=()):
 {website_jsonld()}
 {organization_jsonld()}{ga4_snippet()}
     <style>
-{BASE_CSS}{journal_css}    </style>
+{BASE_CSS}{hero_css}{journal_css}    </style>
   </head>
   <body>
     <header class="hero">
       <p class="wordmark">KUU</p>
       <h1>{d["hero_headline"]}</h1>
       <p class="sub">{d["hero_sub"]}</p>
-      <div class="orb" aria-hidden="true"><div class="orb__water"></div><div class="orb__bubbles">{BUBBLES_HTML}</div></div>
+{hero_visual}
       <a class="cta" href="{cta_base}?ct=lp_hero" rel="noopener">{d["cta"]}</a>
       <div class="scroll-cue" aria-hidden="true">{d["scroll_cue"]}</div>
     </header>
